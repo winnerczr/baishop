@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/security  
+    http://www.springframework.org/schema/security/spring-security-3.0.xsd
+	">
+	
+	<!-- 允许通过 @Autowired 注入Bean -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<sec:http auto-config='true'>		
+		<!-- 需要认证过滤的地址 -->
+		<sec:intercept-url pattern="/ass/**" access="ROLE_ADMIN" requires-channel="any" />
+		<sec:intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER" requires-channel="any" />
+		
+		<!-- 不需要认证过滤的地址 --> 
+		<sec:intercept-url pattern="/WEB-RES/**" filters="none" />
+		<sec:intercept-url pattern="/service/**" filters="none" />
+		<sec:intercept-url pattern="/kaptcha.jpg" filters="none" />
+		<sec:intercept-url pattern="/favicon.ico" filters="none" />
+		<sec:intercept-url pattern="/Login.jspx" filters="none" />
+		<sec:intercept-url pattern="/*.jsp" filters="none" />
+		<sec:intercept-url pattern="/*.html" filters="none" />
+		
+		<!-- 当访问被拒绝时，会转到403.jsp  --> 
+		<sec:access-denied-handler error-page="/WEB-RES/error/403.jsp" />
+		
+		<!-- 限制用户的最大登陆数,防止一个账号被多人使用 -->  
+		<sec:session-management invalid-session-url="/Login.jspx" session-fixation-protection="migrateSession">
+        	<sec:concurrency-control max-sessions="5" expired-url="/WEB-RES/error/402.jsp" />
+    	</sec:session-management>
+    	
+    	<!-- login-page:默认指定的登录页面. authentication-failure-url:出错后跳转页面. default-target-url:成功登陆后跳转页面 -->  
+        <sec:form-login login-page="/Login.jspx" default-target-url="/Main.jspx" />
+          
+        <!-- logout-success-url:成功注销后跳转到的页面 -->  
+        <sec:logout logout-success-url="/Login.jspx" />
+        
+        <!-- 自动登录 -->
+        <sec:remember-me />
+    	
+    	<!-- 拦截器配置 -->
+		<sec:custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="filterSecurityInterceptor" />		
+	</sec:http>
+
+    
+	<!--  认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可  --> 
+	<sec:authentication-manager  alias ="authenticationManager" > 
+	    <sec:authentication-provider user-service-ref ="adminsService">
+			<sec:password-encoder hash="md5">
+				<sec:salt-source user-property="username"/>
+			</sec:password-encoder>
+	    </sec:authentication-provider> 
+	</sec:authentication-manager>
+	
+	
+    <!-- 用户授权拦截器 -->
+    <bean id="filterSecurityInterceptor" class="com.baishop.manager.security.FilterSecurityInterceptor">
+        <property name="authenticationManager" ref="authenticationManager" />
+        <property name="accessDecisionManager">
+		    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+		    <bean class="com.baishop.manager.security.AccessDecisionManager" />        	
+        </property>
+        <property name="securityMetadataSource">
+		    <!-- 资源源数据定义，即定义某一资源可以被哪些角色访问 -->
+		    <bean class="com.baishop.manager.security.FilterInvocationSecurityMetadataSource"/>
+        </property>
+    </bean>
+
+</beans>

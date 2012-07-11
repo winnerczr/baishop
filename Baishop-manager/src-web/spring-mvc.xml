@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:sec="http://www.springframework.org/schema/security" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/security  
+    http://www.springframework.org/schema/security/spring-security-3.0.xsd
+	">
+	
+	
+	<import resource="spring-validator.xml"/>
+	
+	<!-- 允许通过 @Autowired 注入Bean -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<!-- ViewResolver配置 -->
+	<bean id="ViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/classes/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<!-- 文件上传表单的视图解析器 -->  
+    <bean id="multipartResolver"    
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">   
+        <property name="maxUploadSize" value="204800" />    
+    </bean> 
+	
+
+	<!-- ============================= 商城管理 ============================= -->
+	
+	<!-- 商城管理首页 -->
+	<bean name="/Main.jspx" class="com.baishop.manager.web.Main">
+	</bean>
+	
+	<!-- 商城管理登录 -->
+	<bean name="/Login.jspx" class="com.baishop.manager.web.Login">
+	</bean>
+	
+	
+	<!-- ============================= 商品管理 ============================= -->
+	
+	<!-- 我要卖 -->
+	<bean name="/goods/PublishGoods.jspx" class="com.baishop.manager.web.goods.PublishGoods">
+	</bean>
+	
+	<!-- 出售中的商品 -->
+	<bean name="/goods/GoodsManage.jspx" class="com.baishop.manager.web.goods.GoodsManage">
+	</bean>
+	
+	
+	<!-- ============================= 系统管理 ============================= -->
+	
+	<!-- 注册用户 -->
+	<bean name="/ass/SysAccounts.jspx" class="com.baishop.manager.web.ass.SysAccounts">
+	</bean>
+	
+	<!-- 系统用户 -->
+	<bean name="/ass/SysAdmins.jspx" class="com.baishop.manager.web.ass.SysAdmins">
+	</bean>
+	
+	<!-- 用户角色 -->
+	<bean name="/ass/SysRoles.jspx" class="com.baishop.manager.web.ass.SysRoles">
+	</bean>
+	
+	<!-- 应用模块 -->
+	<bean name="/ass/SysModules.jspx" class="com.baishop.manager.web.ass.SysModules">
+	</bean>
+	
+	<!-- 组织架构 -->
+	<bean name="/ass/SysDepts.jspx" class="com.baishop.manager.web.ass.SysDepts">
+	</bean>
+	
+	<!-- 行政区划 -->
+	<bean name="/ass/SysCity.jspx" class="com.baishop.manager.web.ass.SysCity">
+	</bean>
+	
+	<!-- 系统枚举 -->
+	<bean name="/ass/SysEnums.jspx" class="com.baishop.manager.web.ass.SysEnums">
+	</bean>
+
+	<!-- 系统参数 -->
+	<bean name="/ass/SysParams.jspx" class="com.baishop.manager.web.ass.SysParams">
+	</bean>
+	
+	<!-- 远程接口 -->
+	<bean name="/ass/SysRemote.jspx" class="com.baishop.manager.web.ass.SysRemote">
+	</bean>
+	
+	<!-- 调用日志 -->
+	<bean name="/ass/SysLogger.jspx" class="com.baishop.manager.web.ass.SysLogger">
+	</bean>
+	
+
+</beans>

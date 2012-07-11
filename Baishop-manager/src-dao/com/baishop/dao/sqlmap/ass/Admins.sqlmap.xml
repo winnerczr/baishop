@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Admins" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.ass.Admins" >
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="visit_count" property="visitCount" jdbcType="BIGINT" />
+    <result column="is_allow_login" property="isAllowLogin" jdbcType="TINYINT" />
+    <result column="enable" property="enable" jdbcType="TINYINT" />
+    <result column="{userId=user_id}" property="depts" select="Depts.getDepts" />
+    <result column="{userId=user_id}" property="roles" select="Roles.getRoles" />
+    <result column="{userId=user_id}" property="modules" select="Modules.getModules" />
+  </resultMap>
+  
+  <cacheModel id="cacheAdmins" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="Admins.addAdmins"/>
+  	<flushOnExecute statement="Admins.editAdmins"/>
+  	<flushOnExecute statement="Admins.delAdmins"/>  	
+  	<flushOnExecute statement="Depts.addDepts"/>
+  	<flushOnExecute statement="Depts.editDepts"/>
+  	<flushOnExecute statement="Depts.delDepts"/>
+  	<flushOnExecute statement="Roles.addRoles"/>
+  	<flushOnExecute statement="Roles.editRoles"/>
+  	<flushOnExecute statement="Roles.delRoles"/>  
+  	<flushOnExecute statement="Modules.addModules"/>
+  	<flushOnExecute statement="Modules.editModules"/>
+  	<flushOnExecute statement="Modules.delModules"/>  	
+  	<flushOnExecute statement="AdminsDepts.addAdminsDepts"/>
+  	<flushOnExecute statement="AdminsDepts.delAdminsDepts"/>
+  	<flushOnExecute statement="AdminsRoles.addAdminsRoles"/>
+  	<flushOnExecute statement="AdminsRoles.delAdminsRoles"/>
+  	<flushOnExecute statement="AdminsModules.addAdminsModules"/>
+  	<flushOnExecute statement="AdminsModules.delAdminsModules"/>  	
+  	<flushOnExecute statement="RolesModules.addRolesModules"/>
+  	<flushOnExecute statement="RolesModules.delRolesModules"/>  	
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+
+  <select id="getAdmins" resultMap="resultMap" cacheModel="cacheAdmins">
+    select *
+    from bai_admins
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="userId">
+			user_id = #userId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="username">
+			lcase(username) = lcase(#username:VARCHAR#)
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="password">
+			password = #password:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="name">
+			name = #name:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="code">
+			code = #code:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="isAllowLogin">
+			is_allow_login = #isAllowLogin:TINYINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="enable">
+			enable = #enable:TINYINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="roleId">
+			user_id in (select user_id from bai_admins_roles where role_id = #roleId:INTEGER#)
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="moduleId" open="(" close=")">
+			user_id in (
+				select user_id from bai_admins_modules where module_id = #moduleId:INTEGER#
+			)
+			or
+			user_id in (
+				select user_id from bai_admins_roles where role_id in (
+					select role_id from bai_roles_modules where module_id = #moduleId:INTEGER#
+				)
+			)
+		</isNotEmpty>
+		<!-- 网站关键字查询 -->
+		<isNotEmpty prepend="and" property="searchKey" close=")" open="(">
+			username like CONCAT('%',#searchKey:VARCHAR#,'%') or
+			name like CONCAT('%',#searchKey:VARCHAR#,'%') or
+			code like CONCAT('%',#searchKey:VARCHAR#,'%')
+		</isNotEmpty>
+	</dynamic>
+	<dynamic prepend="order by" >
+      <isNotEmpty property="sort" >
+        $sort$
+      </isNotEmpty>
+	  <isEmpty property="sort" >
+	    enable desc, reg_time asc
+	  </isEmpty>
+    </dynamic>
+  </select>
+  
+  <delete id="delAdmins" >
+    delete from bai_admins
+    where user_id in
+	<iterate property="userIds" open="(" close=")" conjunction=",">
+		#userIds[]:INTEGER# 
+	</iterate>
+  </delete>
+
+  <insert id="addAdmins" parameterClass="com.baishop.entity.ass.Admins" >
+    insert into bai_admins
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="username" >
+        username
+      </isNotNull>
+      <isNotNull prepend="," property="password" >
+        password
+      </isNotNull>
+      <isNotNull prepend="," property="name" >
+        name
+      </isNotNull>
+      <isNotNull prepend="," property="code" >
+        code
+      </isNotNull>
+      <isNotNull prepend="," property="sex" >
+        sex
+      </isNotNull>
+      <isNotNull prepend="," property="position" >
+        position
+      </isNotNull>
+      <isNotNull prepend="," property="mobile" >
+        mobile
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        email
+      </isNotNull>
+      <isNotNull prepend="," property="regTime" >
+        reg_time
+      </isNotNull>
+      <isNotNull prepend="," property="updateTime" >
+        update_time
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginTime" >
+        last_login_time
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginIp" >
+        last_login_ip
+      </isNotNull>
+      <isNotNull prepend="," property="visitCount" >
+        visit_count
+      </isNotNull>
+      <isNotNull prepend="," property="isAllowLogin" >
+        is_allow_login
+      </isNotNull>
+      <isNotNull prepend="," property="enable" >
+        enable
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="username" >
+        #username:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="password" >
+        #password:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="name" >
+        #name:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="code" >
+        #code:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sex" >
+        #sex:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="position" >
+        #position:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mobile" >
+        #mobile:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        #email:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="regTime" >
+        #regTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="updateTime" >
+        #updateTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginTime" >
+        #lastLoginTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginIp" >
+        #lastLoginIp:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="visitCount" >
+        #visitCount:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="isAllowLogin" >
+        #isAllowLogin:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="enable" >
+        #enable:TINYINT#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="userId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+
+  <update id="editAdmins" parameterClass="com.baishop.entity.ass.Admins" >
+    update bai_admins
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="username" >
+        username = #username:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="password" >
+        password = #password:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="name" >
+        name = #name:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="code" >
+        code = #code:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sex" >
+        sex = #sex:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="position" >
+        position = #position:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mobile" >
+        mobile = #mobile:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        email = #email:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="regTime" >
+        reg_time = #regTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="updateTime" >
+        update_time = #updateTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginTime" >
+        last_login_time = #lastLoginTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="lastLoginIp" >
+        last_login_ip = #lastLoginIp:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="visitCount" >
+        visit_count = #visitCount:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="isAllowLogin" >
+        is_allow_login = #isAllowLogin:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="enable" >
+        enable = #enable:TINYINT#
+      </isNotNull>
+    </dynamic>
+    where user_id = #userId:INTEGER#
+  </update>
+  
+</sqlMap>

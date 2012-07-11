@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+	<display-name>Baishop-manager</display-name>
+ 
+	<!-- 首页 -->
+	<welcome-file-list>
+		<welcome-file>Main.jspx</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 设置session超时 -->
+	<session-config> 
+	    <session-timeout>40</session-timeout>
+	</session-config>
+ 
+	<!-- log4j配置监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+ 
+	<!-- spring context加载监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- introspector 清理监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
+	
+	<!-- 系统根目录 -->
+	<context-param>
+	    <param-name>webAppRootKey</param-name>
+	    <param-value>manager.root</param-value>
+	</context-param>
+ 
+	<!-- log4j配置路径 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+ 
+	<!-- spring配置文件路径 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:spring-props.xml
+			classpath:spring-dao.xml
+			classpath:spring-beans.xml
+			classpath:spring-security.xml
+			<!-- classpath:conf/spring-remoting.xml -->
+		</param-value>
+	</context-param> 
+	
+	
+	<!-- spring编码拦截器 -->
+	<filter>  
+	    <filter-name>springEncodingFilter</filter-name>  
+	    <filter-class>  
+	        org.springframework.web.filter.CharacterEncodingFilter  
+	    </filter-class>  
+	    <init-param>  
+	        <param-name>encoding</param-name>  
+	        <param-value>UTF-8</param-value>  
+	    </init-param>  
+	    <init-param>  
+	        <param-name>forceEncoding</param-name>  
+	        <param-value>true</param-value>  
+	    </init-param>  
+	</filter>
+    <filter-mapping>
+        <filter-name>springEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>	
+	
+	<!-- spring security 拦截器 -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<!-- spring remoting services servlet -->
+	<servlet>
+		 <servlet-name>spring-services</servlet-name>
+		 <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		 <init-param>
+		  <param-name>contextConfigLocation</param-name>
+		  <param-value>classpath:spring-services.xml</param-value>
+		 </init-param>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>spring-services</servlet-name>
+		<url-pattern>*.srv</url-pattern>
+	</servlet-mapping> 	
+	
+	<!-- spring mvc servlet -->
+	<servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
+		<url-pattern>*.jspx</url-pattern>
+	</servlet-mapping>
+
+	<!-- kaptcha servlet -->
+	<servlet>
+		<servlet-name>kaptcha</servlet-name>
+		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+		<init-param>
+			<param-name>kaptcha.border</param-name>
+			<param-value>no</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.textproducer.font.color</param-name>
+			<param-value>black</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.textproducer.char.length</param-name>
+			<param-value>4</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.image.width</param-name>
+			<param-value>120</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.image.height</param-name>
+			<param-value>50</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>kaptcha</servlet-name>
+		<url-pattern>/kaptcha.jpg</url-pattern>
+	</servlet-mapping>
+	
+ 	<!-- ckfinder servlet 
+	<servlet>
+		<servlet-name>ckfinder</servlet-name>
+		<servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+		<init-param>
+			<param-name>XMLConfig</param-name>
+			<param-value>/WEB-RES/script/ckfinder/config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ckfinder</servlet-name>
+		<url-pattern>
+			/WEB-RES/script/ckfinder/core/connector/java/connector.java
+		</url-pattern>
+	</servlet-mapping>
+	-->
+  
+</web-app>

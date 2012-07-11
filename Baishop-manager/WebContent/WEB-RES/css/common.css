@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+/*---------------------------------------------------------------以下是对ext样式的优化----------------------------------------------------------------*/
+
+/*对提示框架的优化*/
+.x-message-box .x-msg-box-wait {background-image:url('../script/extjs/resources/themes/images/default/shared/blue-loading.gif')}
+.x-message-box .ext-mb-info {background-image:url('../script/extjs/resources/themes/images/default/shared/icon-info.gif')}
+.x-message-box .ext-mb-warning {background-image:url('../script/extjs/resources/themes/images/default/shared/icon-warning.gif')}
+.x-message-box .ext-mb-question {background-image:url('../script/extjs/resources/themes/images/default/shared/icon-question.gif')}
+.x-message-box .ext-mb-error {background-image:url('../script/extjs/resources/themes/images/default/shared/icon-error.gif')}
+
+/*在火狐下字体过小补丁样式*/
+.x-btn-default-small .x-btn-inner, .x-btn-default-medium .x-btn-inner, .x-btn-default-large .x-btn-inner, .x-btn-default-toolbar-small .x-btn-inner, .x-btn-default-toolbar-medium .x-btn-inner, .x-btn-default-toolbar-large .x-btn-inner, .x-menu-item-text, .x-html-editor-tb .x-font-select, .x-panel-header-default, .x-panel-header-text-default, .x-panel-header-default-framed, .x-tip-header, .x-tip-body, .x-form-invalid-tip-body, .x-tip-header-text, .x-progress-text, .x-toolbar, .x-toolbar .x-form-item-label, .x-toolbar .x-toolbar-text, .x-window-header-text-default, .x-tab-bar, .x-tab button, .x-grid-rowbody, .x-grid-row .x-grid-cell, .x-grid-group-title, .x-grid-row-editor .x-form-field, .x-grid-row-editor .x-form-display-field, .x-form-invalid-under, .x-fieldset-header, .x-column-header, .x-mask-msg div, .x-btn-group-header-text-default-framed, table.x-datepicker-inner a, .x-monthpicker-item, .x-dd-drag-ghost { font-size: 12px; }
+.x-tab button { font-size: 13px; }
+.x-column-header { text-shadow:0 0 0 rgba(255, 255, 255, 0.3); }
+
+
+/*---------------------------------------------------------------以下是公共样式----------------------------------------------------------------*/
+
+.title {
+	color: #66AB16;
+	font-family: "微软雅黑","黑体","宋体","klavika-web-1","klavika-web-2",sans-serif;
+	font-size: 2.3em;
+    margin-left: -12px;
+    margin-top: -3px;
+    padding: 0 0 0.4em 2.2em;
+}
+
+.agreement {
+    border: 1px solid #CCCCCC;
+    color: #808080;
+    height: 100px;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding: 0 9px;
+}
+
+
+.icon-cls {
+	background: url(../script/app/images/icons.png) no-repeat -3px -84px !important;
+}
+
+.icon-sub-system {
+	background: url(../script/app/images/icons.png) no-repeat -3px -219px !important;
+}
+
+.icon-module-group {
+	background: url(../script/app/images/icons.png) no-repeat -3px -57px !important;
+}
+
+.icon-module-app { 
+	background: url(../script/app/images/icons.png) no-repeat -3px -111px !important;
+}
+
+.icon-module-app-big {
+    background: url(../script/app/images/singleton-m.png) no-repeat scroll 0 -5px transparent;
+}
+
+.icon-module-function {
+	background: url(../script/app/images/icons.png) no-repeat -3px -165px !important;
+}
+
+.icon-module-constant {
+	background: url(../script/app/images/icons.png) no-repeat -3px -245px !important;
+}
+
+.icon-role-root {
+	background: url(../script/app/images/icons.png) no-repeat -3px -219px !important;
+}
+
+.icon-role-group {
+	background: url(../script/app/images/icons.png) no-repeat -3px -57px !important;
+}
+
+.icon-role-leaf { 
+	background: url(../script/app/images/icons.png) no-repeat -3px -111px !important;
+}
+
+.icon-dept {
+	background: url(../script/app/images/icons.png) no-repeat -3px -84px !important;
+}
+
+.help-hint {
+	font-size:18px;color:#E50012;
+}
+
+/*添加*/
+.icon-add { 
+	background: url(../script/app/images/add.png) ;
+}
+/*编辑*/
+.icon-edit { 
+	background: url(../script/app/images/edit.png) ;
+}
+/*删除*/
+.icon-del { 
+	background: url(../script/app/images/delete.png) ;
+}
+/*保存*/
+.icon-save { 
+	background: url(../script/app/images/save.gif) ;
+}
+/*设置*/
+.icon-set { 
+	background: url(../script/app/images/set.png) ;
+}
+/*停止*/
+.icon-stop { 
+	background: url(../script/app/images/stop.png) ;
+}
+/*向上*/
+.icon-up { 
+	background: url(../script/app/images/up.png) ;
+}
+/*向下*/
+.icon-down { 
+	background: url(../script/app/images/down.png) ;
+}
+/*查询*/
+.icon-search { 
+	background: url(../script/app/images/search.png) ;
+}
+/*帮助*/
+.icon-help {
+	background: url(../script/app/images/help.png) ;
+}
+/*打印*/
+.icon-print { 
+	background: url(../script/app/images/print.png) ;
+}
+/*提取*/
+.icon-hand { 
+	background: url(../script/app/images/hand.png) ;
+}
+/*导出*/
+.icon-export { 
+	background: url(../script/app/images/export.png) ;
+}
+/*文件*/
+.icon-file { 
+	background: url(../script/app/images/file.png) ;
+}

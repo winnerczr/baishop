@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Category" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.goods.Category" >
+    <result column="cate_id" property="cateId" jdbcType="INTEGER" />
+    <result column="cate_parent" property="cateParent" jdbcType="INTEGER" />
+    <result column="cate_path" property="catePath" jdbcType="VARCHAR" />
+    <result column="cate_name" property="cateName" jdbcType="VARCHAR" />
+    <result column="cate_desc" property="cateDesc" jdbcType="VARCHAR" />
+    <result column="leaf" property="leaf" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <cacheModel id="cacheCategory" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="Category.addCategory"/>
+  	<flushOnExecute statement="Category.editCategory"/>
+  	<flushOnExecute statement="Category.delCategory"/>
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+  
+  <select id="getCategory" resultMap="resultMap" parameterClass="hashmap" cacheModel="cacheCategory">
+    select *
+    from bai_category
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="cateId">
+			cate_id = #cateId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="cateParent">
+			cate_parent = #cateParent:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="catePath">
+			cate_path like CONCAT(#catePath:VARCHAR#,'%')
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="leaf">
+			leaf = #leaf:TINYINT#
+		</isNotEmpty>
+	</dynamic>
+	order by sort
+  </select>
+  
+  <delete id="delCategory" parameterClass="hashmap" >
+    delete from bai_category
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="cateId">
+			cate_id = #cateId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="cateParent">
+			cate_parent = #cateParent:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="catePath">
+			cate_path like CONCAT(#catePath:VARCHAR#,'%')
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="leaf">
+			leaf = #leaf:TINYINT#
+		</isNotEmpty>
+	</dynamic>
+  </delete>
+  
+  <insert id="addCategory" parameterClass="com.baishop.entity.goods.Category" >
+    insert into bai_category
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="cateParent" >
+        cate_parent
+      </isNotNull>
+      <isNotNull prepend="," property="catePath" >
+        cate_path
+      </isNotNull>
+      <isNotNull prepend="," property="cateName" >
+        cate_name
+      </isNotNull>
+      <isNotNull prepend="," property="cateDesc" >
+        cate_desc
+      </isNotNull>
+      <isNotNull prepend="," property="leaf" >
+        leaf
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="cateParent" >
+        #cateParent:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="catePath" >
+        #catePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cateName" >
+        #cateName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cateDesc" >
+        #cateDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="leaf" >
+        #leaf:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        #sort:INTEGER#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="cateId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="editCategory" parameterClass="com.baishop.entity.goods.Category" >
+    update bai_category
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="cateParent" >
+        cate_parent = #cateParent:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="catePath" >
+        cate_path = #catePath:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cateName" >
+        cate_name = #cateName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cateDesc" >
+        cate_desc = #cateDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="leaf" >
+        leaf = #leaf:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort = #sort:INTEGER#
+      </isNotNull>
+    </dynamic>
+    where cate_id = #cateId:INTEGER#
+  </update>
+  
+</sqlMap>
