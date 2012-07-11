@@ -85,6 +85,7 @@
 				<version>2.4</version>
 				<executions>
 					<execution>
+                       	<id>service-jar</id>
 						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
@@ -101,6 +102,20 @@
 								<exclude>com/baishop/service/BaseService.java</exclude>
 								<exclude>com/baishop/service/impl/**</exclude>
 							</excludes>
+						</configuration>
+					</execution>
+					<execution>
+                        <id>framework-jar</id>  
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>framework</classifier>
+							<jarName>${project.artifactId}</jarName>
+							<includes>
+								<include>com/baishop/framework/**</include>
+							</includes>
 						</configuration>
 					</execution>
 				</executions>
