@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>注册</title>
+#import("../common/meta.vm")
+<link href="/WEB-RES/web/css/mall/register.css" type="text/css" rel="stylesheet" charset="utf-8" />
+<script src="/WEB-RES/web/js/mall/register.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header">
+	<span class="blank15"></span>
+    <div class="vancllogo">
+    	<a href="/"><img src="/WEB-RES/image/logo.jpg" alt="百鞋诚" /></a>
+		<span class="blank10"></span>
+    </div>    
+    <div class="usermsg">
+		<div class="helpcenter"><a href="#">帮助中心</a></div>
+		<div id="welcome" class="afterlogin">您好，欢迎光临百鞋诚。<span style="color: rgb(161, 0, 0);">&nbsp;</span></div>
+    </div>
+</div>
+<div id="context">
+	<div id="dl">
+		<div class="dl">
+			<h2 align="left">注册新用户</h2>
+			<div align="left" class="dlC">
+				<span class="blank20"></span>
+				<form id="frmRegister" action="/Register.jspx?func=register" method="post">
+					<div class="regSetTabCon">
+					    <div style="display: block;">
+							<div class="field username">
+			                    <label for="username">账号(E-mail)</label>
+			                    <input type="text" value="" class="f-text" id="username" name="username" size="30"/>
+			                    <span id="username-hint">&nbsp;</span> 
+			                    <span class="hint" >登录及找回密码用，不会公开，同时我们也会给这个地址发送您的帐户信息、订单通知等</span>
+							</div>
+							<div class="field nickname">
+			                    <label for="nickname">昵称</label>
+			                    <input type="text" value="" class="f-text" id="nickname" name="nickname" size="30"/>
+			                    <span id="nickname-hint">&nbsp;</span> 
+			                    <span class="hint">请输入中英文、数字、下划线或它们的组合</span>
+			                </div>
+							<div class="field password">
+			                    <label for="password">密码</label>
+			                    <input type="password" class="f-text" id="password" name="password" size="16"/>
+			                    <span id="password-hint">&nbsp;</span> 
+			                    <span class="hint">密码请设为6-16位字母或数字</span>
+			                </div>
+			                <div class="field password">
+			                    <label for="password2">确认密码</label>
+			                    <input type="password" class="f-text" id="password2" name="password2" size="16"/>
+			                    <span id="password2-hint">&nbsp;</span> 
+			                </div>
+							<div class="field subscribe">
+			                    <div>
+			                        <input type="checkbox" checked="checked" class="f-check" id="subscribe" name="subscribe" value="1"/>
+			                        <label for="subscribe">订阅每日最新商品信息</label>
+			                    </div>
+			                    <span class="blank0"></span>
+			                    <div class="subscribe-hint">订阅后将收到每日商品信息邮件（可随时退订）</div>
+			                </div>
+			                <div class="field captcha">
+			                    <label for="captcha">请输入验证码</label>
+			                    <input type="text" name="captcha" class="f-text" id="captcha"/>
+			                    <span id="captcha-hint">&nbsp;</span> 
+			                </div>
+			                <div class="field captcha-img">
+			                    <img src="/kaptcha.jpg" class="signup-captcha-img" id="signup-captcha-img"/>
+			                    <span onclick="$('#signup-captcha-img').attr('src', '/kaptcha.jpg?'+Math.floor(Math.random()*100));">看不清楚？换一张</span>
+			                </div>
+							<input id="redUrl" name="redUrl" type="hidden" />
+							<span class="blank15"></span>
+							<div class="btnReg"><input type="submit" id="btnRegister" class="dlButton" value="" /></div>
+							<span class="blank20"></span>
+			                <div class="field terms">
+			                    <input type="checkbox" checked="checked" class="f-check" id="agreement" name="agreement" value="1"/>
+								我已阅读并同意<a class="agreementlink" target="_blank" href="#">《BAI百鞋诚用户协议》</a>
+			                </div>
+			                <span class="blank20"></span>
+			            </div>
+					</div>
+				</form>
+				<span class="blank20"></span>
+			</div>
+		</div>
+		<div class="zc">
+			<h2 align="left">登录百鞋诚</h2>
+			<span class="blank10"></span>
+			<div>
+				<p>已是 <em>百鞋诚</em> 会员?</p>
+				<p>请点击此处，直接登录!</p>
+			</div>
+			<button id="btnZC" class="zcButton"></button>
+		</div>
+	</div>
+</div>
+#import("../common/footer.vm")
+</body>
+</html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:sec="http://www.springframework.org/schema/security" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/security  
+    http://www.springframework.org/schema/security/spring-security-3.0.xsd
+	">
+	
+	
+	<!-- 允许通过 @Autowired 注入Bean -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	
+	<!-- ViewResolver配置 -->
+	<bean id="velocityResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="suffix" value=".vm" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="toolboxConfigLocation" value="WEB-INF/classes/com/baishop/velocity/velocity-toolbox.xml" />
+	</bean>
+	
+	<!-- Velocity引擎配置 -->
+	<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="WEB-RES/web/view/"/>
+		<property name="velocityProperties">
+			<props>
+				<prop key="userdirective">
+					com.baishop.velocity.HttpImportDirective,
+					com.baishop.velocity.ImportDirective
+				</prop>
+				<prop key="directive.foreach.counter.name">loopCounter</prop>
+				<prop key="directive.foreach.counter.initial.value">0</prop>
+				<prop key="input.encoding">UTF-8</prop>
+				<prop key="output.encoding">UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 文件上传表单的视图解析器 -->  
+    <bean id="multipartResolver"    
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">   
+        <property name="maxUploadSize" value="204800" />    
+    </bean> 
+	
+	<!-- 异常解析器 -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+        <property name="defaultErrorView">  
+            <value>error/error</value>  
+        </property>  
+        <property name="exceptionMappings">  
+            <props>                      
+                <prop key="java.lang.RuntimeException">error/error</prop>               
+            </props>  
+        </property>  
+    </bean>
+    
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+	    <mvc:interceptor>
+			<mvc:mapping path="/mymall/Main.htm" />
+			<bean class="com.baishop.interceptor.MainInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	
+	<!-- ============================= 前台页面  ============================ -->
+	
+	<!-- 首页 -->
+	<bean name="/index.htm" class="com.baishop.web.Index">
+	</bean>
+	
+	<!-- 产品 -->
+	<bean name="/product.htm" class="com.baishop.web.Product">
+	</bean>	
+	
+	<!-- 购物车 -->
+	<bean name="/shopcar.htm" class="com.baishop.web.Shopcar">
+	</bean>
+	
+	<!-- 搜索 -->
+	<bean name="/search.htm" class="com.baishop.web.Search">
+	</bean>
+	
+	<!-- 登录 -->
+	<bean name="/login.htm" class="com.baishop.web.Login">
+	</bean>
+	
+	<!-- 注册 -->
+	<bean name="/register.htm" class="com.baishop.web.Register">
+	</bean>
+	
+	
+	<!-- ============================= 账户中心  ============================ -->
+	
+	<!-- 账户中心首页 -->
+	<bean name="/mymall/main.htm" class="com.baishop.web.mymall.Main">
+	</bean>
+
+	
+
+</beans>

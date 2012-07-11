@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Booking" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.goods.Booking" >
+    <result column="booking_id" property="bookingId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="consignee" property="consignee" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="goods_desc" property="goodsDesc" jdbcType="VARCHAR" />
+    <result column="goods_number" property="goodsNumber" jdbcType="INTEGER" />
+    <result column="booking_time" property="bookingTime" jdbcType="TIMESTAMP" />
+    <result column="is_dispose" property="isDispose" jdbcType="TINYINT" />
+    <result column="dispose_user" property="disposeUser" jdbcType="VARCHAR" />
+    <result column="dispose_time" property="disposeTime" jdbcType="TIMESTAMP" />
+    <result column="dispose_note" property="disposeNote" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <select id="getBooking" resultMap="resultMap" parameterClass="hashmap" >
+    select *
+    from bai_booking
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="bookingId">
+			booking_id = #bookingId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="userId">
+			user_id = #userId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="goodsId">
+			goods_id = #goodsId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="isDispose">
+			is_dispose = #isDispose:TINYINT#
+		</isNotEmpty>
+	</dynamic>
+  </select>
+  
+  <delete id="delBooking" parameterClass="hashmap" >
+    delete from bai_booking
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="bookingId">
+			booking_id = #bookingId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="userId">
+			user_id = #userId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="goodsId">
+			goods_id = #goodsId:BIGINT#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="isDispose">
+			is_dispose = #isDispose:TINYINT#
+		</isNotEmpty>
+	</dynamic>
+  </delete>
+  
+  <insert id="addBooking" parameterClass="com.baishop.entity.goods.Booking" >
+    insert into bai_booking
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="userId" >
+        user_id
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        email
+      </isNotNull>
+      <isNotNull prepend="," property="consignee" >
+        consignee
+      </isNotNull>
+      <isNotNull prepend="," property="phone" >
+        phone
+      </isNotNull>
+      <isNotNull prepend="," property="goodsId" >
+        goods_id
+      </isNotNull>
+      <isNotNull prepend="," property="goodsDesc" >
+        goods_desc
+      </isNotNull>
+      <isNotNull prepend="," property="goodsNumber" >
+        goods_number
+      </isNotNull>
+      <isNotNull prepend="," property="bookingTime" >
+        booking_time
+      </isNotNull>
+      <isNotNull prepend="," property="isDispose" >
+        is_dispose
+      </isNotNull>
+      <isNotNull prepend="," property="disposeUser" >
+        dispose_user
+      </isNotNull>
+      <isNotNull prepend="," property="disposeTime" >
+        dispose_time
+      </isNotNull>
+      <isNotNull prepend="," property="disposeNote" >
+        dispose_note
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="userId" >
+        #userId:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        #email:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="consignee" >
+        #consignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="phone" >
+        #phone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsId" >
+        #goodsId:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsDesc" >
+        #goodsDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsNumber" >
+        #goodsNumber:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="bookingTime" >
+        #bookingTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="isDispose" >
+        #isDispose:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeUser" >
+        #disposeUser:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeTime" >
+        #disposeTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeNote" >
+        #disposeNote:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Long" keyProperty="bookingId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="deitBooking" parameterClass="com.baishop.entity.goods.Booking" >
+    update bai_booking
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="userId" >
+        user_id = #userId:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="email" >
+        email = #email:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="consignee" >
+        consignee = #consignee:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="phone" >
+        phone = #phone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsId" >
+        goods_id = #goodsId:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsDesc" >
+        goods_desc = #goodsDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="goodsNumber" >
+        goods_number = #goodsNumber:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="bookingTime" >
+        booking_time = #bookingTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="isDispose" >
+        is_dispose = #isDispose:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeUser" >
+        dispose_user = #disposeUser:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeTime" >
+        dispose_time = #disposeTime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="disposeNote" >
+        dispose_note = #disposeNote:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where booking_id = #bookingId:BIGINT#
+  </update>
+
+</sqlMap>

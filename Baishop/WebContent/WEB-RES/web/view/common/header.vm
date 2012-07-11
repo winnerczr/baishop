@@ -1,0 +1,1179 @@
+<link href="/WEB-RES/web/css/common/header.css" type="text/css" rel="stylesheet" charset="utf-8" />
+<script src="/WEB-RES/web/js/common/header.js" type="text/javascript"></script>
+<div id="head">
+	<div class="headtop">
+		<div class="lsmallnav">
+			<ul>
+				<li><a href="#">我的账户</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#">积分兑换</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#">微博</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#">帮助中心</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#">投诉建议</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#">在线客服</a></li>
+				<li class="fgbar"></li>
+				<li><a href="#"><span class="mobile"></span>手机百鞋诚</a></li>
+			</ul>
+		</div>
+		<div class="rsmallnav">
+			<img height="30" width="268" src="/WEB-RES/image/phone.gif" />
+		</div>
+	</div> 
+	<span class="blank15"></span>
+	<div class="lwelmsg">
+		<div class="llwelmsg">
+			<a href="/"><img src="/WEB-RES/image/logo.jpg" alt="百鞋诚" /></a>
+			<div>
+				<span>您好，欢迎光临百鞋诚。</span>
+				<a id="aLogin" href="javascript:location.href='/login.html?'+location.href">登录</a>
+				<span class="fgbar">&nbsp;</span>
+				<a id="aRegister" href="javascript:location.href='/register.html?'+location.href">注册</a>
+			</div>
+		</div>
+		<div class="clwelmsg">
+			<div class="welmsgdiv1">
+				<form id="frmKey" method="get" accept-charset="utf-8" action="/search.html">
+					<input type="text" id="key" name="key" class="searchtxt" value="请输入关键词" maxLength="25" />
+					<input type="submit" class="searchbtn" value="" />
+				</form>				
+			</div>
+			<div class="welmsgdiv2">
+				<span>热门关键词：</span>
+				<a href="/search.html?key=男鞋">男鞋</a>
+				<a href="/search.html?key=皮鞋">皮鞋</a>
+				<a href="/search.html?key=休闲鞋">休闲鞋</a>
+				<a href="/search.html?key=运动鞋">运动鞋</a>
+				<a href="/search.html?key=帆布鞋">帆布鞋</a>
+			</div>
+		</div>
+		<div class="rlwelmsg">
+			<div class="lrrwelmsg">
+				<div>
+					<span class="a10000">购物车</span> 中有 <span class="ba10000">0</span> 件商品
+				</div>
+				<div>
+					合 计 <span class="ba10000">0</span> 元 <input type="button" class="jsbtn" value="" onclick="javascript:location.href='/shopcar.html';" />
+				</div>
+			</div>
+			<div class="lrlwelmsg">
+			</div>
+		</div>
+	</div>
+	<span class="blank12"></span>
+	<div class="lnavlist">
+		<ul>
+			<li class="lnav-index"><a name="head-lnavlist-1" href="/"></a></li>
+			<li class="lnav3"><a name="head-lnavlist-3" href="#"></a></li>
+			<li class="lnav2"><a name="head-lnavlist-4" href="#"></a></li>
+			<li class="lnav5"><a name="head-lnavlist-5" href="#"></a></li>
+			<li class="lnav4"><a name="head-lnavlist-6" href="#"></a></li>
+			<li class="lnav8"><a name="head-lnavlist-7" href="#"></a></li>
+			<li class="lnav6"><a name="head-lnavlist-8" href="#"></a></li>
+			<li class="lnav9"><a name="head-lnavlist-9" href="#"></a></li>
+			<li class="lnav11"><a name="head-lnavlist-10" href="#"></a></li>
+			<li class="lnav12"><a name="head-lnavlist-11" href="#"></a></li>
+			<li class="lnav7" style="position: relative;"><a name="head-lnavlist-2" href="#"></a><img src="/WEB-RES/image/newicon_red_01.gif" style="position: absolute; top: -3px; left: 56px;"> </li>
+			<li class="lnav10"><a name="head-lnavlist-12" href="#"></a></li>
+		</ul>
+		<div class="kindnav">
+			<div class="kindleft"></div>
+			<div class="kindcenter">
+				<div class="kindtoplist">
+					<ul>
+						<li>
+							<a href="#" name="head-kindtoplist-1">运动</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-2">箱包</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-3">化妆品</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-4">休闲裤</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-5">牛仔裤 </a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-6">饰品</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-7">卫衣</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-8">情侣</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-9">创意礼品</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-10">凉鞋</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-11">短裤 </a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-12">针织衫</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a target="_blank" href="#" name="head-kindtoplist-13">皮鞋</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a target="_blank" href="#" name="head-kindtoplist-14">佐丹奴</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a target="_blank" href="#" name="head-kindtoplist-15">精品包</a>
+						</li>
+						<li class="dotfgbg">&nbsp;</li>
+						<li>
+							<a href="#" name="head-kindtoplist-16">童装：</a>&nbsp;
+							<a href="#" name="head-kindtoplist-17">卫衣</a>&nbsp;
+							<a href="#" name="head-kindtoplist-17">短袖T恤</a>
+						</li>
+					</ul>
+				</div>
+				<div class="kindbtm">
+					<div class="kindbtmleft">
+						<div id="floor_nav">
+							<ul class="floors">
+								<li><a href="#" name="sub_floor_1"
+									class="track">男装</a></li>
+								<li class="dotfgbg">&nbsp;</li>
+								<li><a href="#" name="sub_floor_2"
+									class="track">女装</a></li>
+								<li class="dotfgbg">&nbsp;</li>
+								<li><a href="#" name="sub_floor_3"
+									class="track">童装</a></li>
+								<li class="dotfgbg">&nbsp;</li>
+								<li><a href="#" name="sub_floor_4"
+									class="track">鞋</a></li>
+								<li class="dotfgbg">&nbsp;</li>
+								<li><a href="#" name="sub_floor_5"
+									class="track">家居</a></li>
+								<li class="dotfgbg">&nbsp;</li>
+								<li><a href="#" name="sub_floor_6"
+									class="track">配饰</a></li>
+							</ul>
+						</div>
+						<div id="sub_floor_menus">
+
+							<div id="sub_floor_1" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sub_floor_2" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sub_floor_3" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sub_floor_4" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sub_floor_5" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div id="sub_floor_6" class="sub_floor">
+								<div class="floatdiv">
+									<div class="navchild">
+										<div class="childleft">
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">衬衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖衬衫</a>
+													<span>|</span>
+													<a href="#" class="track"> 领带</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">POLO衫/T恤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">长袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">短袖POLO衫</a>
+													<span>|</span>
+													<a href="#" class="track">长袖T恤</a>
+													<span>|</span>
+													<a href="#" class="track">短袖T恤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">卫衣</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">基础款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">时尚款卫衣</a>
+													<span>|</span>
+													<a href="#" class="track">经典款卫衣</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">针织衫</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">针织背心</a>
+													<span>|</span>
+													<a href="#" class="track">套头衫</a>
+													<span>|</span>
+													<a href="#" class="track">针织开衫</a>
+													<span>|</span>
+													<a href="#" class="track">羊毛衫</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">外套</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">夹克</a>
+													<span>|</span>
+													<a href="#" class="track">西服</a>
+													<span>|</span>
+													<a href="#" class="track">风衣 </a>
+													<span>|</span>
+													<a href="#" class="track">大衣</a>
+													<span>|</span>
+													<a href="#" class="track">羽绒服</a>
+													<span>|</span>
+													<a href="#" class="track">棉服 </a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">运动装</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">运动装</a>
+													<span>|</span>
+													<a href="#" class="track">运动鞋</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">裤子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">西裤</a>
+													<span>|</span>
+													<a href="#" class="track">休闲裤</a>
+													<span>|</span>
+													<a href="#" class="track">牛仔裤 </a>
+													<span>|</span>
+													<a href="#" class="track">运动裤</a>
+													<span>|</span>
+													<a href="#" class="track">短裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">凡客T</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">短袖基础款</a>
+													<span>|</span>
+													<a href="#" class="track">插肩袖</a>
+													<span>|</span>
+													<a href="#" class="track">领/袖包边款</a>
+													<span>|</span>
+													<a href="#" class="track">V领款</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">内衣裤</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">内衣</a>
+													<span>|</span>
+													<a href="#" class="track">家居服</a>
+													<span>|</span>
+													<a href="#" class="track">内裤</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+											<div class="childli">
+												<div class="childclass">
+													<a href="#" class="track">袜子</a>
+												</div>
+												<div class="childdetail">
+													<a href="#" class="track">袜子</a>
+												</div>
+											</div>
+											<div class="childdotbg"></div>
+										</div>
+										<div class="childright">
+											<ul>
+												<li><a href="#" class="track">新款男装</a>
+												</li>
+												<li><a href="#" class="track">本季热销推荐</a>
+												</li>
+												<li><a href="#" class="track">断码男装</a>
+												</li>
+												<li><a href="#" class="track">大码男装</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="kindbtmright">
+						<ul>
+							<li>
+								<span>热门专区：&nbsp;&nbsp;</span>
+							</li>
+							<li>
+								<a href="#" name="head-rmzq-1">热销排行</a>
+							</li>
+							<li class="dotfgbg">&nbsp;</li>
+							<li>
+								<a href="#" name="head-rmzq-2">大码专区</a>
+							</li>
+							<li class="dotfgbg">&nbsp;</li>
+							<li>
+								<a href="#" name="head-rmzq-3">积分回馈</a>
+							</li>
+							<li class="dotfgbg">&nbsp;</li>
+							<li>
+								<a href="#" name="head-rmzq-4">断码清仓</a>
+							</li>
+							<li class="dotfgbg">&nbsp;</li>
+							<li>
+								<a href="#" name="head-rmzq-5">特惠抢购</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="kindright"></div>
+		</div>
+	</div>
+	<span class="blank15"></span>
+</div>

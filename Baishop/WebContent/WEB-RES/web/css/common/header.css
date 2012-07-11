@@ -1,0 +1,529 @@
+@CHARSET "UTF-8";
+
+#head {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+.headtop {
+    background: url("../../../image/headtop.jpg") repeat-x scroll 0 0 transparent;
+    height: 30px;
+}
+
+.lsmallnav {
+    display: inline;
+    float: left;
+    padding-left: 12px;
+}
+.lsmallnav li {
+    display: inline;
+    float: left;
+    line-height: 30px;
+}
+.lsmallnav li span {
+    display: inline;
+    float: left;
+}
+
+.rsmallnav {
+    display: inline;
+    float: right;
+    padding-right: 12px;
+}
+.rsmallnav span {
+    display: inline;
+    float: left;
+}
+
+.jsbtn {
+    background: url("../../../image/jsbtn.gif") no-repeat scroll center center transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 19px;
+    width: 54px;
+}
+
+.searchtxt {
+  background: url("../../../image/nav0827_25.jpg") no-repeat scroll center center transparent;
+  border-width: 0;
+  display: block;
+  float: left;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 2px;
+  width: 211px;
+}
+
+.searchbtn {
+    background: url("../../../image/searchbtn.gif") no-repeat scroll center center transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 26px;
+    width: 70px;
+}
+
+
+
+.fgbar {
+    background: url("../../../image/fgbar.jpg") no-repeat scroll center center transparent;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.mobile {
+	background: url("../../../image/head-mobile.gif") no-repeat 0 0;
+	width: 14px;
+	height: 30px;
+}
+
+
+.lwelmsg {
+	height: 75px;
+}
+
+.llwelmsg {
+	display: inline;
+	float: left;
+	width: 352px;
+}
+
+.llwelmsg div {	
+	margin: 5px 0 0;
+}
+
+.llwelmsg a {
+	color: #A10000;
+}
+
+
+.clwelmsg {
+	display: inline;
+	float: left;
+	margin: 12px 0 0 40px;
+	width: 283px;
+}
+
+.clwelmsg .welmsgdiv1 {
+	height: 33px;
+}
+
+.clwelmsg .welmsgdiv2 {
+	height: 18px;
+	overflow: hidden;
+}
+
+.clwelmsg .welmsgdiv2 a {
+	color: #72727C;
+	margin-left: 5px;
+}
+
+.clwelmsg .welmsgdiv2 span {
+	color: #A10000;
+}
+
+.rlwelmsg {
+	display: inline;
+	float: right;
+	text-align:right;
+	margin: 12px 2px 0 0;
+}
+
+
+.rlwelmsg .lrrwelmsg {
+	display: inline;
+	float: right;
+}
+
+.rlwelmsg .lrrwelmsg div {
+	clear: both;
+	line-height: 21px;
+}
+
+.rlwelmsg .lrlwelmsg {
+	display: inline;
+	background: url("../../../image/shopcart.jpg") no-repeat 0 0;
+	width: 54px;
+	height: 43px;
+	float: right;
+}
+
+.lnavlist {
+	height: 85px;
+  	clear: both;
+}
+
+.lnavlist li {
+    display: inline;
+    float: left;
+}
+.lnav-index a {
+    background: url("../../../image/nav_index_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 78px;
+}
+.lnav-index a:hover {
+    background: url("../../../image/nav_index_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 78px;
+}
+.lnav2 a {
+    background: url("../../../image/nav2_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav2 a:hover {
+    background: url("../../../image/nav2_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav3 a {
+    background: url("../../../image/nav3_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav3 a:hover {
+    background: url("../../../image/nav3_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav4 a {
+    background: url("../../../image/nav4_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav4 a:hover {
+    background: url("../../../image/nav4_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav5 a {
+    background: url("../../../image/nav5_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav5 a:hover {
+    background: url("../../../image/nav5_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav6 a {
+    background: url("../../../image/nav6_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav6 a:hover {
+    background: url("../../../image/nav6_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav6 .lovesnavhover {
+    background: url("../../../image/nav6_L.gif") no-repeat scroll 0 0 transparent;
+}
+.lnav7 a {
+    background: url("../../../image/nav7_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav7 a:hover {
+    background: url("../../../image/nav7_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav8 a {
+    background: url("../../../image/nav8_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav8 a:hover {
+    background: url("../../../image/nav8_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav9 a {
+    background: url("../../../image/nav9_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav9 a:hover {
+    background: url("../../../image/nav9_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav10 a {
+    background: url("../../../image/nav10_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 132px;
+}
+.lnav11 a {
+    background: url("../../../image/nav11_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav11 a:hover {
+    background: url("../../../image/nav11_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav12 a {
+    background: url("../../../image/nav12_L.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+.lnav12 a:hover {
+    background: url("../../../image/nav12_L2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    width: 77px;
+}
+
+.kindnav {
+  height: 54px;
+}
+
+.kindleft {
+  background: url("../../../image/leftcorner.jpg") no-repeat scroll left center transparent;
+  display: inline;
+  float: left;
+  height: 54px;
+  width: 6px;
+}
+
+.kindcenter {
+  background: url("../../../image/kindnavbg.jpg") repeat-x scroll center center transparent;
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #C5C8CB;
+  display: inline;
+  float: left;
+  height: 52px;
+  width: 968px;
+}
+
+.kindright {
+  background: url("../../../image/rightcorner.jpg") no-repeat scroll left center transparent;
+  display: inline;
+  float: right;
+  height: 54px;
+  width: 6px;
+}
+
+.kindtoplist {
+  border-bottom: 1px solid #DFDFDF;
+  color: #72727C;
+  height: 25px;
+  line-height: 26px;
+  margin: 0 12px;
+  overflow: hidden;
+  padding-left: 12px;
+}
+
+.kindtoplist ul {
+    width: 100%;
+}
+.kindtoplist li {
+    display: inline;
+    float: left;
+}
+.kindtoplist li a {
+    color: #333333;
+}
+.kindtoplist .dotfgbg {
+    background: url("../../../image/dotbar.jpg") no-repeat scroll center center transparent;
+    padding: 0 11px;
+    width: 1px;
+}
+.kindtoplist li a:link, .kindtoplist li a:visited {
+    color: #72727C;
+}
+.kindtoplist li a:hover {
+    color: #A10000;
+}
+
+.kindbtm {
+  border-top: 1px solid #FFFFFF;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 12px;
+}
+.kindbtm .dotfgbg {
+    background: url("../../../image/dotfg2.gif") no-repeat scroll center center transparent;
+    padding: 0 12px;
+    width: 1px;
+}
+.kindbtmleft {
+    display: inline;
+    float: left;
+}
+.kindbtmleft li {
+    position: relative;
+    text-align: center;
+    width: 50px;
+}
+.kindbtmleft li a {
+    display: block;
+    height: 24px;
+    color: #333333;
+}
+
+.kindbtmleft li a:hover {
+    background: url("../../../image/floattop.gif") no-repeat scroll center bottom transparent;
+    color: #A10000;
+}
+.kindbtmright {
+    display: inline;
+    float: right;
+}
+.kindbtmright span {
+    color: #A6AAB0;
+}
+.kindbtmright li a:link, .kindbtmright li a:visited {
+    color: #72727C;
+}
+.kindbtmright li a:hover {
+    color: #A10000;
+}
+.kindbtmright li a {
+}
+
+.a10000 {
+  color: #A10000;
+}
+
+.ba10000 {
+  color: #A10000;
+  font-weight: bold;
+  padding: 0 2px;
+} 
+
+
+#floor_nav {
+  margin-left: 0;
+  vertical-align: text-bottom;
+}
+
+.sub_floor{
+	position:relative;
+	display: none;
+	width: 0px;
+}
+
+.floatdiv {
+  position: absolute;
+  background-color: #F0F0F0;
+  border: 1px solid #A10000;
+  left: -18px;
+  top: 23px;
+  width: 620px;
+  z-index: 9999;
+}
+
+.childdotbg{
+	background: url(../image/childdotbg.gif) repeat-x scroll 0% 0% transparent; 
+	height: 1px; 
+	font-size: 1px; 
+	clear: both;
+}
+
+.childleft {
+	display: inline;
+	float: left;
+	width: 510px;
+}
+
+.childright {
+	display: inline;
+	float: right;
+	width: 100px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.childright li {
+	display: block;
+	clear: both;
+}
+
+.navchild {
+	background: url(http://images.vancl.com/header/20110117/navchild_03.gif) repeat-y scroll right top transparent; 
+	width: 620px; 
+	overflow: hidden;
+}
+
+.childright li a {
+	width: 90px;
+	color: #a10000;
+	background: url(../image/squearred.jpg) no-repeat left 10px;
+	display: block;
+	text-align: left;
+	clear: both;
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.childright li a:hover {
+	background: url(../image/squearred.jpg)
+		no-repeat left 10px;
+	color: #a10000;
+}
+
+.childli {
+	padding: 2px 0px;
+	overflow: hidden;
+}
+
+.childclass {
+	width: 100px;
+	padding-left: 12px;
+	display: inline;
+	float: left;
+}
+
+.childleft .childclass a {
+	background: url(../image/squearred.jpg)
+		no-repeat left 5px;
+	padding-left: 5px;
+	font-size: 12px;
+	font- weight: bold;
+	color: #a10000;
+}
+
+.childdetail {
+	display: inline;
+	float: left;
+	width: 398px;
+}
+
+.childdetail a {
+	display: inline;
+	float: left;
+}
+
+.childdetail span {
+	color: #999;
+	padding: 0px 6px;
+	display: inline;
+	float: left;
+}
+

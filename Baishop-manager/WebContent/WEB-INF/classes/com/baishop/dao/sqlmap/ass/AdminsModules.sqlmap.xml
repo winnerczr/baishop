@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="AdminsModules" >
+
+  <delete id="delAdminsModules" parameterClass="hashmap">
+    delete from bai_admins_modules
+    where 1=0
+   	<dynamic prepend="or">
+		<isNotEmpty prepend="AND" property="userIds">
+			user_id in
+			<iterate property="userIds" open="(" close=")" conjunction=",">
+				#userIds[]:INTEGER# 
+			</iterate>
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="moduleIds">
+		    module_id in
+			<iterate property="moduleIds" open="(" close=")" conjunction=",">
+				#moduleIds[]:INTEGER# 
+			</iterate>
+		</isNotEmpty>
+	</dynamic>
+  </delete>
+  
+  <insert id="addAdminsModules" parameterClass="com.baishop.entity.ass.AdminsModules" >
+    insert into bai_admins_modules
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="userId" >
+        user_id
+      </isNotNull>
+      <isNotNull prepend="," property="moduleId" >
+        module_id
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="userId" >
+        #userId:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="moduleId" >
+        #moduleId:INTEGER#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="userId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+
+</sqlMap>

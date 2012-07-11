@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+
+#foot {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+.helpIntro {
+    border-bottom: 1px solid #9F0306;
+    border-top: 1px solid #9F0306;
+    clear: left;
+    height: 87px;
+    margin: 0;
+    padding: 20px 0 30px;
+    width: 980px;
+}
+.helpIntro dl {
+    border-right: 1px solid #CCCCCC;
+    float: left;
+    height: 97px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 27px;
+}
+.helpIntro dl dt {
+    margin: 0 0 14px;
+}
+.helpIntro dl dd {
+    list-style: none outside none;
+    margin: 0 12px 7px 0;
+    padding: 0;
+}
+.helpIntro .helpLeft {
+    border-right: 1px solid #CCCCCC;
+    float: left;
+    height: 97px;
+    padding: 0 27px 0 0;
+    width: 95px;
+}
+.helpIntro .Nosty {
+    padding: 5px 0 5px 25px;
+    width: 160px;
+	border-right: medium none;
+}
+.helpIntro .Nosty dd {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+.wdSty {
+    color: #A10000;
+    font: bold 14px "宋体";
+}
+
+.bottoms {
+    clear: left;
+    margin-top: 0;
+}
+.bottoms p {
+    margin: 10px 0;
+    padding: 5px 0;
+}
+.bottoms .bZp {
+    height: 55px;
+    width: 540px;
+}
+.bottoms .about {
+    margin: 0 0 8px;
+    padding: 0;
+}
+.bottoms .bZp2 {
+    margin: 0 0 20px;
+    padding: 0;
+}
+.bottoms .bZp2 img {
+    margin-right: 15px;
+}
+.bottoms .bZp3 {
+    margin: 0 0 20px;
+    padding: 0;
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:sec="http://www.springframework.org/schema/security" 
+	xmlns:val="http://www.springmodules.org/validation/bean"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/security  
+    http://www.springframework.org/schema/security/spring-security-3.0.xsd
+    http://www.springmodules.org/validation/bean 
+    http://www.springmodules.org/validation/bean/validation.xsd
+	">
+	
+	<!--SqlMapClient模版类: 系统库（baishop-ass）， 受Jta事务管理 --> 
+	<bean id="sqlMapClientAss" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<bean class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+				<property name="configLocation">
+				    <value>classpath:com/baishop/dao/sqlmap/sqlmap-config-ass.xml</value>
+				</property> 
+				<property name="dataSource">
+					<!-- 数据源 -->
+			    	<bean class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init" destroy-method="close">
+						<property name="uniqueResourceName" value="baishop-ass" />
+						<property name="xaDataSourceClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource" />
+						<property name="xaProperties">
+							<props>
+								<prop key="url">${jdbc.baishop-ass.url}</prop>
+								<prop key="user">${jdbc.baishop-ass.user}</prop>
+								<prop key="password">${jdbc.baishop-ass.password}</prop>
+							</props>
+						</property>
+						<property name="maxPoolSize">
+							<value>${jdbc.baishop-ass.maxPoolSize}</value>
+						</property>
+						<property name="minPoolSize" value="5" />
+						<property name="testQuery" value="select 1" />
+					</bean>
+				</property>    
+			</bean>
+		</property>
+	</bean>	
+	
+	
+	<!--SqlMapClient模版类: 商城库（baishop-shop）， 受Jta事务管理 --> 
+	<bean id="sqlMapClientShop" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<bean class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+				<property name="configLocation">
+				    <value>classpath:com/baishop/dao/sqlmap/sqlmap-config-shop.xml</value>
+				</property> 
+				<property name="dataSource">
+					<!-- 数据源 -->
+			    	<bean class="com.atomikos.jdbc.AtomikosDataSourceBean" init-method="init" destroy-method="close">
+						<property name="uniqueResourceName" value="baishop-shop" />
+						<property name="xaDataSourceClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource" />
+						<property name="xaProperties">
+							<props>
+								<prop key="url">${jdbc.baishop-shop.url}</prop>
+								<prop key="user">${jdbc.baishop-shop.user}</prop>
+								<prop key="password">${jdbc.baishop-shop.password}</prop>
+							</props>
+						</property>
+						<property name="maxPoolSize">
+							<value>${jdbc.baishop-shop.maxPoolSize}</value>
+						</property>
+						<property name="minPoolSize" value="5" />
+						<property name="testQuery" value="select 1" />
+					</bean>
+				</property>    
+			</bean>
+		</property>
+	</bean>	
+	
+	
+	<!--SqlMapClient模版类: 日志库（baishop-syslog），不受Jta事务管理 --> 
+	<bean id="sqlMapClientSyslog" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient">
+			<bean class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+				<property name="configLocation">
+				    <value>classpath:com/baishop/dao/sqlmap/sqlmap-config-syslog.xml</value>
+				</property> 
+				<property name="dataSource">
+					<!-- 数据源 -->
+	    			<bean class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  
+					    <property name="driverClass" value="com.mysql.jdbc.Driver" />  
+					    <property name="initialPoolSize" value="5" />  
+					    <property name="maxIdleTime" value="60" />  
+					    <property name="minPoolSize" value="5" />
+						<property name="idleConnectionTestPeriod" value="60" />
+						<property name="preferredTestQuery" value="select 1" /> 
+					    <property name="jdbcUrl">
+					    	<value>${jdbc.baishop-syslog.url}</value>
+					    </property>  
+					    <property name="user">
+					    	<value>${jdbc.baishop-syslog.user}</value>
+					    </property>  
+					    <property name="password">
+					    	<value>${jdbc.baishop-syslog.password}</value>	    	
+					    </property>
+					    <property name="maxPoolSize">
+					    	<value>${jdbc.baishop-syslog.maxPoolSize}</value>
+					    </property>  
+					</bean>
+				</property>    
+			</bean>
+		</property>
+	</bean>
+	
+	
+
+	<!-- JTA 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManager">
+			<bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
+					init-method="init" destroy-method="close">
+				<property name="forceShutdown" value="true" />
+			</bean>
+		</property>
+		<property name="userTransaction">
+			<bean id="atomikosUserTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
+				<property name="transactionTimeout" value="300" />
+			</bean>
+		</property>
+	</bean>	
+	
+	<!-- 声明式注解事务配置 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/> 
+	<aop:aspectj-autoproxy/>
+	
+	<!-- 声明式XML事务配置  
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*" rollback-for="Throwable"/>
+		</tx:attributes>
+	</tx:advice>	
+	<aop:config>
+		<aop:pointcut id="servicePointcut" 
+            	expression="execution(* com.baishop.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointcut"/>
+    </aop:config>
+	-->	
+	
+	
+</beans>

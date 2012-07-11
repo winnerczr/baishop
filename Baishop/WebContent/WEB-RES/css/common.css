@@ -1,0 +1,211 @@
+@CHARSET "UTF-8";
+
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+body,button,input,select,textarea {
+	font: 12px/1.5 tahoma, arial, sans-serif, ps;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+em, strong, th {
+    font-style: normal;
+    font-weight: normal;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+
+fieldset,img {
+	border: 0;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video
+	{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+mark {
+	background: #ff0;
+}
+
+body {
+	color: #333;
+	background-color: #fff;
+    font: 100 12px;
+    /*font-family: "宋体";*/
+}
+
+img {
+    border: medium none;
+}
+
+a:link, a:visited {
+    color: #333333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #A10000;
+    text-decoration: none;
+}
+
+.blank0 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 0;
+    line-height: 0;
+    margin-top: 0;
+    visibility: hidden;
+}
+
+.blank5 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 5px;
+    overflow: hidden;
+}
+
+.blank8 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.blank10 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.blank12 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.blank15 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.blank20 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.blank25 {
+    clear: both;
+    display: block;
+    font-size: 1px;
+    height: 25px;
+    overflow: hidden;
+}
+
+
+.start01 {
+	display: block; 
+	float: left;
+	margin-top:2px;
+	margin-left:2px;
+    width: 13px;
+    height: 13px;
+    background: url("../image/start01.gif") repeat-x scroll 0 0 transparent;
+}
+
+.start02 {
+	display: block; 
+	float: left;
+	margin-top:2px;
+	margin-left:2px;
+    width: 13px;
+    height: 13px;
+    background: url("../image/start02.gif") repeat-x scroll 0 0 transparent;
+}
+
+.start03 {
+	display: block; 
+	float: left;
+	margin-top:2px;
+	margin-left:2px;
+    width: 13px;
+    height: 13px;
+    background: url("../image/start03.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconfangda {
+	display: block; 
+	float: left;
+    width: 9px;
+    height: 23px;
+    background: url("../image/fangda.gif") repeat-x scroll 0 0 transparent;
+}
+
+
+.iconQuertion {
+	display: block; 
+	float: left;
+    width: 13px;
+    height: 13px;
+    background: url("../image/quertion.gif") repeat-x scroll 0 0 transparent;
+}
+
+
+
+

@@ -1,0 +1,127 @@
+<link href="/WEB-RES/web/css/common/footer.css" type="text/css" rel="stylesheet" charset="utf-8" />
+<script src="/WEB-RES/web/js/common/footer.js" type="text/javascript"></script>
+<div id="foot">
+	<span class="blank20"></span>
+	<div align="left" class="helpIntro">
+		<dl class="helpLeft">
+			<dt>
+				<strong>新手指南</strong>
+			</dt>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">注册新用户</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">网站订购流程</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">网站地图</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>如何付款/退款</strong>
+			</dt>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">支付方式</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">如何办理退款</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">发票制度说明</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>配送方式</strong>
+			</dt>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">配送范围及配送时间</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">配送费收取标准</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>售后服务</strong>
+			</dt>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">退换货政策</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">如何办理退换货</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>帮助中心</strong>
+			</dt>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">常见热点问题</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">联系我们</a>
+			</dd>
+			<dd>
+				<img height="8" width="5" src="/WEB-RES/image/point.gif" /> <a
+					href="#" target="_blank">投诉与建议</a>
+			</dd>
+		</dl>
+		<dl class="Nosty">
+			<dd>
+				<strong>订购热线</strong>（免长途费）<br> <strong class="wdSty">400
+					888 8888</strong>
+			</dd>
+			<dt></dt>
+			<dd>
+				<strong>客户服务热线</strong>（免长途费）<br> <strong class="wdSty">400
+					888 8888</strong>
+			</dd>
+		</dl>
+	</div>
+	<div align="center" class="bottoms">
+		<p class="bZp">
+			<a target="_blank" href="#"><img src="/WEB-RES/image/service01.jpg" /></a><a target="_blank" href="#"><img src="/WEB-RES/image/service02.jpg" /></a><a target="_blank" href="#"><img src="/WEB-RES/image/service03.jpg" /></a>
+		</p>
+		<p class="about">
+			<a target="_blank" href="/">首页</a> | 
+			<a target="_blank" href="#">公司简介</a> | 
+			<a target="_blank" href="#">隐私申明</a> | 
+			<a target="_blank" href="#">团购优惠</a> | 
+			<a target="_blank" href="#">合作专区</a> | 
+			<a target="_blank" href="#">加入我们</a> | 
+			<a target="_blank" href="#">投诉与建议</a> | 
+			<a target="_blank" href="#">手机凡客</a>
+		</p>
+		<p class="bZp3">${sys_mall_copyright} 浙ICP证100557号 浙公网安备110105001124号</p>
+		<p class="bZp2">
+			<a target="_blank"
+				href="#"><img
+				border="0"
+				src="/WEB-RES/image/wsjybzzx.gif">
+			</a>
+			<a target="_blank"
+				href="#"><img
+				height="46" border="0" width="156"
+				src="/WEB-RES/image/redlogo.gif">
+			</a><a target="_blank"
+				href="#"><img
+				border="0"
+				src="/WEB-RES/image/vanclMsg.gif">
+			</a>
+		</p>
+	</div>
+</div>

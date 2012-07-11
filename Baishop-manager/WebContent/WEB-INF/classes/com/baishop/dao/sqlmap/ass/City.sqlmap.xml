@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="City" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.ass.City" >
+    <result column="city_id" property="cityId" jdbcType="INTEGER" />
+    <result column="city_pid" property="cityPid" jdbcType="INTEGER" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
+    <result column="city_pinyin" property="cityPinyin" jdbcType="VARCHAR" />
+    <result column="city_remark" property="cityRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <cacheModel id="cacheCity" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="City.addCity"/>
+  	<flushOnExecute statement="City.editCity"/>
+  	<flushOnExecute statement="City.delCity"/>
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+  
+  <select id="getCity" resultMap="resultMap" cacheModel="cacheCity">
+    select *
+    from bai_city
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="cityId">
+			city_id = #cityId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="cityPid">
+			city_pid = #cityPid:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="cityCode">
+			city_code = #cityCode:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="cityParentCode">
+			city_code like CONCAT(#cityParentCode:VARCHAR#,'%')
+		</isNotEmpty>
+	</dynamic>
+	order by city_code
+  </select>
+  
+  <delete id="delCity" >
+    delete from bai_city
+	where city_id in 
+	<iterate open="(" close=")" conjunction=",">
+		#[]:INTEGER# 
+	</iterate>
+  </delete>
+  
+  <insert id="addCity" parameterClass="com.baishop.entity.ass.City" >
+    insert into bai_city
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="cityPid" >
+        city_pid
+      </isNotNull>
+      <isNotNull prepend="," property="cityCode" >
+        city_code
+      </isNotNull>
+      <isNotNull prepend="," property="cityName" >
+        city_name
+      </isNotNull>
+      <isNotNull prepend="," property="cityPinyin" >
+        city_pinyin
+      </isNotNull>
+      <isNotNull prepend="," property="cityRemark" >
+        city_remark
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="cityPid" >
+        #cityPid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="cityCode" >
+        #cityCode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityName" >
+        #cityName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityPinyin" >
+        #cityPinyin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityRemark" >
+        #cityRemark:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="cityId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="editCity" parameterClass="com.baishop.entity.ass.City" >
+    update bai_city
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="cityPid" >
+        city_pid = #cityPid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="cityCode" >
+        city_code = #cityCode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityName" >
+        city_name = #cityName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityPinyin" >
+        city_pinyin = #cityPinyin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cityRemark" >
+        city_remark = #cityRemark:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where city_id = #cityId:INTEGER#
+  </update>
+
+</sqlMap>

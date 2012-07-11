@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:sec="http://www.springframework.org/schema/security" 
+	xmlns:val="http://www.springmodules.org/validation/bean"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+	http://www.springframework.org/schema/security  
+    http://www.springframework.org/schema/security/spring-security-3.0.xsd
+    http://www.springmodules.org/validation/bean 
+    http://www.springmodules.org/validation/bean/validation.xsd
+	">	
+	
+	<!-- Service基类 -->
+	<bean id="baseService" class="com.baishop.service.BaseService" abstract="true">
+		<property name="sqlMapClientAss">
+			<ref bean="sqlMapClientAss"/>
+		</property>
+		<property name="sqlMapClientShop">
+			<ref bean="sqlMapClientShop"/>
+		</property>
+		<!--  
+		<property name="sqlMapClientSale">
+			<ref bean="sqlMapClientSale"/>
+		</property>
+		<property name="sqlMapClientSlaves">
+			<map>
+				<entry key="baishop-slave-1" value-ref="sqlMapClientSlave-1" />
+				<entry key="baishop-slave-2" value-ref="sqlMapClientSlave-2" />  
+			</map>
+		</property>
+		-->
+	</bean>
+	
+	
+	<!-- =========================================sale服务类========================================= -->
+	
+	<!-- 商品服务类 -->
+	<bean id="usersService" class="com.baishop.service.impl.sale.UsersServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	
+	<!-- =========================================goods服务类========================================= -->
+	
+	<!-- 商品服务类 -->
+	<bean id="goodsService" class="com.baishop.service.impl.goods.GoodsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 属性服务类 -->
+	<bean id="propertiesService" class="com.baishop.service.impl.goods.PropertiesServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 类目服务类 -->
+	<bean id="categoryService" class="com.baishop.service.impl.goods.CategoryServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 品牌服务类 -->
+	<bean id="brandsService" class="com.baishop.service.impl.goods.BrandsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	
+	<!-- =========================================ass服务类========================================= -->
+	
+	<!-- 后台管理员 -->
+	<bean id="adminsService" class="com.baishop.service.impl.ass.AdminsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 后台用户角色 -->
+	<bean id="rolesService" class="com.baishop.service.impl.ass.RolesServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 后台应用模块-->
+	<bean id="modulesService" class="com.baishop.service.impl.ass.ModulesServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 组织架构服务类 -->
+	<bean id="deptsService" class="com.baishop.service.impl.ass.DeptsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 城市区划服务类 -->
+	<bean id="cityService" class="com.baishop.service.impl.ass.CityServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+
+	<!-- 系统参数服务类 -->
+	<bean id="paramsService" class="com.baishop.service.impl.ass.ParamsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 系统枚举服务类 -->
+	<bean id="enumsService" class="com.baishop.service.impl.ass.EnumsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 远程接口权限类-->
+	<bean id="remoteAuthsService" class="com.baishop.service.impl.ass.RemoteAuthsServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	<!-- 系统日志服务器-->
+	<bean id="syslogService" class="com.baishop.service.impl.ass.SyslogServiceImpl" parent="baseService" scope="singleton">
+	</bean>
+	
+	
+		
+	<!-- 导入beans的aop配置 -->
+	<import resource="spring-beans-aop.xml"/>
+	
+	<!-- 导入一些工具类配置 -->
+	<import resource="spring-beans-tools.xml"/>
+	
+
+</beans>

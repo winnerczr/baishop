@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+ 
+	<display-name>Baishop</display-name>
+ 
+	<!-- 首页 -->
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+ 
+	<!-- 设置session超时 -->
+	<session-config> 
+	    <session-timeout>2</session-timeout>
+	</session-config>
+ 
+ 
+	<!-- 自定义监听 -->
+	<listener>
+		<listener-class>com.baishop.AppInfo</listener-class>
+	</listener>
+ 
+	<!-- log4j监听 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+ 
+	<!-- spring监听 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+	<!-- 程序根目录 -->
+	<context-param>
+	    <param-name>webAppRootKey</param-name>
+	    <param-value>web.root</param-value>
+	</context-param>
+ 
+	<!-- log4j配置路径 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+ 
+	<!-- spring配置文件路径 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:spring-remoting.xml
+		</param-value>
+	</context-param> 
+
+ 
+	<!-- url rewrite 拦截器 
+	<filter>
+		<filter-name>urlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<init-param>        
+			<param-name>confPath</param-name>  
+			<param-value>WEB-INF/conf/urlrewrite.xml</param-value>  
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>urlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	-->
+ 
+ 
+	<!-- spring mvc servlet -->
+	<servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+ 
+ 	<!-- ckfinder servlet -->
+	<servlet>
+		<servlet-name>ckfinder</servlet-name>
+		<servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+		<init-param>
+			<param-name>XMLConfig</param-name>
+			<param-value>WEB-RES/script/ckfinder/config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ckfinder</servlet-name>
+		<url-pattern>
+			/WEB-RES/script/ckfinder/core/connector/java/connector.java
+		</url-pattern>
+	</servlet-mapping>
+
+	<!-- 验证码servlet -->
+	<servlet>
+		<servlet-name>kaptcha</servlet-name>
+		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+		<init-param>
+			<param-name>kaptcha.border</param-name>
+			<param-value>no</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.textproducer.font.color</param-name>
+			<param-value>black</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.textproducer.char.length</param-name>
+			<param-value>4</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.image.width</param-name>
+			<param-value>120</param-value>
+		</init-param>
+		<init-param>
+			<param-name>kaptcha.image.height</param-name>
+			<param-value>50</param-value>
+		</init-param>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>kaptcha</servlet-name>
+		<url-pattern>/kaptcha.jpg</url-pattern>
+	</servlet-mapping>
+
+ 
+	<!-- 自定义404、500，及Exception错误的页面 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-RES/error/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-RES/error/500.jsp</location>
+	</error-page>
+	 -->
+  
+</web-app>

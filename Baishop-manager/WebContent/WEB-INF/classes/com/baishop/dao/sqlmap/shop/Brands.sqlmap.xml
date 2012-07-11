@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Brands" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.goods.Brands" >
+    <result column="brand_id" property="brandId" jdbcType="INTEGER" />
+    <result column="brand_name" property="brandName" jdbcType="VARCHAR" />
+    <result column="brand_logo" property="brandLogo" jdbcType="VARCHAR" />
+    <result column="brand_desc" property="brandDesc" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="is_show" property="isShow" jdbcType="TINYINT" />
+  </resultMap>
+  
+  <cacheModel id="cacheBrands" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="Brands.addBrands"/>
+  	<flushOnExecute statement="Brands.editBrands"/>
+  	<flushOnExecute statement="Brands.delBrands"/>
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+  
+  <select id="getBrands" resultMap="resultMap" parameterClass="hashmap" cacheModel="cacheBrands" >
+    select brand_id, brand_name, brand_logo, brand_desc, sort, is_show
+    from bai_brands
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="brandId">
+			brand_id = #brandId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="isShow">
+			is_show = #isShow:INTEGER#
+		</isNotEmpty>
+	</dynamic>
+	order by sort
+  </select>
+  
+  <delete id="delBrands" parameterClass="hashmap" >
+    delete from bai_brands
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="brandId">
+			brand_id = #brandId:INTEGER#
+		</isNotEmpty>
+	</dynamic>
+  </delete>
+  
+  <insert id="addBrands" parameterClass="com.baishop.entity.goods.Brands" >
+    insert into bai_brands
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="brandName" >
+        brand_name
+      </isNotNull>
+      <isNotNull prepend="," property="brandLogo" >
+        brand_logo
+      </isNotNull>
+      <isNotNull prepend="," property="brandDesc" >
+        brand_desc
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort
+      </isNotNull>
+      <isNotNull prepend="," property="isShow" >
+        is_show
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="brandName" >
+        #brandName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="brandLogo" >
+        #brandLogo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="brandDesc" >
+        #brandDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        #sort:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="isShow" >
+        #isShow:TINYINT#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="brandId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="editBrands" parameterClass="com.baishop.entity.goods.Brands" >
+    update bai_brands
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="brandName" >
+        brand_name = #brandName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="brandLogo" >
+        brand_logo = #brandLogo:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="brandDesc" >
+        brand_desc = #brandDesc:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort = #sort:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="isShow" >
+        is_show = #isShow:TINYINT#
+      </isNotNull>
+    </dynamic>
+    where brand_id = #brandId:INTEGER#
+  </update>
+
+</sqlMap>

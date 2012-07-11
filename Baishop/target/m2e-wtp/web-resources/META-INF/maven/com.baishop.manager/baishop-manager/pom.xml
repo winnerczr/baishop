@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.baishop.manager</groupId>
+	<artifactId>baishop-manager</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<distributionManagement>
+		<repository>
+			<id>kadang releases</id>
+			<name>Kadang Release Repository</name>
+			<url>http://192.168.11.225:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>kadang snapshots</id>
+			<name>Kadang Snapshots Repository</name>
+			<url>http://192.168.11.225:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<properties>
+		<!-- 主要依赖库的版本定义 -->
+		<spring.version>3.0.6.RELEASE</spring.version>
+		<spring.security.version>3.0.7.RELEASE</spring.security.version>
+		<!-- Plugin的属性定义 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<finalName>manager</finalName>
+		<sourceDirectory>src-web</sourceDirectory>
+		<testSourceDirectory>src-test</testSourceDirectory>
+		<outputDirectory>WebContent/WEB-INF/classes</outputDirectory>
+		<testOutputDirectory>WebContent/WEB-INF/classes</testOutputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.2.2</version>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.baishop.manager</groupId>
+			<artifactId>baishop-manager</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<classifier>framework</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.baishop.manager</groupId>
+			<artifactId>baishop-manager</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<classifier>service</classifier>
+		</dependency>
+	</dependencies>
+</project>

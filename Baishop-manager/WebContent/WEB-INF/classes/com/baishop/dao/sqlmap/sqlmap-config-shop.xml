@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"  
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<!-- useStatementNamespaces 是否启用名称空间 --> 
+	<!-- cacheModelsEnabled 是否启用缓存机制 -->  
+	<!-- lazyLoadingEnabled 是否启用延迟加载机制 -->  
+	<!-- enhancementEnabled 是否启用字节码增强机制 -->  
+	<!-- errorTracingEnabled 是否启用错误处理机制 -->	
+	<settings 
+		useStatementNamespaces="true" 
+		cacheModelsEnabled ="true" 
+		lazyLoadingEnabled="false" 
+		enhancementEnabled="true"  
+		errorTracingEnabled="true"		
+	/>	
+	
+	<!-- ========================= 商城库 shop ========================= -->
+	
+	<!-- 商品信息 -->
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Goods.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/GoodsImgs.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/GoodsProps.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Properties.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Category.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Brands.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/ShopType.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Booking.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Payment.sqlmap.xml"/>
+	
+	<!-- 用户信息 -->
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Users.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/UsersAddress.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/UsersCredits.sqlmap.xml"/>
+	
+	<!-- 用户订单 -->
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/Order.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/OrderGoods.sqlmap.xml"/>
+	<sqlMap resource="com/baishop/dao/sqlmap/shop/OrderOption.sqlmap.xml"/>
+	
+</sqlMapConfig>

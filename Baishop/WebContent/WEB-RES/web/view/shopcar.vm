@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>购物车</title>
+#import("../common/meta.vm")
+<link href="/WEB-RES/web/css/mall/shopcar.css" type="text/css" rel="stylesheet" charset="utf-8" />
+<script src="/WEB-RES/web/js/mall/shopcar.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header">
+	<span class="blank15"></span>
+    <div class="vancllogo">
+    	<a href="/"><img src="/WEB-RES/image/logo.jpg" alt="百鞋诚" /></a>
+		<span class="blank10"></span>
+    </div>    
+    <div class="usermsg">
+		<div class="helpcenter"><a href="#">帮助中心</a></div>
+		<div id="welcome" class="afterlogin">
+			您好，欢迎光临百鞋诚。
+			<a id="aLogin" href="javascript:location.href='/login.html?'+location.href">登录</a>
+			<span class="fgbar">&nbsp;</span>
+			<a id="aRegister" href="javascript:location.href='/register.html?'+location.href">注册</a>
+		</div>
+    </div>
+</div>
+<span class="blank10"></span>
+<div id="context">
+	<div class="shopcarbread"> <a class="currentlocation">1.查看购物车</a> <a>2.填写核对信息单</a> <a>3.成功提交订单</a> </div>
+	<div id="lbCart" class="tip">
+	    <img height="23" width="29" src="/WEB-RES/image/shopcar.jpg"/><span>临时购物车 </span>现在[<a href="#">登录</a>]，您的<a id="qingdan" href="#">选购清单</a>将被记录。
+	</div>
+	<div style="" id="tishi">
+	    <span>温馨提示：</span>1.选购清单中的商品无法保留库存，请您及时结算。2.商品的价格和库存将以订单提交时为准。
+	    <div id="guanbi"><a href="#"><img src="/WEB-RES/image/guanbi.gif" alt="关闭提示"/></a></div>
+	    <div id="jiao"><img src="/WEB-RES/image/jiao.gif"/></div>
+	</div>
+	<div id="transferSpan" class="freightage">您再购买	<span class="colSty">￥122.00</span>	的产品，即可享受免运费优惠</div>
+	<div class="bxSty">
+		<table cellspacing="0" cellpadding="0" border="0" id="shoppingCatTable" class="tabSty01">
+			<tbody>
+				<tr bgcolor="#7a7f89" style="text-align: center;" class="trSty01">
+					<td width="106" height="30">商品</td>
+					<td width="185">名称</td>
+					<td width="106">尺寸</td>
+					<td width="70">赠送积分</td>
+					<td width="70">单价</td>
+					<td width="70">数量</td>
+					<td width="70">优惠</td>
+					<td width="66">小计</td>  
+					<td width="108">操作</td>
+					<td width="12"></td>
+				</tr>
+			</tbody>
+			<tbody id="productList">
+				<tr>
+					<td align="center" valign="top" class="tdSty01 ">
+						<div class="imgw">
+							<a target="_blank" href="http://item.vancl.com/0034319.html"><img border="0" width="48" alt="Yummy cake 珠片短袖T恤 白色(清仓品)" src="https://sslimg.vancl.com/product/0/0/3/0034319/small/0034319-0201106011743477573.jpg"/></a>
+						</div>
+					</td>
+					<td align="left" style="padding-top: 26px; vertical-align: top;" class="cel02 "><a target="_blank" href="http://item.vancl.com/0034319.html"><span class="STYLE5">Yummy cake 珠片短袖T恤 白色(清仓品)</span></a></td>
+					<td align="center"><span class="STYLE5">XS</span></td>
+					<td align="center"><span id="GivenPoint">14分</span></td>
+					<td align="center">￥<span id="00123206">29.00</span></td>
+					<td align="center"><img src="/WEB-RES/image/minus-disable.gif"/>&nbsp;<input type="text" value="1" style="width: 20px; height: 15px; color: rgb(75, 75, 75);" onkeypress=" if((arguments[0] || window.event).keyCode==13){this.blur(); return false;} " onchange="changeSuccess=false;EditProductCount('00123206','1',this)" maxlength="3" id="OrderAmount_00123206" name="OrderAmount_00123206"/>&nbsp;<img src="/WEB-RES/image/plus.gif"/><div id="pp"></div></td>
+					<td align="center"><span id="vipDiscount">-</span></td>
+					<td align="center">￥<span id="Pdt_price00123206">29.00</span></td>
+					<td align="center" valign="middle" class="cel10 "><div style="z-index: 100; display: none;" id="cover"><div id="noDisplay00123206"></div></div><a onmousedown="cart.trackShoppingurl('sp_cart_mycart_addfaverate',this);" href="javascript:FavoriteConfirm('0034319','00123206',1,'14分',6 )" id="AddFavorite00123206">移入收藏夹</a><br/><a onmousedown="cart.trackShoppingurl('sp_cart_mycart_del',this);" href="javascript:deleteConfirm('00123206',1);" id="delConfirm00123206">删除</a></td>
+					<td width="12px"></td>
+				</tr>
+				<tr class="gwcSuit">
+					<td align="center" valign="top" class="tdSty01 ">
+						<div class="imgw">
+							<a target="_blank" href="http://item.vancl.com/0034319.html"><img border="0" width="48" alt="Yummy cake 珠片短袖T恤 白色(清仓品)" src="https://sslimg.vancl.com/product/0/0/3/0034319/small/0034319-0201106011743477573.jpg"/></a>
+						</div>
+					</td>
+					<td align="left" style="padding-top: 26px; vertical-align: top;" class="cel02 "><a target="_blank" href="http://item.vancl.com/0034319.html"><span class="STYLE5">Yummy cake 珠片短袖T恤 白色(清仓品)</span></a></td>
+					<td align="center"><span class="STYLE5">XS</span></td>
+					<td align="center"><span id="GivenPoint">14分</span></td>
+					<td align="center">￥<span id="00123206">29.00</span></td>
+					<td align="center"><img src="/WEB-RES/image/minus-disable.gif"/>&nbsp;<input type="text" value="1" style="width: 20px; height: 15px; color: rgb(75, 75, 75);" onkeypress=" if((arguments[0] || window.event).keyCode==13){this.blur(); return false;} " onchange="changeSuccess=false;EditProductCount('00123206','1',this)" maxlength="3" id="OrderAmount_00123206" name="OrderAmount_00123206"/>&nbsp;<img src="/WEB-RES/image/plus.gif"/><div id="pp"></div></td>
+					<td align="center"><span id="vipDiscount">-</span></td>
+					<td align="center">￥<span id="Pdt_price00123206">29.00</span></td>
+					<td align="center" valign="middle" class="cel10 "><div style="z-index: 100; display: none;" id="cover"><div id="noDisplay00123206"></div></div><a onmousedown="cart.trackShoppingurl('sp_cart_mycart_addfaverate',this);" href="javascript:FavoriteConfirm('0034319','00123206',1,'14分',6 )" id="AddFavorite00123206">移入收藏夹</a><br/><a onmousedown="cart.trackShoppingurl('sp_cart_mycart_del',this);" href="javascript:deleteConfirm('00123206',1);" id="delConfirm00123206">删除</a></td>
+					<td width="12px"></td>
+				</tr>
+			</tbody>
+			<tbody id="pointProductList"></tbody>
+			<tbody id="suitList"></tbody>
+			<tbody id="mustPresentList">      </tbody>
+			<tbody id="notMustPresentList">
+				<tr id="Present35">
+					<td align="center" valign="top" rowspan="2" class="tdSty02">
+						<div class="thimgw1">    <span id="RP0000448_Img_35"><a target="_blank" href="http://item.vancl.com/0077018.html"><img height="50" border="0" width="48" src="https://sslimg.vancl.com/product/0/0/7/0077018/small/0077018-1j201105201824179448.jpg"/></a></span>   </div>   <img height="18" width="50" src="https://sslimg.vancl.com/ShoppingCartImage/thicon.gif">   
+					</td>  
+					<td height="60" align="left">
+						<a target="_blank" href="http://item.vancl.com/0077018.html">豹纹交叉百搭肩带 玫红 </a>      
+					</td>
+					<td align="center">均码</td>   
+					<td align="center">2分</td>
+					<td align="center">￥<span class="price">5.00</span></td>
+					<td align="center">1</td>
+					<td align="center">-</td>
+					<td align="center">￥<span class="subtotal">5.00</span></td>
+					<td align="center">
+						<div id="cover"> <div id="noDisplay35"> </div> </div>
+						<a href="javascript:deletePresentConfirm(35)" id="delPresentConfirm35">删除</a>
+					</td>
+					<td width="12"></td>
+				</tr>
+				<tr id="PresentInfo35">
+					<td height="48" align="left" colspan="9">
+						<div class="reusableColor4" style="background: url(&quot;https://sslimg.vancl.com/NewVancl/New_Shopping/yhts.gif&quot;) no-repeat scroll 0% 0% transparent; width: 855px; height: 25px; line-height: 25px;">　促销说明：全场购买任意产品 加5元赠肩带</div>
+					</td>
+				</tr>
+				<tr id="Present35" class="gwcSuit">
+					<td align="center" valign="top" rowspan="2" class="tdSty02">
+						<div class="thimgw1">    <span id="RP0000448_Img_35"><a target="_blank" href="http://item.vancl.com/0077018.html"><img height="50" border="0" width="48" src="https://sslimg.vancl.com/product/0/0/7/0077018/small/0077018-1j201105201824179448.jpg"/></a></span>   </div>   <img height="18" width="50" src="https://sslimg.vancl.com/ShoppingCartImage/thicon.gif">   
+					</td>  
+					<td height="60" align="left">
+						<a target="_blank" href="http://item.vancl.com/0077018.html">豹纹交叉百搭肩带 玫红 </a>      
+					</td>
+					<td align="center">均码</td>   
+					<td align="center">2分</td>
+					<td align="center">￥<span class="price">5.00</span></td>
+					<td align="center">1</td>
+					<td align="center">-</td>
+					<td align="center">￥<span class="subtotal">5.00</span></td>
+					<td align="center">
+						<div id="cover"> <div id="noDisplay35"> </div> </div>
+						<a href="javascript:deletePresentConfirm(35)" id="delPresentConfirm35">删除</a>
+					</td>
+					<td width="12"></td>
+				</tr>
+				<tr id="PresentInfo35" class="gwcSuit">
+					<td height="48" align="left" colspan="9">
+						<div class="reusableColor4" style="background: url(&quot;https://sslimg.vancl.com/NewVancl/New_Shopping/yhts.gif&quot;) no-repeat scroll 0% 0% transparent; width: 855px; height: 25px; line-height: 25px;">　促销说明：全场购买任意产品 加5元赠肩带</div>
+					</td>
+				</tr>
+			</tbody> 
+		</table>
+		<table cellspacing="0" cellpadding="0" border="0" width="97.3%" class="dobuleBorder">
+			<tbody>
+				<tr>
+					<td align="right" valign="top" class="tdStyProductTotal">产品数量总计：<span id="spTotalCount" class="colSty ">2</span><span class="colSty sty008">件</span>赠送积分总计：<span class="colSty " id="giftPoint">38</span><span class="colSty sty008">分</span>花费积分总计：<span class="colSty " id="totalPoint">0</span><span class="colSty sty010">分</span><span id="decspan">产品金额总计：<span class="colSty tabSty02">￥</span><span id="spTotalAmount" class="colSty">78.00</span></span></td>
+				</tr> 
+			</tbody>
+		</table> 
+		<table cellspacing="0" cellpadding="0" border="0" class="tabSty01">
+			<tbody>
+				<tr>
+					<td align="left" valign="top" class="tdSty03" colspan="2"><div style="display: inline; float: left; margin-top: 20px;"><a href="javascript:ClearShoppingCar();" style="display: inline; float: left;"><img src="/WEB-RES/image/clear.gif" style="display: block; float: left; margin-top: 4px;"/></a><a style="display: inline; float: left; margin-left: 5px;" name="sp_cart_mycar_clearCar" class="track" href="javascript:ClearShoppingCar();">清空购物车</a></div></td>
+					<td align="left">&nbsp;</td>
+					<td align="center">&nbsp;</td>
+					<td align="right" valign="top" class="tdSty04" colspan="3">
+						<a name="sp_cart_mycar_goBuy" class="track" href="javascript:backShoppingUrl();">
+							<img alt="继续购物" src="/WEB-RES/image/shopcar_21.gif"/>
+						</a>
+						<a name="sp_cart_mycar_goPay" href="/Shoporder.html" class="jl02 track">
+							<img alt="去结算" src="/WEB-RES/image/pic_gwc__r2_c10.jpg"/>
+						</a>
+						<br/>
+					</td>
+				</tr>
+			</tbody>
+        </table>
+
+	</div>
+	<span class="blank20"></span>
+	#httpImport("/controls/SpecialProducts.jscx")
+	<span class="blank20"></span>
+	#httpImport("/controls/RecentProducts.jscx")
+	<span class="blank20"></span>
+	<div align="left" class="sty006 reusableColor3">
+		您在购物过程中有任何疑问，请查阅 <a target="_blank" href="http://help.vancl.com/"><span class="reusableColor1">帮助中心</span></a> 或 <a target="_blank" href="mailto:service@vancl.com"><span class="reusableColor1">联系客服</span></a><span style="padding-left: 350px;">如果您对购物车有意见或建议，欢迎</span><a target="_blank" href="http://mkt.vancl.com/survey/Statement.aspx?id=48"><span class="reusableColor1">向我们反馈</span></a>
+	</div>
+	<div class="aboutmyshop"> 
+		<span class="blank10"></span>
+	    <h2>关于"我的购物车"</h2>
+	    <span class="blank8"></span>
+	    <div class="aboutmedetail"> *在商品保留期间内，您所选择商品的价格、优惠政策等信息可能发生变化。因此，“购物车”和“收藏夹”中的商品最终成交信息将以您提交订单成功时Vancl网站公布的信息为准。 </div>
+	    <span class="blank10"></span> 
+    </div>
+</div>
+#import("../common/footer.vm")
+</body>
+</html>

@@ -1,0 +1,1518 @@
+@CHARSET "UTF-8";
+
+#context {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+
+.advert1 {
+    width: 980px;
+    margin: 0;
+    padding: 0;
+}
+
+.breadNav {
+    border-bottom: 1px solid #CCCCCC;
+    color: #999999;
+    height: 22px;
+}
+
+.breadNav span {
+    margin: 0 8px;
+}
+
+.danpinLeft {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    width: 507px;
+}
+
+.selImg {
+    width: 507px;
+}
+
+.smallImg {
+    display: inline;
+    float: left;
+    width: 72px;
+}
+
+.smallImg #imageMenu {
+    height: 425px;
+    overflow: hidden;
+}
+
+.smallImg li {
+    margin-top: 8px;
+}
+
+.smallImg li img {
+    border: 1px solid #B4B4B4;
+    padding: 1px;
+}
+
+#onlickImg img {
+    background: none repeat scroll 0 0 #336699;
+    border: 1px solid #336699;
+}
+
+.imageMenuMouseover {
+    background: none repeat scroll 0 0 #336699;
+    border: 1px solid #336699;
+}
+
+.smallImgDown, .smallImgUp, .smallImgRight, .smallImgLeft, #imageMenu li img, .selColor ul li {
+    cursor: pointer;
+}
+
+.smallImgUp, .smallImgDown {
+    height: 5px;
+    margin: 11px 0 4px 0;
+    width: 72px;
+}
+
+#vertical.bigImg {
+    height: 400px;
+    margin-top: 34px;
+    overflow: hidden;
+    width: 400px;
+    position: relative;
+}
+
+#vertical #midimg {
+    height: 400px;
+    width: 400px;
+}
+
+#vertical #winSelector {
+    height: 200px;
+    width: 220px;
+}
+
+#winSelector {
+    background-color: #E6EAF3;
+    border: 1px solid White;
+    cursor: crosshair;
+    opacity: 0.6;
+    position: absolute;
+}
+
+.fangdaArea p {
+    display: inline;
+    float: right;
+}
+
+.fangda img, .fangda span {
+    display: inline;
+    float: left;
+}
+
+.fangda span {
+    line-height: 28px;
+    margin-left: 8px;
+}
+
+.fangda img, .fangda span {
+    display: inline;
+    float: left;
+}
+
+.btnFangdaArea {
+    margin-left: 140px;
+    position: relative;
+    text-align: center;
+    width: 375px;
+}
+
+.btnFangdaArea span {
+    display: block;
+    float: left;
+    margin: 0 5px 0 auto;
+}
+
+.btnFX {
+    background: url("http://images.vancl.com/Others/2011/3/31/allbgs.gif") no-repeat scroll 0 -107px #333333;
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    font-size: 12px;
+    height: 23px;
+    line-height: 23px;
+    text-indent: 20px;
+    width: 101px;
+}
+
+.pingfen span {
+    color: #999999;
+}
+
+.voteArea {
+    background: none repeat scroll 0 0 #F4F7FC;
+    border: 1px solid #D6D6D6;
+    width: 505px;
+}
+
+.voteArea p {
+    color: #666666;
+    line-height: 22px;
+    padding: 8px 15px;
+}
+
+.voteArea p strong {
+    color: #000000;
+}
+
+.lookMoreArea h2 {
+    color: #666666;
+    display: inline;
+    float: left;
+    margin-left: 15px;
+}
+
+.lookMoreArea h3 {
+    display: inline;
+    float: right;
+    margin-right: 15px;
+}
+
+.lookMoreArea h3 a:link, .lookArea h3 a:visited, .lookArea h3 a:hover {
+    color: #A10000;
+    text-decoration: none;
+}
+
+.danpinRight {
+    display: inline;
+    float: right;
+    position: relative;
+    width: 442px;
+}
+
+.danpinRight h2 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+}
+
+.brandNumArea {
+    color: #999999;
+}
+
+.brandNumArea span {
+    display: inline;
+    float: left;
+    margin-right: 15px;
+}
+
+.brandNumArea strong {
+    color: #333333;
+}
+
+.brandNumArea span {
+    display: inline;
+    float: left;
+    margin-right: 15px;
+}
+
+.QZico {
+    display: inline;
+    float: right;
+    width: 170px;
+}
+
+.cuxiaoPrice {
+    color: #333333;
+}
+
+.cuxiaoPrice span {
+    color: #A10000;
+}
+
+.cuxiaoPrice strong {
+    font-family: Tahoma;
+    font-size: 24px;
+}
+
+.mSpriceArea span {
+    margin-right: 20px;
+}
+
+.mSpriceArea span strong {
+    color: #999999;
+}
+
+.vipPrice span {
+    color: #333333;
+    margin-right: 20px;
+}
+
+.question {
+    display: inline;
+    float: right;
+}
+
+.question img {
+    margin-right: 4px;
+}
+
+.question img, .question a {
+    display: inline;
+    float: left;
+}
+
+.clothingColor h3 {
+    color: #999999;
+    display: inline;
+    float: left;
+    line-height: 19px;
+    text-indent: 10px;
+}
+
+.clothingColor h3 strong {
+    color: #A10000;
+    font-weight: bold;
+}
+
+#onlickColor {
+    background: none repeat scroll 0 0 #336699;
+    border: 1px solid #336699;
+}
+
+.smallImgDown, .smallImgUp, .smallImgRight, .smallImgLeft, #imageMenu li img, .selColor ul li {
+    cursor: pointer;
+}
+
+.selColor li {
+    border: 1px solid #B4B4B4;
+    display: inline;
+    float: left;
+    height: 54px;
+    margin: 0 4px 6px 0;
+    width: 100px;
+}
+
+.colorBlock {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 52px;
+    margin: 1px auto 0;
+    width: 98px;
+}
+
+.colorBlock img {
+    display: inline;
+    float: left;
+    height: 50px;
+    margin: 1px 0 0 1px;
+    overflow: hidden;
+    width: 50px;
+}
+
+.colorBlock p {
+    color: #666666;
+    display: inline;
+    float: left;
+    line-height: 16px;
+    margin-left: 6px;
+    padding-top: 4px;
+    width: 40px;
+}
+
+
+.selSizeArea {
+    margin-top: 16px;
+}
+
+.selSizeArea h3 {
+    color: #999999;
+    display: inline;
+    float: left;
+    line-height: 20px;
+    margin-left: 10px;
+}
+
+.selSizeArea h3 strong {
+    color: #A10000;
+}
+
+.selSizeArea h4 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    display: inline;
+    float: right;
+    line-height: 18px;
+    margin-right: 25px;
+    padding: 0 3px;
+}
+
+.selSizeArea ul {
+    margin-left: 10px;
+}
+
+.selSizeArea li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C8C8C8;
+    color: #333333;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-right: 5px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#onlickSelSize {
+    background: none repeat scroll 0 0 #BACBDD;
+    border: 1px solid #336699;
+}
+
+.shoppingCarArea div {
+    display: inline;
+    float: left;
+}
+
+.goodsNum {
+    padding: 0 0 0 20px;
+    width: 115px;
+}
+
+.goodsNum span {
+    color: #666666;
+    line-height: 22px;
+}
+
+.goodsNum select {
+    height: 20px;
+    line-height: 20px;
+    width: 42px;
+}
+
+.goodsNum span, .goodsNum select {
+    display: inline;
+    float: left;
+}
+
+.goodsPrice {
+    width: 175px;
+}
+
+.goodsPrice p {
+    color: #666666;
+}
+
+.goodsPrice p strong {
+    font-weight: bold;
+}
+
+.goodsPrice p em {
+    color: #A10000;
+}
+
+.shoppingCarArea .goodsCar {
+    width: 100%;
+}
+
+.shoppingCarArea .goodsCar .dp_gwbtn {
+    background: url("http://images.vancl.com/Others/2011/3/8/shoppingCar.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 35px;
+    padding-right: 10px;
+    width: 138px;
+}
+
+.shoppingCarArea .goodsCar .dp_scbtn {
+    background: url("http://images.vancl.com/Others/2011/3/8/collectgoods.jpg") no-repeat scroll 0 bottom transparent;
+    display: block;
+    float: right;
+    height: 36px;
+    margin-right: 70px;
+    width: 101px;
+}
+
+.goodsAddArea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #CCCCCC;
+    height: 25px;
+    padding: 10px 0 10px 15px;
+    position: relative;
+    width: 420px;
+    z-index: 0;
+}
+
+
+.goodsAdd span {
+    display: inline;
+    float: left;
+    line-height: 26px;
+}
+
+span.goodsAdd {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 55px;
+}
+
+.cityAdd {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #BDBDBD;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    margin: 0 5px;
+    width: 70px;
+}
+
+.cityAdd strong {
+    background: url("http://images.vancl.com/Others/2011/3/31/allbgs.gif") no-repeat scroll -129px -78px transparent;
+    display: block;
+    float: right;
+    width: 15px;
+}
+
+.payArea {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.shuoming {
+    padding-left: 15px;
+}
+
+.mianyunfei {
+    color: #A10000;
+    margin-top: 10px;
+    text-indent: 80px;
+}
+
+.payLeft {
+    color: #A10000;
+    display: inline;
+    float: left;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: right;
+    width: 80px;
+}
+
+.payRight {
+    display: inline;
+    float: left;
+    line-height: 22px;
+    width: 320px;
+}
+
+.pay a {
+    margin: 0 4px;
+}
+
+.goodsAddArea strong, .shuoming strong, .pay strong {
+    color: #A10000;
+    font-weight: bold;
+}
+
+.youhuiArea {
+    background: url("http://images.vancl.com/Others/2011/3/31/allbgs.gif") no-repeat scroll 0 -298px #F4F7FC;
+    border: 1px solid #D6D6D6;
+    padding-top: 25px;
+    width: 440px;
+}
+
+.youhuiArea li {
+    background: url("http://images.vancl.com/Others/2011/3/31/allbgs.gif") no-repeat scroll 60px -3px transparent;
+    color: #A10000;
+    margin-bottom: 15px;
+    text-indent: 70px;
+}
+
+.youhuiArea li a:link, .youhuiArea li a:visited, .youhuiArea li a:hover {
+    color: #A10000;
+    text-decoration: none;
+}
+
+.sideBarArea {
+    display: inline;
+    float: left;
+    width: 200px;
+}
+
+.setTabMenu01 {
+    background: none repeat scroll 0 0 #E6E6E6;
+    border-bottom: 1px solid #DDDDDD;
+    height: 27px;
+    position: relative;
+    width: 200px;
+}
+
+.setTabMenu01 ul {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.setTabMenu01 li {
+    border-left: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    color: #333333;
+    display: inline;
+    float: left;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+}
+
+.setTabMenu01 li.hover {
+    background: url("http://images.vancl.com/Others/2010/8/20/setTabMenuBg.gif") repeat-x scroll 0 0 transparent;
+    border-color: #DEDEDE #DEDEDE -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    font-weight: bold;
+    width: 98px;
+}
+
+.setTabCon01 {
+    border-color: -moz-use-text-color #D6D6D6 #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    width: 198px;
+}
+
+#con_one_1 {
+    padding-bottom: 15px;
+}
+
+#con_one_1 li {
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+#con_one_1 li strong {
+    color: #A10000;
+}
+
+.sideBarCommon {
+    border: 1px solid #D6D6D6;
+    width: 198px;
+}
+
+.sideBarCommon h3 {
+    background: url("http://images.vancl.com/Others/2010/8/20/setTabMenuBg.gif") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #D6D6D6;
+    color: #333333;
+    font-weight: bold;
+    height: 27px;
+    line-height: 27px;
+    text-indent: 10px;
+}
+
+.sel05 {
+    padding-left: 14px;
+}
+
+.sel05>span {
+    color: #999999;
+    display: inline;
+    float: left;
+    line-height: 33px;
+}
+
+.sel05>span>span {
+    margin: 0 5px;
+}
+
+.sideBarCon02 li {
+	display:block;
+    padding-top: 15px;
+    width: 198px;
+}
+
+.sideBarCon02 .gray-bg>span {
+    margin-left: 20px;
+}
+
+.sideBarCon02 p {
+    padding-left: 10px;
+    width: 98px;
+    word-spacing: normal;
+    word-wrap: break-word;
+}
+
+.sideBarCon02 img, .sideBarCon02 p {
+    display: inline;
+    float: left;
+}
+
+.bl {
+    display: inline;
+    float: left;
+}
+
+.bl-bg {
+    display: block;
+    float: left;
+    height: 8px;
+    margin: 3px 5px 0 -10px;
+    padding: 0;
+    width: 30px;
+}
+
+.blbuy {
+    color: #A10000;
+    margin-left: 20px;
+    display: inline;
+    float: left;
+}
+
+.hotName {
+    line-height: 18px;
+}
+
+.hotPrice {
+    color: #A10000;
+    padding-top: 4px;
+}
+
+.RsetTabArea {
+    display: inline;
+    float: right;
+    overflow: hidden;
+    width: 748px;
+}
+
+.RsetTabMenu {
+    border-bottom: 3px solid #6F0019;
+    height: 32px;
+}
+
+.RsetTabMenu li.hover {
+    background: url("http://images.vancl.com/Others/2011/3/24/tab_03.gif") repeat-x scroll 0 0 transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: default;
+    height: 32px;
+    line-height: 32px;
+    width: 148px;
+}
+
+.RsetTabMenu li {
+    background: url("http://images.vancl.com/Others/2011/3/24/tab_06.gif") repeat-x scroll 0 0 transparent;
+    border-color: #D6D6D6 #D6D6D6 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    margin-right: 2px;
+    text-align: center;
+    width: 146px;
+}
+
+.RsetTabMenu li strong {
+    color: #A10000;
+}
+
+.RsetTabMenu li.hover a, .RsetTabMenu li.hover strong {
+    color: #FFFFFF;
+}
+
+li.down {
+    color: #777777;
+}
+
+li.three5 {
+    margin-right: 0;
+}
+
+li.down a:link, li.down a:visited, li.down a:hover {
+    color: #777777;
+}
+
+.area1 h3 {
+    color: #999999;
+    font-weight: bold;
+    position: relative;
+    width: 748px;
+}
+
+.productMS {
+    border-bottom: 1px dotted #999999;
+    color: #666666;
+    padding-bottom: 25px;
+    text-indent: 2em;
+}
+
+.sizeCal_linkhide {
+    float: left;
+}
+
+.sizeList {
+    color: #999999;
+}
+
+.sizeList table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sizeList td {
+    border: 1px solid #E4E4E4;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.imgCon ul {
+    padding-bottom: 20px;
+}
+
+.imgCon li {
+    margin-top: 30px;
+    text-align: center;
+    width: 748px;
+}
+
+.assort {
+    border: 1px solid #E3E3E3;
+    clear: both;
+    height: 87px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 746px;
+}
+
+.assorttitle {
+    background-color: #F2F2F2;
+    border-right: 1px solid #E3E3E3;
+    color: #66696E;
+    display: inline;
+    float: left;
+    font-weight: bold;
+    height: 71px;
+    padding-top: 16px;
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+}
+
+.assortlist {
+    display: inline;
+    float: left;
+    height: 77px;
+    padding-top: 10px;
+    width: 720px;
+}
+
+.assortlist ul {
+    display: block;
+}
+
+.assortlist li {
+    display: inline;
+    float: left;
+    margin: 0 0 0 10px;
+    padding: 0;
+    text-align: left;
+    width: 168px;
+}
+
+.assortpic {
+    display: inline;
+    float: left;
+}
+
+.assortdetail {
+    display: inline;
+    float: left;
+    line-height: 20px;
+    padding-left: 8px;
+    width: 90px;
+}
+
+.assortprice {
+    color: #A10000;
+}
+
+.liketabfg {
+    color: #FFFFFF;
+    height: 30px;
+    line-height: 30px;
+}
+
+.fgnameleft {
+    background: url("http://images.vancl.com/Others/2011/3/24/tab_11.gif") repeat-x scroll 0 0 transparent;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 30px;
+    text-align: center;
+    width: 120px;
+}
+
+.fgbgright {
+    background: url("http://images.vancl.com/Others/2011/3/24/tab_14.gif") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #6E0019;
+    border-right: 1px solid #D6D6D6;
+    border-top: 1px solid #D6D6D6;
+    display: block;
+    float: left;
+    height: 28px;
+    width: 627px;
+}
+
+.pingfen li {
+    border: 1px solid #D6D6D6;
+    display: inline;
+    float: left;
+    margin-right: 23px;
+    width: 232px;
+}
+
+.pingfen h2 {
+    background: url("http://images.vancl.com/Others/2011/3/31/allbgs.gif") no-repeat scroll 0 -220px transparent;
+    height: 25px;
+    line-height: 25px;
+    margin: 2px auto;
+    text-indent: 40px;
+    width: 228px;
+}
+
+.pingfen img {
+    margin-bottom: -1px;
+}
+
+.pingfen h2 strong {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+}
+
+.pingfen h2 img {
+    display: inline;
+    float: left;
+    margin-top: 4px;
+}
+
+.starArea {
+    margin-left: 12px;
+}
+
+.starArea span {
+    color: #999999;
+    float: left;
+    height: 13px;
+}
+
+.starArea span {
+    color: #999999;
+    float: left;
+    height: 13px;
+}
+
+.pingfenLine {
+    background: none repeat scroll 0 0 #F0F0F0;
+    margin: 0 8px;
+    width: 72px;
+}
+
+.pingfenLine strong {
+    background: none repeat scroll 0 0 #A10000;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    width: 20%;
+}
+
+.starArea span {
+    color: #999999;
+    float: left;
+    height: 13px;
+}
+
+.sizePingjia {
+    border-color: #D6D6D6 -moz-use-text-color #D6D6D6 #D6D6D6;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    width: 746px;
+}
+
+.sizePingjia li {
+    border-right: 1px solid #D6D6D6;
+    display: inline;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.sizePingjia li span {
+    background: url("http://images.vancl.com/Others/2010/8/20/allbgs.gif") no-repeat scroll -4px -181px transparent;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin: 2px 0 0 2px;
+    text-indent: 30px;
+    width: 81px;
+}
+
+.sizePingjia strong em {
+    color: #A10000;
+}
+
+.area2 {
+    border: 1px solid #CFCFCF;
+    width: 746px;
+}
+
+.area3Head span, .area3Head button {
+    display: inline;
+    float: left;
+    line-height: 26px;
+}
+
+.buttonred {
+    background-color: #9D031F;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 26px;
+    margin-left: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.allUser {
+    border-bottom: 1px solid #CFCFCF;
+    color: #999999;
+    height: 35px;
+    line-height: 35px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.area2Head {
+    background: none repeat scroll 0 0 #F0F0F0;
+    height: 35px;
+    line-height: 35px;
+}
+
+.area2Head li {
+    color: #333333;
+    display: inline;
+    float: left;
+}
+
+.area2HeadLeft {
+    font-size: 14px;
+    text-indent: 20px;
+    width: 440px;
+}
+
+.area2HeadCenter {
+    width: 185px;
+}
+
+.area2HeadRight {
+    width: 120px;
+}
+
+.area2Con {
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.area2ConP {
+    color: #999999;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.selCS {
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    width: 710px;
+}
+.selCS span {
+    color: #999999;
+    display: inline;
+    float: left;
+    margin-right: 24px;
+}
+.selCS li {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border-color: #E5E5E5 -moz-use-text-color #E5E5E5 #E5E5E5;
+    border-style: solid none solid solid;
+    border-width: 1px medium 1px 1px;
+    color: #999999;
+    display: inline;
+    float: left;
+    text-align: center;
+    width: 100px;
+}
+
+.new-comment {
+    color: #999999;
+    height: 20px;
+    line-height: 20px;
+    margin: 10px 0 0 20px;
+}
+
+.new-left {
+    display: inline;
+    float: left;
+    width: 400px;
+}
+
+.thiscomment {
+    display: inline;
+    float: left;
+}
+
+.new-btn a {
+    background: url("http://images.vancl.com/Others/2011/3/26/reply_btn.gif") no-repeat scroll 0 0 transparent;
+    display: inline;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 7px;
+    text-align: center;
+    width: 64px;
+}
+
+.acolora10000 {
+    color: #A10000;
+}
+
+.new-right {
+    display: inline;
+    float: right;
+    margin: 3px 10px 0 0;
+}
+
+.new-share {
+    display: inline;
+    float: left;
+}
+
+.new-right a img {
+    display: inline;
+    float: left;
+    margin: 0 3px;
+}
+
+.want-reply a:link, .want-reply a:visited, .want-reply a:hover {
+    display: inline;
+    float: left;
+    text-decoration: underline;
+}
+
+.showfile {
+    cursor: pointer;
+}
+
+.area2Page {
+    height: 44px;
+}
+
+.area2Page ul {
+    display: inline;
+    float: right;
+    margin-right: 14px;
+    margin-top: 15px;
+}
+.area2Page li {
+    display: inline;
+    float: left;
+    height: 15px;
+    line-height: 15px;
+    padding: 0 4px;
+}
+.area2Page li strong {
+    color: #A10000;
+    font-weight: bold;
+}
+
+.area3 {
+    border: 1px solid #CFCFCF;
+    width: 746px;
+}
+
+.area3Head {
+    background: url("http://images.vancl.com/Others/2010/8/20/areaHeadBg.gif") repeat-x scroll 0 0 transparent;
+    border-bottom: 1px solid #CFCFCF;
+    height: 26px;
+}
+
+.area3Sp01 img {
+    margin: 6px 8px 0;
+}
+
+.area3Sp02, .area3Sp03 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.area3Sp03 {
+    margin-left: 8px;
+    margin-right: 106px;
+}
+
+.area3Sp03 strong {
+    color: #A10000;
+    font-weight: bold;
+}
+
+.area3Head select {
+    height: 20px;
+    margin-top: 3px;
+    width: 90px;
+}
+
+.area3Head button {
+    background: none repeat scroll 0 0 #A50000;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 58px;
+    text-align: center;
+    width: 84px;
+}
+
+.area3Con {
+    padding: 0 10px 0 15px;
+}
+
+.area3ConBg {
+    background: none repeat scroll 0 0 #F0F0F0;
+}
+
+.userQuesArea {
+    color: #666666;
+}
+
+.userQuesArea {
+    color: #666666;
+}
+.userQuesArea h4 {
+    display: inline;
+    float: left;
+}
+.userQuesArea h4 strong {
+    font-weight: bold;
+}
+.userQuesArea h5 {
+    display: inline;
+    float: right;
+}
+.area3Con h6 {
+    color: #666666;
+    font-weight: bold;
+}
+
+.myAsk {
+    color: #666666;
+    text-align: right;
+}
+
+.adminAsk {
+    color: #666666;
+    line-height: 20px;
+    padding-right: 240px;
+    text-indent: 2em;
+}
+
+li.pageLeft, li.pageRight {
+    border: 1px solid #B2B2B2;
+}
+
+
+.area4 {
+    border-color: -moz-use-text-color #CFCFCF #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    width: 746px;
+}
+.area4 h2 {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-top: 1px solid #CFCFCF;
+    color: #A10000;
+    font-size: 14px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    text-indent: 34px;
+    width: 100%;
+}
+.area4 .area4Con {
+    color: #666666;
+    line-height: 22px;
+    padding: 10px 42px 0 34px;
+}
+
+.area5 {
+    border-color: #CFCFCF #CFCFCF -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    width: 746px;
+}
+
+.area5 h2 {
+    background: none repeat scroll 0 0 #F0F0F0;
+    font-size: 14px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    margin-top: 1px;
+    text-indent: 34px;
+    width: 100%;
+}
+
+.area5 h2 strong {
+    color: #A10000;
+    font-weight: bold;
+}
+
+.area5 li {
+    color: #666666;
+    line-height: 22px;
+    padding: 0 42px 0 34px;
+}
+
+.area5 li em {
+    color: #A10000;
+    font-weight: bold;
+}
+
+.area5 li strong {
+   
+    font-weight: bold;
+}
+
+.area5 table strong {
+    font-weight: bold;
+}
+
+.area5List {
+    display: inline;
+    float: left;
+    width: 175px;
+}
+
+.TI2em {
+    text-indent: 2em;
+}
+
+.area5Table {
+    color: #666666;
+    line-height: 22px;
+    margin: 0 34px;
+}
+
+.payKinds td {
+    text-align: center;
+}
+
+.payFS {
+    color: #666666;
+    line-height: 22px;
+}
+
+#bigView {
+    border: 1px solid #B4B4B4;
+    overflow: hidden;
+    position: absolute;
+    width: 440px; 
+    height: 400px; 
+    top: 380px; 
+    left: 760px; 
+    display: none;
+}
+
+#bigView img {
+    position: absolute;
+}
+
+
+
+
+.iconsel01 {
+	display: block; 
+	float: left;
+    width: 92px;
+    height: 33px;
+    background: url("../../../image/sel01.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconsel02 {
+	display: block; 
+	float: left;
+    width: 92px;
+    height: 33px;
+    background: url("../../../image/sel02.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconsel03 {
+	display: block; 
+	float: left;
+    width: 92px;
+    height: 33px;
+    background: url("../../../image/sel03.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconsel04 {
+	display: block; 
+	float: left;
+    width: 92px;
+    height: 33px;
+    background: url("../../../image/sel04.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconsel05 {
+	display: block; 
+	float: left;
+    width: 92px;
+    height: 33px;
+    background: url("../../../image/sel05.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb0 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b0.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb1 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb2 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b2.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb3 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b3.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb4 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b4.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb5 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b5.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb6 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b6.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb7 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b7.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb8 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b8.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb9 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b9.gif") repeat-x scroll 0 0 transparent;
+}
+
+.iconb10 {
+	display: block; 
+	float: left;
+    width: 29px;
+    height: 8px;
+    background: url("../../../image/b10.gif") repeat-x scroll 0 0 transparent;
+}
+
+.smallImgUp01 {
+	display: block; 
+	float: left;
+    width: 72px;
+    height: 5px;
+    background: url("../../../image/smallImgUp01.gif") repeat-x scroll 0 0 transparent;
+}
+
+.smallImgDown01 {
+	display: block; 
+	float: left;
+    width: 72px;
+    height: 5px;
+    background: url("../../../image/smallImgDown01.gif") repeat-x scroll 0 0 transparent;
+}
+
+.smallImgUp02 {
+	display: block; 
+	float: left;
+    width: 72px;
+    height: 5px;
+    background: url("../../../image/smallImgUp02.gif") repeat-x scroll 0 0 transparent;
+}
+
+.smallImgDown02 {
+	display: block; 
+	float: left;
+    width: 72px;
+    height: 5px;
+    background: url("../../../image/smallImgDown02.gif") repeat-x scroll 0 0 transparent;
+}
+
+
+

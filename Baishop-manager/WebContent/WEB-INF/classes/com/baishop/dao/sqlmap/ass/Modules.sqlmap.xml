@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Modules" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.ass.Modules" >
+    <result column="module_id" property="moduleId" jdbcType="INTEGER" />
+    <result column="module_pid" property="modulePid" jdbcType="INTEGER" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="iconCls" property="iconCls" jdbcType="VARCHAR" />
+    <result column="expanded" property="expanded" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <cacheModel id="cacheModules" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="Modules.addModules"/>
+  	<flushOnExecute statement="Modules.editModules"/>
+  	<flushOnExecute statement="Modules.delModules"/>
+  	<flushOnExecute statement="AdminsModules.addAdminsModules"/>
+  	<flushOnExecute statement="AdminsModules.delAdminsModules"/>
+  	<flushOnExecute statement="RolesModules.addRolesModules"/>
+  	<flushOnExecute statement="RolesModules.delRolesModules"/>
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+  
+  <select id="getModules" resultMap="resultMap" cacheModel="cacheModules">
+    select module_id, module_pid, text, url, type, iconCls, expanded, sort
+    from bai_modules
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="moduleId">
+			module_id = #moduleId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="modulePid">
+			module_pid = #modulePid:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="text">
+			text = #text:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="url">
+			url = #url:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="type">
+			type = #type:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="userId">
+			module_id in (select module_id from bai_admins_modules where user_id = #userId:INTEGER#)
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="roleId">
+			module_id in (select module_id from bai_roles_modules where role_id = #roleId:INTEGER#)
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="roleIds">
+			module_id in (
+				select module_id from bai_roles_modules where role_id in
+				<iterate property="roleIds" open="(" close=")" conjunction=",">
+					#roleIds[]:INTEGER# 
+				</iterate>
+			)
+		</isNotEmpty>
+	</dynamic>
+	order by sort
+  </select>
+  
+  <delete id="delModules" >
+    delete from bai_modules
+    where module_id in
+	<iterate property="moduleIds" open="(" close=")" conjunction=",">
+		#moduleIds[]:INTEGER# 
+	</iterate>
+  </delete>
+  
+  <insert id="addModules" parameterClass="com.baishop.entity.ass.Modules" >
+    insert into bai_modules
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="modulePid" >
+        module_pid
+      </isNotNull>
+      <isNotNull prepend="," property="text" >
+        text
+      </isNotNull>
+      <isNotNull prepend="," property="url" >
+        url
+      </isNotNull>
+      <isNotNull prepend="," property="type" >
+        type
+      </isNotNull>
+      <isNotNull prepend="," property="iconCls" >
+        iconCls
+      </isNotNull>
+      <isNotNull prepend="," property="expanded" >
+        expanded
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="modulePid" >
+        #modulePid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="text" >
+        #text:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="url" >
+        #url:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="type" >
+        #type:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="iconCls" >
+        #iconCls:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="expanded" >
+        #expanded:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        #sort:INTEGER#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="moduleId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="editModules" parameterClass="com.baishop.entity.ass.Modules" >
+    update bai_modules
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="modulePid" >
+        module_pid = #modulePid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="text" >
+        text = #text:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="url" >
+        url = #url:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="type" >
+        type = #type:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="iconCls" >
+        iconCls = #iconCls:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="expanded" >
+        expanded = #expanded:TINYINT#
+      </isNotNull>
+      <isNotNull prepend="," property="sort" >
+        sort = #sort:INTEGER#
+      </isNotNull>
+    </dynamic>
+    where module_id = #moduleId:INTEGER#
+  </update>
+  
+</sqlMap>

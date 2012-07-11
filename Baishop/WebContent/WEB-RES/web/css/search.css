@@ -1,0 +1,751 @@
+@CHARSET "UTF-8";
+
+#context {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+
+.advert1 {
+    width: 980px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sr_contation {
+    margin: 0 auto;
+    width: 980px;
+}
+
+.sr_left {
+    display: inline;
+    float: left;
+    width: 756px;
+}
+
+.sr_right {
+    border: 1px solid #D0D0D0;
+    display: inline;
+    float: right;
+    padding: 1px;
+    width: 208px;
+}
+
+.breadnav {
+    clear: both;
+    line-height: 40px;
+}
+
+.locationdiv {
+    display: inline;
+}
+
+.locationdiv span {
+    color: #B4B4B4;
+}
+
+.floatright {
+    display: inline;
+    float: right;
+}
+
+.pagediv {
+    display: inline;
+    float: right;
+}
+
+.pagediv span {
+    display: block;
+    float: left;
+    margin-left: 12px;
+}
+
+.tsmsg {
+    color: #B4B4B4;
+    display: inline;
+    float: right;
+}
+
+.tsmsg span {
+    color: #A00000;
+    padding: 0 2px;
+}
+
+.selectarea {
+    border: 1px solid #C7CACD;
+    clear: both;
+    padding: 0 1px;
+}
+
+.selectarea .selectareali {
+    background: url("http://images.vancl.com/search/dot.jpg") repeat-x scroll center bottom transparent;
+    clear: both;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.selectareaLeft {
+    display: inline;
+    float: left;
+    width: 50px;
+}
+
+.selectarea .selectareali .selectareaLeft span {
+    background: url("http://images.vancl.com/search/navgrey.jpg") no-repeat scroll 0 0 transparent;
+    color: #000000;
+    display: block;
+    height: 17px;
+    line-height: 17px;
+    margin-left: 10px;
+    text-align: center;
+    width: 36px;
+}
+
+.selectareaRight {
+    display: inline;
+    float: left;
+    width: 700px;
+}
+
+.selectareali .selectareaRight ul li {
+    display: block;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 20px;
+}
+
+.selectareali .selectareaRight a {
+    display: block;
+    min-width: 11px;
+}
+
+.selectareali .selectareaRight li a {
+    float: left;
+}
+
+.selectareali .selectareaRight a span {
+    color: #999999;
+    height: 20px;
+}
+
+
+.selectarea #selectlihover {
+    background-color: #EDEDED;
+    clear: both;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.selectarea #selectlihover .selectareaLeft span {
+    background: url("http://images.vancl.com/search/navred.jpg") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+
+.selectarea .hovera a {
+    color: #A10000;
+}
+
+.selectkinds {
+    background-color: #EDEDED;
+    overflow: hidden;
+    padding: 0;
+}
+
+.selectkinds .colorspan {
+    display: inline;
+    float: left;
+    line-height: 18px;
+    margin-left: 3px;
+}
+
+.colorarea {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    width: 370px;
+}
+
+.colorarea a {
+    display: block;
+}
+
+.colorarea a:hover span {
+    border: 1px solid #A00000;
+}
+
+.colorarea .hovera span {
+    border: 1px solid #A00000;
+}
+
+.colorlist {
+    display: inline;
+    float: left;
+}
+
+.colorlist li {
+    display: block;
+    float: left;
+    margin-bottom: 8px;
+    margin-left: 3px;
+}
+
+
+.searchHead {
+    background: url("http://images.vancl.com/search/bgh31.jpg") repeat-x scroll 0 0 transparent;
+    border: 1px solid #B4B4B4;
+    clear: both;
+    height: 31px;
+    line-height: 31px;
+    width: 754px;
+}
+
+.searchbar {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+}
+
+.searchbar .searchtitle {
+    display: inline;
+    float: left;
+}
+
+.searchbar .searchselect {
+    display: inline;
+    float: left;
+    margin-top: 6px;
+    position: relative;
+}
+
+.searchbar .searchselect span {
+    background: url("http://images.vancl.com/search/selectbg1.gif") no-repeat scroll right center #FFFFFF;
+    border: 1px solid #AEB1B4;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+    line-height: 17px;
+    overflow: hidden;
+    padding-left: 3px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.searchbar .searchselect ul {
+    background-color: #FFFFFF;
+    border: 1px solid #AEB1B4;
+    clear: both;
+    position: absolute;
+    z-index: 9999;
+}
+
+.searchbar .searchselect ul li {
+    display: block;
+    height: 18px;
+    line-height: 18px;
+    min-width: 71px;
+    width: 71px;
+}
+
+.searchbar .searchselect ul li a {
+    display: block;
+    min-width: 71px;
+    text-indent: 5px;
+    width: auto;
+}
+
+.orderimg {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.searchbarText {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    width: 135px;
+}
+
+.FpriceText {
+    border: 1px solid #AEB1B4;
+    display: inline;
+    float: left;
+    height: 17px;
+    line-height: 17px;
+    margin-top: 6px;
+    width: 35px;
+}
+
+.Fline {
+    display: inline;
+    float: left;
+    line-height: 20px;
+    margin: 6px 3px 0;
+}
+
+.FpriceBtn {
+    background: url("http://images.vancl.com/search/priceBtn.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 19px;
+    margin: 6px 0 0 3px;
+    width: 45px;
+}
+
+.styleorder {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+}
+
+.styleorder .span01 {
+    display: inline;
+    float: left;
+    margin-left: 5px;
+    margin-top: 9px;
+}
+
+.styleorder .span02 {
+    display: inline;
+    float: left;
+    margin: 0 2px;
+}
+
+
+.pruarea li {
+    display: inline;
+    float: left;
+    height: 265px;
+    margin-right: 22px;
+    overflow: hidden;
+    text-align: center;
+    width: 172px;
+}
+
+.pruarea li .pic {
+    height: 172px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 172px;
+}
+
+.pruarea li .pic img {
+    border: 1px solid #DBD7D6;
+}
+
+.pruarea li div {
+    text-align: left;
+}
+
+.pruarea li p {
+    height: 40px;
+    line-height: 18px;
+    margin-top: 15px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.Mprice, .Pprice {
+    color: #9F9F9F;
+    margin-right: 10px;
+}
+
+.Sprice {
+    font-weight: bold;
+}
+
+.Sprice, .Pprice {
+    color: #A10000;
+}
+
+
+.newview {
+    background: url("http://images.vancl.com/NewVancl/Productlist/icon/icon-new.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: "arial";
+    font-size: 16px;
+    height: 23px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 2;
+}
+
+.teshui {
+    background: url("http://images.vancl.com/NewVancl/Productlist/icon/icon-off.png") no-repeat scroll 0 0 transparent;
+    bottom: 0;
+    color: #FFFFFF;
+    font-family: "arial";
+    font-size: 16px;
+    height: 25px;
+    padding: 18px 0 2px 6px;
+    position: absolute;
+    right: 0;
+    text-indent: 8px;
+    width: 40px;
+}
+
+
+.ico {
+    background-image: url("http://images.vancl.com/NewVancl/Productlist/drift/jt.gif");
+    float: left;
+    height: 25px;
+    position: absolute;
+    width: 12px;
+    z-index: 10;
+}
+
+.fc02 {
+    background-color: #E6EAF3;
+    border: 1px solid #777777;
+    color: #999999;
+    font-size: 12px;
+    height: 483px;
+    width: 290px;
+    z-index: 9;
+}
+
+.fc02 .jJ {
+    height: 310px;
+    margin: 0;
+    padding: 9px 0 10px;
+}
+
+.fc02 .jJ img {
+    border: 1px solid #FFFFFF;
+}
+
+.fc02 .sd {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0 10px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.jJ01 {
+    margin: 7px 0 0 19px;
+}
+
+.jJ02 {
+    color: #A10000;
+    margin: 17px 0 0 19px;
+}
+
+.jJ03 {
+    margin: 7px 0 0 19px;
+}
+
+.jJ04 {
+    margin: 17px 0 0 19px;
+}
+
+.jJ03 span {
+    color: #333333;
+}
+
+.jJ04 span {
+    margin-right: 3px;
+}
+
+.searchPage {
+    display: inline;
+    float: right;
+}
+
+.searchPage span {
+    display: inline;
+    float: left;
+}
+
+.searchPage ul {
+    display: inline;
+    float: left;
+    margin-right: 5px;
+}
+
+.searchPage li {
+    display: inline;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+    margin-top: 11px;
+}
+
+.searchPage li a {
+    background: url("http://images.vancl.com/search/pagebg1.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 17px;
+    line-height: 17px;
+    width: 25px;
+}
+
+.searchPage .currentpage {
+    background: url("http://images.vancl.com/search/pagebg2.gif") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 17px;
+    line-height: 17px;
+    width: 25px;
+}
+
+.wy_con11Left {
+    display: inline;
+    float: left;
+    width: 208px;
+}
+
+.wy_con11Left h2 {
+    background-color: #565662;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 10px;
+    width: 208px;
+}
+
+.wytoplist {
+    padding: 10px 0;
+}
+
+.wytoplist li {
+    display: block;
+    height: 69px;
+    overflow: hidden;
+    padding: 10px 14px 10px 10px;
+}
+
+.wyimg {
+    display: inline;
+    float: left;
+}
+
+.wytitle {
+    display: block;
+    float: left;
+    margin-left: 8px;
+}
+
+.wytitle1 {
+    width: 106px;
+}
+
+.wytitle .wyshoujia {
+    color: #A10000;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: left;
+}
+
+.hotpl {
+    color: #999999;
+    text-align: right;
+    width: 106px;
+}
+
+.lovespllist {
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.uppage {
+	display: block;
+    margin-top: 11px;
+    width: 19px;
+    height: 17px;
+    background: url("../../../image/uppage.jpg") repeat-x scroll 0 0 transparent;
+}
+
+.downpage {
+	display: block;
+    margin-top: 11px;
+    width: 48px;
+    height: 17px;
+    background: url("../../../image/downpage.jpg") repeat-x scroll 0 0 transparent;
+}
+
+.color0 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 31px;
+    height: 17px;
+    background: url("../../../image/color0.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color1 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color2 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color2.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color3 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color3.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color4 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color4.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color5 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color5.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color6 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color6.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color7 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color7.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color8 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color8.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color9 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color9.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color10 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color10.gif") repeat-x scroll 0 0 transparent;
+}
+
+.color11 {
+	display: block; 
+	border: 1px solid #AEB1B4;
+    width: 17px;
+    height: 17px;
+    background: url("../../../image/color11.gif") repeat-x scroll 0 0 transparent;
+}
+
+
+.xiaoliang1 {
+	display: block; 
+	float: left;
+    width: 44px;
+    height: 19px;
+    background: url("../../../image/xiaoliang1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.xiaoliang2 {
+	display: block; 
+	float: left;
+    width: 44px;
+    height: 19px;
+    background: url("../../../image/xiaoliang2.gif") repeat-x scroll 0 0 transparent;
+}
+
+.haoping1 {
+	display: block; 
+	float: left;
+    width: 44px;
+    height: 19px;
+    background: url("../../../image/haoping1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.haoping2 {
+	display: block; 
+	float: left;
+    width: 44px;
+    height: 19px;
+    background: url("../../../image/haoping2.gif") repeat-x scroll 0 0 transparent;
+}
+
+.zuixin1 {
+	display: block; 
+	float: left;
+    width: 41px;
+    height: 19px;
+    background: url("../../../image/zuixin1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.zuixin2 {
+	display: block; 
+	float: left;
+    width: 41px;
+    height: 19px;
+    background: url("../../../image/zuixin2.gif") repeat-x scroll 0 0 transparent;
+}
+
+.jiage1 {
+	display: block; 
+	float: left;
+    width: 41px;
+    height: 19px;
+    background: url("../../../image/jiage1.gif") repeat-x scroll 0 0 transparent;
+}
+
+.jiage2 {
+	display: block; 
+	float: left;
+    width: 41px;
+    height: 19px;
+    background: url("../../../image/jiage2.gif") repeat-x scroll 0 0 transparent;
+}
+
+
+
+
+
+
+
+

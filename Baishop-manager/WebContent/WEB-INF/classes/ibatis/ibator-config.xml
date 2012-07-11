@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration>
+  <classPathEntry location="D:\Java\Workspaces\eclipse-jee\Documents\lib/mysql-connector-java-5.0.8-bin.jar" />
+  <ibatorContext id="context1">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1/baishop-ass?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;zeroDateTimeBehavior=convertToNull" userId="root" password="mfkjesk" />
+    <javaModelGenerator targetPackage="ibatis" targetProject="Baishop-manager/src-test" />
+    <sqlMapGenerator targetPackage="ibatis" targetProject="Baishop-manager/src-test" />
+    <daoGenerator targetPackage="ibatis" targetProject="Baishop-manager/src-test" type="GENERIC-CI" />
+    
+    <!-- 
+    <table schema="" tableName="bai_city" domainObjectName="City">
+      <generatedKey column="city_id" sqlStatement="MySql" identity="true" />
+    </table>
+        
+    <table schema="" tableName="bai_users" domainObjectName="Users">
+      <generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+    </table>    
+    <table schema="" tableName="bai_users_address" domainObjectName="UsersAddress">
+      <generatedKey column="address_id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+    <table schema="" tableName="bai_credits" domainObjectName="Credits">
+      <generatedKey column="credits_id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+    <table schema="" tableName="bai_payment" domainObjectName="Payment">
+      <generatedKey column="pay_id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+    <table schema="" tableName="bai_booking" domainObjectName="Booking">
+      <generatedKey column="booking_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="bai_goods" domainObjectName="Goods">
+      <generatedKey column="goods_id" sqlStatement="MySql" identity="true" />
+    </table> 
+   	<table schema="" tableName="bai_goods_imgs" domainObjectName="GoodsImgs">
+      <generatedKey column="imgs_id" sqlStatement="MySql" identity="true" />
+    </table> 
+	<table schema="" tableName="bai_goods_props" domainObjectName="GoodsProps">
+      <generatedKey column="props_id" sqlStatement="MySql" identity="true" />
+    </table> 
+
+    <table schema="" tableName="bai_category" domainObjectName="Category">
+      <generatedKey column="cate_id" sqlStatement="MySql" identity="true" />
+    </table>    
+    <table schema="" tableName="bai_brands" domainObjectName="Brands">
+      <generatedKey column="brand_id" sqlStatement="MySql" identity="true" />
+    </table> 
+	<table schema="" tableName="bai_shop_type" domainObjectName="ShopType">
+      <generatedKey column="type_id" sqlStatement="MySql" identity="true" />
+    </table> 
+	<table schema="" tableName="bai_properties" domainObjectName="Properties">
+      <generatedKey column="props_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+    <table schema="" tableName="bai_order" domainObjectName="Order">
+      <generatedKey column="order_id" sqlStatement="MySql" identity="true" />
+    </table> 
+	<table schema="" tableName="bai_order_goods" domainObjectName="OrderGoods">
+      <generatedKey column="order_id goods_id" sqlStatement="MySql" identity="true" />
+    </table> 
+	<table schema="" tableName="bai_order_option" domainObjectName="OrderOption">
+      <generatedKey column="op_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+    
+	<table schema="" tableName="bai_admins" domainObjectName="Admins">
+      <generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+	<table schema="" tableName="bai_admin_roles" domainObjectName="Roles">
+      <generatedKey column="role_id" sqlStatement="MySql" identity="true" />
+    </table>  
+    
+	<table schema="" tableName="bai_modules" domainObjectName="Modules">
+      <generatedKey column="module_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="bai_admins_roles" domainObjectName="AdminsRoles">
+      <generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="bai_admin_roles_modules" domainObjectName="RolesModules">
+      <generatedKey column="role_id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="syslog" domainObjectName="SysLog">
+      <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="syslog_filter" domainObjectName="SysLogFilter">
+      <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table> 
+    
+	<table schema="" tableName="bai_remote_auths" domainObjectName="RemoteAuths">
+      <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+        
+	<table schema="" tableName="syslog" domainObjectName="Syslog">
+      <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+    <table schema="" tableName="bai_dept" domainObjectName="Dept">
+      <generatedKey column="dept_id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+    
+    -->
+    
+    
+  </ibatorContext>
+</ibatorConfiguration>
+
+
+         <!-- 
+              column    自增长或使用sequence生成的字段名 
+              sqlStatement 生成字段的sql片段或其简称(参考官方文档) 
+              identity    true表示后生成，false表示预生成 
+               
+                  例如： 
+                   
+                  postgresql：<generatedKey 
+                      column="lid" 
+                      sqlStatement="select nextval('tb000000producttype_lid_seq')" 
+                      identity="false" /> 
+                       
+                  sqlserver：<generatedKey 
+                      column="lid" 
+                      sqlStatement="SqlServer" 
+                      identity="true" /> 
+                       
+                  oracle：<generatedKey 
+                      column="lid" 
+                      sqlStatement="select tb000000producttype_lid_seq.nextval from dual" 
+                      identity="false" /> 
+               
+          --> 

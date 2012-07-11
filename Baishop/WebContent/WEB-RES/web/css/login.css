@@ -1,0 +1,181 @@
+@CHARSET "UTF-8";
+
+.header {
+    border-bottom: 1px solid #7A7F89;
+    overflow: hidden;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.vancllogo {
+    display: inline;
+    float: left;
+}
+
+.usermsg {
+    margin-top: 30px;
+}
+
+.helpcenter {
+    display: inline;
+    float: right;
+}
+
+.afterlogin {
+    color: #666666;
+    display: inline;
+    float: right;
+    margin-right: 50px;
+}
+
+
+#context {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+#dl {
+    color: #999999;
+    font-size: 12px;
+    margin: 15px 0 0;
+    width: 980px;
+}
+
+#dl .dl {
+    clear: left;
+    float: left;
+    border: 1px solid #DCDFE5;
+    height: 400px;
+    width: 673px !important;
+}
+
+#dl .dl h2 {
+    border-bottom: 1px solid #565662;
+    margin: 0 0 5px;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 600px;
+    color: #A10000;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+.dlC {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.dlC ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dlC li {
+    list-style: none outside none;
+    margin: 0;
+    width: 580px;
+}
+
+.regSetTabCon {
+    background: none repeat scroll 0 0 #FAFAFA;
+    padding: 0 20px 0 20px;
+}
+
+.FTextArea span {
+    display: block;
+    color: #333333;
+    float: left;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding-right: 20px;
+    text-align: right;
+    width: 90px;
+}
+
+.FTextArea input {
+    border: 1px solid #A5AFC3;
+    height: 19px;
+    line-height: 19px;
+    width: 300px;
+	font-size: 14px;
+    padding: 3px 4px;
+}
+
+.FTextArea span, .FTextArea input {
+    display: inline;
+    float: left;
+}
+
+.dlButton {
+    background: url("../../../image/btnReg.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 25px;
+    margin-left: 184px;
+    width: 80px;
+}
+
+.btnReg span {
+    display: inline;
+    float: left;
+    margin-left: 12px;
+    padding-top: 6px;
+}
+
+.tishiHead {
+    color: #A10000;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tishiArea li {
+    line-height: 22px;
+}
+
+#dl .zc {
+    float: right;
+	border: 1px solid #DCDFE5;
+    height: 400px;
+    width: 273px !important;
+    text-align: center;
+}
+
+#dl .zc h2 {
+    border-bottom: 1px solid #565662;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 215px;
+    color: #A10000;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+#dl .zc p {
+    padding: 0;
+    margin: 8px auto;
+    width: 220px;
+}
+
+#dl .zc p em {
+	color: #A10000;
+	font-weight: bold;
+}
+
+.zcButton {
+    background: url("../../../image/button_zc.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 25px;
+    margin: 10px 0 0 84px;
+    width: 91px;
+}
+

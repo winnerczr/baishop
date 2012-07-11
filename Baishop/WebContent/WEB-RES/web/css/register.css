@@ -1,0 +1,276 @@
+@CHARSET "UTF-8";
+
+.header {
+    border-bottom: 1px solid #7A7F89;
+    overflow: hidden;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.vancllogo {
+    display: inline;
+    float: left;
+}
+
+.usermsg {
+    margin-top: 30px;
+}
+
+.helpcenter {
+    display: inline;
+    float: right;
+}
+
+.afterlogin {
+    color: #666666;
+    display: inline;
+    float: right;
+    margin-right: 50px;
+}
+
+
+#context {
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+}
+
+
+#dl {
+    color: #999999;
+    font-size: 12px;
+    margin: 15px 0 0;
+    width: 980px;
+}
+
+#dl .dl {
+    clear: left;
+    float: left;
+    border: 1px solid #DCDFE5;
+    height: 630px;
+    width: 673px !important;
+}
+
+#dl .dl h2 {
+    border-bottom: 1px solid #565662;
+    margin: 0 0 5px;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 600px;
+    color: #A10000;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+.dlC {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.dlC ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dlC li {
+    list-style: none outside none;
+    margin: 0;
+    width: 580px;
+}
+
+.regSetTabCon {
+    background: none repeat scroll 0 0 #FAFAFA;
+    padding: 0 20px 0 20px;
+}
+
+.field {
+    float: left;
+    margin: 5px auto 10px;
+    padding: 0 0 2px 10px;
+    width: 668px;
+}
+
+.field label {
+    color: #333333;
+    float: left;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding-right: 20px;
+    text-align: right;
+    width: 90px;
+}
+
+.field .f-check {
+    float: left;
+    margin-top: 3px;
+}
+
+.field .f-text {
+    border: 1px solid #A5AFC3;
+    float: left;
+    margin: 3px 0 0;
+    width: 270px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px 4px;
+}
+
+.field .highlight {
+    border: 1px solid #CC3333;
+}
+
+#username-hint, #nickname-hint, #password-hint, #password2-hint, #captcha-hint {
+    float: left;
+    font-family: Tahoma;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 1px 0 1px 25px;
+}
+
+.username {
+    position: relative;
+}
+
+.username-auto {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    color: #666666;
+    display: none;
+    font-size: 12px;
+    left: 120px;
+    overflow: hidden;
+    position: absolute;
+    top: 27px;
+    width: 278px;
+    z-index: 1;
+}
+
+.subscribe {
+    margin-left: 110px;
+    margin-top: 5px;
+    padding-bottom: 0;
+    width: 300px;
+}
+
+.subscribe label {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 0;
+    padding-left: 3px;
+    text-align: left;
+    width: 250px;
+}
+
+.subscribe-hint {
+    color: #989898;
+    font-size: 12px;
+    display: block;
+}
+
+.captcha {
+    margin-bottom: 5px;
+}
+
+.captcha-img {
+    margin-top: 0;
+    padding-left: 120px;
+    width: 400px;
+}
+
+.captcha-img span {
+    color: #339999;
+    cursor: pointer;
+    font-size: 12px;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+.wrong {
+    background: url("../../../image/icons-signup.png") no-repeat scroll 5px -47px transparent;
+    color: #CC6666;
+}
+
+.hint {
+    clear: left;
+    color: #989898;
+    float: left;
+    font-size: 12px;
+    margin-left: 110px;
+    width: 300px;
+}
+
+
+.terms {
+    margin-bottom: 0;
+    margin-left: 110px;
+    margin-top: 5px;
+    padding-bottom: 0;
+    width: 300px;
+}
+
+.agreementlink:link {
+    color: #A10000;
+    display: inline;
+    text-decoration: underline;
+}
+
+
+.dlButton {
+    background: url("../../../image/button_wczc.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 25px;
+    margin-left: 184px;
+    width: 91px;
+}
+
+
+#dl .zc {
+    float: right;
+	border: 1px solid #DCDFE5;
+    height: 630px;
+    width: 273px !important;
+    text-align: center;
+}
+
+#dl .zc h2 {
+    border-bottom: 1px solid #565662;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 215px;
+    color: #A10000;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+#dl .zc p {
+    padding: 0;
+    margin: 8px auto;
+    width: 220px;
+}
+
+#dl .zc p em {
+	color: #A10000;
+	font-weight: bold;
+}
+
+.zcButton {
+    background: url("../../../image/btnReg.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 25px;
+    margin: 10px 0 0 84px;
+    width: 80px;
+}
+
+
+

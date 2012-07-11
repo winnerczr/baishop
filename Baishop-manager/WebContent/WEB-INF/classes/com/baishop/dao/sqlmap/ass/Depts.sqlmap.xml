@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="Depts" >
+
+  <resultMap id="resultMap" class="com.baishop.entity.ass.Depts" >
+    <result column="dept_id" property="deptId" jdbcType="INTEGER" />
+    <result column="dept_pid" property="deptPid" jdbcType="INTEGER" />
+    <result column="dept_code" property="deptCode" jdbcType="VARCHAR" />
+    <result column="dept_name" property="deptName" jdbcType="VARCHAR" />
+    <result column="dept_pinyin" property="deptPinyin" jdbcType="VARCHAR" />
+    <result column="dept_remark" property="deptRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <cacheModel id="cacheDepts" type="MEMORY" readOnly="true" serialize="false">
+  	<flushInterval hours="24"/>
+  	<flushOnExecute statement="Depts.addDepts"/>
+  	<flushOnExecute statement="Depts.editDepts"/>
+  	<flushOnExecute statement="Depts.delDepts"/>
+  	<flushOnExecute statement="AdminsDepts.addAdminsDepts"/>
+  	<flushOnExecute statement="AdminsDepts.delAdminsDepts"/>
+  	<property name="reference-type" value="SOFT"/>
+  </cacheModel>
+  
+  <select id="getDepts" resultMap="resultMap" cacheModel="cacheDepts">
+    select *
+    from bai_depts
+    <dynamic prepend="where">
+		<isNotEmpty prepend="AND" property="deptId">
+			dept_id = #deptId:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="deptPid">
+			dept_pid = #deptPid:INTEGER#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="deptCode">
+			dept_code = #deptCode:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="deptParentCode">
+			dept_code like CONCAT(#deptParentCode:VARCHAR#,'%')
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="userId">
+			dept_id in (select dept_id from bai_admins_depts where user_id = #userId:INTEGER#)
+		</isNotEmpty>
+	</dynamic>
+	order by dept_code
+  </select>
+  
+  <delete id="delDepts">
+    delete from bai_depts
+    where dept_id in 
+	<iterate open="(" close=")" conjunction=",">
+		#[]:INTEGER# 
+	</iterate>
+  </delete>
+  
+  <insert id="addDepts" parameterClass="com.baishop.entity.ass.Depts" >
+    insert into bai_depts
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="deptPid" >
+        dept_pid
+      </isNotNull>
+      <isNotNull prepend="," property="deptCode" >
+        dept_code
+      </isNotNull>
+      <isNotNull prepend="," property="deptName" >
+        dept_name
+      </isNotNull>
+      <isNotNull prepend="," property="deptPinyin" >
+        dept_pinyin
+      </isNotNull>
+      <isNotNull prepend="," property="deptRemark" >
+        dept_remark
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="deptPid" >
+        #deptPid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="deptCode" >
+        #deptCode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptName" >
+        #deptName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptPinyin" >
+        #deptPinyin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptRemark" >
+        #deptRemark:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+    <selectKey resultClass="java.lang.Integer" keyProperty="deptId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  
+  <update id="editDepts" parameterClass="com.baishop.entity.ass.Depts" >
+    update bai_depts
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="deptPid" >
+        dept_pid = #deptPid:INTEGER#
+      </isNotNull>
+      <isNotNull prepend="," property="deptCode" >
+        dept_code = #deptCode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptName" >
+        dept_name = #deptName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptPinyin" >
+        dept_pinyin = #deptPinyin:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="deptRemark" >
+        dept_remark = #deptRemark:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where dept_id = #deptId:INTEGER#
+  </update>
+  
+</sqlMap>

@@ -1,0 +1,1924 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品</title>
+#import("../common/meta.vm")
+<link href="/WEB-RES/web/css/mall/product.css" type="text/css" rel="stylesheet" charset="utf-8" />
+<script src="/WEB-RES/web/js/mall/product.js" type="text/javascript"></script>
+</head>
+<body>
+#import("../common/header.vm")
+<div id="context">
+	<div class="advert1">
+		<a target="_blank" href="#"><img src="http://images.vancl.com/16/20110523/stripebanner_sun01_110523.jpg"/></a><a target="_blank" href="#"><img src="http://images.vancl.com/16/20110523/stripebanner_02_110523.jpg"/></a>
+	</div>
+	<span class="blank15"></span>	
+	<div class="breadNav">
+		<a name="nav" title="首页" href="/">首页</a><span>&gt;</span>
+		<a title="鞋" href="#">鞋</a><span>&gt;</span>
+		<a title="女鞋" href="#">女鞋</a><span>&gt;</span>
+		<a title="单鞋" href="#">单鞋</a><span>&gt;</span>
+		<span id="styleinfo">百搭天后鱼嘴女鞋</span>
+	</div>
+	<span class="blank15"></span>
+	<div class="danpinArea">
+		<div class="danpinLeft">
+			<div class="selImg">
+				<div class="smallImg">
+				    <div class="smallImgUp">
+			    		<span class="smallImgUp02"></span>
+				    </div>
+				    <ul id="imageMenu">
+				        <li class="track" id="onlickImg">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-1j201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-5201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-6201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-7201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-5201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-7201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-5201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-7201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-5201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-7201103101432331028.jpg"/>
+				        </li>
+				        <li class="track">
+				            <img alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-5201103101432331028.jpg"/>
+				        </li>
+				    </ul>
+				    <div class="smallImgDown">
+			    		<span class="smallImgDown02"></span>
+				    </div>
+				</div>
+				<div style="float: right; display: inline;" class="bigImg" id="vertical">
+				    <img id="midimg" title="百搭天后鱼嘴女鞋" src="http://images.vancl.com/product/0/0/4/0046949/mid/0046949-1j201103101432331028.jpg"/>
+				    <div id="winSelector" style="left: 76.5px; top: 200px; display: none;"></div>
+				</div>
+				<span class="blank25"></span>
+			</div>
+			<span class="blank0"></span>
+            <div class="fangdaArea">
+                <p class="fangda">
+			    	<span class="iconfangda"></span>
+                    <span><a target="_blank" href="/Product/Pic.aspx?ProductCode=0046949&amp;ProductName=%e7%99%be%e6%90%ad%e5%a4%a9%e5%90%8e%e9%b1%bc%e5%98%b4%e5%a5%b3%e9%9e%8b+%e9%85%92%e7%ba%a2%e8%89%b2">放大查看</a></span>
+                </p>
+            </div>
+            <span class="blank10"></span>
+            <div class="btnFangdaArea">
+                <span style="width: 101px;">
+                <a id="share" class="btnFX" href="/styles/Static.mvc?Position=Share">分享给好友</a></span> 
+            </div>
+            <span class="blank25"></span>
+			<div class="pingfen">
+			    <span style="float:left;">用户综合评分：</span> 
+			    <span class="start01"></span> 
+			    <span class="start01"></span> 
+			    <span class="start01"></span> 
+			    <span class="start01"></span> 
+			    <span class="start02"></span> 
+			</div>
+			<span class="blank15"></span>
+			<div class="voteArea">
+			    <p>
+		    		大部分人觉得此件鞋的
+			        <strong>样式很漂亮</strong>（42%）、<strong>舒适度不错</strong>（36%）、<strong>厚度适中</strong>（94%）、<strong>材质适中</strong>（75%）、<strong>重量适中</strong>（82%）、<strong>透气性适中</strong>（75%）。
+			    </p>
+			    <span class="blank0"></span>
+			    <div class="lookMoreArea">
+			        <h2>所有数据均来自购买过此件商品的顾客投票</h2>
+			        <h3><a href="#a2">[查看详情]</a></h3>
+			        <span class="blank10"></span>
+			    </div>
+			</div>
+		</div>
+		<div class="danpinRight">
+			<div id="pricearea">
+				<h2 id="productname">百搭天后鱼嘴女鞋 酒红色</h2>
+				<span class="blank10"></span>				
+				<div class="brandNumArea">
+				    <span>品牌：<strong>VANCL 凡客诚品</strong></span>
+				    <span id="productcode">商品编号：0046949</span>				    
+				    <div class="QZico"></div>				    
+				</div>				
+				<span class="blank5"></span>
+				<div class="cuxiaoPrice">售价：<span>￥<strong>99.00</strong></span></div>
+				<span class="blank10"></span>
+				<div class="mSpriceArea"><span><strong>市场价：￥299.00</strong></span><span>售价：￥99.00</span></div>
+				<span class="blank10"></span>
+				<div class="vipPrice">
+				    <span class="question">
+				   		<span class="iconQuertion"></span>
+				        <a href="/styles/Static.mvc?Position=vip">如何成为VIP/SVIP</a>				        
+				    </span>
+				    <span>VIP价：￥97.02</span>
+				    <span>SVIP价：￥94.05</span>				    
+				</div>
+				<span class="blank10"></span>
+			</div>
+			<div style="border: 1px solid rgb(204, 204, 204);" class="selectArea">
+				<div style="background-color: rgb(244, 247, 252);" class="selColorArea">
+                <span class="blank10"></span>
+					<div class="clothingColor">
+					    <h3>颜色：<strong></strong></h3>
+					</div>
+					<span class="blank10"></span>
+					<div style="padding-left: 10px; border-bottom: 1px solid rgb(204, 204, 204);" class="selColor">
+					    <ul>
+					        <li title="酒红色">
+					            <div class="colorBlock">
+					                <img alt="酒红色" src="http://images.vancl.com/product/0/0/4/004694/0046949.jpg"/>
+									<p>酒红色</p>
+					            </div>
+					        </li>
+					        <li title="黑色">
+					            <div class="colorBlock">
+					                <img alt="黑色" src="http://images.vancl.com/product/0/0/4/004694/0046948.jpg"/>
+									<p> 黑色</p>
+					            </div>
+					        </li>
+					    </ul>
+					    <span class="blank10"></span>
+					</div>
+					<div class="selSizeArea">
+						<h3>尺码：<strong>未选择</strong></h3>
+						<h4><a class="track" name="viewsize-track" href="#a1">查看尺码表</a></h4>						
+						<span class="blank10"></span>
+						<div class="selSize">
+						    <ul>
+						      <li>35</li>
+						      <li>36</li>
+						      <li>37</li>
+						      <li>38</li>
+						      <li>39</li>
+						      <li>40</li>
+						    </ul>
+						    <span class="blank20"></span>
+						</div>
+					</div>
+					<div class="shoppingCarArea">
+						<div class="goodsNum">
+						    <div>
+						        <span>数量：</span>
+						        <select id="selectedAmount">						            
+						            <option value="1">1</option>						            
+						            <option value="2">2</option>						            
+						            <option value="3">3</option>						            
+						            <option value="4">4</option>						            
+						            <option value="5">5</option>						            
+						            <option value="6">6</option>						            
+						            <option value="7">7</option>						            
+						            <option value="8">8</option>						            
+						            <option value="9">9</option>						            
+						            <option value="10">10</option>						            
+						        </select>
+						    	<span class="blank5"></span>
+						    </div>
+						    <div style="display: none;" id="comeon"><img src="/WEB-RES/image/ylyxicon.jpg" /></div>
+						</div>
+						<div class="goodsPrice">
+						    <p id="selectedColor">颜色：酒红色</p>
+						    <span class="blank8"></span>
+						    <p id="selectedSize">尺码：未选择</p>
+						    <span class="blank8"></span>
+						    <p><strong>小计：</strong><em>￥99.00</em></p>
+						</div>
+						<div class="goodsCar">
+						    <span class="blank15"></span>
+						    <a title="收藏该商品" href="https://www.vancl.com/Usercenter/UserFavorite.aspx?AddCart=0046949" class="dp_scbtn"></a>
+						    <a title="放入购物车" id="addToShoppingCar" href="#ref=zhuanti_4770_0046949" class="dp_gwbtn"></a>
+						    <span class="blank10"></span>
+						</div>
+						<span class="blank10"></span>
+					</div>
+					<div style="" class="goodsAddArea">
+					  <div class="goodsAdd">
+					      <span><strong>库存情况：</strong>送至</span>
+					      <p class="cityAdd"><span class="goodsAdd">北京</span><strong>&nbsp;</strong></p>
+					      <span id="stockinfo">请先选择尺码</span>
+					  </div>
+					  <div style="display: none;" class="addressWindows">
+					        <p>
+					            <span>华北地区：</span>
+					            <a name="hs-110000" href="#">北京</a>、<a name="hs-120000" href="#">天津</a>、<a name="hs-130000" href="#">河北</a>、<a name="hs-140000" href="#">山西</a>、<a name="hs-150000" href="#">内蒙古</a>
+					        </p>
+					        <p>
+					            <span>华东地区：</span>
+					            <a name="hs-310000" href="#">上海</a>、<a name="hs-320000" href="#">江苏</a>、<a name="hs-330000" href="#">浙江</a>、<a name="hs-370000" href="#">山东</a>、<a name="hs-340000" href="#">安徽</a>、<a name="hs-350000" href="#">福建</a>
+					        </p>
+					        <p>
+					            <span>华南地区：</span>
+					            <a name="hs-440000" href="#">广东</a>、<a name="hs-450000" href="#">广西</a>、<a name="hs-460000" href="#">海南</a>
+					        </p>
+					        <p>
+					            <span>华中地区：</span>
+					            <a name="hs-420000" href="#">湖北</a>、<a name="hs-430000" href="#">湖南</a>、<a name="hs-410000" href="#">河南</a>、<a name="hs-360000" href="#">江西</a>
+					        </p>				        
+					        <p>
+					            <span>西南地区：</span>
+					            <a name="hs-510000" href="#">四川</a>、<a name="hs-530000" href="#">云南</a>、<a name="hs-520000" href="#">贵州</a>、<a name="hs-540000" href="#">西藏</a>、<a name="hs-500000" href="#">重庆</a>
+					        </p>
+					        <p>
+					            <span>西北地区：</span>
+					            <a name="hs-640000" href="#">宁夏</a>、<a name="hs-650000" href="#">新疆</a>、<a name="hs-630000" href="#">青海</a>、<a name="hs-610000" href="#">陕西</a>、<a name="hs-620000" href="#">甘肃</a>
+					        </p>
+					        <p>
+					            <span>东北地区：</span>
+					            <a name="hs-210000" href="#">辽宁</a>、<a name="hs-220000" href="#">吉林</a>、<a name="hs-230000" href="#">黑龙江</a>
+					        </p>
+					        <span class="blank10"></span>
+					    </div>
+					</div>
+				</div>
+				<div class="payArea">
+				    <span class="blank15"></span>
+				    <div class="shuoming">
+				        <strong>运费说明：</strong>全国不限区域，快递与EMS均为15元。
+				    </div>
+				    <div class="mianyunfei">全场购物满59元免运费。</div>
+				    <span class="blank15"></span>
+				    <div class="pay">
+				        <div class="payLeft">支付方式：</div>
+				        <div class="payRight">
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_6.htm">货到付款</a>|
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_7.htm">在线支付</a>|
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_9.htm">邮政汇款</a>|
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_10.htm">礼品卡或虚拟账户支付</a>|
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_8.htm">邮局网汇通汇款</a>|
+				            <a href="/styles/static.mvc?position=payareadetail&amp;page=/help/Servise_d_11.htm">电话支付</a>
+						</div>
+				    </div>
+				    <span class="blank10"></span>
+				</div>			
+			</div>			
+			<span class="blank25"></span>			
+			<div class="youhuiArea">
+			    <ul>
+			        <li>
+			            <a target="_blank" title="全场购买任意产品 加10元赠护手霜" href="http://www.vancl.com/Product_0035792/ShiShangFanBuShuangJianBeiBaoHuiSe.html">全场购买任意产品 加10元赠护手霜</a>
+			        </li>
+			        <li>
+	            		全场购买任意产品 加15元赠环保手提袋
+			        </li>
+			    </ul>
+			    <span class="blank10"></span>
+			</div>		
+		</div>
+	</div>
+	<span class="blank25"></span>
+	<div class="sideBarSettabArea">
+		<div class="sideBarArea">
+			<div class="setTab01">
+				<div class="setTabMenu01">
+				    <ul>
+				        <li class="hover" id="one1">产品属性</li>
+				    </ul>
+				</div>
+				<div class="setTabCon01">
+				    <div style="padding-top: 5px;" id="con_one_1">
+				        <ul>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>外观：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">基础</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>性别：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">女</span>
+				            </li>				            
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>款式：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">休闲皮鞋</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>材质：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;"></span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>面料：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">PU</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>内里：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">PU</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>鞋底：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">美耐底</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>跟型：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">高跟</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>元素：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">复古淑媛</span>
+				            </li>
+				            <li style="margin-top: 0px; line-height: 20px; clear: both;"><span style="float: left;">
+				                <strong>鞋头：</strong></span><span style="float: left; text-indent: 0px; line-height: 20px;">鱼嘴</span>
+				            </li>
+				        </ul>
+				        <div style="clear: both;">
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3>与同款相似产品相比较</h3>
+			    <div class="sideBarCon01">
+			        <span class="blank20"></span>
+			        <div class="sel05">
+			            <span>厚度：薄</span><span><span class="iconsel02"></span></span><span>厚</span></div>
+			        <span class="blank5"></span>
+			        
+			        <div class="sel05">
+			            <span>柔软：软</span><span><span class="iconsel02"></span></span><span>硬</span></div>
+			        <span class="blank5"></span>
+			        
+			        <div class="sel05">
+			            <span>重量：轻</span><span><span class="iconsel02"></span></span><span>重</span></div>
+			        <span class="blank5"></span>
+			        
+			        <div class="sel05">
+			            <span>透气：透</span><span><span class="iconsel02"></span></span><span>密</span></div>
+			        <span class="blank15"></span>			        
+			    </div>
+			</div>				
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3>看过此商品的顾客最终购买</h3>
+			    <div class="sideBarCon02">
+			        <ul>
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="百搭天后鱼嘴女鞋 酒红色" href="http://www.vancl.com/StyleDetail_8781_0046949_0/BaiDaTianHouYuZuiNvXieJiuHongSe.html?ref=dp_PurchasedAfterWatching_0_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="百搭天后鱼嘴女鞋 酒红色" src="/WEB-USER/products/shoes/0046949/small-0046949-1j201103101432331028.jpg"/>
+			                </a>
+		                    <div class="bl">
+			                    <div class="bl-bg">
+			                    	<span class="gray-bg"><span class="iconb1"></span></span>
+			                    </div>
+			                    <div class="blbuy">5.5% 购买</div>
+		                    </div>
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="百搭天后鱼嘴女鞋 酒红色" href="http://www.vancl.com/StyleDetail_8781_0046949_0/BaiDaTianHouYuZuiNvXieJiuHongSe.html?ref=dp_PurchasedAfterWatching_0_0046949">百搭天后鱼嘴女鞋 酒红色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="幻彩丝柔连裤长筒袜（高弹款） 黑色" href="http://www.vancl.com/StyleDetail_1975_0003337_0/HuanCaiSiRouLianKuChangTongWaefbc88GaoDanKuanefbc89HeiSe.html?ref=dp_PurchasedAfterWatching_1_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="幻彩丝柔连裤长筒袜（高弹款） 黑色" src="http://images.vancl.com/product/0/0/0/0003337/small/2010_4_12_17_42_19_4047.jpg"/>
+			                </a>
+							<div class="bl">
+								<div class="bl-bg">
+			                    	<span class="gray-bg"><span class="iconb1"></span></span>
+			                    </div>
+			                    <div class="blbuy">5% 购买</div>
+			                </div>
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="幻彩丝柔连裤长筒袜（高弹款） 黑色" href="http://www.vancl.com/StyleDetail_1975_0003337_0/HuanCaiSiRouLianKuChangTongWaefbc88GaoDanKuanefbc89HeiSe.html?ref=dp_PurchasedAfterWatching_1_0046949">幻彩丝柔连裤长筒袜（高弹款） 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥9.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="彩色七日隐形船袜（7双装） 黑+白+墨绿+青蓝+紫+黄+红" href="http://www.vancl.com/StyleDetail_3589_0009993_0/CaiSeQiRiYinXingChuanWaefbc887ShuangZhuangefbc89Hei2bBai2bMoLv2bQingLan2bZi2bHuang2bHong.html?ref=dp_PurchasedAfterWatching_2_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="彩色七日隐形船袜（7双装） 黑+白+墨绿+青蓝+紫+黄+红" src="http://images.vancl.com/product/0/0/0/0009993/small/2010_7_7_16_42_41_4039.jpg"/>
+			                </a>
+		                    <div class="bl">
+	                    		<div class="bl-bg">
+		                    		<span class="gray-bg"><span class="iconb1"></span></span>
+		                    	</div>
+		                    	<div class="blbuy">3.1% 购买</div>
+		                    </div>			                
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="彩色七日隐形船袜（7双装） 黑+白+墨绿+青蓝+紫+黄+红" href="http://www.vancl.com/StyleDetail_3589_0009993_0/CaiSeQiRiYinXingChuanWaefbc887ShuangZhuangefbc89Hei2bBai2bMoLv2bQingLan2bZi2bHuang2bHong.html?ref=dp_PurchasedAfterWatching_2_0046949">彩色七日隐形船袜（7双装） </a>
+			                </p>
+			                <p class="hotPrice">￥15.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="时尚风情气质女鞋 黑色" href="http://www.vancl.com/StyleDetail_8779_0046937_0/ShiShangFengQingQiZhiNvXieHeiSe.html?ref=dp_PurchasedAfterWatching_3_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="时尚风情气质女鞋 黑色" src="http://images.vancl.com/product/0/0/4/0046937/small/0046937-1j201103101603347552.jpg"/>
+			                </a>
+		                    <div class="bl">
+			                    <div class="bl-bg">
+			                    	<span class="gray-bg"><span class="iconb1"></span></span>
+			                    </div>
+			                    <div class="blbuy">2.8% 购买</div>
+		                    </div>
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="时尚风情气质女鞋 黑色" href="http://www.vancl.com/StyleDetail_8779_0046937_0/ShiShangFengQingQiZhiNvXieHeiSe.html?ref=dp_PurchasedAfterWatching_3_0046949">时尚风情气质女鞋 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="经典百搭纯色低帮帆布女鞋 白蓝色" href="http://www.vancl.com/StyleDetail_7687_0030081_0/JingDianBaiDaChunSeDiBangFanBuNvXieBaiLanSe.html?ref=dp_PurchasedAfterWatching_4_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="经典百搭纯色低帮帆布女鞋 白蓝色" src="http://images.vancl.com/product/0/0/3/0030081/small/0030081-1j201103101442032378.jpg"/>
+			                </a>
+		                    <div class="bl">
+			                    <div class="bl-bg">
+			                    	<span class="gray-bg"><span class="iconb1"></span></span>
+			                    </div>
+			                    <div class="blbuy">1.6% 购买</div>
+			               	</div>
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="经典百搭纯色低帮帆布女鞋 白蓝色" href="http://www.vancl.com/StyleDetail_7687_0030081_0/JingDianBaiDaChunSeDiBangFanBuNvXieBaiLanSe.html?ref=dp_PurchasedAfterWatching_4_0046949">经典百搭纯色低帮帆布女鞋 白蓝色</a>
+			                </p>
+			                <p class="hotPrice">￥59.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="PurchasedAfterWatching-track-0046949" class="track" target="_blank" title="Basic清凉人字拖（女款） 青苹果色" href="http://www.vancl.com/StyleDetail_11603_0072485_0/BasicQingLiangRenZiTuoefbc88NvKuanefbc89QingPingGuoSe.html?ref=dp_PurchasedAfterWatching_5_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="Basic清凉人字拖（女款） 青苹果色" src="http://images.vancl.com/product/0/0/7/0072485/small/0072485-1j201105061110116021.jpg"/>
+			                </a>
+		                    <div class="bl">
+		                    	<div class="bl-bg">
+			                    	<span class="gray-bg"><span class="iconb1"></span></span>
+			                    </div>
+			                    <div class="blbuy">1.6% 购买</div>
+		                    </div>
+			                <p class="hotName">
+			                    <a target="_blank" name="PurchasedAfterWatching-track-0046949" class="track" title="Basic清凉人字拖（女款） 青苹果色" href="http://www.vancl.com/StyleDetail_11603_0072485_0/BasicQingLiangRenZiTuoefbc88NvKuanefbc89QingPingGuoSe.html?ref=dp_PurchasedAfterWatching_5_0046949">Basic清凉人字拖（女款） 青苹果色</a>
+			                </p>
+			                <p class="hotPrice">￥9.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			        </ul>
+			        <span class="blank15"></span>
+			    </div>
+			</div>
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3>看过此商品的顾客还看过</h3>
+			    <div class="sideBarCon02">
+			        <ul>
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_SimilarWatching_0_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="时尚风情气质女鞋 紫色" src="http://images.vancl.com/product/0/0/4/0046936/small/0046936-1j201103101603347552.jpg"/>
+			                </a>			                
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarWatching-track-0046949" class="track" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_SimilarWatching_0_0046949">时尚风情气质女鞋 紫色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="奢华铆钉时尚女鞋 黑色" href="http://www.vancl.com/StyleDetail_8780_0046942_0/SheHuaMaoDingShiShangNvXieHeiSe.html?ref=dp_SimilarWatching_1_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="奢华铆钉时尚女鞋 黑色" src="http://images.vancl.com/product/0/0/4/0046942/small/0046942-1j201103101511039311.jpg"/>
+			               	</a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarWatching-track-0046949" class="track" title="奢华铆钉时尚女鞋 黑色" href="http://www.vancl.com/StyleDetail_8780_0046942_0/SheHuaMaoDingShiShangNvXieHeiSe.html?ref=dp_SimilarWatching_1_0046949">奢华铆钉时尚女鞋 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="优美蝴蝶花鱼嘴高跟女鞋 黑色" href="http://www.vancl.com/StyleDetail_7324_0043520_0/YouMeiHuDieHuaYuZuiGaoGenNvXieHeiSe.html?ref=dp_SimilarWatching_2_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="优美蝴蝶花鱼嘴高跟女鞋 黑色" src="http://images.vancl.com/product/0/0/4/0043520/small/0043520-1j201102111350283381.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                	<a target="_blank" name="SimilarWatching-track-0046949" class="track" title="优美蝴蝶花鱼嘴高跟女鞋 黑色" href="http://www.vancl.com/StyleDetail_7324_0043520_0/YouMeiHuDieHuaYuZuiGaoGenNvXieHeiSe.html?ref=dp_SimilarWatching_2_0046949">优美蝴蝶花鱼嘴高跟女鞋 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥229.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="派对女王高跟女凉鞋 香槟色" href="http://www.vancl.com/StyleDetail_11916_0063140_0/PaiDuiNvWangGaoGenNvLiangXieXiangZuoSe.html?ref=dp_SimilarWatching_3_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="派对女王高跟女凉鞋 香槟色" src="http://images.vancl.com/product/0/0/6/0063140/small/0063140-1j201105050934086901.jpg"/>
+			               	</a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarWatching-track-0046949" class="track" title="派对女王高跟女凉鞋 香槟色" href="http://www.vancl.com/StyleDetail_11916_0063140_0/PaiDuiNvWangGaoGenNvLiangXieXiangZuoSe.html?ref=dp_SimilarWatching_3_0046949">派对女王高跟女凉鞋 香槟色</a>
+			                </p>
+			                <p class="hotPrice">￥129.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="华美迷幻坡跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8789_0047200_0/HuaMeiMiHuanPoGenNvXieKaFeiSe.html?ref=dp_SimilarWatching_4_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="华美迷幻坡跟女鞋 咖啡色" src="http://images.vancl.com/product/0/0/4/0047200/small/0047200-1j201106011124178667.jpg"/>
+			               	</a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarWatching-track-0046949" class="track" title="华美迷幻坡跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8789_0047200_0/HuaMeiMiHuanPoGenNvXieKaFeiSe.html?ref=dp_SimilarWatching_4_0046949">华美迷幻坡跟女鞋 咖啡色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="SimilarWatching-track-0046949" class="track" target="_blank" title="魅力职场气质高跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8782_0047155_0/ZuoLiZhiChangQiZhiGaoGenNvXieKaFeiSe.html?ref=dp_SimilarWatching_5_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="魅力职场气质高跟女鞋 咖啡色" src="http://images.vancl.com/product/0/0/4/0047155/small/0047155-1j201103101601347111.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarWatching-track-0046949" class="track" title="魅力职场气质高跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8782_0047155_0/ZuoLiZhiChangQiZhiGaoGenNvXieKaFeiSe.html?ref=dp_SimilarWatching_5_0046949">魅力职场气质高跟女鞋 咖啡色</a>
+			              	</p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			        </ul>
+			        <span class="blank15"></span>
+			    </div>
+			</div>
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3> 购买此商品的顾客还购买过</h3>
+			    <div class="sideBarCon02">
+			        <ul>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_SimilarPurchase_0_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="时尚风情气质女鞋 紫色" src="http://images.vancl.com/product/0/0/4/0046936/small/0046936-1j201103101603347552.jpg"/>
+			               	</a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_SimilarPurchase_0_0046949">时尚风情气质女鞋 紫色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="奢华铆钉时尚女鞋 灰色" href="http://www.vancl.com/StyleDetail_8780_0046943_0/SheHuaMaoDingShiShangNvXieHuiSe.html?ref=dp_SimilarPurchase_1_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="奢华铆钉时尚女鞋 灰色" src="http://images.vancl.com/product/0/0/4/0046943/small/0046943-1j201103101511039311.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="奢华铆钉时尚女鞋 灰色" href="http://www.vancl.com/StyleDetail_8780_0046943_0/SheHuaMaoDingShiShangNvXieHuiSe.html?ref=dp_SimilarPurchase_1_0046949">奢华铆钉时尚女鞋 灰色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="优美蝴蝶花鱼嘴高跟女鞋 黑色" href="http://www.vancl.com/StyleDetail_7324_0043520_0/YouMeiHuDieHuaYuZuiGaoGenNvXieHeiSe.html?ref=dp_SimilarPurchase_2_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="优美蝴蝶花鱼嘴高跟女鞋 黑色" src="http://images.vancl.com/product/0/0/4/0043520/small/0043520-1j201102111350283381.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="优美蝴蝶花鱼嘴高跟女鞋 黑色" href="http://www.vancl.com/StyleDetail_7324_0043520_0/YouMeiHuDieHuaYuZuiGaoGenNvXieHeiSe.html?ref=dp_SimilarPurchase_2_0046949">优美蝴蝶花鱼嘴高跟女鞋 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥229.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="华美迷幻坡跟女鞋 红色" href="http://www.vancl.com/StyleDetail_8789_0047199_0/HuaMeiMiHuanPoGenNvXieHongSe.html?ref=dp_SimilarPurchase_3_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="华美迷幻坡跟女鞋 红色" src="http://images.vancl.com/product/0/0/4/0047199/small/0047199-1j201106011124178667.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="华美迷幻坡跟女鞋 红色" href="http://www.vancl.com/StyleDetail_8789_0047199_0/HuaMeiMiHuanPoGenNvXieHongSe.html?ref=dp_SimilarPurchase_3_0046949">华美迷幻坡跟女鞋 红色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="Fair lady 风情半裙 黑色" href="http://www.vancl.com/StyleDetail_9710_0055180_0/FairladyFengQingBanQunHeiSe.html?ref=dp_SimilarPurchase_4_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="Fair lady 风情半裙 黑色" src="http://images.vancl.com/product/0/0/5/0055180/small/0055180-0201105261108477886.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="Fair lady 风情半裙 黑色" href="http://www.vancl.com/StyleDetail_9710_0055180_0/FairladyFengQingBanQunHeiSe.html?ref=dp_SimilarPurchase_4_0046949">Fair lady 风情半裙 黑色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="SimilarPurchase-track-0046949" class="track" target="_blank" title="梦幻海军风高跟鱼嘴女鞋 浅卡其色" href="http://www.vancl.com/StyleDetail_7323_0043544_0/MengHuanHaiJunFengGaoGenYuZuiNvXieQianKaQiSe.html?ref=dp_SimilarPurchase_5_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风高跟鱼嘴女鞋 浅卡其色" src="http://images.vancl.com/product/0/0/4/0043544/small/0043544-1j201101211127457020.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="SimilarPurchase-track-0046949" class="track" title="梦幻海军风高跟鱼嘴女鞋 浅卡其色" href="http://www.vancl.com/StyleDetail_7323_0043544_0/MengHuanHaiJunFengGaoGenYuZuiNvXieQianKaQiSe.html?ref=dp_SimilarPurchase_5_0046949">梦幻海军风高跟鱼嘴女鞋 浅卡其色</a>
+			                </p>
+			                <p class="hotPrice">￥229.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			        </ul>
+			        <span class="blank15"></span>
+			    </div>
+			</div>
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3>同类最热销</h3>
+			    <div class="sideBarCon02">
+			        <ul>			            
+			            <li>
+			            	<a name="Hot-track-0046949" class="track" target="_blank" title="梦幻海军风平底女鞋 杏白条" href="http://www.vancl.com/StyleDetail_7380_0037066_0/MengHuanHaiJunFengPingDiNvXieXingBaiTiao.html?ref=dp_Hot_0_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风平底女鞋 杏白条" src="http://images.vancl.com/product/0/0/3/0037066/small/0037066-1j201101211122156703.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="Hot-track-0046949" class="track" title="梦幻海军风平底女鞋 杏白条" href="http://www.vancl.com/StyleDetail_7380_0037066_0/MengHuanHaiJunFengPingDiNvXieXingBaiTiao.html?ref=dp_Hot_0_0046949">梦幻海军风平底女鞋 杏白条</a>
+			                </p>
+			                <p class="hotPrice">￥49.00</p>
+			           		<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="Hot-track-0046949" class="track" target="_blank" title="梦幻海军风平底女鞋 黑白条" href="http://www.vancl.com/StyleDetail_7380_0037064_0/MengHuanHaiJunFengPingDiNvXieHeiBaiTiao.html?ref=dp_Hot_1_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风平底女鞋 黑白条" src="http://images.vancl.com/product/0/0/3/0037064/small/0037064-1j201101211122156703.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="Hot-track-0046949" class="track" title="梦幻海军风平底女鞋 黑白条" href="http://www.vancl.com/StyleDetail_7380_0037064_0/MengHuanHaiJunFengPingDiNvXieHeiBaiTiao.html?ref=dp_Hot_1_0046949">梦幻海军风平底女鞋 黑白条</a>
+			                </p>
+			                <p class="hotPrice">￥49.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="Hot-track-0046949" class="track" target="_blank" title="梦幻海军风平底女鞋 蓝白条" href="http://www.vancl.com/StyleDetail_7380_0037065_0/MengHuanHaiJunFengPingDiNvXieLanBaiTiao.html?ref=dp_Hot_2_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风平底女鞋 蓝白条" src="http://images.vancl.com/product/0/0/3/0037065/small/0037065-1j201101211122156703.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="Hot-track-0046949" class="track" title="梦幻海军风平底女鞋 蓝白条" href="http://www.vancl.com/StyleDetail_7380_0037065_0/MengHuanHaiJunFengPingDiNvXieLanBaiTiao.html?ref=dp_Hot_2_0046949">梦幻海军风平底女鞋 蓝白条</a>
+			                </p>
+			                <p class="hotPrice">￥49.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="Hot-track-0046949" class="track" target="_blank" title="梦幻海军风平底女鞋 红白条" href="http://www.vancl.com/StyleDetail_7380_0037067_0/MengHuanHaiJunFengPingDiNvXieHongBaiTiao.html?ref=dp_Hot_3_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风平底女鞋 红白条" src="http://images.vancl.com/product/0/0/3/0037067/small/0037067-1j201101211122156703.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="Hot-track-0046949" class="track" title="梦幻海军风平底女鞋 红白条" href="http://www.vancl.com/StyleDetail_7380_0037067_0/MengHuanHaiJunFengPingDiNvXieHongBaiTiao.html?ref=dp_Hot_3_0046949">梦幻海军风平底女鞋 红白条</a>
+			                </p>
+			                <p class="hotPrice">￥49.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			            <li>
+			            	<a name="Hot-track-0046949" class="track" target="_blank" title="魅力蕾丝时尚休闲女鞋 酒红色" href="http://www.vancl.com/StyleDetail_8741_0039437_0/ZuoLiLeiSiShiShangXiuXianNvXieJiuHongSe.html?ref=dp_Hot_4_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="魅力蕾丝时尚休闲女鞋 酒红色" src="http://images.vancl.com/product/0/0/3/0039437/small/0039437-1j201104111316130025.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="Hot-track-0046949" class="track" title="魅力蕾丝时尚休闲女鞋 酒红色" href="http://www.vancl.com/StyleDetail_8741_0039437_0/ZuoLiLeiSiShiShangXiuXianNvXieJiuHongSe.html?ref=dp_Hot_4_0046949">魅力蕾丝时尚休闲女鞋 酒红色</a>
+			                </p>
+			                <p class="hotPrice">￥59.00</p>
+			            	<span class="blank0"></span>
+			            </li>
+			        </ul>
+			        <span class="blank15"></span>
+			    </div>
+			</div>
+			<span class="blank20"></span>
+			<div class="sideBarCommon">
+			    <h3>我最近看过</h3>
+			    <div class="sideBarCon02">
+			        <ul>
+			            <li>
+			            	<a name="History-track-0046949" class="track" target="_blank" title="梦幻海军风平底女鞋 红白条" href="http://www.vancl.com/StyleDetail_7380_0037067_0/MengHuanHaiJunFengPingDiNvXieHongBaiTiao.html?ref=dp_History_0_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="梦幻海军风平底女鞋 红白条" src="http://images.vancl.com/product/0/0/3/0037067/small/0037067-1j201101211122156703.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="History-track-0046949" class="track" title="梦幻海军风平底女鞋 红白条" href="http://www.vancl.com/StyleDetail_7380_0037067_0/MengHuanHaiJunFengPingDiNvXieHongBaiTiao.html?ref=dp_History_0_0046949">梦幻海军风平底女鞋 红白条</a>
+			                </p>
+			                <p class="hotPrice">￥49.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="History-track-0046949" class="track" target="_blank" title="魅力职场气质高跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8782_0047155_0/ZuoLiZhiChangQiZhiGaoGenNvXieKaFeiSe.html?ref=dp_History_1_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="魅力职场气质高跟女鞋 咖啡色" src="http://images.vancl.com/product/0/0/4/0047155/small/0047155-1j201103101601347111.jpg"/>
+			               	</a>
+			                <p class="hotName">
+			                    <a target="_blank" name="History-track-0046949" class="track" title="魅力职场气质高跟女鞋 咖啡色" href="http://www.vancl.com/StyleDetail_8782_0047155_0/ZuoLiZhiChangQiZhiGaoGenNvXieKaFeiSe.html?ref=dp_History_1_0046949">魅力职场气质高跟女鞋 咖啡色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			            <li>
+			            	<a name="History-track-0046949" class="track" target="_blank" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_History_2_0046949">
+			                	<img style="margin-bottom: 5px; margin-left: 10px;" alt="时尚风情气质女鞋 紫色" src="http://images.vancl.com/product/0/0/4/0046936/small/0046936-1j201103101603347552.jpg"/>
+			                </a>
+			                <p class="hotName">
+			                    <a target="_blank" name="History-track-0046949" class="track" title="时尚风情气质女鞋 紫色" href="http://www.vancl.com/StyleDetail_8779_0046936_0/ShiShangFengQingQiZhiNvXieZiSe.html?ref=dp_History_2_0046949">时尚风情气质女鞋 紫色</a>
+			                </p>
+			                <p class="hotPrice">￥99.00</p>
+			            	<span class="blank0"></span>
+			            </li>			            
+			        </ul>
+			        <span class="blank15"></span>
+			    </div>
+			</div>
+			<span class="blank20"></span>
+		</div>
+		<div class="RsetTabArea">			
+			<div class="RsetTabMenu">
+			    <ul>
+			        <li class="hover">商品信息</li>
+			        <li class="down">购买评论<strong>(51)</strong></li>
+			        <li class="down">疑难提问<strong>(9)</strong></li>
+			        <li class="down">售后服务</li>
+			        <li class="three5 down">如何购买</li>
+			    </ul>
+			</div>
+			<div class="RsetTabCon">
+				<span class="blank5"></span>
+				<div class="area1">
+					<div style="position: relative; top: 0px; right: 0px; z-index: 0;">
+					    <h3>产品描述：</h3>
+					    <span class="blank8"></span>
+					    <p style="line-height: 20px;" class="productMS">
+							        鞋面采用镜面pu材质，抒发女孩蓄势待发的甜美力量；鞋头优雅鱼嘴造型，展示女性天生拥有的优雅姿态；高跟设计，优化女性整体身形比例；耐磨防滑大底，在穿着上更加贴心舒适。
+							<br/>&nbsp; &nbsp; 跟高：7.5cm
+							<br/>&nbsp; &nbsp; 保养说明：
+							<br/>&nbsp; &nbsp; 1、半湿的布轻轻擦拭即可。
+							<br/>&nbsp; &nbsp; 2、保持干燥,雨天不宜穿着,若被弄湿受潮,将其置于阴凉通风处自然吹干,用干布轻擦,去除污渍。
+							<br/>&nbsp; &nbsp; 3、穿用时不宜做剧烈运动，定期查看天皮(鞋跟着地面的添加层),发现有深度磨损应及时更换。
+							<br/>&nbsp; &nbsp; 4、切忌爆晒,受潮,火烤,水洗,锐物碰撞和接触化学溶剂,以免造成损坏。
+							<br/>&nbsp; &nbsp; 5、因内里属染色工艺制成,故遇到深色内里部分请在前期穿着时使用深色袜子,避免褪色困扰。
+							<br/>&nbsp; &nbsp; 6、尽量避免连续多天穿同一双鞋,使鞋保持干燥及弹性,避免在以下不适当情况下穿着，雨天、运动、骑车、湿滑地面、不平路面、雪地、沙地等，延长鞋子使用寿命。
+					    </p>
+					    <span class="blank15"></span>
+					    <div id="sizeCal_link" class="sizeCal_linkhide">
+					    	<h3>
+						       	产品尺码表：　<a target="_blank" href="/help/frssbx.htm">如何测量尺码</a>
+						    </h3>
+						    <span class="blank15"></span>
+						    <div class="sizeList">
+						        <table> 
+								<tbody>
+									<tr>
+									  <td class="col01">欧洲鞋码</td>
+									  <td class="col02">中国鞋码</td>
+									</tr>
+									<tr>
+									  <td>35</td>
+									  <td>225</td>
+									</tr>
+									<tr>
+									  <td>36</td>
+									  <td>230</td>
+									</tr>
+									<tr>
+									  <td>37</td>
+									  <td>235</td>
+									</tr>
+									<tr>
+									  <td>38</td>
+									  <td>240</td>
+									</tr>
+									<tr>
+									  <td>39</td>
+									  <td>245</td>
+									</tr>
+									<tr>
+									  <td>40</td>
+									  <td>250</td>
+									</tr>
+								</tbody>
+								</table>
+						    </div>
+					    	<span class="blank25"></span>
+					    	<h3>详情图片：</h3>
+					    	<span class="blank8"></span>
+					    	<h3 style="font-weight: normal;">
+        						<span>注：</span><a href="#vertical" target="_self">商品实际颜色以静物图为准</a>
+        					</h3>
+        					<div class="imgCon">
+						        <ul>
+						            <li><img src="http://images.vancl.com/others/2011/4/8/bdth01.jpg" style="display: inline;"/></li>
+					            	<li><img src="http://images.vancl.com/others/2011/4/8/bdth02.jpg" style="display: inline;"/></li>
+					            	<li><img src="http://images.vancl.com/others/2011/4/8/bdth03.jpg" style="display: inline;"/></li>
+									<li class="relatedshow" id="relatedImage_0">
+										<img src="http://images.vancl.com/Others/2011/3/2/0036861-0302-02.jpg" style="display: inline;"/>
+										<div class="assort">
+											<div class="assorttitle">搭配单品</div>
+											<div class="assortlist">
+												<ul>
+												   <li>
+												    <div class="assortpic">
+												    	<a href="http://www.vancl.com/StyleDetail_7880_0036861_0/MuErBianShiShangChangXiuChenShanLuoSe.html?ref=dp_related_0_0036861" target="_blank">
+												    		<img src="http://images.vancl.com/product/0/0/3/0036861/small/0036861-0201103021749458558.jpg" style="display: inline;"/>
+												    	</a>
+												    </div>
+												    <div class="assortdetail">
+												     <p><a href="http://www.vancl.com/StyleDetail_7880_0036861_0/MuErBianShiShangChangXiuChenShanLuoSe.html?ref=dp_related_0_0036861" target="_blank">木耳边时尚长袖衬衫 裸色</a></p>
+												        <p class="assortprice">￥149.00</p>
+												    </div>
+												   </li>
+												</ul>
+											</div>
+										</div>
+									</li>   
+									<li class="relatedshow" id="relatedImage_1">
+										<img src="http://images.vancl.com/Others/2011/3/2/0036861-0302-1.jpg" style="display: inline;"/>
+										<div class="assort">
+											<div class="assorttitle">搭配单品</div>
+											<div class="assortlist">
+												 <ul>	    
+											        <li>
+											        <div class="assortpic">
+											        	<a href="http://www.vancl.com/StyleDetail_7880_0036861_0/MuErBianShiShangChangXiuChenShanLuoSe.html?ref=dp_related_0_0036861" target="_blank">
+											        		<img src="http://images.vancl.com/product/0/0/3/0036861/small/0036861-0201103021749458558.jpg" style="display: inline;"/>
+											        	</a>
+											        </div>
+											        <div class="assortdetail">
+											         <p><a href="http://www.vancl.com/StyleDetail_7880_0036861_0/MuErBianShiShangChangXiuChenShanLuoSe.html?ref=dp_related_0_0036861" target="_blank">木耳边时尚长袖衬衫 裸色</a></p>
+											            <p class="assortprice">￥149.00</p>
+											        </div>
+											        </li>	    
+												</ul>
+											</div>
+										</div>
+									</li>
+						        </ul>
+						    </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<span class="blank15" style="display: block;"></span>
+			<div class="liketabfg" style="display: block;">
+				<span class="fgnameleft">购买评论</span>
+				<span class="fgbgright"></span>
+				<span class="blank0"></span>
+			</div>
+			<div id="gmpl" class="RsetTabCon">
+				<span class="blank10"></span>
+				<div class="pingfen">
+				    <ul>
+				        <li>
+				            <h2>
+				                <strong>综合评分:</strong>
+				                <img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag04.gif"/>
+				            </h2>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 37.2549%;"></strong>
+				                </span>
+				                <span>19</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 37.2549%;"></strong>
+				                </span>
+				                <span>19</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 21.5686%;"></strong>
+				                </span>
+				                <span>11</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 3.92157%;"></strong>
+				                </span>
+				                <span>2</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 0%;"></strong>
+				                </span>
+				                <span>0</span>
+				          	</div>				            
+				            <span class="blank10"></span>
+				        </li>
+				        <li>
+				            <h2>
+				                <strong>外观评分:</strong>
+				                <img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag04.gif"/>
+				            </h2>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 41.1765%;"></strong>
+				                </span>
+				                <span>21</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 41.1765%;"></strong>
+				                </span>
+				                <span>21</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 15.6863%;"></strong>
+				                </span>
+				                <span>8</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 1.96078%;"></strong>
+				                </span>
+				                <span>1</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 0%;"></strong>
+				                </span>
+				                <span>0</span>
+				            </div>
+				            <span class="blank10"></span>
+				        </li>
+				        <li style="margin-right: 0pt;">
+				            <h2>
+				                <strong>舒适度:</strong>
+				                <img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag03.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag04.gif"/><img src="//images.vancl.com/Others/2010/8/20/tag05.gif"/>
+				            </h2>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 25.4902%;"></strong>
+				                </span>
+				                <span>13</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 21.5686%;"></strong>
+				                </span>
+				                <span>11</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 35.2941%;"></strong>
+				                </span>
+				                <span>18</span>
+				       		</div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 9.80392%;"></strong>
+				                </span>
+				                <span>5</span>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="starArea">
+				                <span>
+				                    <img src="http://images.vancl.com/Others/2010/8/20/start01.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/><img src="http://images.vancl.com/Others/2010/8/20/start03.gif"/>
+				                </span>
+				                <span class="pingfenLine">
+				                	<strong style="width: 7.84314%;"></strong>
+				                </span>
+				                <span>4</span>
+				            </div>
+				            <span class="blank10"></span>
+				        </li>				        
+				    </ul>
+				</div>
+				<span class="blank15"></span>
+				<div class="sizePingjia">
+				    <ul>
+				        <li style="width: 303px;">
+				        	<span>尺码</span>
+							<strong>11% 的用户认为实际尺码[<em>偏大</em>]</strong>
+				        </li>
+			            <li style="width: 220px;">
+			                <strong>66% 的用户认为实际尺码[<em>合适</em>]</strong>
+			            </li>
+			            <li style="width: 220px;">
+			                <strong>21% 的用户认为实际尺码[<em>偏小</em>]</strong>
+			            </li>
+				    </ul>
+				    <span class="blank0"></span>
+				</div>
+				<span class="blank20"></span>				
+				<div class="area2 root">				    
+				    <div class="area3Head">
+				        <span class="area3Sp01">
+				            <img title="" alt="" src="http://images.vancl.com/Others/2010/8/20/tag02.gif"/>
+				        </span>
+				        <span class="area3Sp02">购买评论</span> <span class="area3Sp03">共<strong id="feedbackcount">51</strong>条</span><span>&nbsp;</span>
+				        <span style="float: right; margin-right: 40px;" class="buttonred"><a style="color: White;" name="deny" id="pinglun" href="/Styles/AjaxComment.mvc?productCode=0046949&amp;type=0">我要评论</a></span>
+				    </div>
+				    <div class="allUser">
+						所有打分及评论均来自已购买本商品用户
+				    </div>
+				    <div id="styleAssesseslist">				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				        <span class="blank10"></span>
+				        <div class="area2Head">
+				            <ul>
+				                <li class="area2HeadLeft">好</li>
+				                <li class="area2HeadCenter">来自：lxl197025@***</li>
+				                <li class="area2HeadRight">2011-6-1 13:43:25</li>
+				            </ul>
+				        </div>
+				        <div class="area2Con">
+				            <span class="blank10"></span>
+				            <p class="area2ConP">鞋子很漂亮，穿着蛮舒服，平时穿37码的，这次也是挑37码，不觉得小</p>
+				            <div class="selCS">
+				                <span>该用户购买</span>
+				                <span>颜色：黑色</span>
+								<span>尺码：37</span>
+				            </div>
+				            <span class="blank0"></span>				            
+				            <div class="new-comment">
+				                <div class="new-left">
+				                    <span class="thiscomment">这条评论对我：</span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                    <span class="new-btn"><a href="#/styles/ajaxfeedbackvote.mvc?id=2135288&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                    <p class="want-reply"><a href="#/styles/ajaxfeedbackreplylist.mvc?id=2135288&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				                </div>
+				                <div class="new-right">
+				                    <span class="new-share">分享到：</span>
+				                    <a title="新浪" class="share4sina" href="#"><img alt="新浪" src="//images.vancl.com/Others/2011/4/14/sina.jpg"/></a>
+				                    <a title="豆瓣" class="share4dou" href="#"><img alt="豆瓣" src="//images.vancl.com/Others/2011/4/14/dou.jpg"/></a>
+				                    <a title="开心" class="share4kai" href="#"><img alt="开心" src="//images.vancl.com/Others/2011/4/14/kai.jpg"/></a>
+				                </div>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				        </div>				        
+				    </div>
+				    <div class="area2Page" id="styleAssessesPager"><ul><li><a><strong>1</strong></a></li><li><a href="javascript:void(0)">2</a></li><li><a href="javascript:void(0)">3</a></li><li><a href="javascript:void(0)">4</a></li><li><a href="javascript:void(0)">5</a></li><li><a href="javascript:void(0)">6</a></li><li class="pageRight"><a href="javascript:void(0)">下一页</a></li></ul></div>				    
+				</div>
+				
+			</div>
+			<span class="blank15" style="display: block;"></span>
+			<div class="liketabfg" style="display: block;">
+				<span class="fgnameleft">疑难提问</span>
+				<span class="fgbgright"></span>
+				<span class="blank0"></span>
+			</div>
+			<div id="yntw" class="RsetTabCon" style="display: block;">			
+				<span class="blank10"></span>
+				<div class="area3 root">				    
+				    <div class="area3Head" style="float: left; width: 100%;">
+				        <span class="area3Sp01" style="float: left;">
+				            <img src="http://images.vancl.com/Others/2010/8/20/tag01.gif"/>
+				        </span> 
+				        <span class="area3Sp02">疑难提问</span> 
+				        <span class="area3Sp03" style="margin-right: 10px; margin-left: 10px; float: left;">共<strong id="quizcount">9</strong>条</span>
+				        <span id="tiwen" style="float: right; margin-right: 40px;" class="buttonred">我要提问</span>				        
+				        <span style="float: right;">
+				            <select id="questionOrderType" style="float: left;">
+				                <option value="0" selected="selected" style="float: left;">更新时间</option>
+				                <option value="1">回复次数</option>
+				            </select>
+				        </span>
+				        <span style="float: right;">排序方式：</span>				        
+				    </div>				    
+				    <div id="stylequestionslist">				        
+				        <div class="area3Con">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>957960***@***　问：<strong>退单</strong></h4>
+				                <h5>2011-5-27 8:50:35</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+		                		我昨天四点多下的单，今天看到说鞋偏小。我就想换大一码的，点了一下取消订单。显是成功了。但我不确定有没有取消。
+				            </div>
+				            <span class="blank15"></span>				            
+				            <h6>管理员127　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客您好，请您出示您的订单号，以便我们能为您正确的查询，如果订单在未出库的状态下是可以修改订单的，如果已出库，建议您在签收商品后在进行退换货服务，或拒签订单，希望对您有所帮助，谢谢您的支持^_^ 14</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>				                
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=435726&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>				            
+				            <p class="myAsk">共有　1　条回答 
+				            <a href="/styles/AjaxAnswer.mvc?id=1154044&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con area3ConBg">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>kuangcongyan@***　问：<strong>退换货状态异常是什么意思</strong></h4>
+				                <h5>2011-5-26 8:49:53</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+				               	 我买的鞋子码数不对，办理了两次换货，第一次是直接拿过来换的，第二次把我的鞋收走了。没有帮我换，我看了我的账户里面退换货订单里面显示“状态异常”这是什么意思？
+				            </div>
+				            <span class="blank15"></span>
+				            
+				            <h6>管理员329　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客：建议您将您的订单号码告知我们，我们可以为您查询，您也可以发送邮件至service@vancl.com 会有工作人员为您查询，希望可以帮到您！(*^__^*)</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=433193&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>
+				            <p class="myAsk">共有　1　条回答
+				            <a href="/styles/AjaxAnswer.mvc?id=1149658&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>957960***@***　问：<strong>退单</strong></h4>
+				                <h5>2011-5-27 8:50:35</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+		                		我昨天四点多下的单，今天看到说鞋偏小。我就想换大一码的，点了一下取消订单。显是成功了。但我不确定有没有取消。
+				            </div>
+				            <span class="blank15"></span>				            
+				            <h6>管理员127　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客您好，请您出示您的订单号，以便我们能为您正确的查询，如果订单在未出库的状态下是可以修改订单的，如果已出库，建议您在签收商品后在进行退换货服务，或拒签订单，希望对您有所帮助，谢谢您的支持^_^ 14</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>				                
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=435726&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>				            
+				            <p class="myAsk">共有　1　条回答 
+				            <a href="/styles/AjaxAnswer.mvc?id=1154044&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con area3ConBg">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>kuangcongyan@***　问：<strong>退换货状态异常是什么意思</strong></h4>
+				                <h5>2011-5-26 8:49:53</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+				               	 我买的鞋子码数不对，办理了两次换货，第一次是直接拿过来换的，第二次把我的鞋收走了。没有帮我换，我看了我的账户里面退换货订单里面显示“状态异常”这是什么意思？
+				            </div>
+				            <span class="blank15"></span>
+				            
+				            <h6>管理员329　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客：建议您将您的订单号码告知我们，我们可以为您查询，您也可以发送邮件至service@vancl.com 会有工作人员为您查询，希望可以帮到您！(*^__^*)</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=433193&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>
+				            <p class="myAsk">共有　1　条回答
+				            <a href="/styles/AjaxAnswer.mvc?id=1149658&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>957960***@***　问：<strong>退单</strong></h4>
+				                <h5>2011-5-27 8:50:35</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+		                		我昨天四点多下的单，今天看到说鞋偏小。我就想换大一码的，点了一下取消订单。显是成功了。但我不确定有没有取消。
+				            </div>
+				            <span class="blank15"></span>				            
+				            <h6>管理员127　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客您好，请您出示您的订单号，以便我们能为您正确的查询，如果订单在未出库的状态下是可以修改订单的，如果已出库，建议您在签收商品后在进行退换货服务，或拒签订单，希望对您有所帮助，谢谢您的支持^_^ 14</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>				                
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=435726&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>				            
+				            <p class="myAsk">共有　1　条回答 
+				            <a href="/styles/AjaxAnswer.mvc?id=1154044&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con area3ConBg">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>kuangcongyan@***　问：<strong>退换货状态异常是什么意思</strong></h4>
+				                <h5>2011-5-26 8:49:53</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+				               	 我买的鞋子码数不对，办理了两次换货，第一次是直接拿过来换的，第二次把我的鞋收走了。没有帮我换，我看了我的账户里面退换货订单里面显示“状态异常”这是什么意思？
+				            </div>
+				            <span class="blank15"></span>
+				            
+				            <h6>管理员329　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客：建议您将您的订单号码告知我们，我们可以为您查询，您也可以发送邮件至service@vancl.com 会有工作人员为您查询，希望可以帮到您！(*^__^*)</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=433193&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>
+				            <p class="myAsk">共有　1　条回答
+				            <a href="/styles/AjaxAnswer.mvc?id=1149658&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>957960***@***　问：<strong>退单</strong></h4>
+				                <h5>2011-5-27 8:50:35</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+		                		我昨天四点多下的单，今天看到说鞋偏小。我就想换大一码的，点了一下取消订单。显是成功了。但我不确定有没有取消。
+				            </div>
+				            <span class="blank15"></span>				            
+				            <h6>管理员127　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客您好，请您出示您的订单号，以便我们能为您正确的查询，如果订单在未出库的状态下是可以修改订单的，如果已出库，建议您在签收商品后在进行退换货服务，或拒签订单，希望对您有所帮助，谢谢您的支持^_^ 14</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>				                
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=435726&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>				            
+				            <p class="myAsk">共有　1　条回答 
+				            <a href="/styles/AjaxAnswer.mvc?id=1154044&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con area3ConBg">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>kuangcongyan@***　问：<strong>退换货状态异常是什么意思</strong></h4>
+				                <h5>2011-5-26 8:49:53</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+				               	 我买的鞋子码数不对，办理了两次换货，第一次是直接拿过来换的，第二次把我的鞋收走了。没有帮我换，我看了我的账户里面退换货订单里面显示“状态异常”这是什么意思？
+				            </div>
+				            <span class="blank15"></span>
+				            
+				            <h6>管理员329　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客：建议您将您的订单号码告知我们，我们可以为您查询，您也可以发送邮件至service@vancl.com 会有工作人员为您查询，希望可以帮到您！(*^__^*)</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=433193&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>
+				            <p class="myAsk">共有　1　条回答
+				            <a href="/styles/AjaxAnswer.mvc?id=1149658&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>957960***@***　问：<strong>退单</strong></h4>
+				                <h5>2011-5-27 8:50:35</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+		                		我昨天四点多下的单，今天看到说鞋偏小。我就想换大一码的，点了一下取消订单。显是成功了。但我不确定有没有取消。
+				            </div>
+				            <span class="blank15"></span>				            
+				            <h6>管理员127　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客您好，请您出示您的订单号，以便我们能为您正确的查询，如果订单在未出库的状态下是可以修改订单的，如果已出库，建议您在签收商品后在进行退换货服务，或拒签订单，希望对您有所帮助，谢谢您的支持^_^ 14</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>				                
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=435726&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=435726&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>				            
+				            <p class="myAsk">共有　1　条回答 
+				            <a href="/styles/AjaxAnswer.mvc?id=1154044&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>				        
+				        <div class="area3Con area3ConBg">
+				            <span class="blank20"></span>
+				            <div class="userQuesArea">
+				                <h4>kuangcongyan@***　问：<strong>退换货状态异常是什么意思</strong></h4>
+				                <h5>2011-5-26 8:49:53</h5>
+				            </div>
+				            <div style="clear: both; padding: 10px;">
+				               	 我买的鞋子码数不对，办理了两次换货，第一次是直接拿过来换的，第二次把我的鞋收走了。没有帮我换，我看了我的账户里面退换货订单里面显示“状态异常”这是什么意思？
+				            </div>
+				            <span class="blank15"></span>
+				            
+				            <h6>管理员329　回答：</h6>
+				            <span class="blank8"></span>
+				            <p class="adminAsk">亲爱的顾客：建议您将您的订单号码告知我们，我们可以为您查询，您也可以发送邮件至service@vancl.com 会有工作人员为您查询，希望可以帮到您！(*^__^*)</p>
+				            <div class="new-comment">
+				                <span class="thiscomment">这条回复对我：</span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=pros">有用<span class="acolora10000">(0)</span></a></span>
+				                <span class="new-btn"><a href="#/styles/ajaxquizvote.mvc?id=433193&amp;t=cons">没用<span class="acolora10000">(0)</span></a></span>
+				                <p class="want-reply"><a href="#/styles/ajaxquizreplylist.mvc?id=433193&amp;first=true" class="showfile">我要回复<span class="acolora10000">(0)</span></a></p>
+				            </div>
+				            <span class="blank10"></span>
+				            <div class="notesNewpl" style="display: none;"></div>
+				            <span class="blank8"></span>
+				            <p class="myAsk">共有　1　条回答
+				            <a href="/styles/AjaxAnswer.mvc?id=1149658&amp;styleId=8781">[我要回答]</a></p>
+				            <span class="blank20"></span>
+				        </div>
+				    </div>
+				    <div style="border-top: 1px solid rgb(225, 225, 225);" class="area2Page" id="stylequestionsPager"><ul><li><a><strong>1</strong></a></li><li><a href="javascript:void(0)">2</a></li><li class="pageRight"><a href="javascript:void(0)">下一页</a></li></ul></div>
+				</div>
+
+			</div>
+			<div id="shfw" class="RsetTabCon" style="display: block;">
+				<span class="blank20"></span>
+				<div class="area4">
+				    <h2>
+				        <span style="float: right; margin-right: 10px; font-weight: normal; font-size: 12px;">
+				            <a title="" href="http://www.vancl.com/help/Returned_1.htm" target="_blank">查看退换货政策&gt;&gt;</a>
+				        </span>◎如何办理退换货：
+				    </h2>
+				    <div class="area4Con">
+					    <ul>
+					        <li><em>1.</em>如果您的订单需要办理退换货，请您务必先通过电话或邮件的方式与VANCL客服中心联系。</li><li>客服电话：400-650-7099</li><li>
+					            客服邮件：service@vancl.com</li><li><em>2.</em>北京、上海（除崇明外）、广州、深圳、江苏、四川、重庆、安徽、湖北、湖南、浙江、山东、江西、福建、贵州、云南、广西、海南等部分地区已开通上门退换货业务，您可进入<a href="http://www.vancl.com/help/Transfer.htm" target="_blank">帮助中心</a>查询您所在区域是否已开通上门退换货业务，如需办理请致电VANCL客服热线。
+					            </li>
+					        <li>1）客服人员接到您的电话后会及时为您登记退换货单，退换货单登记后配送人员会带着更换后的商品/退货单为您上门办理退换货服务。 </li>
+					        <li>2）为您上门办理退换货时请您将所需退回商品、发货单连同发票一起退还给配送人员。 </li>
+					        <li>3）配送人员验收完毕后会将更换后的商品当场交到您手中或当场为您办理退款服务。 </li>
+					        <li>特殊说明：原订单订购时选择的支付方式为货到付款或货到后POS机刷卡付款，为您上门办理退换货时会退现金给您；其他支付方式，我们会在收到退回货物后尽快将货款原渠道返还。（财务办理退款成功后会短信通知您）</li><li>
+					            <em>3.</em>不支持上门办理退换货的区域，请您严格按以下步骤进行操作： </li>
+					        <li>1）致电VANCL客服热线，客服人员会帮您登记退换货单；</li><li>2）客服人员为您登记退换货单后，系统会自动为您保留库存7天，请您务必于7天内将商品退回至VANCL库房，7天后库存将自动释放。</li><li>
+					            3）为确保退回商品收到后及时为您办理，请退回货物时一并附上订单发货单及发票。</li><li>4）我们收到包裹后，会对您退回的商品进行质检，然后根据您的需求进行退换货操作。</li><li>
+				                5）若办理退货，退款会使用您原订单的支付方式进行退回，支付现金的订单可选择邮政汇款或银行转账退款。采用这两种方式退款到达您的账户会需要一定的时间，银行转账会根据不同银行间跨行转账的到账期而不同，邮局汇款则可能因邮局地域之间差异而不同。</li><li>
+			                    6）退/换货包裹接收地址</li><li>地址：北京市大兴区西红门镇大生庄黄亦路23号（百纳物流）</li><li>邮编：100076</li><li>收件人：凡客诚品（北京）科技有限公司</li><li>
+		                        7）因商品质量问题（非人为损坏）造成的退、换货，VANCL承担您邮寄或快递到VANCL的费用（请您注意使用合理的方式进行邮寄或快递，我们会根据运单金额实报，最高报销金额为15元），此费用将存入您在VANCL的虚拟账户内，您可以在下次购物时使用。</li>
+					    </ul>
+				    </div>
+				    <span class="blank25"></span>
+				</div>
+			</div>			
+			<div id="rhgm" class="RsetTabCon">
+				<span class="blank20"></span>
+				<div class="area5">
+				    <h2>◎支付方式<strong>&mdash;货到付款支付</strong></h2>
+				    <ul>
+				        <li class="TI2em">VANCL配送员送货上门，客户收单验货后，直接将货款交给配送员的一种结算方式。 <a title="" href="http://www.vancl.com/help/Transfer.htm" target="_blank">点此查看</a>货到付款的支持范围。</li>
+				    </ul>
+				    <span class="blank10"></span>
+				</div>
+				<div class="area5">
+				    <h2><span><a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">详情&gt;&gt;</a></span>◎支付方式<strong>&mdash;在线支付</strong></h2>
+				    <table cellspacing="0" cellpadding="0" border="0" class="area5Table">
+			        <tbody>
+				        <tr>
+				            <td>
+				                VANCL为您提供快钱在线支付、财付通在线支付、支付宝在线支付、工商银行在线支付、招商银行在线支付、网汇通在线支付等6种在线支付方式，几乎涵盖所有大中型银行发行的银行卡，覆盖率达98%。选择在线支付，您的银行卡需要开通相应在线支付功能。
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				                <table cellspacing="0" cellpadding="0" border="0" class="payKinds">
+				                    <tbody><tr>
+				                        <td width="135">
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">
+				                                <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/kuaiqian.gif"/></a><p>
+				                                    <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">快钱网上支付</a></p>
+				                        </td>
+				                        <td width="135">
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">
+				                                <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/caifutong.gif"/></a><p>
+				                                    <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">财付通支付</a></p>
+				                        </td>
+				                        <td width="135">
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">
+				                                <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/zhifubao.gif"/></a><p>
+				                                    <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">支付宝支付</a></p>
+				                        </td>
+				                        <td width="135">
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">
+				                                <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/gonghang.gif"/></a><p>
+				                                    <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">工行在线支付</a></p>
+				                        </td>
+				                        <td width="135">
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">
+				                                <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/yiwangtong.gif"/></a>
+				                            <p>
+				                                <a title="" href="http://www.vancl.com/help/Servise_d_7.htm" target="_blank">招行一网通在线支付</a></p>
+				                        </td>
+				                    </tr>
+				                </tbody></table>
+				                <span class="blank10"></span>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>
+				                <strong>温馨提示：</strong>在线支付付款等待期限为24小时。请您在订购成功后24小时内完成支付，否则我们将不会保留您的订单。感谢您对VANCL的支持，此规则最终解释权归VANCL所有，如有疑问请致电VANCL客服热线：400-650-7099，我们将竭诚为您服务。
+				            </td>
+				        </tr>
+				    </tbody>
+				    </table>
+				    <span class="blank25"></span>
+				</div>
+				<div class="area5">
+				    <h2>
+				        <span><a title="" href="http://www.vancl.com/help/Servise_d_9.htm" target="_blank">详情&gt;&gt;</a></span>◎支付方式<strong>&mdash;邮局网汇通汇款
+				        </strong>
+				    </h2>
+				    <table cellspacing="0" cellpadding="0" border="0">
+				        <tbody>
+					        <tr>
+					            <td width="196">
+					                <a title="" href="http://www.vancl.com/help/Servise_d_9.htm" target="_blank">
+					                    <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/wanghuitong.gif"/></a>
+					            </td>
+					            <td width="500" valign="top">
+					                <span class="blank15"></span>
+					                <table cellspacing="0" cellpadding="0" border="0" class="payFS">
+					                    <tbody><tr>
+					                        <td>
+					                            <strong>邮局网汇通汇款：</strong>指客户将货款通过邮政部门免费、及时汇到VANCL的一种结算方式。选择此方式支付订单货款的客户，请您在下单后尽快到邮局进行汇款。此类订单在下单10日后，如未收到您的货款，将被系统自动取消。
+					                            <a title="" href="http://www.vancl.com/help/Servise_d_9.htm" target="_blank">详情&gt;&gt;</a>
+					                        </td>
+					                    </tr>
+					                    <tr>
+					                        <td>
+					                            <strong>邮局网汇通汇款与普通邮局汇款的区别是：</strong>免手续费而且更及时。
+					                        </td>
+					                    </tr>
+					                    <tr>
+					                        <td>
+					                            <strong>收款时间：</strong>款汇出后的1-2个工作日。
+					                        </td>
+					                    </tr>
+					                </tbody></table>
+					            </td>
+					        </tr>
+					    </tbody>
+				    </table>
+				</div>
+				<div class="area5">
+				    <h2><span><a title="" href="http://www.vancl.com/help/Servise_d_8.htm" target="_blank">详情&gt;&gt;</a></span>◎支付方式<strong>&mdash;邮局汇款</strong></h2>
+				    <table cellspacing="0" cellpadding="0" border="0">
+				        <tbody>
+					        <tr>
+					            <td width="196">
+					                <a title="" href="http://www.vancl.com/help/Servise_d_8.htm" target="_blank">
+					                    <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/youzheng.gif"/>
+					                </a>
+					            </td>
+					            <td width="500" valign="top">
+					                <span class="blank15"></span>
+					                <table cellspacing="0" cellpadding="0" border="0" class="payFS">
+					                    <tbody><tr>
+					                        <td>
+					                            <strong>邮局汇款：</strong>指客户将货款通过邮政部门汇到VANCL的结算方式。选择此方式支付订单货款的客户，请您在下单后尽快到邮局进行汇款。此类订单在下单10日后，如未收到您的货款，将被系统自动取消。
+					                            <a title="" href="http://www.vancl.com/help/Servise_d_8.htm" target="_blank">详情&gt;&gt;</a>
+					                        </td>
+					                    </tr>
+					                    <tr>
+					                        <td>
+					                            <strong>温馨提示：</strong>您通过邮局商务汇款或普通邮局汇款任一汇款方式汇款我们均可收到，但各自的收款时间不一致，如果您在汇款一段时间内后，订单还未收款，请您联系客服中心为您办理查询。查询时，请您提供汇款人姓名、金额、地址、收款人地址、汇款时间、汇票号、订单号及您在VANCL的用户名等信息，客服人员会按照您填写的信息进行查询。
+					                        </td>
+					                    </tr>
+					                </tbody></table>
+					            </td>
+					        </tr>
+					    </tbody>
+				    </table>
+				</div>
+				<div class="area5">
+				    <h2>
+				        <span><a title="" href="http://www.vancl.com/help/Servise_d_10.htm" target="_blank">详情&gt;&gt;</a></span>◎支付方式<strong>&mdash;VANCL礼品卡或者虚拟账户支付 </strong>
+				    </h2>
+				    <table cellspacing="0" cellpadding="0" border="0">
+				        <tbody><tr>
+				            <td width="196">
+				                <a title="" href="http://www.vancl.com/help/Servise_d_10.htm" target="_blank">
+				                    <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/vanclCard.gif"/></a>
+				            </td>
+				            <td width="500" valign="top">
+				                <span class="blank15"></span>
+		                        <span class="blank15"></span>
+				                <table cellspacing="0" cellpadding="0" border="0" class="payFS">				                    
+				                    <tbody>
+				                    <tr>
+				                        <td>
+				                            <strong>礼品卡支付：</strong>在进入结算中心-提交订单页面，输入您的礼品卡号及密码，点击验证进行支付订单。如您的礼品卡金额不够支付此订单， 请您继续选择余款的支付方式。<a title="" href="http://www.vancl.com/help/Servise_d_10.htm" target="_blank">详情&gt;&gt;</a>
+				                        </td>
+				                    </tr>
+				                	</tbody>
+				                </table>
+				            </td>
+				        </tr>
+				    </tbody></table>
+				    <table cellspacing="0" cellpadding="0" border="0">
+				        <tbody><tr>
+				            <td width="196">
+				                <a title="" href="http://www.vancl.com/help/Servise_d_10.htm" target="_blank">
+				                    <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/xuni.gif"/></a>
+				            </td>
+				            <td width="500" valign="top">
+				                <span class="blank15"></span>
+				                <table cellspacing="0" cellpadding="0" border="0" class="payFS">
+				                    <tbody><tr>
+				                        <td>
+				                            <strong>虚拟账户支付：</strong>是您在VANCL的专属账户；您在VANCL购物多支付的部分或报销运费等金额都会存入您在VANCL虚拟账户中，您可以在VANCL购物时使用。
+				                            <a title="" href="http://www.vancl.com/help/Servise_d_10.htm" target="_blank">详情&gt;&gt;</a>
+				                        </td>
+				                    </tr>
+				                </tbody></table>
+				            </td>
+				        </tr>
+				    </tbody></table>
+				</div>
+				<div style="border-bottom: 1px solid rgb(207, 207, 207);" class="area5">
+				    <h2>
+				        <span><a title="" href="http://www.vancl.com/help/Servise_d_11.htm" target="_blank">
+				            详情&gt;&gt;</a></span>◎支付方式<strong>&mdash;电话支付 </strong>
+				    </h2>
+				    <table cellspacing="0" cellpadding="0" border="0">
+				        <tbody><tr>
+				            <td width="196">
+				                <a title="" href="http://www.vancl.com/help/Servise_d_11.htm" target="_blank">
+				                    <img title="" alt="" src="http://images.vancl.com/zhuanti/danpin_20100927/dianhua.gif"/>
+				                </a>
+				            </td>
+				            <td width="500" valign="top">
+				                <span class="blank15"></span>
+	                    		<span class="blank15"></span>
+				                <table cellspacing="0" cellpadding="0" border="0" class="payFS">
+				                    <tbody><tr>
+				                        <td>
+				                            <strong>电话支付：</strong>指客户通过电话完成支付操作；此支付方式比较便捷，您仅需一通电话即可完成付款。 VANCL为您提供了<a style="color: rgb(161, 0, 0);" title="" href="http://www.vancl.com/help/Servise_d_11.htm" target="_blank">汇付天下电话支付</a>和<a style="color: rgb(161, 0, 0);" title="" href="http://www.vancl.com/help/Servise_d_11.htm" target="_blank">招商银行电话支付</a>两种电话支付服务。<a title="" href="http://www.vancl.com/help/Servise_d_11.htm" target="_blank">详情&gt;&gt;</a>
+				                        </td>
+				                    </tr>
+				                </tbody></table>
+				            </td>
+				        </tr>
+				    </tbody></table>
+				</div>
+				<div style="border-bottom: 1px solid rgb(207, 207, 207);" class="area5">
+				    <h2>
+				        <span></span>◎支付方式<strong>&mdash;温馨提示 </strong>
+				    </h2>
+				    <span style="padding-top: 10px;" class="blank10"></span>
+				    <ul>
+				        <li class="TI2em">如您对我们“帮助中心”的说明有任何疑问或建议请拨打400-650-7099或发送邮件至service@vancl.com。</li>
+				    </ul>
+				    <span class="blank20"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span class="blank15"></span>
+	<div id="bigView">
+    	<img src="/WEB-USER/products/shoes/0046949/big-0046949-1j201103101432331028.jpg" style="left: 0px; top: 0px;"/>
+    </div>
+</div>
+#import("../common/footer.vm")
+</body>
+</html>
