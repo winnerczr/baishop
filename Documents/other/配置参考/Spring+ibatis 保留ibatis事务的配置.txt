@@ -1,0 +1,105 @@
+SPRING IBATIS  整合后保留IBATIS事务的配置方式如下
+
+1,spring的配置(请只看有文字的地方)
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- 许多整合的例子要配置数据源 
+             这个步骤害了好多人啊
+             请你将你的程序毫不留情的将数据源的配置注释或删掉
+	<bean id="jdbcDriver"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver">
+		</property>
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.1.41:1521:express">
+		</property>
+		<property name="username" value="iexpress"></property>
+		<property name="password" value="poscard"></property>
+	</bean>
+	 -->
+	<!-- 这个地方为JNDI数据源 不用看
+	<bean id="jndiDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:/oracle/payment</value>
+		</property>
+	</bean>
+	 -->
+
+	sqlMapClient的配置 请注意看 这里我并没有引用数据源（一定不要引用SPRING的数据源）
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<!-- 
+	 	<property name="dataSource" ref="jdbcDriver"/>
+	 	 -->
+        <property name="configLocation">
+            <value>/WEB-INF/SqlMapConfig.xml</value>
+        </property>
+    </bean>
+</beans>
+
+2，sqlMapClient的配置
+<sqlMapConfig>
+	<!-- SQLMAP设置 这个地方根据你的需要自己改吧
+		maxRequests = "512"    //设置SQL最大请求数 该值大于maxTransactions * 10 并且大于 maxSessions 缺省值512
+		maxSessions = "128"    //同一时间最大的SESSION数 应该大于maxTransactions 并且小于maxRequests 默认128
+		maxTransactions = "32" //最大的事务处理数
+		cacheModelsEnabled = "true" //全局性的禁用SqlMapClient的缓存 默认为TRUE
+		lazyLoadingEnabled = "true" //全局性的禁用SqlMapClient的延迟加载
+		enhancementEnabled = "false" //全局的字节码增强 默认为FALSE
+		useStatementNamespaces = "false" //一定要为FALSE
+	 -->	 
+	<!--看到没 我用的是IBATIS的数据源 并且配置事务为JDBC 当然也可以是JNDI 数据源必须在IBATIS里配置-->
+	<transactionManager type="JDBC">
+	   	 <dataSource type="SIMPLE">
+	      <property value="oracle.jdbc.driver.OracleDriver" name="JDBC.Driver"/>
+	      <property value="jdbc:oracle:thin:@192.168.1.41:1521:express"   name="JDBC.ConnectionURL"/>
+	      <property value="iexpress" name="JDBC.Username"/>
+	      <property value="poscard" name="JDBC.Password"/>
+	     </dataSource>
+  	</transactionManager>
+	<!--这个地方就正常写了-->
+  	<sqlMap resource="poscard/db/dao/RoleFunctions_SqlMap.xml"/>
+</sqlMapConfig>
+3,spring- dao的配置 (看好了啊 不要看我的配置的类 跟类没关系)
+<bean id="roleFunctionsDao"
+      class="poscard.db.dao.RoleFunctionsDao">
+	<!--   看到这个地方了么 不要给SqlMapClientDaoSupport注入DATASOURCE  删除或注释掉
+	<property name="dataSource">
+            <ref bean="jdbcDriver" />
+        </property>
+        -->
+        <property name="sqlMapClient">
+            <ref  bean="sqlMapClient" />
+        </property>
+</bean>
+我的方法 这个类同样继承 SqlMapClientDaoSupport
+public String insert(RoleFunctions funs) {
+        SqlMapClient smc = super.getSqlMapClient();
+        
+        try {
+            smc.startTransaction();
+            smc.insert("insertRoleFunctions", funs);
+            funs.setFlag("长度超标一定出错");
+            smc.insert("insertRoleFunctions", funs);
+            //smc.commitTransaction(); //不提交试验一下 绝对不能进数据库 我用的是ORACLE
+        } catch (Exception e) {
+            logger.warn(e + "回滚操作");
+        } finally {
+            try {
+                smc.endTransaction();
+            } catch (SQLException e) {
+                logger.warn("结束事务出现异常");
+            }
+        }
+
+        return null;
+    }
+
+看明白了没！说白了就是不用SPRING的数据源而用IBATIS的数据源！这样就把事务的权利还给了IBATIS
+这样就可以处理对多表的插入操作了！安全性能得到提高！而且不用想网上那帮傻老爷们和傻老娘们那样
+啥啥配置那个SPRING事务啥的 配完还不好使！ 是吧！哈哈哈哈！更牛的是说自动事务好的！ 我超级不理解。
+好啥？能节约点代码？出问题了找谁去啊！日了！
+如果没看明白的呢！10分我也不能让你白花！ 我的QQ 81611911 密码回答呢是2 实在不明白我给你指导。
+语言组织可能有点乱。没办法 天生的！

@@ -1,0 +1,65 @@
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2010, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+
+<host xmlns="urn:jboss:domain:1.0"
+      name="slave(192.168.1.2)">
+
+    <management>
+		<management-interfaces>
+		   <native-interface interface="management" port="9999"/>
+		</management-interfaces>
+    </management>
+
+    <domain-controller>
+		<remote host="192.168.1.1" port="9999"/>
+    </domain-controller>
+
+    <interfaces>
+        <interface name="management">
+            <inet-address value="127.0.0.1"/>
+        </interface>
+        <interface name="public">
+           <inet-address value="192.168.1.2"/>
+        </interface>
+    </interfaces>
+
+ 	<jvms>
+ 	   <jvm name="default">
+          <heap size="64m" max-size="128m"/>
+       </jvm>
+ 	</jvms>
+
+    <servers>
+        <server name="server-8180" group="main-server-group" auto-start="true">
+            <jvm name="default"/>
+            <socket-binding-group ref="standard-sockets" port-offset="100"/>
+        </server>
+        <server name="server-8280" group="main-server-group" auto-start="true">
+            <jvm name="default"/>
+            <socket-binding-group ref="standard-sockets" port-offset="200"/>
+        </server>
+        <server name="server-8380" group="main-server-group" auto-start="true">
+            <jvm name="default"/>
+            <socket-binding-group ref="standard-sockets" port-offset="300"/>
+        </server>
+    </servers>
+</host>
