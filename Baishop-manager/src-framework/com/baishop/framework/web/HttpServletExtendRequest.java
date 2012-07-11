@@ -13,7 +13,20 @@ public interface HttpServletExtendRequest extends HttpServletRequest,
 		MultipartRequest, DataBinderRequest {
 	
 	/**
-	 * 获取参数
+	 * 获取原生的HttpServletRequest
+	 * @return 返回HttpServletRequest对象
+	 */
+	public HttpServletRequest getRequest();
+	
+	/**
+	 * 获取参数,并去空格
+	 * @param name 参数名
+	 * @return 返回参数值
+	 */
+	public String getParameter(String name);
+	
+	/**
+	 * 获取参数,并去空格
 	 * @param name 参数名
 	 * @param charsetName 编码，如UTF-8
 	 * @return 返回参数值
@@ -21,13 +34,13 @@ public interface HttpServletExtendRequest extends HttpServletRequest,
 	public String getParameter(String name, String charsetName);
 	
 	/**
-	 * 获取参数
+	 * 获取参数,并去空格
 	 * @param name 参数名
-	 * @param srcCharsetName 源编码
-	 * @param destCharsetName 目标编码
+	 * @param charsetName 编码，如UTF-8
+	 * @param defaultValue 默认值
 	 * @return 返回参数值
 	 */
-	public String getParameter(String name, String srcCharsetName, String destCharsetName);
+	public String getParameter(String name, String charsetName, String defaultValue);
 
 	/**
 	 * 获取boolean型参数

@@ -27,11 +27,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
-import org.tuckey.web.filters.urlrewrite.utils.StringUtils;
 
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.binder.ServletRequestExtendDataBinder;
@@ -45,6 +45,11 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 		this.request = request;
 	}
 	
+	
+	@Override
+	public HttpServletRequest getRequest() {
+		return request;
+	}
 
 
 	@Override
@@ -54,13 +59,19 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 
 	@Override
 	public String getParameter(String name, String charsetName) {
-		return this.getParameter(name, "ISO8859-1", charsetName);
+		return this.getParameter(name, charsetName, null);
 	}
 
 	@Override
-	public String getParameter(String name, String srcCharsetName, String destCharsetName) {
+	public String getParameter(String name, String charsetName, String defaultValue) {
 		try {
-			return new String(request.getParameter(name).getBytes(srcCharsetName), destCharsetName);
+			String value = request.getParameter(name);
+			
+			if(StringUtils.isBlank(value))
+				return defaultValue;
+			
+			return new String(value.getBytes("ISO8859-1"), charsetName);
+			
 		} catch (UnsupportedEncodingException e) {
 			throw new RuntimeException(e); 
 		}
@@ -501,7 +512,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Boolean.valueOf(value);
+			return Boolean.valueOf(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -521,7 +532,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Integer.valueOf(value);
+			return Integer.valueOf(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -541,7 +552,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Long.valueOf(value);
+			return Long.valueOf(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -561,7 +572,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Float.valueOf(value);
+			return Float.valueOf(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -581,7 +592,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Double.valueOf(value);
+			return Double.valueOf(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -613,7 +624,7 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			else
 				sdf = new SimpleDateFormat(pattern);
 			
-			return sdf.parse(value);
+			return sdf.parse(value.trim());
 			
 		}catch(Exception e){
 			return defaultValue;
