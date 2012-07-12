@@ -38,6 +38,16 @@
 		    </bean>
         </property>
     </bean>
+    
+    <!-- CluserLock集群锁 -->
+   	<bean id="cluserLockTemplate" class="com.baishop.framework.lock.CluserLockTemplate"> 
+		<property name="connectString">
+			<value>${remoting.zookeeper.url}</value>
+		</property>
+		<property name="timeout">
+			<value>40000</value>
+		</property>
+	</bean>
 
 	<!-- 线程池 -->
 	<bean id="threadPoolTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"> 
