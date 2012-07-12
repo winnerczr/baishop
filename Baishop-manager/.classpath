@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-web">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-web">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-service">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-service">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-service-impl">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-service-impl">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-dao">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-dao">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-framework">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-framework">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="WebContent/WEB-INF/classes1" path="src-test">
+	<classpathentry kind="src" output="WebContent/WEB-INF/classes" path="src-test">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -49,5 +49,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="WebContent/WEB-INF/classes1"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

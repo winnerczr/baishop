@@ -2,9 +2,9 @@ package com.baishop.service;
 
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-import org.tuckey.web.filters.urlrewrite.utils.StringUtils;
 
 import com.baishop.framework.utils.ConvertUtils;
 
