@@ -36,10 +36,13 @@
 			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" />
 		</property>
 		<property name="user">
-			<value>${remoting.user}</value>
+			<value>${remoting.soa.user}</value>
 		</property>
 		<property name="password">
-			<value>${remoting.password}</value>
+			<value>${remoting.soa.password}</value>
+		</property>
+		<property name="prefix">
+			<value>${remoting.soa.url}</value>
 		</property>
 	</bean>
 	
@@ -52,7 +55,7 @@
 	<!-- 用户服务类 -->
 	<bean id="usersService" parent="httpInvokerWithAuthsProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>${remoting.url}/service/Users.srv</value>
+		  <value>/service/Users.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.sale.UsersService</value>
@@ -66,7 +69,7 @@
 	<!-- 商品服务类 -->
 	<bean id="goodsService" parent="httpInvokerWithAuthsProxyFactoryBean" >
 	    <property name="serviceUrl">
-		  <value>${remoting.url}/service/goods/Goods.srv</value>
+		  <value>/service/goods/Goods.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.goods.GoodsService</value>
@@ -79,7 +82,7 @@
 	<!-- 系统参数服务类 -->
 	<bean id="paramsService" parent="httpInvokerWithAuthsProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>${remoting.url}/service/Params.srv</value>
+		  <value>/service/Params.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.ParamsService</value>
@@ -89,7 +92,7 @@
 	<!-- 系统枚举服务类 -->
 	<bean id="enumsService" parent="httpInvokerWithAuthsProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>${remoting.url}/service/Enums.srv</value>
+		  <value>/service/Enums.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.EnumsService</value>
@@ -99,7 +102,7 @@
 	<!-- 城市区划服务类 -->
 	<bean id="cityService" parent="httpInvokerWithAuthsProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>${remoting.url}/service/City.srv</value>
+		  <value>/service/City.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.CityService</value>
