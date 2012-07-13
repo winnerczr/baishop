@@ -1,8 +1,12 @@
-package com.baishop.framework.remoting.hessian;
+package com.baishop.framework.remoting.httpinvoker;
 
-import org.springframework.remoting.caucho.HessianProxyFactoryBean;
 
-public class HessianWithAuthsProxyFactoryBean extends HessianProxyFactoryBean {
+/**
+ * 扩展HttpInvokerProxyFactoryBean， 使其支持权限控制、访问监控
+ * @author Linpn
+ */
+public class HttpInvokerProxyFactoryBean 
+			extends org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean {
 	
 	private String prefix;
 	
