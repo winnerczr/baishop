@@ -78,11 +78,11 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 
 	@Override
 	public void logger(Syslog syslog) {
-		this.logger(syslog, null);
+		this.logger(syslog, this.logger);
 	}
-		
-	@Override
-	public void logger(Syslog syslog, Logger logger) {
+
+
+	protected void logger(Syslog syslog, Logger logger) {
 		try{
 			sqlMapClientSyslog.insert("Syslog.addSyslog", syslog);
 			

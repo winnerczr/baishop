@@ -3,7 +3,6 @@ package com.baishop.service.ass;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 
 import com.baishop.entity.ass.Syslog;
@@ -43,13 +42,6 @@ public interface SyslogService {
 	 * @param syslog 日志对象
 	 */
 	public void logger(final Syslog syslog);
-
-	/**
-	 * 添加日志
-	 * @param syslog 日志对象
-	 * @param logger log4j对象
-	 */
-	public void logger(Syslog syslog, Logger logger);
 	
 	/**
 	 * 添加日志Aop切面方法
