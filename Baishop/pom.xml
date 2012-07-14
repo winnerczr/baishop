@@ -9,12 +9,12 @@
 		<repository>
 			<id>kadang releases</id>
 			<name>Kadang Release Repository</name>
-			<url>http://192.168.11.225:8081/nexus/content/repositories/releases/</url>
+			<url>https://repository.sonatype.org/content/groups/public/</url>
 		</repository>
 		<snapshotRepository>
 			<id>kadang snapshots</id>
 			<name>Kadang Snapshots Repository</name>
-			<url>http://192.168.11.225:8081/nexus/content/repositories/snapshots</url>
+			<url>https://repository.sonatype.org/content/groups/public/</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
