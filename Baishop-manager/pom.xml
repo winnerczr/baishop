@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.baishop.manager</groupId>
+	<groupId>com.baishop</groupId>
 	<artifactId>baishop-manager</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
@@ -99,7 +99,7 @@
 								<include>com/baishop/entity/**</include>
 							</includes>
 							<excludes>
-								<exclude>com/baishop/service/BaseService.java</exclude>
+								<exclude>com/baishop/service/*.java</exclude>
 								<exclude>com/baishop/service/impl/**</exclude>
 							</excludes>
 						</configuration>

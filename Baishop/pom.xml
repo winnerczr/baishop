@@ -25,7 +25,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
-		<finalName>manager</finalName>
+		<finalName>baishop</finalName>
 		<sourceDirectory>src-web</sourceDirectory>
 		<testSourceDirectory>src-test</testSourceDirectory>
 		<outputDirectory>WebContent/WEB-INF/classes</outputDirectory>
@@ -79,13 +79,13 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.baishop.manager</groupId>
+			<groupId>com.baishop</groupId>
 			<artifactId>baishop-manager</artifactId>
 			<version>1.0-SNAPSHOT</version>
 			<classifier>framework</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.baishop.manager</groupId>
+			<groupId>com.baishop</groupId>
 			<artifactId>baishop-manager</artifactId>
 			<version>1.0-SNAPSHOT</version>
 			<classifier>service</classifier>
