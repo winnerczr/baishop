@@ -49,7 +49,6 @@
 			classpath:spring-dao.xml
 			classpath:spring-beans.xml
 			classpath:spring-security.xml
-			<!-- classpath:conf/spring-remoting.xml -->
 		</param-value>
 	</context-param> 
 	
@@ -93,6 +92,7 @@
 		  <param-name>contextConfigLocation</param-name>
 		  <param-value>classpath:spring-services.xml</param-value>
 		 </init-param>
+		<load-on-startup>0</load-on-startup>
 	</servlet> 
 	<servlet-mapping>
 		<servlet-name>spring-services</servlet-name>
