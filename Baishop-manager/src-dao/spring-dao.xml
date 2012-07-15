@@ -139,19 +139,5 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/> 
 	<aop:aspectj-autoproxy/>
 	
-	<!-- 声明式XML事务配置  
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="get*" read-only="true"/>
-			<tx:method name="*" rollback-for="Throwable"/>
-		</tx:attributes>
-	</tx:advice>	
-	<aop:config>
-		<aop:pointcut id="servicePointcut" 
-            	expression="execution(* com.baishop.service.*.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointcut"/>
-    </aop:config>
-	-->	
-	
 	
 </beans>

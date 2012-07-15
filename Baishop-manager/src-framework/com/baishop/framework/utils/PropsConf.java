@@ -4,6 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
 
+/**
+ * Properties扩展类
+ * @author Linpn
+ */
 public class PropsConf extends Properties {
 	
 	private static final long serialVersionUID = 7618753756577836359L;
