@@ -16,15 +16,8 @@ firefox开发插件		firebug,firecookie,Page Speed
 
 
 
-
-60.169.78.146
-administrator  kulong123
-
 122.224.171.132
 administrator hundsun1qaz2wsx
-
-
-
 
 
 
