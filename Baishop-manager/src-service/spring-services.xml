@@ -19,18 +19,38 @@
     http://www.springframework.org/schema/security/spring-security-3.0.xsd
 	">
 	
-	<!-- 带权限的 HTTP Invoker Exporter -->
-	<bean id="httpInvokerWithAuthsServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsServiceExporter" abstract="true">
+	<import resource="spring-props.xml"/>
+	
+	
+	<!-- =================================SOA Exporter服务基类================================= -->
+	
+	<!-- 基类SoaServiceExporter -->
+	<bean id="SoaServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsServiceExporter" abstract="true">
 		<property name="authsConfService">
 			<ref bean="remoteAuthsService"/>
 		</property>
 	</bean>
-
-
+	
+	
+	<!-- =================================JMS Exporter服务基类================================= -->
+	
+	<!-- 基类JmsServiceExporter -->
+	<bean id="JmsServiceExporter" class="com.baishop.framework.remoting.jms.JmsRpcServiceExporter" abstract="true">
+		<property name="connectionFactory" ref="jmsConnectionFactory"/>
+	</bean>
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${remoting.jms.url}"/>
+	</bean>
+	<bean id="jmsTransactionManager" class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="jmsConnectionFactory"/>		
+	</bean>
+    
+    
+    
 	<!-- ============================sale服务类============================ -->
 	
 	<!-- 系统参数服务类 -->
-	<bean name="/service/sale/Users.srv" parent="httpInvokerWithAuthsServiceExporter">
+	<bean name="/service/sale/Users.srv" parent="SoaServiceExporter">
 	    <property name="service">
 	      <ref bean="usersService"/>
 	    </property>
@@ -43,7 +63,7 @@
 	<!-- ============================goods服务类 ============================ -->
 	
 	<!-- 系统参数服务类 -->
-	<bean name="/service/goods/Goods.srv" parent="httpInvokerWithAuthsServiceExporter">
+	<bean name="/service/goods/Goods.srv" parent="SoaServiceExporter">
 	    <property name="service">
 	      <ref bean="goodsService"/>
 	    </property>
@@ -56,7 +76,7 @@
 	<!-- ============================ass服务类============================ -->
 	
 	<!-- 系统参数服务类 -->
-	<bean name="/service/ass/Params.srv" parent="httpInvokerWithAuthsServiceExporter">
+	<bean name="/service/ass/Params.srv" parent="SoaServiceExporter">
 	    <property name="service">
 	      <ref bean="paramsService"/>
 	    </property>
@@ -66,7 +86,7 @@
 	</bean>
 	
 	<!-- 系统枚举服务类 -->
-	<bean name="/service/ass/Enums.srv" parent="httpInvokerWithAuthsServiceExporter">
+	<bean name="/service/ass/Enums.srv" parent="SoaServiceExporter">
 	    <property name="service">
 	      <ref bean="enumsService"/>
 	    </property>
@@ -76,7 +96,7 @@
 	</bean>
 	
 	<!-- 城市区划服务类 -->
-	<bean name="/service/ass/City.srv" parent="httpInvokerWithAuthsServiceExporter">
+	<bean name="/service/ass/City.srv" parent="SoaServiceExporter">
 	    <property name="service">
 	      <ref bean="cityService"/>
 	    </property>
