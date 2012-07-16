@@ -19,8 +19,11 @@
     http://www.springframework.org/schema/security/spring-security-3.0.xsd
 	">
 
-	<!-- 带权限的 HTTP Invoker Exporter -->
-	<bean id="httpInvokerWithAuthsProxyFactoryBean" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsProxyFactoryBean" abstract="true">
+
+	<!-- =================================SOA FactoryBean服务基类================================= -->
+	
+	<!-- 基类SoaProxyFactoryBean -->
+	<bean id="SoaProxyFactoryBean" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsProxyFactoryBean" abstract="true">
 		<property name="httpInvokerRequestExecutor">
 			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" />
 		</property>
@@ -35,6 +38,19 @@
 		</property>
 	</bean>
 	
+		
+	<!-- =================================JMS FactoryBean服务基类================================= -->
+	
+	<!-- 基类JmsProxyFactoryBean -->
+	<bean id="JmsProxyFactoryBean" class="com.kadang.kd6.framework.remoting.jms.JmsRpcProxyFactoryBean" abstract="true">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+	</bean>
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${remoting.jms.url}"/>
+	</bean>
+	<bean id="jmsTransactionManager" class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="jmsConnectionFactory"/>		
+	</bean>
 	
 	
 	
@@ -42,7 +58,7 @@
 	
 
 	<!-- 用户服务类 -->
-	<bean id="usersService" parent="httpInvokerWithAuthsProxyFactoryBean">
+	<bean id="usersService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
 		  <value>/service/Users.srv</value>
 		</property>
@@ -56,7 +72,7 @@
 	
 	
 	<!-- 商品服务类 -->
-	<bean id="goodsService" parent="httpInvokerWithAuthsProxyFactoryBean" >
+	<bean id="goodsService" parent="SoaProxyFactoryBean" >
 	    <property name="serviceUrl">
 		  <value>/service/goods/Goods.srv</value>
 		</property>
@@ -69,7 +85,7 @@
 	<!-- ============================ass服务类============================ -->
 		
 	<!-- 系统参数服务类 -->
-	<bean id="paramsService" parent="httpInvokerWithAuthsProxyFactoryBean">
+	<bean id="paramsService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
 		  <value>/service/Params.srv</value>
 		</property>
@@ -79,7 +95,7 @@
 	</bean>
 	
 	<!-- 系统枚举服务类 -->
-	<bean id="enumsService" parent="httpInvokerWithAuthsProxyFactoryBean">
+	<bean id="enumsService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
 		  <value>/service/Enums.srv</value>
 		</property>
@@ -89,7 +105,7 @@
 	</bean>
 	
 	<!-- 城市区划服务类 -->
-	<bean id="cityService" parent="httpInvokerWithAuthsProxyFactoryBean">
+	<bean id="cityService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
 		  <value>/service/City.srv</value>
 		</property>

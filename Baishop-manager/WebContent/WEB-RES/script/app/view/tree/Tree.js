@@ -81,7 +81,7 @@ Ext.define('Baishop.view.tree.Tree', {
                         text: '退出',
                         listeners: {
                             click: function(cls) {
-                            	window.location.href="j_spring_security_logout";
+                            	window.location.href="j_spring_cas_security_logout";
                             }
                         }
                     }

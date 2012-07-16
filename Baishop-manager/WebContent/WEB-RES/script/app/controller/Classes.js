@@ -130,10 +130,7 @@ Ext.define('Baishop.controller.Classes', {
 			return url;
     	} else
     	if(url.indexOf("/")==0){
-	    	var href = document.location.href;
-	    	href = href.substring(0,href.lastIndexOf("/")+1);
-	    	href = href + url.substring(1);
-	        return href;
+	        return url;
 		}else{
 			return "";
 		}

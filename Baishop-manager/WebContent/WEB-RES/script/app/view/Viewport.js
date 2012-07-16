@@ -30,21 +30,42 @@ Ext.define('Baishop.view.Viewport', {
                     width: "100%"
                 },
                 items: [
-                    {
-                        xtype: 'button',
+					{
+					    xtype: 'button',
+					    cls: 'logo',
+					    height: 60,
+					    margin: '0 0 10 0',
+					    width: 200,
+					    border: 0,
+					    ui: 'hmm',
+					    listeners: {
+					        click: function() {
+					            Ext.getCmp('container').layout.setActiveItem(0);
+					        }
+					    }
+					},
+                    /*{
+                        xtype: 'hovermenubutton',
                         cls: 'logo',
                         height: 60,
                         margin: '0 0 10 0',
                         width: 200,
                         border: 0,
                         ui: 'hmm',
+                        menuCfg: {
+                            margin: '41 0 0 10',
+                            width: 200
+                        },
+                        store: Ext.create('Ext.data.Store', {
+							fields: ['id', 'cls'],
+							data: Baishop.listSystems
+                	    }),
                         listeners: {
                             click: function() {
                                 Ext.getCmp('container').layout.setActiveItem(0);
-                                Baishop.History.push("");
                             }
                         }
-                    },
+                    },*/
                     {
                         flex: 1,
                         xtype: 'classtree',

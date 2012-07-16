@@ -90,7 +90,7 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 				logger.debug("日志：" + syslog.getDescription());
 			
 		}catch(Exception e){
-			throw new ServiceException(903003, e);
+			throw new ServiceException(e);
 		}
 	}
 	
@@ -106,13 +106,16 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 				//判断是否过滤日志
 				if(!filter(signature.toString())){
 					//日志对象
-					Syslog syslog = new Syslog();
+					Syslog syslog = new Syslog();					
+					String args = JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+					
 					syslog.setUser("admin");
 					syslog.setSource((byte)1);
 					syslog.setType(signature.getDeclaringTypeName());
 					syslog.setMethod(signature.toString().replaceAll(signature.getDeclaringTypeName()+".", ""));
-					syslog.setArgs(JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", ""));
+					syslog.setArgs(args.length()<=255?args:args.substring(0, 255));
 					syslog.setDescription(signature.toString());
+					
 					logger(syslog, getLog4j(joinpoint.getTarget()));
 				}
 			}			
@@ -132,7 +135,7 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 	 * 如:Params com.baishop.service.ParamsService.getParams(String)
 	 * @return 返回是否被过滤, true表示被过滤，false表示没被过滤
 	 */
-	private boolean filter(String signature){
+	protected boolean filter(String signature){
 		//从数据库中获取过滤数据
 		if(filterCache==null || filterCache.length<=0){
 			Params params = paramsService.getParams("logger_filter");

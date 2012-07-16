@@ -22,7 +22,10 @@ public class Main extends PageManagerController {
 																ModulesService.GROUP,
 																ModulesService.MODULE
 															});
-		modeview.addObject("modules", modules);
+		modeview.addObject("treeModules", modules.getJSONArray("children").get(0));
+		modeview.addObject("leafModules", this.getLeafModulesOfJSON());
+		modeview.addObject("listSystems", this.getListSystemsOfJSON());
+
 	}
 
 }

@@ -107,7 +107,7 @@ public abstract class PageManagerController extends PageController {
 		
 		//模块信息
 		String func = request.getParameter("func");
-		String path = request.getServletPath() + (func!=null ? "?func="+func : "");  
+		String path = request.getContextPath() + request.getServletPath() + (func!=null ? "?func="+func : "");  
 		Modules module = modulesService.getModulesByUrl(path);
 		if(module!=null){
 			modeview.addObject("module_title", module.getText());
@@ -233,31 +233,24 @@ public abstract class PageManagerController extends PageController {
 	//------------------------------------- 公共方法 ----------------------------------------------//
 
 	/**
-	 * 获取JSON格式的树型模块
-	 * @param user 后台用户对象,如果user为null，则查出所有的模块
-	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
+	 * 获取子系统、模块、操作的map集合
+	 * @return 返回JSON对象
 	 */
-	public JSONObject getTreeModulesOfJSON() {
-		return this.getTreeModulesOfJSON(null);
-	}
-	
-	/**
-	 * 获取JSON格式的树型模块
-	 * @param user 后台用户对象,如果user为null，则查出所有的模块
-	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
-	 */
-	public JSONObject getTreeModulesOfJSON(Admins user) {
-		return this.getTreeModulesOfJSON(user, null);
-	}
-	
-	/**
-	 * 获取JSON格式的树型模块
-	 * @param user 后台用户对象,如果user为null，则查出所有的模块
-	 * @param subsystem 后台子系统,如果为null，则查出所有子系统的模块
-	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
-	 */
-	public JSONObject getTreeModulesOfJSON(Admins user, final String subsystem) {
-		return this.getTreeModulesOfJSON(user, subsystem, null);
+	public JSONArray getListSystemsOfJSON(){		
+		JSONArray json = new JSONArray();		
+		List<Modules> list = this.modulesService.getModulesList(null);
+		
+		for(Modules module : list){		
+			//添加最叶子节点到列表中
+			if(ModulesService.SYSTEM.equals(module.getType())){
+				JSONObject m = new JSONObject();
+				m.put("id", module.getModuleId());
+				m.put("cls", module.getText());
+				json.add(m);
+			}
+		}
+		
+		return json;
 	}
 	
 	
@@ -266,7 +259,7 @@ public abstract class PageManagerController extends PageController {
 	 * @param user 后台用户对象,如果user为null，则查出所有的模块
 	 * @param subsystem 后台子系统,如果为null，则查出所有子系统的模块
 	 * @param types 模块类型,值为"SYSTEM"、"GROUP"、"MODULE"、"FUNCTION"， 如果为null，则查出所有的模块
-	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
+	 * @return 返回JSON对象
 	 */
 	public JSONObject getTreeModulesOfJSON(Admins user, final String subsystem, final String[] types) {
 		final JSONObject json = new JSONObject();
@@ -277,7 +270,6 @@ public abstract class PageManagerController extends PageController {
 			json.put("text", "应用模块");
 			json.put("iconCls", "icon-docs");
 			json.put("children", new JSONArray());
-			json.put("leafMap", new JSONObject());
 			
 			List<Modules> list;
 			if(user==null)
@@ -341,12 +333,6 @@ public abstract class PageManagerController extends PageController {
 							}							
 							children.add(node);
 							treeNode.put("leaf", false);
-							
-							
-							//添加最叶子节点到列表中
-							if(ModulesService.MODULE.equals(module.getType()) || ModulesService.FUNCTION.equals(module.getType())){
-								json.getJSONObject("leafMap").put(module.getText(), module.getUrl());
-							}
 						}
 					}
 				}
@@ -356,6 +342,26 @@ public abstract class PageManagerController extends PageController {
 			
 		} catch (Exception e) {
 			throw new ServiceException(902001, e);
+		}
+		
+		return json;
+	}
+	
+
+	
+	/**
+	 * 获取子系统、模块、操作的map集合
+	 * @return 返回JSON对象
+	 */
+	public JSONObject getLeafModulesOfJSON(){		
+		JSONObject json = new JSONObject();		
+		List<Modules> list = this.modulesService.getModulesList(null);
+		
+		for(Modules module : list){		
+			//添加最叶子节点到列表中
+			if(ModulesService.SYSTEM.equals(module.getType()) || ModulesService.MODULE.equals(module.getType()) || ModulesService.FUNCTION.equals(module.getType())){
+				json.put(module.getText(), module.getUrl());
+			}
 		}
 		
 		return json;

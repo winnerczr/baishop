@@ -20,9 +20,9 @@
   	    Ext.create('Baishop.Application');
   	    
   	    //加载模块数据
-  	    var modules = ${modules};
-  	    Baishop.treeModules = modules.children[0] || {};
-  	    Baishop.leafModules = modules.leafMap || {};
+  	    Baishop.treeModules = ${treeModules};
+  	    Baishop.leafModules = ${leafModules};
+  	  	Baishop.listSystems = ${listSystems};
   	});
 </script>
 </head>
