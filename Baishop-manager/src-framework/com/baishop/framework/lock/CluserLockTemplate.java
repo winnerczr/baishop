@@ -38,7 +38,7 @@ public class CluserLockTemplate {
 	 * @param action
 	 * @return
 	 */
-	public synchronized boolean execute(String path, CluserLockCallback action) {
+	public synchronized boolean lock(String path, CluserLockCallback action) {
 		try {
 			// 创建集群锁对象
 			CluserLock cluserLock = new CluserLock(connectString, path, timeout);

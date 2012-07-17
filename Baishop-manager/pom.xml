@@ -85,7 +85,7 @@
 				<version>2.4</version>
 				<executions>
 					<execution>
-                       	<id>service-jar</id>
+						<id>service-jar</id>
 						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
@@ -105,7 +105,7 @@
 						</configuration>
 					</execution>
 					<execution>
-                        <id>framework-jar</id>  
+						<id>framework-jar</id>
 						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
@@ -220,17 +220,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-struts</artifactId>
-			<version>3.1.1.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>commons-fileupload</artifactId>
-					<groupId>commons-fileupload</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
@@ -278,6 +267,22 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-acl</artifactId>
 			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-struts</artifactId>
+			<version>3.1.1.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-fileupload</artifactId>
+					<groupId>commons-fileupload</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-core</artifactId>
+			<version>2.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springmodules</groupId>

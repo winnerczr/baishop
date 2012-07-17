@@ -98,6 +98,7 @@ public abstract class PageManagerController extends PageController {
 
 		//请求路径
 		modeview.addObject("page_context", request.getContextPath());
+		modeview.addObject("page_action", request.getContextPath() + request.getServletPath());
 		
 		//系统参数
 		modeview.addObject("app_title", appConf.getProperty("app.title", "", "UTF-8"));		

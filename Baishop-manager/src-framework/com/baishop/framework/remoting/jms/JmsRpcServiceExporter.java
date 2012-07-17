@@ -1,11 +1,9 @@
 package com.baishop.framework.remoting.jms;
 
-import javax.jms.MessageListener;
-
 import org.apache.activemq.command.ActiveMQQueue;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jms.listener.DefaultMessageListenerContainer;
-import org.springframework.jms.listener.SessionAwareMessageListener;
-import org.springframework.remoting.support.RemoteExporter;
+import org.springframework.jms.remoting.JmsInvokerServiceExporter;
 
 /**
  * 包装了DefaultMessageListenerContainer与JmsInvokerServiceExporter。
@@ -13,29 +11,65 @@ import org.springframework.remoting.support.RemoteExporter;
  * @author Administrator
  *
  */
-public class JmsRpcServiceExporter extends DefaultMessageListenerContainer {
+public class JmsRpcServiceExporter extends DefaultMessageListenerContainer implements InitializingBean {
+	
+	private Object service;
+
+	@SuppressWarnings("rawtypes")
+	private Class serviceInterface;
+	
+
+	public void afterPropertiesSet() {
+		super.afterPropertiesSet();
+		
+		JmsInvokerServiceExporter messageListener = new JmsInvokerServiceExporter();
+		messageListener.setService(service);
+		messageListener.setServiceInterface(serviceInterface);
+		messageListener.afterPropertiesSet();
+		
+		super.setMessageListener(messageListener);
+	}
+	
+
 	
 	
 	/**
-	 * Set the message listener implementation to register.
-	 * This can be either a standard JMS {@link MessageListener} object
-	 * or a Spring {@link SessionAwareMessageListener} object.
-	 * <p>Note: The message listener may be replaced at runtime, with the listener
-	 * container picking up the new listener object immediately (works e.g. with
-	 * DefaultMessageListenerContainer, as long as the cache level is less than
-	 * CACHE_CONSUMER). However, this is considered advanced usage; use it with care!
-	 * @throws IllegalArgumentException if the supplied listener is not a
-	 * {@link MessageListener} or a {@link SessionAwareMessageListener}
-	 * @see javax.jms.MessageListener
-	 * @see SessionAwareMessageListener
+	 * Set the service to export.
+	 * Typically populated via a bean reference.
 	 */
-	@Override
-	public void setMessageListener(Object messageListener) {
-		super.setMessageListener(messageListener);
+	public void setService(Object service) {
+		this.service = service;
+	}
+
+	/**
+	 * Return the service to export.
+	 */
+	public Object getService() {
+		return this.service;
+	}
+
+	/**
+	 * Set the interface of the service to export.
+	 * The interface must be suitable for the particular service and remoting strategy.
+	 */
+	@SuppressWarnings("rawtypes")
+	public void setServiceInterface(Class serviceInterface) {
+		if (serviceInterface != null && !serviceInterface.isInterface()) {
+			throw new IllegalArgumentException("'serviceInterface' must be an interface");
+		}
+		this.serviceInterface = serviceInterface;
 		
 		//初始化destination
 		if(this.getDestination()==null)
-			this.setDestination(new ActiveMQQueue("jms-rpc://" + ((RemoteExporter)messageListener).getServiceInterface().getName()));
+			this.setDestination(new ActiveMQQueue("jms-rpc://" + this.serviceInterface.getName()));
+	}
+
+	/**
+	 * Return the interface of the service to export.
+	 */
+	@SuppressWarnings("rawtypes")
+	public Class getServiceInterface() {
+		return this.serviceInterface;
 	}
 	
 }
