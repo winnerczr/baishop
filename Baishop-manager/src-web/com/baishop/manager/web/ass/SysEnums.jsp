@@ -54,14 +54,14 @@ Ext.onReady(function() {
 			    allowBlank: false
 			},{
 			    xtype:'textfield',
-			    id: 'txtEnumsKey',
-			    name: 'enums.enumsKey',
+			    id: 'txtEnumsName',
+			    name: 'enums.enumsName',
 			    fieldLabel: '枚举键',
 			    allowBlank: false
 			},{
 			    xtype:'textarea',
-			    id: 'txtEnumsValue',
-			    name: 'enums.enumsValue',
+			    id: 'txtEnumsText',
+			    name: 'enums.enumsText',
 			    fieldLabel: '枚举值',
 			    allowBlank: false
 			},{
@@ -100,7 +100,7 @@ Ext.onReady(function() {
 		store: Ext.create('Ext.data.Store', {
 	        idProperty: 'enumsId',
 	        fields: [
-				'enumsId', 'enumsType', 'enumsKey', 'enumsValue', 'enumsRemark'
+				'enumsId', 'enumsType', 'enumsName', 'enumsText', 'enumsRemark'
 	        ],
 	        groupField: 'enumsType',
 	        proxy: {
@@ -137,12 +137,12 @@ Ext.onReady(function() {
             sortable: true
         },{
             text: '枚举键',
-            dataIndex: 'enumsKey',
+            dataIndex: 'enumsName',
             width: 200,
             sortable: true
         },{
             text: '枚举值',
-            dataIndex: 'enumsValue',
+            dataIndex: 'enumsText',
             width: 300,
             sortable: true
         },{
@@ -186,8 +186,8 @@ Ext.onReady(function() {
 		    		var frmEnums = Ext.getCmp("frmEnums");
 		    		frmEnums.items.get("enumsId").setValue(rows[0].get("enumsId"));
 		    		frmEnums.items.get("txtEnumsType").setValue(rows[0].get("enumsType"));
-		    		frmEnums.items.get("txtEnumsKey").setValue(rows[0].get("enumsKey"));
-		    		frmEnums.items.get("txtEnumsValue").setValue(rows[0].get("enumsValue"));
+		    		frmEnums.items.get("txtEnumsName").setValue(rows[0].get("enumsName"));
+		    		frmEnums.items.get("txtEnumsText").setValue(rows[0].get("enumsText"));
 		    		frmEnums.items.get("txtEnumsRemark").setValue(rows[0].get("enumsRemark"));
 		    	});
 		    }

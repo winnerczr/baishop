@@ -22,10 +22,10 @@ public interface EnumsService extends Serializable {
 	/**
 	 * 获取枚举
 	 * @param enumsType 枚举类型
-	 * @param enumsKey 枚举键
+	 * @param enumsName 枚举键
 	 * @return 返回枚举对象
 	 */
-	public Enums getEnums(String enumsType, String enumsKey); 	
+	public Enums getEnums(String enumsType, String enumsName); 	
 	
 	/**
 	 * 获取枚举列表
