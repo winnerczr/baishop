@@ -19,14 +19,14 @@ import org.apache.zookeeper.data.Stat;
  * 集群锁
  * @author Linpn
  */
-public class CluserLock {
+public class ClusterLock {
 	protected final Log logger = LogFactory.getLog(getClass());
 	
 	private ZooKeeper zooKeeper;
 	private String path;
 	private int timeout;
 
-	public CluserLock(String connectString, String path, int timeout) throws IOException {
+	public ClusterLock(String connectString, String path, int timeout) throws IOException {
 		this.zooKeeper = new ZooKeeper(connectString, timeout, new Watcher() {
 			public void process(WatchedEvent event) {
 				logger.info("event " + event.getType() + " has happened!");

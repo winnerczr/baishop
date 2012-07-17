@@ -4,14 +4,14 @@ package com.baishop.framework.lock;
  * 集群锁异常类
  * @author Linpn
  */
-public class CluserLockException extends RuntimeException {
+public class ClusterLockException extends RuntimeException {
 	
 	private static final long serialVersionUID = 7739908608271736696L;
 	
 	/**
 	 * 构造集群锁异常类
 	 */
-	public CluserLockException() {
+	public ClusterLockException() {
 		super();
 	}
 
@@ -21,7 +21,7 @@ public class CluserLockException extends RuntimeException {
 	 * @param message
 	 *            异常信息
 	 */
-	public CluserLockException(String message) {
+	public ClusterLockException(String message) {
 		super(message);
 	}
 
@@ -31,7 +31,7 @@ public class CluserLockException extends RuntimeException {
 	 * @param cause
 	 *            异常对象
 	 */
-	public CluserLockException(Throwable cause) {
+	public ClusterLockException(Throwable cause) {
 		super(cause);
 	}
 
@@ -43,7 +43,7 @@ public class CluserLockException extends RuntimeException {
 	 * @param cause
 	 *            异常对象
 	 */
-	public CluserLockException(String message, Throwable cause) {
+	public ClusterLockException(String message, Throwable cause) {
 		super(message, cause);
 	}
 

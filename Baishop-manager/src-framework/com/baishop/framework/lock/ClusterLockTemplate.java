@@ -8,7 +8,7 @@ import org.apache.commons.logging.LogFactory;
  * 
  * @author Linpn
  */
-public class CluserLockTemplate {
+public class ClusterLockTemplate {
 
 	protected final Log logger = LogFactory.getLog(getClass());
 
@@ -17,14 +17,14 @@ public class CluserLockTemplate {
 	// 超时时间，单位：毫秒
 	private int timeout = 40 * 1000;
 
-	public CluserLockTemplate() {
+	public ClusterLockTemplate() {
 	}
 
-	public CluserLockTemplate(String connectString) {
+	public ClusterLockTemplate(String connectString) {
 		this.connectString = connectString;
 	}
 
-	public CluserLockTemplate(String connectString, int timeout) {
+	public ClusterLockTemplate(String connectString, int timeout) {
 		this.connectString = connectString;
 		this.timeout = timeout;
 	}
@@ -32,40 +32,42 @@ public class CluserLockTemplate {
 	
 
 	/**
-	 * 执行集群同步
-	 * 
-	 * @param path
-	 * @param action
-	 * @return
+	 * 执行集群同步锁，排队形式
+	 * @param key 集群锁的键，标识是哪个集群锁，任意值(不允许'/'字符)，建议使用类的限定名，但要保证唯一
+	 * @param action 回调方法
+	 * @return 回调的返回值
 	 */
-	public synchronized boolean execute(String path, CluserLockCallback action) {
+	public synchronized boolean lock(String key, ClusterLockCallback action) {
 		try {
+			//组装zookeeper的path
+			String path = "/ClusterLock-" + key;
+			
 			// 创建集群锁对象
-			CluserLock cluserLock = new CluserLock(connectString, path, timeout);
+			ClusterLock clusterLock = new ClusterLock(connectString, path, timeout);
 
 			try {
 				// 上锁
-				cluserLock.lock();
+				clusterLock.lock();
 				logger.info("lock path : " + path);
 
 				// 执行过程
-				return action.doInCluserLock();
+				return action.doInClusterLock();
 
 			} catch (Exception e) {
 				throw e;
 			} finally {
 				// 解锁
-				cluserLock.unLock();
+				clusterLock.unLock();
 				logger.info("unlock path : " + path);
 
 				// 关闭连接
-				cluserLock.close();
+				clusterLock.close();
 				logger.info("close ZooKeeper");
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new CluserLockException(e);
+			throw new ClusterLockException(e);
 		}
 	}
 

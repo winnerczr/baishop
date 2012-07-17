@@ -40,7 +40,7 @@
     </bean>
     
     <!-- CluserLock集群锁 -->
-   	<bean id="cluserLockTemplate" class="com.baishop.framework.lock.CluserLockTemplate"> 
+   	<bean id="clusterLockTemplate" class="com.baishop.framework.lock.ClusterLockTemplate"> 
 		<property name="connectString">
 			<value>${remoting.zookeeper.url}</value>
 		</property>
