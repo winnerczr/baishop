@@ -3,8 +3,6 @@ package com.baishop.service.ass;
 import java.util.List;
 import java.util.Map;
 
-import org.aspectj.lang.JoinPoint;
-
 import com.baishop.entity.ass.Syslog;
 
 /**
@@ -12,6 +10,13 @@ import com.baishop.entity.ass.Syslog;
  * @author Linpn
  */
 public interface SyslogService {
+	
+	
+	/**
+	 * 添加日志
+	 * @param syslog 日志对象
+	 */
+	public void logger(final Syslog syslog);
 	
 	/**
 	 * 获取日志
@@ -36,22 +41,5 @@ public interface SyslogService {
 	 * @return
 	 */
 	public long getSyslogCount(Map<String,Object> params);
-	
-	/**
-	 * 添加日志
-	 * @param syslog 日志对象
-	 */
-	public void logger(final Syslog syslog);
-	
-	/**
-	 * 添加日志Aop切面方法
-	 * @param joinpoint
-	 */
-	public void loggerJoinPoint(final JoinPoint joinpoint);
-	
-	/**
-	 * 清空过滤器缓存
-	 */
-	public void clearFilterCache();
 
 }

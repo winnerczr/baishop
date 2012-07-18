@@ -1,9 +1,16 @@
 package com.baishop.framework.remoting.jms;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageProducer;
+import javax.jms.Session;
+
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jms.listener.DefaultMessageListenerContainer;
 import org.springframework.jms.remoting.JmsInvokerServiceExporter;
+import org.springframework.jms.support.JmsUtils;
+import org.springframework.remoting.support.RemoteInvocationResult;
 
 /**
  * 包装了DefaultMessageListenerContainer与JmsInvokerServiceExporter。
@@ -22,7 +29,26 @@ public class JmsRpcServiceExporter extends DefaultMessageListenerContainer imple
 	public void afterPropertiesSet() {
 		super.afterPropertiesSet();
 		
-		JmsInvokerServiceExporter messageListener = new JmsInvokerServiceExporter();
+		JmsInvokerServiceExporter messageListener = new JmsInvokerServiceExporter(){
+			/**
+			 * 重写基类方法，使其的返回值为void时，不推送消息
+			 */
+			@Override
+			protected void writeRemoteInvocationResult(
+					Message requestMessage, Session session, RemoteInvocationResult result) throws JMSException {
+				//判断返回值是否为void
+				if(result.getValue()!=null){
+					Message response = createResponseMessage(requestMessage, session, result);
+					MessageProducer producer = session.createProducer(requestMessage.getJMSReplyTo());
+					try {
+						producer.send(response);
+					}
+					finally {
+						JmsUtils.closeMessageProducer(producer);
+					}
+				}
+			}
+		};
 		messageListener.setService(service);
 		messageListener.setServiceInterface(serviceInterface);
 		messageListener.afterPropertiesSet();

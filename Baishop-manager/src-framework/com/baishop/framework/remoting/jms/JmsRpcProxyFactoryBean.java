@@ -137,6 +137,7 @@ public class JmsRpcProxyFactoryBean extends JmsInvokerProxyFactoryBean {
 			}
 			
 			
+			//如果接口方法返回值为void，就异步执行，不需要等待
 			if(!returnType.getName().equals("void")){
 				long timeout = getReceiveTimeout();
 				return (timeout > 0 ? consumer.receive(timeout) : consumer.receive());
