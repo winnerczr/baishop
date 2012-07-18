@@ -13,6 +13,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.baishop.aspect.SyslogAspect;
 import com.baishop.entity.ass.Params;
 import com.baishop.entity.ass.Syslog;
 import com.baishop.framework.json.JsonConfigGlobal;
@@ -26,6 +27,8 @@ public class SysLogger extends PageManagerController {
 	
 	@Autowired
 	private SyslogService syslogService;
+	@Autowired
+	private SyslogAspect syslogAspect;
 
 	@Override
 	public void execute(HttpServletExtendRequest request,
@@ -134,7 +137,7 @@ public class SysLogger extends PageManagerController {
 			Params params = paramsService.getParams("logger_filter");
 			params.setParamsValue(filter);
 			paramsService.editParams(params);			
-			syslogService.clearFilterCache();
+			syslogAspect.clearFilterCache();
 			
 			//输出数据
 			out.println("{success: true}");

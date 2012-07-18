@@ -26,11 +26,16 @@
 	<aop:config>
        	<!-- 业务层中所有公开方法的切入点 -->
 		<aop:pointcut id="servicePointcut"  expression="execution(* com.baishop.service.*.*.*(..)) and !execution(* com.baishop.service.ass.SyslogService.*(..))" />
+		
 		<!-- 日志插入点 -->
-	    <aop:aspect ref="syslogService"> 
+	    <aop:aspect ref="syslogAspect"> 
 	        <aop:after pointcut-ref="servicePointcut" method="loggerJoinPoint" />
 	    </aop:aspect>
 	</aop:config>
+	
+	<!-- 日志切面 -->
+	<bean id="syslogAspect" class="com.baishop.aspect.SyslogAspect">
+	</bean>
 	
 
 </beans>
