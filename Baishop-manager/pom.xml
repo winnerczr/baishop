@@ -18,10 +18,8 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
-		<!-- 主要依赖库的版本定义 -->
 		<spring.version>3.0.6.RELEASE</spring.version>
 		<spring.security.version>3.0.7.RELEASE</spring.security.version>
-		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
