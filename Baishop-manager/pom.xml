@@ -73,7 +73,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<!-- 设置WebContent目录为Web目录 -->
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
