@@ -18,10 +18,8 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
-		<!-- 主要依赖库的版本定义 -->
 		<spring.version>3.0.6.RELEASE</spring.version>
 		<spring.security.version>3.0.7.RELEASE</spring.security.version>
-		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
@@ -75,7 +73,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<!-- 设置WebContent目录为Web目录 -->
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
