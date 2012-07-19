@@ -63,7 +63,6 @@ public class HttpInvokerWithAuthsServiceExporter
 			throw new NestedServletException("Class not found during deserialization", ex);
 		}
 	}
-
 	
 	
 	/**
@@ -71,10 +70,10 @@ public class HttpInvokerWithAuthsServiceExporter
 	 * @param location
 	 * @throws Exception
 	 */
-	public void setAuthsConfLocation(Resource location) throws Exception {
+	public void setAuthsConfigurer(RemoteAuthsConfigurer authsConfigurer) throws Exception {
 		if(configurer==null){
-			configurer = this.getConfigurer(location);
-		}		
+			configurer = this.getConfigurer(authsConfigurer);
+		}
 	}
 	
 	
@@ -83,12 +82,11 @@ public class HttpInvokerWithAuthsServiceExporter
 	 * @param location
 	 * @throws Exception
 	 */
-	public void setAuthsConfService(RemoteAuthsConfigurer authsConfService) throws Exception {
+	public void setAuthsConfigurer(Resource location) throws Exception {
 		if(configurer==null){
-			configurer = this.getConfigurer(authsConfService);
-		}
+			configurer = this.getConfigurer(location);
+		}		
 	}	
-	
 	
 	
 	/**
@@ -99,7 +97,7 @@ public class HttpInvokerWithAuthsServiceExporter
 	 * @param methodName 简单方法名，如：getUser
 	 * @return 如果有权限返回true,如则返回false
 	 */
-	public boolean hasAuthorities(String user, String password, String interfaceName, String methodName) {
+	protected boolean hasAuthorities(String user, String password, String interfaceName, String methodName) {
 		try {
 			// 验证用户名或密码
 			JSONObject jsonUser = configurer.getJSONObject(user);
@@ -125,6 +123,18 @@ public class HttpInvokerWithAuthsServiceExporter
 		} catch (Exception ex){
 			return false;
 		}
+	}
+	
+
+	
+	
+	/**
+	 * 从service中读取JSON格式的权限数据
+	 * @param authsConfigurer AuthsConfigurer 对象
+	 * @return 返回JSON
+	 */
+	private JSONObject getConfigurer(RemoteAuthsConfigurer authsConfigurer) throws Exception {
+		return authsConfigurer.getAuthsConf();
 	}
 	
 	
@@ -177,17 +187,5 @@ public class HttpInvokerWithAuthsServiceExporter
 //		}
 		
 	}
-	
-	
-	/**
-	 * 从service中读取JSON格式的权限数据
-	 * @param authsConfService AuthsConfService 对象
-	 * @return 返回JSON
-	 */
-	private JSONObject getConfigurer(RemoteAuthsConfigurer authsConfService) throws Exception {
-		return authsConfService.getAuthsConf();
-	}
-
-
 
 }
