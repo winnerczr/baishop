@@ -45,8 +45,13 @@
 	<bean id="JmsProxyFactoryBean" class="com.kadang.kd6.framework.remoting.jms.JmsRpcProxyFactoryBean" abstract="true">
         <property name="connectionFactory" ref="jmsConnectionFactory"/>
 	</bean>
-	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-		<property name="brokerURL" value="${remoting.jms.url}"/>
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">  
+	    <property name="connectionFactory">  
+	        <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL" value="${remoting.jms.url}"/>
+			</bean> 
+	    </property>  
+	    <property name="maxConnections" value="5"/>  
 	</bean>
 	<bean id="jmsTransactionManager" class="org.springframework.jms.connection.JmsTransactionManager">
 		<property name="connectionFactory" ref="jmsConnectionFactory"/>		
