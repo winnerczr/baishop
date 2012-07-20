@@ -108,7 +108,6 @@
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.CityService</value>
 	    </property>
-	</bean>
-		
+	</bean>		
 	
 </beans>
