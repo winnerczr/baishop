@@ -50,7 +50,7 @@
 						</property>
 					</bean> 
 			    </property>  
-			    <property name="maxConnections" value="5"/>  
+			    <property name="maxConnections" value="1"/>  
 			</bean>
     	</property>
     </bean>

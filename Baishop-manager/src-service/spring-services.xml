@@ -26,7 +26,7 @@
 	
 	<!-- 基类SoaServiceExporter -->
 	<bean id="SoaServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsServiceExporter" abstract="true">
-		<property name="authsConfService">
+		<property name="authsConfigurer">
 			<ref bean="remoteAuthsService"/>
 		</property>
 	</bean>
