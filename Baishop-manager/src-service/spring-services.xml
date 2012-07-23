@@ -25,8 +25,8 @@
 	<!-- =================================SOA Exporter服务基类================================= -->
 	
 	<!-- 基类SoaServiceExporter -->
-	<bean id="SoaServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsServiceExporter" abstract="true">
-		<property name="authsConfigurer">
+	<bean id="SoaServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerServiceExporter" abstract="true">
+		<property name="authsConfigurerService">
 			<ref bean="remoteAuthsService"/>
 		</property>
 	</bean>
@@ -35,7 +35,7 @@
 	<!-- =================================JMS Exporter服务基类================================= -->
 	
 	<!-- 基类JmsServiceExporter -->
-	<bean id="JmsServiceExporter" class="com.kadang.kd6.framework.remoting.jms.JmsRpcServiceExporter" abstract="true">
+	<bean id="JmsServiceExporter" class="com.baishop.framework.remoting.jms.JmsRpcServiceExporter" abstract="true">
 		<property name="connectionFactory">
 			<bean class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">  
 			    <property name="connectionFactory">  
@@ -108,6 +108,7 @@
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.CityService</value>
 	    </property>
-	</bean>		
+	</bean>
+		
 	
 </beans>

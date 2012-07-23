@@ -23,7 +23,7 @@
 	<!-- =================================SOA FactoryBean服务基类================================= -->
 	
 	<!-- 基类SoaProxyFactoryBean -->
-	<bean id="SoaProxyFactoryBean" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsProxyFactoryBean" abstract="true">
+	<bean id="SoaProxyFactoryBean" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerProxyFactoryBean" abstract="true">
 		<property name="httpInvokerRequestExecutor">
 			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" />
 		</property>

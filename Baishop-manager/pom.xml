@@ -94,6 +94,7 @@
 								<include>conf/*.xml</include>
 								<include>com/baishop/service/**</include>
 								<include>com/baishop/entity/**</include>
+								<include>com/baishop/aspect/**</include>
 							</includes>
 							<excludes>
 								<exclude>com/baishop/service/*.java</exclude>
