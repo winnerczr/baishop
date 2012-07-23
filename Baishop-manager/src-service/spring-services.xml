@@ -19,38 +19,9 @@
     http://www.springframework.org/schema/security/spring-security-3.0.xsd
 	">
 	
-	<import resource="spring-props.xml"/>
 	
+	<import resource="spring-support.xml"/>
 	
-	<!-- =================================SOA Exporter服务基类================================= -->
-	
-	<!-- 基类SoaServiceExporter -->
-	<bean id="SoaServiceExporter" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerWithAuthsServiceExporter" abstract="true">
-		<property name="authsConfService">
-			<ref bean="remoteAuthsService"/>
-		</property>
-	</bean>
-	
-	
-	<!-- =================================JMS Exporter服务基类================================= -->
-	
-	<!-- 基类JmsServiceExporter -->
-	<bean id="JmsServiceExporter" class="com.kadang.kd6.framework.remoting.jms.JmsRpcServiceExporter" abstract="true">
-		<property name="connectionFactory">
-			<bean class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">  
-			    <property name="connectionFactory">  
-			        <bean class="org.apache.activemq.ActiveMQConnectionFactory">
-						<property name="brokerURL">
-							<value>${remoting.jms.url}</value>
-						</property>
-					</bean> 
-			    </property>  
-			    <property name="maxConnections" value="5"/>  
-			</bean>
-		</property>
-	</bean>
-    
-    
     
 	<!-- ============================sale服务类============================ -->
 	
@@ -108,7 +79,6 @@
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.CityService</value>
 	    </property>
-	</bean>
-		
+	</bean>		
 	
 </beans>
