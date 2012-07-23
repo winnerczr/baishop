@@ -48,7 +48,7 @@
 			classpath:spring-props.xml
 			classpath:spring-dao.xml
 			classpath:spring-beans.xml
-			classpath:spring-security.xml
+			classpath:spring-security.xml 
 		</param-value>
 	</context-param> 
 	
