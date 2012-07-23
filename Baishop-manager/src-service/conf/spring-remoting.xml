@@ -20,7 +20,43 @@
 	">
 
 
-	<import resource="classpath*:spring-support.xml"/>
+	<!-- =================================SOA FactoryBean服务基类================================= -->
+	
+	<!-- 基类SoaProxyFactoryBean -->
+	<bean id="SoaProxyFactoryBean" class="com.baishop.framework.remoting.httpinvoker.HttpInvokerProxyFactoryBean" abstract="true">
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" />
+		</property>
+		<property name="user">
+			<value>${remoting.soa.user}</value>
+		</property>
+		<property name="password">
+			<value>${remoting.soa.password}</value>
+		</property>
+		<property name="prefix">
+			<value>${remoting.soa.url}</value>
+		</property>
+	</bean>
+	
+		
+	<!-- =================================JMS FactoryBean服务基类================================= -->
+	
+	<!-- 基类JmsProxyFactoryBean -->
+	<bean id="JmsProxyFactoryBean" class="com.baishop.framework.remoting.jms.JmsRpcProxyFactoryBean" abstract="true">
+        <property name="connectionFactory">
+			<bean class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">  
+			    <property name="connectionFactory">  
+			        <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+						<property name="brokerURL">
+							<value>${remoting.jms.url}</value>
+						</property>
+					</bean> 
+			    </property>  
+			    <property name="maxConnections" value="5"/>  
+			</bean>
+		</property>
+	</bean>
+	
 	
 	
 	<!-- ============================sale服务类============================ -->
