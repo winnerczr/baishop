@@ -46,7 +46,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:spring-remoting.xml
+			classpath:spring-props.xml
+			classpath*:spring-remoting.xml
 		</param-value>
 	</context-param> 
 
