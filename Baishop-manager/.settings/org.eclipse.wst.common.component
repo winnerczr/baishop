@@ -3,6 +3,7 @@
     <wb-module deploy-name="Baishop-manager">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src-framework"/>
         <property name="java-output-path" value="/Baishop-manager/build/classes"/>
         <property name="context-root" value="manager"/>
     </wb-module>

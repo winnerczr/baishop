@@ -28,6 +28,14 @@
 		<testSourceDirectory>src-test</testSourceDirectory>
 		<outputDirectory>WebContent/WEB-INF/classes</outputDirectory>
 		<testOutputDirectory>WebContent/WEB-INF/classes</testOutputDirectory>
+		<resources>
+			<resource>
+				<directory>src-web</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

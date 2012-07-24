@@ -42,13 +42,60 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>src-web</source>
+								<source>${basedir}/src-web</source>
 								<source>${basedir}/src-service</source>
 								<source>${basedir}/src-service-impl</source>
 								<source>${basedir}/src-dao</source>
 								<source>${basedir}/src-framework</source>
 								<source>${basedir}/src-test</source>
 							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-resource</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>add-resource</goal>
+						</goals>
+						<configuration>
+							<resources>
+								<resource>
+									<directory>${basedir}/src-web</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<directory>${basedir}/src-service</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<directory>${basedir}/src-service-impl</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<directory>${basedir}/src-dao</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<directory>${basedir}/src-framework</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+								<resource>
+									<directory>${basedir}/src-test</directory>
+									<excludes>
+										<exclude>**/*.java</exclude>
+									</excludes>
+								</resource>
+							</resources>
 						</configuration>
 					</execution>
 				</executions>
@@ -92,12 +139,12 @@
 							<jarName>${project.artifactId}</jarName>
 							<includes>
 								<include>conf/*.xml</include>
-								<include>com/baishop/service/**</include>
-								<include>com/baishop/entity/**</include>
 								<include>com/baishop/aspect/**</include>
+								<include>com/baishop/entity/**</include>
+								<include>com/baishop/service/**</include>
 							</includes>
 							<excludes>
-								<exclude>com/baishop/service/*.java</exclude>
+								<exclude>com/baishop/service/*.class</exclude>
 								<exclude>com/baishop/service/impl/**</exclude>
 							</excludes>
 						</configuration>
@@ -118,10 +165,10 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<plugin>  
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.2</version>
+				<version>2.3.2</version>
 			</plugin>
 		</plugins>
 	</build>
