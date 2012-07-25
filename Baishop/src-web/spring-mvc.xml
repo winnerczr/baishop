@@ -23,6 +23,9 @@
 	">
 	
 	
+	<import resource="spring-validator.xml"/>
+	
+	
 	<!-- 允许通过 @Autowired 注入Bean -->
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 	
