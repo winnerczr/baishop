@@ -5,7 +5,7 @@ Pg3Ed7Ej2gt5
 原型设计软件			Axure RP Pro6
 缺陷跟踪管理系统		JIRA 4.4 
 压力测试工具			LoadRunne
-网站流量统计			CNZZ、百度统计
+网站流量统计			CNZZ、百度统计、51la
 内容分享工具			百度分享
 网站信任工具			google信任、QQ信任
 推荐工具				百分点推荐
