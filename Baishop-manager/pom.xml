@@ -47,7 +47,6 @@
 								<source>${basedir}/src-service-impl</source>
 								<source>${basedir}/src-dao</source>
 								<source>${basedir}/src-framework</source>
-								<source>${basedir}/src-test</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -96,6 +95,18 @@
 									</excludes>
 								</resource>
 							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${basedir}/src-test</source>
+							</sources>
 						</configuration>
 					</execution>
 				</executions>
