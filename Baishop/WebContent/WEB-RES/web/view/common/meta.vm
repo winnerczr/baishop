@@ -6,6 +6,7 @@
 <script src="/WEB-RES/script/jquery/jquery-1.5.2.js" type="text/javascript"></script>
 <script src="/WEB-RES/script/common.js" type="text/javascript"></script>
 <link href="/WEB-RES/css/common.css" type="text/css" rel="stylesheet"/>
+<link href="/WEB-RES/css/icon.css" type="text/css" rel="stylesheet"/>
 
 ##<!-- 网页调试插件 -->
 ##<script src="https://getfirebug.com/firebug-lite.js" type="text/javascript"></script>

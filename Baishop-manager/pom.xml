@@ -15,6 +15,7 @@
 			<id>kadang snapshots</id>
 			<name>Kadang Snapshots Repository</name>
 			<url>https://repository.sonatype.org/content/groups/public/</url>
+			<uniqueVersion>true</uniqueVersion> 
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
