@@ -36,6 +36,15 @@ Ext.onReady(function() {
 			bodyStyle:'padding:20px 0 0 23px',
 			border: false,
 			autoScroll: true,
+			defaults: { 
+				listeners: {
+					specialkey: function(obj,e){
+						 if (e.getKey() == Ext.EventObject.ENTER) {
+							Ext.getCmp("btnOK").handler();
+						}
+					}
+				}
+			},
 			fieldDefaults: {
 				labelAlign: 'left',
 				labelWidth: 50, 
