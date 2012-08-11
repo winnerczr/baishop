@@ -30,10 +30,7 @@
 		<property name="sqlMapClientShop">
 			<ref bean="sqlMapClientShop"/>
 		</property>
-		<!--  
-		<property name="sqlMapClientSale">
-			<ref bean="sqlMapClientSale"/>
-		</property>
+		<!-- 
 		<property name="sqlMapClientSlaves">
 			<map>
 				<entry key="baishop-slave-1" value-ref="sqlMapClientSlave-1" />
