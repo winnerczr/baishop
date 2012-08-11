@@ -40,7 +40,7 @@ Ext.onReady(function() {
 			border: false,
 			autoScroll: false,
 			fieldDefaults: {
-			labelAlign: 'left',
+				labelAlign: 'left',
 				labelWidth: 70, 
 				msgTarget: 'side',
 				width: 260
@@ -56,6 +56,15 @@ Ext.onReady(function() {
 		       	    layout: 'fit',
 		       	    showed: true,
 					bodyStyle:'padding:20px',
+					defaults: { 
+						listeners: {
+							specialkey: function(obj,e){
+								 if (e.getKey() == Ext.EventObject.ENTER) {
+									Ext.getCmp("btnOK").handler();
+								}
+							}
+						}
+					},
 		       	    items:[{
 					    xtype: 'hiddenfield',
 					    id: 'userId',
