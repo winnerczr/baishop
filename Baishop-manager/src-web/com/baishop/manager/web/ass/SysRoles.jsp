@@ -39,6 +39,15 @@ Ext.onReady(function() {
 			bodyStyle:'padding:20px 0 0 23px',
 			border: false,
 			autoScroll: true,
+			defaults: { 
+				listeners: {
+					specialkey: function(obj,e){
+						 if (e.getKey() == Ext.EventObject.ENTER) {
+							Ext.getCmp("btnGroupOK").handler();
+						}
+					}
+				}
+			},
 			fieldDefaults: {
 				labelAlign: 'left',
 				labelWidth: 50, 
@@ -70,8 +79,7 @@ Ext.onReady(function() {
 				xtype:'textarea',
 				id: 'group_txtRoleDesc',
 				name: 'role.roleDesc',
-				fieldLabel: '描述',
-				allowBlank: false
+				fieldLabel: '描述'
 			},{
 				xtype:'hiddenfield',
 				id: 'group_hddRoleType',
@@ -80,14 +88,13 @@ Ext.onReady(function() {
 			}]
 		})],
 		buttons: [{
-			id: "btnOK",
+			id: "btnGroupOK",
 			text:'确定',
 			width: 80,
 			handler: function(){			    		 		
 				saveRoles(Ext.getCmp("winGroup"), Ext.getCmp("frmGroup"), Ext.getCmp("treeRoles"));
 			}
 		},{
-			id: "btnCancel",
 			text:'取消',
 			width: 80,
 			handler: function(){
@@ -130,6 +137,15 @@ Ext.onReady(function() {
 		       	    layout: 'fit',
 		       	    showed: true,
 					bodyStyle:'padding:20px',
+					defaults: { 
+						listeners: {
+							specialkey: function(obj,e){
+								 if (e.getKey() == Ext.EventObject.ENTER) {
+									Ext.getCmp("btnRoleOK").handler();
+								}
+							}
+						}
+					},
 		       	    items:[{
 					    xtype: 'hiddenfield',
 					    id: 'hddRoleId',
@@ -155,8 +171,7 @@ Ext.onReady(function() {
 						xtype:'textarea',
 						id: 'txtRoleDesc',
 						name: 'role.roleDesc',
-						fieldLabel: '描述',
-						allowBlank: false
+						fieldLabel: '描述'
 					},{
 						xtype:'combobox',
 						id: 'cbbRoleType',
@@ -268,14 +283,13 @@ Ext.onReady(function() {
 			}]
 		})],
 		buttons: [{
-			id: "btnOK",
+			id: "btnRoleOK",
 			text:'确定',
 			width: 80,
 			handler: function(){			    		 		
 				saveRoles(Ext.getCmp("winRoles"), Ext.getCmp("frmRoles"), Ext.getCmp("treeRoles"));
 			}
 		},{
-			id: "btnCancel",
 			text:'取消',
 			width: 80,
 			handler: function(){

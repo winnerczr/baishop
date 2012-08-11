@@ -15,7 +15,6 @@ public abstract class BaseService {
 	public final Logger logger = Logger.getLogger(this.getClass());
 	private SqlMapClientTemplate sqlMapClientAss;	
 	private SqlMapClientTemplate sqlMapClientShop;	
-	private SqlMapClientTemplate sqlMapClientSale;
 	private Map<String, SqlMapClientTemplate> sqlMapClientSlaves;	
 	
 	
@@ -45,20 +44,6 @@ public abstract class BaseService {
 	 */
 	public void setSqlMapClientShop(SqlMapClientTemplate sqlMapClientShop) {
 		this.sqlMapClientShop = sqlMapClientShop;
-	}
-	
-	/**
-	 * 获取交易库SqlMapClientTemplate对象
-	 */
-	public SqlMapClientTemplate getSqlMapClientSale() {
-		return sqlMapClientSale;
-	}
-
-	/**
-	 * 设置交易库SqlMapClientTemplate对象
-	 */
-	public void setSqlMapClientSale(SqlMapClientTemplate sqlMapClientSale) {
-		this.sqlMapClientSale = sqlMapClientSale;
 	}
 	
 	/**
