@@ -22,6 +22,16 @@
     http://www.springmodules.org/validation/bean/validation.xsd
 	">	
 	
+		
+		
+	<!-- 导入beans的aop配置 -->
+	<import resource="spring-aop.xml"/>
+	
+	<!-- 导入一些工具类配置 -->
+	<import resource="spring-tools.xml"/>
+	
+	
+	
 	<!-- Service基类 -->
 	<bean id="baseService" class="com.baishop.service.BaseService" abstract="true">
 		<property name="sqlMapClientAss">
@@ -104,14 +114,6 @@
 	<!-- 系统日志服务器-->
 	<bean id="syslogService" class="com.baishop.service.impl.ass.SyslogServiceImpl" parent="baseService" scope="singleton">
 	</bean>
-	
-	
-		
-	<!-- 导入beans的aop配置 -->
-	<import resource="spring-beans-aop.xml"/>
-	
-	<!-- 导入一些工具类配置 -->
-	<import resource="spring-beans-tools.xml"/>
 	
 
 </beans>
