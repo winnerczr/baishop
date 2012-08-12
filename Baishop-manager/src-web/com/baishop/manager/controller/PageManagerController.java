@@ -43,7 +43,7 @@ import com.baishop.service.ass.RolesService;
 import com.baishop.service.goods.CategoryService;
 
 /**
- * 页面MVC控制层基类，主要编写业务公共方法
+ * 页面MVC控制层基类，主要编写公共方法
  * @author Linpn
  */
 public abstract class PageManagerController extends PageController {
@@ -76,14 +76,6 @@ public abstract class PageManagerController extends PageController {
 	@Autowired
 	protected CategoryService categoryService;
 	
-	
-	public PageManagerController(){
-		/**
-		 * Spring MVC设置的视图，以"/WEB-INF/classes/"开头，以".jsp"结尾的文件
-		 * 默认与当前控制类同名，如"com.baishop.web.manager.Main"类的视图文件为"com/baishop/web/manager/Main"
-		 */
-		this.view = this.getClass().getName().replaceAll("\\.", "/");
-	}
 	
 	
 	/**
