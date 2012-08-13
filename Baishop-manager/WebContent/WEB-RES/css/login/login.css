@@ -1,0 +1,55 @@
+/*------------------- 
+Copyright(c) Kadang.Com Inc All rights reserved 2012/07/23  by 希子
+-------------------*/
+/*--- reset ---*/
+	html{overflow-x: hidden;}
+    html,body,div,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,iframe,table,caption,tbody,tfoot,thead,th,td{margin:0;padding:0;}
+    ol,ul{list-style:none;}
+    fieldset,abbr,acronym{border:0;}
+    img{border:0;vertical-align:top;}
+    address,caption,cite,code,dfn,i,em,b,strong,th,var,optgroup{font-style:normal;}
+    blockquote,q{quotes:none;}
+    blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+    table{border-collapse:collapse;border-spacing:0;}
+    caption,th,td{text-align:left;}
+    input,select,textarea{vertical-align:middle;}
+    input,button,select,textarea{outline:none}
+/*--- common ---*/
+    body{font-family:'微软雅黑','宋体';}
+    .fz18{font-size:18px;}
+    .fz14{font-size:14px;}
+    .fz12{font-size: 12px;}
+    .ovh{overflow: hidden;}
+    .pt5{padding-top:5px;}
+    .vam{vertical-align: middle;}
+    .fl{float:left;display: inline;}
+    .vh{visibility: hidden;}
+    .vv{visibility: visible;}
+    .w{width:100%;}
+/*--- login.html ---*/
+    .erp_img{background:url(erp_mian.jpg) no-repeat -9999px;}
+	.loginBody,.comBody{background:#076aab url(bg.jpg) repeat-x left top;}
+        .loginMain{position: relative;width:1059px;height:335px;margin:203px auto 0 auto;}
+            .erp_logo{width: 353px;height:421px;background-position: 0 0;}
+            .erp_login{width:426px;height:421px;background-position: -354px 0;}
+                .erp_tableLogin{width:100%;margin-top:85px;color: #fff;}
+                .erp_tableLogin td{padding:6px 2px;}
+                .erp_tableLogin .input_text{width:210px;height:20px;padding:8px 7px;border: 1px solid #0d2c52;background:#1e4f8a;line-height:20px;color:#fff;font-size:14px;}
+                .erp_tableLogin .loginEor{float: left;background:url(errorBtn.png) no-repeat left center;padding-left:20px;}
+                .erp_tableLogin .td1{width:123px;text-align: right;}
+                .erp_tableLogin .checkBox{width:20px;height:20px}
+                .erp_tableLogin .checkBoxTips{float: left;display: block;padding-top:1px;*padding-top:2px;font-size:12px;}
+                .erp_tableLogin .subBtn{background:url(loginbtn.png) no-repeat;display: block;border: none;background-position: 0 0;height:42px;width:104px;cursor:pointer;}
+            .erp_rightDiv{width:280px;height:421px;background-position: -779px 0;}
+
+/*--- common fix ---*/
+    .backHead{height:115px;padding-top:1px;border-bottom:1px solid #557ba4;position:relative;}
+        .backLogo{display: block;margin-top:35px;margin-left:45px;}
+        .backHead .logout{position:absolute;top:85px;right:30px;color:#fff;font-size:14px;}
+    .backFoot{height:69px;line-height:69px;padding-left:36px;color:#fff;border-top:1px solid #557ba4;}
+/*--- index.html ---*/
+    .backMain{height:450px;}
+        .backMenu{margin-top:60px;margin-left:30px;}
+            .backMenu li{float: left;margin-left:14px;margin-bottom: 30px;}
+            .backMenu li a{display: block;background:#4172a1;height:60px;line-height:60px;width:247px;color: #fff;text-align: center;font-size:18px;text-decoration: none;}
+            .backMenu li a:hover{background:#ffc000;color: #132860;font-weight:700;}
