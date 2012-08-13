@@ -5,7 +5,7 @@
   <resultMap id="resultMap" class="com.baishop.entity.ass.Enums" >
     <result column="enums_id" property="enumsId" jdbcType="INTEGER" />
     <result column="enums_type" property="enumsType" jdbcType="VARCHAR" />
-    <result column="enums_name" property="enumsName" jdbcType="VARCHAR" />
+    <result column="enums_code" property="enumsCode" jdbcType="VARCHAR" />
     <result column="enums_text" property="enumsText" jdbcType="VARCHAR" />
     <result column="enums_remark" property="enumsRemark" jdbcType="VARCHAR" />
   </resultMap>
@@ -28,13 +28,13 @@
 		<isNotEmpty prepend="AND" property="enumsType">
 			enums_type = #enumsType:VARCHAR#
 		</isNotEmpty>
-		<isNotEmpty prepend="AND" property="enumsName">
-			enums_name = #enumsName:VARCHAR#
+		<isNotEmpty prepend="AND" property="enumsCode">
+			enums_code = #enumsCode:VARCHAR#
 		</isNotEmpty>
 		<!-- 网站关键字查询 -->
 		<isNotEmpty prepend="and" property="searchKey" close=")" open="(">
 			enums_type like CONCAT('%',#searchKey:VARCHAR#,'%') or 
-			enums_name like CONCAT('%',#searchKey:VARCHAR#,'%') or 
+			enums_code like CONCAT('%',#searchKey:VARCHAR#,'%') or 
 			enums_text like CONCAT('%',#searchKey:VARCHAR#,'%')
 		</isNotEmpty>
 	</dynamic>
@@ -62,8 +62,8 @@
       <isNotNull prepend="," property="enumsType" >
         enums_type
       </isNotNull>
-      <isNotNull prepend="," property="enumsName" >
-        enums_name
+      <isNotNull prepend="," property="enumsCode" >
+        enums_code
       </isNotNull>
       <isNotNull prepend="," property="enumsText" >
         enums_text
@@ -78,8 +78,8 @@
       <isNotNull prepend="," property="enumsType" >
         #enumsType:VARCHAR#
       </isNotNull>
-      <isNotNull prepend="," property="enumsName" >
-        #enumsName:VARCHAR#
+      <isNotNull prepend="," property="enumsCode" >
+        #enumsCode:VARCHAR#
       </isNotNull>
       <isNotNull prepend="," property="enumsText" >
         #enumsText:VARCHAR#
@@ -100,8 +100,8 @@
       <isNotNull prepend="," property="enumsType" >
         enums_type = #enumsType:VARCHAR#
       </isNotNull>
-      <isNotNull prepend="," property="enumsName" >
-        enums_name = #enumsName:VARCHAR#
+      <isNotNull prepend="," property="enumsCode" >
+        enums_code = #enumsCode:VARCHAR#
       </isNotNull>
       <isNotNull prepend="," property="enumsText" >
         enums_text = #enumsText:VARCHAR#
