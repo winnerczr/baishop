@@ -224,6 +224,37 @@ public abstract class PageManagerController extends PageController {
 	
 
 	//------------------------------------- 公共方法 ----------------------------------------------//
+	
+	/**
+	 * 执行首页的公共代码
+	 * @param request
+	 * @param response
+	 * @param modeview
+	 */
+	protected void doMainPage(HttpServletExtendRequest request,
+			HttpServletExtendResponse response, ModelAndView modeview){
+		// 获取当前用户有权限的模块树
+		JSONObject modules = this.getTreeModulesOfJSON(this.getCurrUser(),
+															this.appConf.getProperty("app.name", "", "UTF-8"),
+															new String[] { 
+																ModulesService.SYSTEM,
+																ModulesService.GROUP,
+																ModulesService.MODULE
+															});
+		JSONArray treeModules = modules.getJSONArray("children");
+		if(treeModules.size()>0)
+			modeview.addObject("treeModules", treeModules.get(0));
+		else
+			modeview.addObject("treeModules", "{}");
+		
+		// 获取所有包含URL的模块
+		modeview.addObject("leafModules", this.getLeafModulesOfJSON());
+		
+		// 获取所有子系统
+		modeview.addObject("listSystems", this.getListSystemsOfJSON());
+	}
+	
+	
 
 	/**
 	 * 获取子系统、模块、操作的map集合
