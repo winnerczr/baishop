@@ -27,11 +27,11 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 	}
 
 	@Override
-	public Enums getEnums(String enumsType, String enumsName) {
+	public Enums getEnums(String enumsType, String enumsCode) {
 		try{
 			Map<String,Object> params = new HashMap<String,Object>();
 			params.put("enumsType", enumsType);
-			params.put("enumsName", enumsName);
+			params.put("enumsCode", enumsCode);
 			
 			Enums enums = (Enums)this.getSqlMapClientAss().queryForObject("Enums.getEnums", params);
 			return enums;
