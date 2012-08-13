@@ -41,16 +41,16 @@ public class SyslogAspect implements Serializable {
 	 * @param joinpoint
 	 */
 	public void loggerJoinPoint(final JoinPoint joinpoint) {
-		try{
-			//通过线程池打印日志
-			threadPoolTaskExecutor.execute(new Runnable(){
-				@Override
-				public void run() {
+		//通过线程池打印日志
+		threadPoolTaskExecutor.execute(new Runnable(){
+			@Override
+			public void run() {
+				try{
 					//接口签名
 					Signature signature = joinpoint.getSignature();
 					
 					//判断是否过滤日志
-					//if(!filter(signature.toString())){
+					if(!filter(signature.toString())){
 						//日志对象
 						Syslog syslog = new Syslog();					
 						String args = JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
@@ -66,12 +66,12 @@ public class SyslogAspect implements Serializable {
 						Logger logger = getLog4j(joinpoint.getTarget());
 						if(logger!=null)
 							logger.debug("日志：" + syslog.getDescription());
-					//}
-				}			
-			});
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 	
 	
