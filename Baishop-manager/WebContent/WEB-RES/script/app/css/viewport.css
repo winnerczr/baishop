@@ -422,7 +422,7 @@ a:hover { color: #0464BB; }
 /* line 686, ../sass/viewport.scss */
 .hover-menu { font-size: 12px; position: absolute; padding: 5px 15px 10px; background: #eaeaea; z-index: 8; top: 21px; line-height: 1.3em; border: 1px solid #bfbfbf; border-top: 1px solid #eaeaea; left: -16px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
 /* line 699, ../sass/viewport.scss */
-.hover-menu.sidebar { min-width: 220px; left: 20px !important; }
+.hover-menu.sidebar { min-width: 200px; left: 20px !important; }
 /* line 702, ../sass/viewport.scss */
 .hover-menu table { width: 100%; }
 /* line 704, ../sass/viewport.scss */
