@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v9.62 
-MySQL - 5.5.17 : Database - baishop-ass
+MySQL - 5.5.20 : Database - baishop-ass
 *********************************************************************
 */
 
@@ -136,18 +136,18 @@ DROP TABLE IF EXISTS `bai_enums`;
 CREATE TABLE `bai_enums` (
   `enums_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '枚举ID',
   `enums_type` varchar(64) NOT NULL DEFAULT '' COMMENT '枚举类型',
-  `enums_name` varchar(64) NOT NULL DEFAULT '' COMMENT '枚举键',
+  `enums_code` varchar(64) NOT NULL DEFAULT '' COMMENT '枚举键',
   `enums_text` varchar(2000) NOT NULL DEFAULT '' COMMENT '枚举值',
   `enums_remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`enums_id`),
-  UNIQUE KEY `idx_enums_type_key` (`enums_type`,`enums_name`),
+  UNIQUE KEY `idx_enums_type_code` (`enums_type`,`enums_code`),
   KEY `idx_enums_type` (`enums_type`),
-  KEY `idx_enums_key` (`enums_name`)
+  KEY `idx_enums_code` (`enums_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='系统枚举表';
 
 /*Data for the table `bai_enums` */
 
-insert  into `bai_enums`(`enums_id`,`enums_type`,`enums_name`,`enums_text`,`enums_remark`) values (1,'100','1','是',''),(2,'100','0','否',''),(3,'101','1','允许',''),(4,'101','0','不允许',''),(5,'102','1','启用',''),(6,'102','0','不启用','');
+insert  into `bai_enums`(`enums_id`,`enums_type`,`enums_code`,`enums_text`,`enums_remark`) values (1,'100','1','是',''),(2,'100','0','否',''),(3,'101','1','允许',''),(4,'101','0','不允许',''),(5,'102','1','启用',''),(6,'102','0','不启用','');
 
 /*Table structure for table `bai_modules` */
 

@@ -59,13 +59,13 @@ Ext.onReady(function() {
 			    xtype:'textfield',
 			    id: 'txtEnumsType',
 			    name: 'enums.enumsType',
-			    fieldLabel: '枚举类别',
+			    fieldLabel: '枚举类型',
 			    allowBlank: false
 			},{
 			    xtype:'textfield',
 			    id: 'txtEnumsCode',
 			    name: 'enums.enumsCode',
-			    fieldLabel: '枚举键',
+			    fieldLabel: '枚举码',
 			    allowBlank: false
 			},{
 			    xtype:'textarea',
@@ -135,17 +135,17 @@ Ext.onReady(function() {
 			}
 	    }),
         features: [Ext.create('Ext.grid.feature.Grouping',{
-            groupHeaderTpl: '枚举类别: {name}　({rows.length} 条记录)'
+            groupHeaderTpl: '枚举类型: {name}'
         })],
 		selModel: Ext.create('Ext.selection.CheckboxModel'),
         columns:[{
-            text: '枚举类别',
+            text: '枚举类型',
             dataIndex: 'enumsType',
             width: 200,
             hidden: true,
             sortable: true
         },{
-            text: '枚举键',
+            text: '枚举码',
             dataIndex: 'enumsCode',
             width: 200,
             sortable: true
