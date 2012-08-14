@@ -15,6 +15,10 @@ Ext.onReady(function(){
     	getGoodsProps: '${page_context}/goods/PublishGoods.jspx?func=getGoodsProps'
     };
     
+    
+	//部门tree与combobox的数据
+	var treeCategory = Ext.decode('${treeCategory}');
+    
  	
  	//添加和编辑窗口
  	var frmGoods = Ext.create('Ext.form.Panel', {
@@ -64,14 +68,14 @@ Ext.onReady(function(){
 			        editable: false,
 			        tpl: "<tpl for='treeCategory'><div id='treeCategory' style='height:200px;'></div></tpl>",
 			      	emptyText: '请选择类目...',  
-                   	store: Ext.decode('${cbbCategory}'),
+                   	store: treeCategory.cbbCategory,
 					value: '${goods.cateId}'==''?0:Number('${goods.cateId}'),
 					tree: Ext.create('Ext.tree.Panel', {
 						width: '100%',
 						border:false, 
 					    rootVisible: false,  
 						store: Ext.create('Ext.data.TreeStore', {
-						    root: Ext.decode('${treeCategory}')
+						    root: treeCategory
 						}),
 						listeners: {
 							itemclick: function(obj, record, item, index, e, options){
