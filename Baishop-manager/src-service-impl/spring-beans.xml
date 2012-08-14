@@ -107,10 +107,6 @@
 	<bean id="enumsService" class="com.baishop.service.impl.ass.EnumsServiceImpl" parent="baseService" scope="singleton">
 	</bean>
 	
-	<!-- 远程接口权限类-->
-	<bean id="remoteAuthsService" class="com.baishop.service.impl.ass.RemoteAuthsServiceImpl" parent="baseService" scope="singleton">
-	</bean>
-	
 	<!-- 系统日志服务器-->
 	<bean id="syslogService" class="com.baishop.service.impl.ass.SyslogServiceImpl" parent="baseService" scope="singleton">
 	</bean>

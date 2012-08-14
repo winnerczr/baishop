@@ -21,7 +21,7 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 	@Override
 	public void logger(Syslog syslog) {
 		try{
-			//this.sqlMapClientSyslog.insert("Syslog.addSyslog", syslog);
+			this.sqlMapClientSyslog.insert("Syslog.addSyslog", syslog);
 			logger.debug("日志：" + syslog.getDescription());
 		}catch(Exception e){
 			e.printStackTrace();

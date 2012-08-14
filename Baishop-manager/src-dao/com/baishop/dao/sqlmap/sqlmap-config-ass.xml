@@ -29,7 +29,6 @@
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/AdminsDepts.sqlmap.xml"/>
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/AdminsModules.sqlmap.xml"/>
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/RolesModules.sqlmap.xml"/>
-	<sqlMap resource="com/baishop/dao/sqlmap/ass/RemoteAuths.sqlmap.xml"/>
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/Params.sqlmap.xml"/>
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/Enums.sqlmap.xml"/>
 	<sqlMap resource="com/baishop/dao/sqlmap/ass/City.sqlmap.xml"/>

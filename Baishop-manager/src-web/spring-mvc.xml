@@ -101,10 +101,6 @@
 	<bean name="/ass/SysParams.jspx" class="com.baishop.manager.web.ass.SysParams">
 	</bean>
 	
-	<!-- 远程接口 -->
-	<bean name="/ass/SysRemote.jspx" class="com.baishop.manager.web.ass.SysRemote">
-	</bean>
-	
 	<!-- 调用日志 -->
 	<bean name="/ass/SysLogger.jspx" class="com.baishop.manager.web.ass.SysLogger">
 	</bean>

@@ -160,7 +160,7 @@ Ext.onReady(function() {
 		},{
 			text: '日志描述',
 			dataIndex: 'description',
-			width: 200,
+			width: 800,
 			sortable: true
 		}],
 		tbar: [{
