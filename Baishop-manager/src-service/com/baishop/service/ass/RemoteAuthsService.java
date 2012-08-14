@@ -3,8 +3,9 @@ package com.baishop.service.ass;
 import java.util.List;
 import java.util.Map;
 
+import junit.remoting.RemoteAuthsConfigurer;
+
 import com.baishop.entity.ass.RemoteAuths;
-import com.baishop.framework.remoting.RemoteAuthsConfigurer;
 
 /**
  * 远程服务访问用户的权限控制 

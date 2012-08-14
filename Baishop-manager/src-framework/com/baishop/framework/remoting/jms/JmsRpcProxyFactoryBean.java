@@ -23,6 +23,11 @@ import org.springframework.remoting.RemoteInvocationFailureException;
 import org.springframework.remoting.support.RemoteInvocation;
 import org.springframework.remoting.support.RemoteInvocationResult;
 
+/**
+ * 扩展JmsRpcProxyFactoryBean
+ * 并根据接口名(serviceInterface)设置默认的消息目标(destination)，目标名以jms-rpc://开头。
+ * @author Linpn
+ */
 public class JmsRpcProxyFactoryBean extends JmsInvokerProxyFactoryBean {
 	
 	private Queue queue;

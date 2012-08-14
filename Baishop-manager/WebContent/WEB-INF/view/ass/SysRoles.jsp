@@ -218,12 +218,12 @@ Ext.onReady(function() {
 			    	        columns:[{
 			    	            text: '用户名',
 			    	            dataIndex: 'username',
-			    	            width: 101,
+			    	            width: 90,
 			    	            sortable: true
 			    	        },{
 			    	            text: '姓名',
 			    	            dataIndex: 'name',
-			    	            width: 101,
+			    	            width: 90,
 			    	            sortable: true,
 			    	            renderer: function(value, p, record) {
 			    	            	return "["+ record.get("code") +"] " + value;

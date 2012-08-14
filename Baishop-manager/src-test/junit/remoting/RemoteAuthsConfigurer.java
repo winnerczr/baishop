@@ -1,4 +1,4 @@
-package com.baishop.framework.remoting;
+package junit.remoting;
 
 import net.sf.json.JSONObject;
 
