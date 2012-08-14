@@ -16,11 +16,12 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 	@Override
 	public Category getCategory(int cateId) {
 		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("cateId", cateId);
-			
-			Category category = (Category)this.getSqlMapClientShop().queryForObject("Category.getCategory", params);
-			return category;			
+			List<Category> list = this.getCategoryList();
+			for(Category cate : list){
+				if(cate.getCateId()==cateId)
+					return cate;
+			}
+			return null;			
 		}catch(Exception e){
 			throw new ServiceException(102001, e);
 		}

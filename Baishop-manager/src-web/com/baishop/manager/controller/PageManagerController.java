@@ -517,7 +517,7 @@ public abstract class PageManagerController extends PageController {
 							children.add(node);
 							treeNode.put("leaf", false);						
 							
-							//添加最叶子节点到列表中
+							//添加节点到列表中
 							json.getJSONArray("cbbDept").add(JSONArray.fromObject(new Object[]{dept.getDeptId(), dept.getDeptName()}));
 						}
 					}
@@ -539,12 +539,14 @@ public abstract class PageManagerController extends PageController {
 	 * @return
 	 */
 	public JSONObject getTreeCategoryOfJSON() {
-		JSONObject json = new JSONObject();
+		final JSONObject json = new JSONObject();
 		
 		try {
 			json.put("id", 0);
 			json.put("text", "商品类目");
 			json.put("iconCls", "icon-docs");
+			json.put("children", new JSONArray());
+			json.put("cbbCategory", new JSONArray());
 			
 			List<Category> list = categoryService.getCategoryList();
 			
@@ -571,6 +573,16 @@ public abstract class PageManagerController extends PageController {
 							}
 							children.add(node);
 							treeNode.put("leaf", false);
+							
+							//添加节点到列表中
+							String name = cate.getCateName();			
+							int pid = cate.getCateParent();
+							while(pid>0){
+								Category _cate = categoryService.getCategory(pid);
+								pid = _cate.getCateParent();
+								name = _cate.getCateName() + ">>" + name;
+							}
+							json.getJSONArray("cbbCategory").add(JSONArray.fromObject(new Object[]{cate.getCateId(), name}));
 						}
 					}
 				}
@@ -580,38 +592,6 @@ public abstract class PageManagerController extends PageController {
 			
 		} catch (Exception e) {
 			throw new ServiceException(902001, e);
-		}
-		
-		return json;
-	}
-
-	
-	/**
-	 * 获取JSON格式的叶子列表
-	 * @return
-	 */
-	public JSONArray getCbbLeafCategoryOfJSON() {
-		JSONArray json = new JSONArray();
-		
-		List<Category> list = categoryService.getCategoryList();
-		
-		for(Category cate : list){
-			if(cate.getLeaf()!=1)
-				continue;
-			
-			JSONArray node = new JSONArray();
-			node.add(cate.getCateId());
-			
-			String name = cate.getCateName();			
-			int pid = cate.getCateParent();
-			while(pid>0){
-				Category _cate = categoryService.getCategory(pid);
-				pid = _cate.getCateParent();
-				name = _cate.getCateName() + ">>" + name;
-			}
-			
-			node.add(name);
-			json.add(node);
 		}
 		
 		return json;

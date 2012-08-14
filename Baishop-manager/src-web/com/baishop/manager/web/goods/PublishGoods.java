@@ -65,9 +65,7 @@ public class PublishGoods extends PageManagerController {
 		
 		//商品类目树和叶子列表
 		String treeCategory = this.getTreeCategoryOfJSON().toString();
-		String cbbCategory = this.getCbbLeafCategoryOfJSON().toString();
 		modeview.addObject("treeCategory", treeCategory);
-		modeview.addObject("cbbCategory", cbbCategory);
 		
 		//加载商品品牌列表
 		List<Brands> cbbBrands = brandsService.getBrandsList();
