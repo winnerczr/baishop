@@ -37,42 +37,32 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	 */
 	@Override
 	public Modules getModules(int moduleId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("moduleId", moduleId);
-			
-			Modules module = (Modules)this.getSqlMapClientAss().queryForObject("Modules.getModules", params);
-			return module;			
-		}catch(Exception e){
-			throw new ServiceException(902001, e);
+		List<Modules> list = this.getModulesList(null);
+		for(Modules module : list){
+			if(module.getModuleId().equals(moduleId))
+				return module;
 		}
+		return null;
 	}
 	
 	@Override
 	public Modules getModules(String text) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("text", text);
-			
-			Modules module = (Modules)this.getSqlMapClientAss().queryForObject("Modules.getModules", params);
-			return module;			
-		}catch(Exception e){
-			throw new ServiceException(902001, e);
+		List<Modules> list = this.getModulesList(null);
+		for(Modules module : list){
+			if(module.getText().equals(text))
+				return module;
 		}
+		return null;
 	}
 	
 	@Override
 	public Modules getModulesByUrl(String url) {
-		Map<String,Object> params = new HashMap<String,Object>();
-		params.put("url", url);
-		
-		List<Modules> list = this.getModulesList(params);
-		
-		if(list.size()==1){
-			return list.get(0);
-		}else{
-			return null;
+		List<Modules> list = this.getModulesList(null);
+		for(Modules module : list){
+			if(module.getUrl().equals(url))
+				return module;
 		}
+		return null;
 	}
 
 	
@@ -83,59 +73,51 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 			List<Modules> list = this.getSqlMapClientAss().queryForList("Modules.getModules", params);
 			return list;			
 		}catch(Exception e){
-			throw new ServiceException(902001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"模块"});
 		}
 	}
 	
 	@Override
 	public List<Modules> getModulesListByRoleIds(int[] roleIds) {
-		try{
-			if(roleIds==null || roleIds.length<=0)
-				return new ArrayList<Modules>();
-			
-			// 模块列表
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("roleIds", roleIds);			
-			List<Modules> list = this.getModulesList(params);
-			
-			//去除重复
-			list = removeRepeatModule(list);
-			
-			return list;
-			
-		}catch(Exception e){
-			throw new ServiceException(902001, e);
-		}
+		if(roleIds==null || roleIds.length<=0)
+			return new ArrayList<Modules>();
+		
+		// 模块列表
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("roleIds", roleIds);			
+		List<Modules> list = this.getModulesList(params);
+		
+		//去除重复
+		list = removeRepeatModule(list);
+		
+		return list;
 	}	
 	
 	@Override
 	public List<Modules> getModulesListByUser(Admins user, boolean requery) {
-		try{
-			// 模块列表
-			List<Modules> list = new ArrayList<Modules>();
-			
-			// 重新查询
-			if(requery){
-				user = adminsService.getAdmins(user.getUserId());
-			}
-			
-			// 获取用户中的模块列表
-			list.addAll(user.getModules());
-			
-			// 获取用色中的模块列表
-			List<Roles> roles = user.getRoles();
-			for(Roles role : roles){
-				list.addAll(role.getModules());
-			}			
-
-			//去除重复
-			list = removeRepeatModule(list);
-			
-			return list;
-			
-		}catch(Exception e){
-			throw new ServiceException(902001, e);
+		// 模块列表
+		List<Modules> list = new ArrayList<Modules>();
+		
+		// 重新查询
+		if(requery){
+			user = adminsService.getAdmins(user.getUserId());
 		}
+		
+		// 获取用户中的模块列表
+		list.addAll(user.getModules());
+		
+		// 获取用色中的模块列表
+		List<Roles> roles = user.getRoles();
+		for(Roles role : roles){
+			list.addAll(role.getModules());
+		}			
+
+		//去除重复
+		list = removeRepeatModule(list);
+		
+		return list;
 	}	
 	
 	
@@ -148,7 +130,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 		List<Modules>	list = this.getModulesList(params);
 		if(list.size()>0){
 			//请先删除子节点
-			throw new ServiceException(101);
+			throw new ServiceException(110);
 		}
 		
 		this.delModules(new int[]{moduleId});
@@ -164,7 +146,9 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 			this.getSqlMapClientAss().delete("Modules.delModules", params);
 			this.getSqlMapClientAss().delete("RolesModules.delRolesModules", params);
 		}catch(Exception e){
-			throw new ServiceException(902002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"模块"});
 		}
 	}
 
@@ -181,7 +165,9 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 			this.getSqlMapClientAss().update("Modules.editModules", modules);
 			
 		}catch(Exception e){
-			throw new ServiceException(902003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"模块"});
 		}
 	}
 
@@ -191,7 +177,9 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 		try{
 			this.getSqlMapClientAss().update("Modules.editModules", modules);
 		}catch(Exception e){
-			throw new ServiceException(902004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"模块"});
 		}
 	}
 	

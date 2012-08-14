@@ -16,29 +16,23 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 
 	@Override
 	public Params getParams(int paramsId) {
-		try{
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("paramsId", paramsId);
-			
-			Params params = (Params) this.getSqlMapClientAss().queryForObject("Params.getParams", map);		
-			return params;
-		}catch(Exception e){
-			throw new ServiceException(899001, e);
+		List<Params> list = this.getParamsList(new HashMap<String,Object>());
+		for(Params params : list){
+			if(params.getParamsId().equals(paramsId))
+				return params;
 		}
+		return null;
 	}
 	
 
 	@Override
 	public Params getParams(String paramsName) {
-		try{
-			Map<String,Object> map = new HashMap<String,Object>();
-			map.put("paramsName", paramsName);
-			
-			Params params = (Params) this.getSqlMapClientAss().queryForObject("Params.getParams", map);		
-			return params;
-		}catch(Exception e){
-			throw new ServiceException(899001, e);
+		List<Params> list = this.getParamsList(new HashMap<String,Object>());
+		for(Params params : list){
+			if(params.getParamsName().equals(paramsName))
+				return params;
 		}
+		return null;
 	}
 
 
@@ -52,7 +46,9 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 			List<Params> list = this.getSqlMapClientAss().queryForList("Params.getParams", map);		
 			return list;
 		}catch(Exception e){
-			throw new ServiceException(899001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"系统参数"});
 		}
 	}
 	
@@ -68,7 +64,9 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 		try{
 			this.getSqlMapClientAss().delete("Params.delParams",paramsIds);		
 		}catch(Exception e){
-			throw new ServiceException(899002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"系统参数"});
 		}
 	}
 
@@ -78,7 +76,9 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 		try{
 			this.getSqlMapClientAss().insert("Params.addParams",params);		
 		}catch(Exception e){
-			throw new ServiceException(899003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"系统参数"});
 		}
 	}
 	
@@ -88,7 +88,9 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 		try{
 			this.getSqlMapClientAss().update("Params.editParams",params);		
 		}catch(Exception e){
-			throw new ServiceException(899004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"系统参数"});
 		}
 	}
 

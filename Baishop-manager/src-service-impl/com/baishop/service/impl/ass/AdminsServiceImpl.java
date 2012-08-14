@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.ibatis.SqlMapClientCallback;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -23,6 +24,7 @@ import com.baishop.entity.ass.Roles;
 import com.baishop.framework.exception.ServiceException;
 import com.baishop.service.BaseService;
 import com.baishop.service.ass.AdminsService;
+import com.baishop.service.ass.DeptsService;
 import com.ibatis.sqlmap.client.SqlMapExecutor;
 
 
@@ -35,6 +37,10 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 	private static final long serialVersionUID = -5609524598183928386L;
 
 	private Md5PasswordEncoder md5 = new Md5PasswordEncoder();
+	
+	@Autowired
+	private DeptsService deptsService;
+	
 
 	@Override
 	public UserDetails loadUserByUsername(String username)
@@ -53,42 +59,32 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 
 	@Override
 	public Admins getAdmins(int userId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("userId", userId);
-			
-			Admins user = (Admins)this.getSqlMapClientAss().queryForObject("Admins.getAdmins", params);
-			return user;			
-		}catch(Exception e){
-			throw new ServiceException(900001, e);
+		List<Admins> list = this.getAdminsList(null);
+		for(Admins user : list){
+			if(user.getUserId().equals(userId))
+				return user;
 		}
+		return null;
 	}
 
 	@Override
 	public Admins getAdmins(String username) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("username", username);
-			
-			Admins user = (Admins)this.getSqlMapClientAss().queryForObject("Admins.getAdmins", params);
-			return user;			
-		}catch(Exception e){
-			throw new ServiceException(900001, e);
+		List<Admins> list = this.getAdminsList(null);
+		for(Admins user : list){
+			if(username.equals(user.getUsername()))
+				return user;
 		}
+		return null;
 	}
 
 	@Override
 	public Admins getAdmins(String username, String password) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("username", username);
-			params.put("password", md5.encodePassword(password, username));
-			
-			Admins user = (Admins)this.getSqlMapClientAss().queryForObject("Admins.getAdmins", params);
-			return user;			
-		}catch(Exception e){
-			throw new ServiceException(900001, e);
+		List<Admins> list = this.getAdminsList(null);
+		for(Admins user : list){
+			if(user.getUsername().equals(username) && user.getPassword().equals(md5.encodePassword(password, username)))
+				return user;
 		}
+		return null;
 	}
 
 	@Override
@@ -104,7 +100,7 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 		}catch(Exception e){
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
-			throw new ServiceException(900001, e);
+			throw new ServiceException(101, e, new String[]{"用户"});
 		}
 	}
 	
@@ -112,6 +108,22 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 	public List<Admins> getAdminsListByRoleId(int roleId) {
 		Map<String,Object> params = new HashMap<String,Object>();
 		params.put("roleId", roleId);
+		
+		List<Admins> list = this.getAdminsList(params);
+		return list;
+	}
+	
+	@Override
+	public List<Admins> getAdminsListByDeptId(int deptId) {
+		Depts dept = deptsService.getDepts(deptId);
+		List<Admins> list = this.getAdminsListByDeptCode(dept.getDeptCode());
+		return list;
+	}
+	
+	@Override
+	public List<Admins> getAdminsListByDeptCode(String deptCode) {
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("deptCode", deptCode);
 		
 		List<Admins> list = this.getAdminsList(params);
 		return list;
@@ -139,7 +151,7 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 		}catch(Exception e){
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
-			throw new ServiceException(900002, e);
+			throw new ServiceException(102, e, new String[]{"用户"});
 		}
 	}
 	
@@ -223,7 +235,9 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 			}
 			
 		}catch(Exception e){
-			throw new ServiceException(900003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"用户"});
 		}
 	}
 
@@ -309,7 +323,9 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 			}
 			
 		}catch(Exception e){
-			throw new ServiceException(900004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"用户"});
 		}
 	}
 	

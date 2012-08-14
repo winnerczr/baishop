@@ -48,6 +48,20 @@ public interface AdminsService extends Serializable {
 	public List<Admins> getAdminsListByRoleId(int roleId);
 	
 	/**
+	 * 获取后台用户列表
+	 * @param deptId 部门ID
+	 * @return 返回后台用户列表
+	 */
+	public List<Admins> getAdminsListByDeptId(int deptId);
+	
+	/**
+	 * 获取后台用户列表
+	 * @param deptCode 部门编号
+	 * @return 返回后台用户列表
+	 */
+	public List<Admins> getAdminsListByDeptCode(String deptCode);
+	
+	/**
 	 * 删除后台用户
 	 * @param userId 后台用户ID
 	 */

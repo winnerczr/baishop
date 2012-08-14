@@ -17,28 +17,22 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 
 	@Override
 	public Depts getDepts(int deptId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("deptId", deptId);
-			
-			Depts dept = (Depts)this.getSqlMapClientAss().queryForObject("Depts.getDepts", params);
-			return dept;			
-		}catch(Exception e){
-			throw new ServiceException(800001, e);
+		List<Depts> list = this.getDeptsList(null);
+		for(Depts dept : list){
+			if(dept.getDeptId().equals(deptId))
+				return dept;
 		}
+		return null;
 	}
 
 	@Override
 	public Depts getDepts(String deptCode) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("deptCode", deptCode);
-			
-			Depts dept = (Depts)this.getSqlMapClientAss().queryForObject("Depts.getDepts", params);
-			return dept;			
-		}catch(Exception e){
-			throw new ServiceException(800001, e);
+		List<Depts> list = this.getDeptsList(null);
+		for(Depts dept : list){
+			if(dept.getDeptCode().equals(deptCode))
+				return dept;
 		}
+		return null;
 	}
 
 	@Override
@@ -48,7 +42,9 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 			List<Depts> list = this.getSqlMapClientAss().queryForList("Depts.getDepts", params);
 			return list;			
 		}catch(Exception e){
-			throw new ServiceException(800001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"部门"});
 		}
 	}
 
@@ -91,7 +87,9 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 			this.getSqlMapClientAss().delete("Depts.delDepts", deptIds);
 			this.getSqlMapClientAss().delete("AdminsDepts.delAdminsDepts", params);
 		}catch(Exception e){
-			throw new ServiceException(800002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"部门"});
 		}
 	}
 
@@ -102,7 +100,9 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 		try{
 			this.getSqlMapClientAss().insert("Depts.addDepts", dept);
 		}catch(Exception e){
-			throw new ServiceException(800003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"部门"});
 		}
 	}
 
@@ -112,7 +112,9 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 		try{
 			this.getSqlMapClientAss().update("Depts.editDepts", dept);
 		}catch(Exception e){
-			throw new ServiceException(800004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"部门"});
 		}
 	}
 

@@ -15,29 +15,22 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 
 	@Override
 	public Enums getEnums(int enumsId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("enumsId", enumsId);
-			
-			Enums enums = (Enums)this.getSqlMapClientAss().queryForObject("Enums.getEnums", params);
-			return enums;			
-		}catch(Exception e){
-			throw new ServiceException(898001, e);
+		List<Enums> list = this.getEnumsList(new HashMap<String,Object>());
+		for(Enums enums : list){
+			if(enums.getEnumsId().equals(enumsId))
+				return enums;
 		}
+		return null;
 	}
 
 	@Override
 	public Enums getEnums(String enumsType, String enumsCode) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("enumsType", enumsType);
-			params.put("enumsCode", enumsCode);
-			
-			Enums enums = (Enums)this.getSqlMapClientAss().queryForObject("Enums.getEnums", params);
-			return enums;
-		}catch(Exception e){
-			throw new ServiceException(898001, e);
+		List<Enums> list = this.getEnumsList(new HashMap<String,Object>());
+		for(Enums enums : list){
+			if(enums.getEnumsType().equals(enumsType) && enums.getEnumsCode().equals(enumsCode))
+				return enums;
 		}
+		return null;
 	}
 
 	@Override
@@ -59,7 +52,9 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 			List<Enums> list = this.getSqlMapClientAss().queryForList("Enums.getEnums", params);
 			return list;
 		}catch(Exception e){
-			throw new ServiceException(898001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"系统枚举"});
 		}
 	}
 
@@ -73,7 +68,9 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 		try{
 			this.getSqlMapClientAss().delete("Enums.delEnums", enumsIds);
 		}catch(Exception e){
-			throw new ServiceException(898002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"系统枚举"});
 		}
 	}
 
@@ -82,7 +79,9 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 		try{
 			this.getSqlMapClientAss().insert("Enums.addEnums", enums);
 		}catch(Exception e){
-			throw new ServiceException(898003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"系统枚举"});
 		}
 	}
 
@@ -91,7 +90,9 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 		try{
 			this.getSqlMapClientAss().update("Enums.editEnums", enums);
 		}catch(Exception e){
-			throw new ServiceException(898004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"系统枚举"});
 		}
 	}
 

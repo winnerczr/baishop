@@ -27,15 +27,12 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 
 	@Override
 	public Roles getRoles(int roleId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("roleId", roleId);
-			
-			Roles role = (Roles)this.getSqlMapClientAss().queryForObject("Roles.getRoles", params);
-			return role;			
-		}catch(Exception e){
-			throw new ServiceException(901001, e);
+		List<Roles> list = this.getRolesList(null);
+		for(Roles role : list){
+			if(role.getRoleId().equals(roleId))
+				return role;
 		}
+		return null;
 	}
 
 	@Override
@@ -45,7 +42,9 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			List<Roles> list = this.getSqlMapClientAss().queryForList("Roles.getRoles", params);
 			return list;			
 		}catch(Exception e){
-			throw new ServiceException(901001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"角色"});
 		}
 	}
 
@@ -68,7 +67,7 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 		List<Roles> list = this.getRolesList(params);
 		if(list.size()>0){
 			//请先删除子节点
-			throw new ServiceException(101);
+			throw new ServiceException(110);
 		}
 		
 		this.delRoles(new int[]{roleId});
@@ -86,7 +85,9 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			this.getSqlMapClientAss().delete("RolesModules.delRolesModules", params);
 			
 		}catch(Exception e){
-			throw new ServiceException(901002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"角色"});
 		}
 		
 	}
@@ -128,7 +129,9 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			}
 			
 		}catch(Exception e){
-			throw new ServiceException(901003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"角色"});
 		}
 	}
 
@@ -164,7 +167,9 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			}
 			
 		}catch(Exception e){
-			throw new ServiceException(901004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"角色"});
 		}
 	}
 	

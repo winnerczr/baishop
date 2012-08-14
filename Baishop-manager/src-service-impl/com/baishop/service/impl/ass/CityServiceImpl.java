@@ -15,28 +15,22 @@ public class CityServiceImpl extends BaseService implements CityService {
 
 	@Override
 	public City getCity(int cityId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("cityId", cityId);
-			
-			City city = (City)this.getSqlMapClientAss().queryForObject("City.getCity", params);
-			return city;			
-		}catch(Exception e){
-			throw new ServiceException(800001, e);
+		List<City> list = this.getCityList(null);
+		for(City city : list){
+			if(city.getCityId().equals(cityId))
+				return city;
 		}
+		return null;
 	}
 
 	@Override
 	public City getCity(String cityCode) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("cityCode", cityCode);
-			
-			City city = (City)this.getSqlMapClientAss().queryForObject("City.getCity", params);
-			return city;			
-		}catch(Exception e){
-			throw new ServiceException(800001, e);
+		List<City> list = this.getCityList(null);
+		for(City city : list){
+			if(city.getCityCode().equals(cityCode))
+				return city;
 		}
+		return null;
 	}
 
 	@Override
@@ -46,7 +40,9 @@ public class CityServiceImpl extends BaseService implements CityService {
 			List<City> list = this.getSqlMapClientAss().queryForList("City.getCity", params);
 			return list;			
 		}catch(Exception e){
-			throw new ServiceException(800001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"城市"});
 		}
 	}
 
@@ -83,7 +79,9 @@ public class CityServiceImpl extends BaseService implements CityService {
 		try{
 			this.getSqlMapClientAss().delete("City.delCity", cityIds);
 		}catch(Exception e){
-			throw new ServiceException(800002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"城市"});
 		}
 	}
 
@@ -93,7 +91,9 @@ public class CityServiceImpl extends BaseService implements CityService {
 		try{
 			this.getSqlMapClientAss().insert("City.addCity", city);
 		}catch(Exception e){
-			throw new ServiceException(800003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"城市"});
 		}
 	}
 
@@ -102,7 +102,9 @@ public class CityServiceImpl extends BaseService implements CityService {
 		try{
 			this.getSqlMapClientAss().update("City.editCity", city);
 		}catch(Exception e){
-			throw new ServiceException(800004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"城市"});
 		}
 	}
 

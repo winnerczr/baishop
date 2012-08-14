@@ -15,15 +15,12 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 
 	@Override
 	public Category getCategory(int cateId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("cateId", cateId);
-			
-			Category category = (Category)this.getSqlMapClientShop().queryForObject("Category.getCategory", params);
-			return category;			
-		}catch(Exception e){
-			throw new ServiceException(102001, e);
+		List<Category> list = this.getCategoryList();
+		for(Category cate : list){
+			if(cate.getCateId().equals(cateId))
+				return cate;
 		}
+		return null;
 	}
 
 	@Override
@@ -33,7 +30,9 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 			List<Category> list = this.getSqlMapClientShop().queryForList("Category.getCategory");
 			return list;
 		}catch(Exception e){
-			throw new ServiceException(102001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"商品类目"});
 		}
 	}
 
@@ -46,7 +45,9 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 			
 			this.getSqlMapClientShop().delete("Category.delCategory", params);
 		}catch(Exception e){
-			throw new ServiceException(102002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"商品类目"});
 		}
 	}
 
@@ -56,7 +57,9 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 		try{
 			this.getSqlMapClientShop().insert("Category.addCategory", category);
 		}catch(Exception e){
-			throw new ServiceException(102003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"商品类目"});
 		}
 	}
 
@@ -65,7 +68,9 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
 		try{
 			this.getSqlMapClientShop().update("Category.editCategory", category);
 		}catch(Exception e){
-			throw new ServiceException(102004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"商品类目"});
 		}
 	}
 	

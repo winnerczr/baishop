@@ -15,15 +15,12 @@ public class BrandsServiceImpl extends BaseService implements BrandsService {
 
 	@Override
 	public Brands getBrands(int brandsId) {
-		try{
-			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("brandsId", brandsId);
-			
-			Brands brands = (Brands)this.getSqlMapClientShop().queryForObject("Brands.getBrands", params);
-			return brands;			
-		}catch(Exception e){
-			throw new ServiceException(103001, e);
+		List<Brands> list = this.getBrandsList();
+		for(Brands brands : list){
+			if(brands.getBrandId().equals(brandsId))
+				return brands;
 		}
+		return null;
 	}
 
 	@Override
@@ -33,7 +30,9 @@ public class BrandsServiceImpl extends BaseService implements BrandsService {
 			List<Brands> list = this.getSqlMapClientShop().queryForList("Brands.getBrands");
 			return list;
 		}catch(Exception e){
-			throw new ServiceException(103001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"品牌"});
 		}
 	}
 
@@ -59,7 +58,9 @@ public class BrandsServiceImpl extends BaseService implements BrandsService {
 			
 			this.getSqlMapClientShop().delete("Brands.delBrands", params);
 		}catch(Exception e){
-			throw new ServiceException(103002, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(102, e, new String[]{"品牌"});
 		}
 	}
 
@@ -68,7 +69,9 @@ public class BrandsServiceImpl extends BaseService implements BrandsService {
 		try{
 			this.getSqlMapClientShop().insert("Brands.addBrands", brands);
 		}catch(Exception e){
-			throw new ServiceException(103003, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"品牌"});
 		}
 	}
 
@@ -77,7 +80,9 @@ public class BrandsServiceImpl extends BaseService implements BrandsService {
 		try{
 			this.getSqlMapClientShop().update("Brands.editBrands", brands);
 		}catch(Exception e){
-			throw new ServiceException(103004, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(104, e, new String[]{"品牌"});
 		}
 	}
 	
