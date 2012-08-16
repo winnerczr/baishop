@@ -27,12 +27,6 @@
 		<property name="httpInvokerRequestExecutor">
 			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor" />
 		</property>
-		<property name="user">
-			<value>${remoting.soa.user}</value>
-		</property>
-		<property name="password">
-			<value>${remoting.soa.password}</value>
-		</property>
 		<property name="prefix">
 			<value>${remoting.soa.url}</value>
 		</property>

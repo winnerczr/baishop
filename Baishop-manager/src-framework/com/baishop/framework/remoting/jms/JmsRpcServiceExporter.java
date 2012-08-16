@@ -15,8 +15,7 @@ import org.springframework.remoting.support.RemoteInvocationResult;
 /**
  * 包装了DefaultMessageListenerContainer与JmsInvokerServiceExporter。
  * 并根据接口名(serviceInterface)设置默认的消息目标(destination)，目标名以jms-rpc://开头。
- * @author Administrator
- *
+ * @author Linpn
  */
 public class JmsRpcServiceExporter extends DefaultMessageListenerContainer implements InitializingBean {
 	
