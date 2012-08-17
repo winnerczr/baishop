@@ -70,6 +70,9 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
+			if(StringUtils.isBlank(charsetName))
+				charsetName = "UTF-8";
+			
 			return new String(value.getBytes("ISO8859-1"), charsetName);
 			
 		} catch (UnsupportedEncodingException e) {
@@ -630,6 +633,5 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			return defaultValue;
 		}
 	}
-
-
+	
 }

@@ -1,5 +1,7 @@
 package com.baishop.framework.remoting.httpinvoker;
 
+import org.aopalliance.intercept.MethodInvocation;
+
 
 /**
  * 扩展HttpInvokerProxyFactoryBean
@@ -9,6 +11,17 @@ public class HttpInvokerProxyFactoryBean
 			extends org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean {
 	
 	private String prefix;
+	
+	
+	/**
+	 * 重写基类方法，添加计时功能
+	 */
+	@Override
+	public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+		Object result = super.invoke(methodInvocation);
+		return result;		
+	}
+	
 	
 	
 	/**

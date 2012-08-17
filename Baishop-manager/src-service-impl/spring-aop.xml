@@ -28,13 +28,14 @@
 		<aop:pointcut id="servicePointcut"  expression="execution(* com.baishop.service.*.*.*(..)) and !execution(* com.baishop.service.ass.SyslogService.*(..))" />
 		
 		<!-- 日志插入点 -->
-	    <aop:aspect ref="syslogAspect"> 
-	        <aop:after pointcut-ref="servicePointcut" method="loggerJoinPoint" />
-	    </aop:aspect>
+	    <aop:aspect ref="serviceAspect"> 
+	        <aop:around pointcut-ref="servicePointcut" method="around"/>
+	    </aop:aspect>	    
+	    
 	</aop:config>
 	
 	<!-- 日志切面 -->
-	<bean id="syslogAspect" class="com.baishop.aspect.SyslogAspect">
+	<bean id="serviceAspect" class="com.baishop.aspect.ServiceAspect">
 	</bean>
 	
 

@@ -1,12 +1,12 @@
 package com.baishop.aspect;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
 
 import net.sf.json.JSONArray;
 
+import org.apache.commons.lang.time.StopWatch;
 import org.apache.log4j.Logger;
-import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -18,19 +18,21 @@ import com.baishop.service.ass.ParamsService;
 import com.baishop.service.ass.SyslogService;
 
 /**
- * Aop日志切面
+ * Service的调用日志和调用时间
  * @author Linpn
  */
-public class SyslogAspect implements Serializable {
+public class ServiceAspect implements Serializable {
 	
 	private static final long serialVersionUID = -3575826094887922083L;
+	
+	protected final Logger logger = Logger.getLogger(this.getClass());
 	
 	@Autowired
 	private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 	@Autowired
-	private ParamsService paramsService;
-	@Autowired
 	private SyslogService syslogService;
+	@Autowired
+	private ParamsService paramsService;
 	
 	//日志过滤器缓存
 	private String[] filterCache;
@@ -39,8 +41,18 @@ public class SyslogAspect implements Serializable {
 	/**
 	 * 日志切面方法 
 	 * @param joinpoint
+	 * @throws Throwable 
 	 */
-	public void loggerJoinPoint(final JoinPoint joinpoint) {
+	public Object around(final ProceedingJoinPoint joinpoint) 
+			throws Throwable {
+
+        //用 commons-lang 提供的 StopWatch 计时  
+        final StopWatch clock = new StopWatch();  
+        clock.start(); 
+        final Object reVal = joinpoint.proceed();
+        clock.stop(); 
+        
+
 		//通过线程池打印日志
 		threadPoolTaskExecutor.execute(new Runnable(){
 			@Override
@@ -52,26 +64,40 @@ public class SyslogAspect implements Serializable {
 					//判断是否过滤日志
 					if(!filter(signature.toString())){
 						//日志对象
-						Syslog syslog = new Syslog();					
-						String args = JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+						Syslog syslog = new Syslog();
+
+						String args = "", result = "";
+						if(joinpoint.getArgs()!=null && joinpoint.getArgs().length>0)
+							args = JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+						if(reVal!=null)
+							result = JSONArray.fromObject(reVal, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
 						
-						syslog.setUser("admin");
 						syslog.setSource((byte)1);
-						syslog.setType(signature.getDeclaringTypeName());
-						syslog.setMethod(signature.toString().replaceAll(signature.getDeclaringTypeName()+".", ""));
+						syslog.setSignature(signature.toString());
 						syslog.setArgs(args.length()<=255?args:args.substring(0, 255));
-						syslog.setDescription(signature.toString());
+						syslog.setResult(result.length()<=255?result:result.substring(0, 255));
+						syslog.setDescription("");
+						syslog.setExecTime(clock.getTime());
+
+						//输出访问日志
+						if(logger.isInfoEnabled()){
+							logger.info("Exec method ["+ syslog.getSignature() +", time: "+ syslog.getExecTime() +"ms]" );
+						}
+						if(logger.isDebugEnabled()){
+							logger.debug("Method args ["+ syslog.getArgs() + "]");
+							logger.debug("Method return ["+ syslog.getResult() +"]");
+						}
 						
+						//插入数据库						
 						syslogService.logger(syslog);
-						Logger logger = getLog4j(joinpoint.getTarget());
-						if(logger!=null)
-							logger.debug("日志：" + syslog.getDescription());
 					}
 				}catch(Exception e){
 					e.printStackTrace();
 				}
 			}
 		});
+		
+		return reVal;  
 	}
 	
 	
@@ -146,19 +172,19 @@ public class SyslogAspect implements Serializable {
 	}
 	
 	
-	/**
-	 * 获取对象自身的log4j属性
-	 * @param target
-	 * @return
-	 */
-	private Logger getLog4j(Object target){		
-		try{
-			Field field = target.getClass().getField("logger");
-			Logger logger = (Logger)field.get(target);
-			return logger;
-		}catch(Exception e){
-			return null;
-		}
-	}
+//	/**
+//	 * 获取对象自身的log4j属性
+//	 * @param target
+//	 * @return
+//	 */
+//	private Logger getLog4j(Object target){		
+//		try{
+//			Field field = target.getClass().getField("logger");
+//			Logger logger = (Logger)field.get(target);
+//			return logger;
+//		}catch(Exception e){
+//			return null;
+//		}
+//	}
 	
 }

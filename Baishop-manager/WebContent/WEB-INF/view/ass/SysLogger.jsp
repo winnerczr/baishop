@@ -77,7 +77,7 @@ Ext.onReady(function() {
         remoteSort: true,
 		idProperty: 'id',
 		fields: [
-			'id', 'user', 'source', 'type', 'method', 'args', 'description', 'date'
+			'id', 'source', 'signature', 'args', 'result', 'description', 'execTime', 'createTime'
 		],
         proxy: {
             type: 'jsonp',
@@ -94,7 +94,7 @@ Ext.onReady(function() {
     		}
         },
         sorters: [{
-            property: 'date',
+            property: 'createTime',
             direction: 'desc'
         }],
         listeners: {
@@ -118,14 +118,10 @@ Ext.onReady(function() {
 		loadMask: true,
 		store: storeSyslog,
 		columns:[Ext.create('Ext.grid.RowNumberer'), {
-			text: '用户名',
-			dataIndex: 'user',
-			width: 150,
-			sortable: true
-		},{
 			text: '调用来源',
 			dataIndex: 'source',
 			width: 90,
+			align:'center',
 			sortable: true,
             renderer: function(value, p, record) {
             	switch(Number(value)){
@@ -138,29 +134,36 @@ Ext.onReady(function() {
             	}
 			}
 		},{
-			text: '执行时间',
-			dataIndex: 'date',
+			text: '插入时间',
+			dataIndex: 'createTime',
 			width: 150,
+			align:'center',
 			sortable: true
 		},{
-			text: '接口类型名',
-			dataIndex: 'type',
-			width: 350,
+			text: '执行时间(毫秒)',
+			dataIndex: 'execTime',
+			width: 100,
+			align:'center',
 			sortable: true
 		},{
-			text: '方法签名',
-			dataIndex: 'method',
-			width: 300,
+			text: '接口签名',
+			dataIndex: 'signature',
+			width: 500,
 			sortable: true
 		},{
 			text: '参数列表',
 			dataIndex: 'args',
-			width: 800,
+			width: 500,
+			sortable: true
+		},{
+			text: '返回值',
+			dataIndex: 'result',
+			width: 500,
 			sortable: true
 		},{
 			text: '日志描述',
 			dataIndex: 'description',
-			width: 800,
+			width: 500,
 			sortable: true
 		}],
 		tbar: [{

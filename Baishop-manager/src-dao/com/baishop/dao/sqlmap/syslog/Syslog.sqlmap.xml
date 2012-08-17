@@ -4,13 +4,13 @@
 
   <resultMap id="resultMap" class="com.baishop.entity.ass.Syslog" >
     <result column="id" property="id" jdbcType="BIGINT" />
-    <result column="user" property="user" jdbcType="VARCHAR" />
     <result column="source" property="source" jdbcType="TINYINT" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="method" property="method" jdbcType="VARCHAR" />
+    <result column="signature" property="signature" jdbcType="VARCHAR" />
     <result column="args" property="args" jdbcType="VARCHAR" />
+    <result column="result" property="result" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="exec_time" property="execTime" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   
   
@@ -19,28 +19,23 @@
 		<isNotEmpty prepend="AND" property="id">
 			id = #id:BIGINT#
 		</isNotEmpty>
-		<isNotEmpty prepend="AND" property="user">
-			user = #user:VARCHAR#
-		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="source">
 			source = #source:TINYINT#
 		</isNotEmpty>		
 		<isNotEmpty prepend="AND" property="startDate">
 			<![CDATA[ 
-			date >= #startDate:TIMESTAMP#
+			create_time >= #startDate:TIMESTAMP#
 			]]> 
 		</isNotEmpty>		
 		<isNotEmpty prepend="AND" property="endDate">
 			<![CDATA[ 
-			date <= #endDate:TIMESTAMP#
+			create_time <= #endDate:TIMESTAMP#
 			]]> 
 		</isNotEmpty>	
 		
 		<!-- 网站关键字查询 -->
 		<isNotEmpty prepend="and" property="searchKey" close=")" open="(">
-			user like CONCAT('%',#searchKey:VARCHAR#,'%') or 
-			type like CONCAT('%',#searchKey:VARCHAR#,'%') or 
-			method like CONCAT('%',#searchKey:VARCHAR#,'%') or 
+			signature like CONCAT('%',#searchKey:VARCHAR#,'%') or 
 			description like CONCAT('%',#searchKey:VARCHAR#,'%')
 		</isNotEmpty>
 	</dynamic>
@@ -52,7 +47,7 @@
         $sort$
       </isNotEmpty>
 	  <isEmpty property="sort" >
-	    date desc
+	    create_time desc
 	  </isEmpty>
     </dynamic>
 	<dynamic prepend="limit">
@@ -70,7 +65,7 @@
   
   
   <select id="getSyslog" resultMap="resultMap" parameterClass="hashmap" >
-    select id, user, source, type, method, args, description, date
+    select *
     from syslog
 	<include refid="select_where_clause" />
 	<include refid="select_sort_limit_clause" />
@@ -86,51 +81,51 @@
   <insert id="addSyslog" parameterClass="com.baishop.entity.ass.Syslog" >
     insert into syslog
     <dynamic prepend="(" >
-      <isNotNull prepend="," property="user" >
-        user
-      </isNotNull>
       <isNotNull prepend="," property="source" >
         source
       </isNotNull>
-      <isNotNull prepend="," property="type" >
-        type
-      </isNotNull>
-      <isNotNull prepend="," property="method" >
-        method
+      <isNotNull prepend="," property="signature" >
+        signature
       </isNotNull>
       <isNotNull prepend="," property="args" >
         args
       </isNotNull>
+      <isNotNull prepend="," property="result" >
+        result
+      </isNotNull>
       <isNotNull prepend="," property="description" >
         description
       </isNotNull>
-      <isNotNull prepend="," property="date" >
-        date
+      <isNotNull prepend="," property="execTime" >
+        exec_time
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        create_time
       </isNotNull>
       )
     </dynamic>
     values
     <dynamic prepend="(" >
-      <isNotNull prepend="," property="user" >
-        #user:VARCHAR#
-      </isNotNull>
       <isNotNull prepend="," property="source" >
         #source:TINYINT#
       </isNotNull>
-      <isNotNull prepend="," property="type" >
-        #type:VARCHAR#
-      </isNotNull>
-      <isNotNull prepend="," property="method" >
-        #method:VARCHAR#
+      <isNotNull prepend="," property="signature" >
+        #signature:VARCHAR#
       </isNotNull>
       <isNotNull prepend="," property="args" >
         #args:VARCHAR#
       </isNotNull>
+      <isNotNull prepend="," property="result" >
+        #result:VARCHAR#
+      </isNotNull>
       <isNotNull prepend="," property="description" >
         #description:VARCHAR#
       </isNotNull>
-      <isNotNull prepend="," property="date" >
-        #date:TIMESTAMP#
+      <isNotNull prepend="," property="execTime" >
+        #execTime:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        #createTime:TIMESTAMP#
       </isNotNull>
       )
     </dynamic>
