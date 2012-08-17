@@ -11,12 +11,18 @@ import com.baishop.entity.ass.Syslog;
  */
 public interface SyslogService {
 	
+
+	/**
+	 * 打印日志
+	 * @param msg 日志内容
+	 */
+	public void logger(String msg);
 	
 	/**
-	 * 添加日志
+	 * 打印日志
 	 * @param syslog 日志对象
 	 */
-	public void logger(final Syslog syslog);
+	public void logger(Syslog syslog);	
 	
 	/**
 	 * 获取日志

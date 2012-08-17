@@ -16,15 +16,25 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 	
 	@Autowired
 	private SqlMapClientTemplate sqlMapClientSyslog;
+
+	
+	@Override
+	public void logger(String msg) {
+		Syslog syslog = new Syslog();
+		syslog.setSource((byte)1);
+		syslog.setDescription(msg);		
+		this.logger(syslog);
+	}
 	
 	
 	@Override
 	public void logger(Syslog syslog) {
 		try{
 			this.sqlMapClientSyslog.insert("Syslog.addSyslog", syslog);
-			logger.debug("日志：" + syslog.getDescription());
 		}catch(Exception e){
-			e.printStackTrace();
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(103, e, new String[]{"日志"});
 		}
 	}
 	
@@ -38,7 +48,9 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 			Syslog syslog = (Syslog)this.sqlMapClientSyslog.queryForObject("Syslog.getSyslog", params);
 			return syslog;			
 		}catch(Exception e){
-			throw new ServiceException(903001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"日志"});
 		}
 	}
 	
@@ -56,7 +68,9 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 			List<Syslog> list = this.sqlMapClientSyslog.queryForList("Syslog.getSyslog", params);
 			return list;			
 		}catch(Exception e){
-			throw new ServiceException(903001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"日志"});
 		}
 	}
 
@@ -66,7 +80,10 @@ public class SyslogServiceImpl extends BaseService implements SyslogService {
 			long count = (Long)this.sqlMapClientSyslog.queryForObject("Syslog.getSyslogCount", params);			
 			return count;		
 		}catch(Exception e){
-			throw new ServiceException(903001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"日志"});
 		}
 	}
+
 }

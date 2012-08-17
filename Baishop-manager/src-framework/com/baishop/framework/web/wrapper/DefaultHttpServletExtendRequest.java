@@ -633,6 +633,5 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 			return defaultValue;
 		}
 	}
-
-
+	
 }
