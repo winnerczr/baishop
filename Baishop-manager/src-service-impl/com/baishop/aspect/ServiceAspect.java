@@ -49,7 +49,7 @@ public class ServiceAspect implements Serializable {
         //用 commons-lang 提供的 StopWatch 计时  
         final StopWatch clock = new StopWatch();  
         clock.start(); 
-        final Object reVal = joinpoint.proceed();
+        final Object result = joinpoint.proceed();
         clock.stop(); 
         
 
@@ -66,16 +66,18 @@ public class ServiceAspect implements Serializable {
 						//日志对象
 						Syslog syslog = new Syslog();
 
-						String args = "", result = "";
-						if(joinpoint.getArgs()!=null && joinpoint.getArgs().length>0)
-							args = JSONArray.fromObject(joinpoint.getArgs(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
-						if(reVal!=null)
-							result = JSONArray.fromObject(reVal, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
+						String sArgs = "", sResult = "";
+						Object[] args = joinpoint.getArgs();
+						
+						if(args!=null && args.length>0)
+							sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+						if(result!=null)
+							sResult = JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
 						
 						syslog.setSource((byte)1);
 						syslog.setSignature(signature.toString());
-						syslog.setArgs(args.length()<=255?args:args.substring(0, 255));
-						syslog.setResult(result.length()<=255?result:result.substring(0, 255));
+						syslog.setArgs(sArgs.length()<=255?sArgs:sArgs.substring(0, 255));
+						syslog.setResult(sResult.length()<=255?sResult:sResult.substring(0, 255));
 						syslog.setDescription("");
 						syslog.setExecTime(clock.getTime());
 
@@ -97,7 +99,7 @@ public class ServiceAspect implements Serializable {
 			}
 		});
 		
-		return reVal;  
+		return result;  
 	}
 	
 	
