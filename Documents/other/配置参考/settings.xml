@@ -22,13 +22,13 @@
 		<mirror>
 			<id>repository.sonatype.org</id>
 			<mirrorOf>central</mirrorOf>
-			<url>https://repository.sonatype.org/content/groups/public/</url>
+			<url>http://repository.sonatype.org/content/groups/public/</url>
 		</mirror>
 		<mirror>
 			<id>jboss-public-repository-group</id>
 			<mirrorOf>central</mirrorOf>
 			<name>JBoss Public Repository Group</name>
-			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
 		</mirror>
 	</mirrors>
 	<proxies />
@@ -40,6 +40,13 @@
 					<id>nexus</id>
 					<name>Repository for Local Nexus Server</name>
 					<url>https://repository.sonatype.org/content/groups/public/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+					</snapshots>
 				</repository>
 				<repository>
 					<id>repository.springframework.maven.release</id>

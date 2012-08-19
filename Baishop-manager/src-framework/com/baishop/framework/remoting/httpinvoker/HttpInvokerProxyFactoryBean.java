@@ -1,7 +1,11 @@
 package com.baishop.framework.remoting.httpinvoker;
 
+import net.sf.json.JSONArray;
+
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.lang.time.StopWatch;
+
+import com.baishop.framework.json.JsonConfigGlobal;
 
 
 /**
@@ -27,13 +31,22 @@ public class HttpInvokerProxyFactoryBean
 		Object result = super.invoke(methodInvocation);
         clock.stop();
         
+
+        Object[] args = methodInvocation.getArguments();  
+        String sArgs = "", sResult="";
+        
+		if(args!=null && args.length>0)
+			sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+		if(result!=null)
+			sResult = JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");       
+        
 		//输出访问时间日志
 		if(logger.isInfoEnabled()){
-			logger.info("SOA URL path [, time: "+ clock.getTime() +"ms]");
+			logger.info("SOA URL path ["+ this.getServiceUrl() +", time: "+ clock.getTime() +"ms]");
 		}
 		if(logger.isDebugEnabled()){
-			logger.debug("SOA args []");
-			logger.debug("SOA return []");
+			logger.debug("SOA args ["+ sArgs + "]");
+			logger.debug("SOA return ["+ sResult + "]");
 		}		
 
 		return result;		

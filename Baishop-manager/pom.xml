@@ -9,12 +9,12 @@
 		<repository>
 			<id>kadang releases</id>
 			<name>Kadang Release Repository</name>
-			<url>https://repository.sonatype.org/content/groups/public/</url>
+			<url>https://repository.sonatype.org/content/groups/public1/</url>
 		</repository>
 		<snapshotRepository>
 			<id>kadang snapshots</id>
 			<name>Kadang Snapshots Repository</name>
-			<url>https://repository.sonatype.org/content/groups/public/</url>
+			<url>https://repository.sonatype.org/content/groups/public1/</url>
 			<uniqueVersion>true</uniqueVersion> 
 		</snapshotRepository>
 	</distributionManagement>
