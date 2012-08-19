@@ -49,7 +49,7 @@
     
     
     
-	<!-- ============================sale服务类============================ -->
+	<!-- ============================shop服务类============================ -->
 	
 	<!-- 系统参数服务类 -->
 	<bean name="/service/sale/Users.srv" parent="SoaServiceExporter">
@@ -60,9 +60,6 @@
 	      <value>com.baishop.service.sale.UsersService</value>
 	    </property>
 	</bean>
-	
-
-	<!-- ============================goods服务类 ============================ -->
 	
 	<!-- 系统参数服务类 -->
 	<bean name="/service/goods/Goods.srv" parent="SoaServiceExporter">
