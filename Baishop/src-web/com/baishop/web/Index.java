@@ -9,6 +9,7 @@ import com.baishop.controller.PageBaiController;
 import com.baishop.entity.goods.Goods;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
+import com.baishop.service.ass.SyslogService;
 import com.baishop.service.goods.GoodsService;
 import com.baishop.service.goods.GoodsService.GoodsQueryMode;
 
@@ -21,6 +22,8 @@ public class Index extends PageBaiController {
 	
 	@Autowired
 	private GoodsService goodsService;
+	@Autowired
+	private SyslogService syslogService;
 
 	@Override
 	public void execute(HttpServletExtendRequest request,
@@ -31,6 +34,8 @@ public class Index extends PageBaiController {
 			modeview.addObject("goodsList", goodsList);
 			
 			System.out.println(goodsList);
+			
+			syslogService.logger("记录日志");
 		
 		}catch(Exception e){
 			e.printStackTrace();

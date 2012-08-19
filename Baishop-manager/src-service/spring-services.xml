@@ -103,6 +103,16 @@
 	      <value>com.baishop.service.ass.CityService</value>
 	    </property>
 	</bean>
+	
+	<!-- 日志服务类 -->
+	<bean parent="JmsServiceExporter">
+	    <property name="service">
+	      <ref bean="syslogService"/>
+	    </property>
+	    <property name="serviceInterface">
+	      <value>com.baishop.service.ass.SyslogService</value>
+	    </property>
+	</bean>
 		
 	
 </beans>
