@@ -53,13 +53,13 @@
 	
 	
 	
-	<!-- ============================sale服务类============================ -->
+	<!-- ============================shop服务类============================ -->
 	
 
 	<!-- 用户服务类 -->
 	<bean id="usersService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>/service/Users.srv</value>
+		  <value>/manager/service/Users.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.sale.UsersService</value>
@@ -67,13 +67,10 @@
 	</bean>
 	
 	
-	<!-- ============================goods服务类 ============================ -->
-	
-	
 	<!-- 商品服务类 -->
 	<bean id="goodsService" parent="SoaProxyFactoryBean" >
 	    <property name="serviceUrl">
-		  <value>/service/goods/Goods.srv</value>
+		  <value>/manager/service/goods/Goods.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.goods.GoodsService</value>
@@ -86,7 +83,7 @@
 	<!-- 系统参数服务类 -->
 	<bean id="paramsService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>/service/Params.srv</value>
+		  <value>/manager/service/Params.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.ParamsService</value>
@@ -96,7 +93,7 @@
 	<!-- 系统枚举服务类 -->
 	<bean id="enumsService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>/service/Enums.srv</value>
+		  <value>/manager/service/Enums.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.EnumsService</value>
@@ -106,7 +103,7 @@
 	<!-- 城市区划服务类 -->
 	<bean id="cityService" parent="SoaProxyFactoryBean">
 	    <property name="serviceUrl">
-		  <value>/service/City.srv</value>
+		  <value>/manager/service/City.srv</value>
 		</property>
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.CityService</value>

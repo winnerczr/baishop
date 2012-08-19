@@ -1,8 +1,5 @@
 package com.baishop.manager.web;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -12,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
 import com.baishop.manager.controller.PageManagerController;
-import com.google.code.kaptcha.Constants;
 
 public class Login extends PageManagerController {
 	
@@ -44,24 +40,24 @@ public class Login extends PageManagerController {
 	}
 	
 	
-	/**
-	 * 判断验证码
-	 */
-	public void checkCaptcha(HttpServletExtendRequest request, 
-			HttpServletExtendResponse response) throws IOException {
-
-		PrintWriter out = response.getWriter();
-		
-		String captcha = request.getParameter("captcha");
-		String kaptcha = (String)request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
-		
-		if(captcha!=null && kaptcha!=null & kaptcha.toLowerCase().equals(captcha.toLowerCase())){
-			out.print(true);
-		}else{
-			out.print(false);
-		}
-		
-		out.close();
-	}
+//	/**
+//	 * 判断验证码
+//	 */
+//	public void checkCaptcha(HttpServletExtendRequest request, 
+//			HttpServletExtendResponse response) throws IOException {
+//
+//		PrintWriter out = response.getWriter();
+//		
+//		String captcha = request.getParameter("captcha");
+//		String kaptcha = (String)request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY);
+//		
+//		if(captcha!=null && kaptcha!=null & kaptcha.toLowerCase().equals(captcha.toLowerCase())){
+//			out.print(true);
+//		}else{
+//			out.print(false);
+//		}
+//		
+//		out.close();
+//	}
 
 }

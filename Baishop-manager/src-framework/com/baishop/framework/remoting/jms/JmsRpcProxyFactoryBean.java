@@ -67,6 +67,7 @@ public class JmsRpcProxyFactoryBean extends JmsInvokerProxyFactoryBean {
 	 */
 	@Override
 	public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+		
 		if (AopUtils.isToStringMethod(methodInvocation.getMethod())) {
 			return "JMS invoker proxy for queue [" + this.queue + "]";
 		}

@@ -26,11 +26,15 @@ public class Index extends PageBaiController {
 	public void execute(HttpServletExtendRequest request,
 			HttpServletExtendResponse response, ModelAndView modeview) {
 		
-		List<Goods> goodsList = goodsService.getGoodsList(GoodsQueryMode.SIMPLE);
-		modeview.addObject("goodsList", goodsList);
+		try{
+			List<Goods> goodsList = goodsService.getGoodsList(GoodsQueryMode.SIMPLE);
+			modeview.addObject("goodsList", goodsList);
+			
+			System.out.println(goodsList);
 		
-		System.out.println(goodsList);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
-
 	
 }

@@ -9,13 +9,13 @@
 		<repository>
 			<id>kadang releases</id>
 			<name>Kadang Release Repository</name>
-			<url>https://repository.sonatype.org/content/groups/public1/</url>
+			<url>https://repository.sonatype.org/content/groups/public/</url>
 		</repository>
 		<snapshotRepository>
 			<id>kadang snapshots</id>
 			<name>Kadang Snapshots Repository</name>
-			<url>https://repository.sonatype.org/content/groups/public1/</url>
-			<uniqueVersion>true</uniqueVersion> 
+			<url>https://repository.sonatype.org/content/groups/public/</url>
+			<uniqueVersion>true</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
 	<properties>
@@ -171,7 +171,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>  
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.3.2</version>
@@ -430,11 +430,6 @@
 					<groupId>tomcat</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity</artifactId>
-			<version>1.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
