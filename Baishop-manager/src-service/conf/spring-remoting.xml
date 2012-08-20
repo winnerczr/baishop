@@ -109,5 +109,12 @@
 	      <value>com.baishop.service.ass.CityService</value>
 	    </property>
 	</bean>
+	
+	<!-- 日志服务类 -->
+	<bean id="syslogService" parent="JmsProxyFactoryBean">
+	    <property name="serviceInterface">
+	      <value>com.baishop.service.ass.SyslogService</value>
+	    </property>
+	</bean>
 
 </beans>

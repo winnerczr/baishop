@@ -19,7 +19,7 @@ public class HttpInvokerProxyFactoryBean
 	
 	
 	/**
-	 * 重写基类方法，添加计时功能
+	 * 重写基类方法，添加监控功能
 	 */
 	@Override
 	public Object invoke(MethodInvocation methodInvocation) 
@@ -42,7 +42,7 @@ public class HttpInvokerProxyFactoryBean
         
 		//输出访问时间日志
 		if(logger.isInfoEnabled()){
-			logger.info("SOA URL path ["+ this.getServiceUrl() +", time: "+ clock.getTime() +"ms]");
+			logger.info("SOA URL path ["+ this.getServiceUrl() +", method: "+ this.getServiceInterface().getName() +"."+ methodInvocation.getMethod().getName() +"(), time: "+ clock.getTime() +"ms]");
 		}
 		if(logger.isDebugEnabled()){
 			logger.debug("SOA args ["+ sArgs + "]");

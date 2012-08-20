@@ -19,7 +19,7 @@ Ext.onReady(function() {
 	};
   	
 	//部门tree与combobox的数据
-	var depts = Ext.decode('${depts}');
+	var treeDepts = Ext.decode('${treeDepts}');
   	    
 	//------------------------------------------------------------------------------------//
   	    
@@ -119,13 +119,13 @@ Ext.onReady(function() {
 				        editable: false,
 				        multiSelect: true,
 				        tpl: "<tpl for='treeDept'><div id='treeDept' style='height:200px;'></div></tpl>",
-		               	store: depts.cbbDept,
+		               	store: treeDepts.cbbDept,
 						tree: Ext.create('Ext.tree.Panel', {
 							width: '100%',
 							border:false, 
 						    rootVisible: false, 
 							store: Ext.create('Ext.data.TreeStore', {
-							    root: depts
+							    root: treeDepts
 							})
 						}),
 				        listeners : {

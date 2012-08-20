@@ -35,7 +35,7 @@ public class SysAdmins extends PageManagerController {
 			HttpServletExtendResponse response, ModelAndView modeview) {
 
 		//部门tree与combobox
-		modeview.addObject("depts", this.getTreeDeptOfJSON());	
+		modeview.addObject("treeDepts", this.getTreeDeptOfJSON());	
 	}
 	
 	
