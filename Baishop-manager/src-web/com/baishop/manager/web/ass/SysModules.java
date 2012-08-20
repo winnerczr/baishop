@@ -45,7 +45,7 @@ public class SysModules extends PageManagerController {
 		
 		try{
 			//组装JSON
-			JSONObject json = this.getTreeModulesOfJSON(null,null,null);
+			JSONObject json = modulesService.getTreeModulesOfJSON(null,null,null);
 
 			//输出数据
 			out.println(json);

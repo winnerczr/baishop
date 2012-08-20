@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.json.JSONObject;
+
 import com.baishop.entity.ass.Roles;
 
 /**
@@ -62,4 +64,11 @@ public interface RolesService extends Serializable {
 	 * @param roles 后台角色对象
 	 */
 	public void editRoles(final Roles roles, boolean syncModules);
+	
+	
+	/**
+	 * 获取JSON格式的树型角色,EXTJS中使用
+	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
+	 */
+	public JSONObject getTreeRolesOfJSON();
 }

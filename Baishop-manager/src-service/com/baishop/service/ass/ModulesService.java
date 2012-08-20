@@ -4,8 +4,11 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.baishop.entity.ass.Modules;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import com.baishop.entity.ass.Admins;
+import com.baishop.entity.ass.Modules;
 
 /**
  * 功能模块服务类
@@ -91,5 +94,28 @@ public interface ModulesService extends Serializable {
 	 * @param modules 功能模块对象
 	 */
 	public void editModules(Modules modules);
+	
+	
+
+	/**
+	 * 获取子系统的map集合
+	 * @return 返回JSON对象
+	 */
+	public JSONArray getListSystemsOfJSON();	
+	
+	/**
+	 * 获取子系统、模块、操作的map集合
+	 * @return 返回JSON对象
+	 */
+	public JSONObject getLeafModulesOfJSON();
+	
+	/**
+	 * 获取JSON格式的树型模块
+	 * @param user 后台用户对象,如果user为null，则查出所有的模块
+	 * @param subsystem 后台子系统,如果为null，则查出所有子系统的模块
+	 * @param types 模块类型,值为"SYSTEM"、"GROUP"、"MODULE"、"FUNCTION"， 如果为null，则查出所有的模块
+	 * @return 返回JSON对象
+	 */
+	public JSONObject getTreeModulesOfJSON(Admins user, final String subsystem, final String[] types);
 	
 }

@@ -1,13 +1,11 @@
 package com.baishop.manager.controller;
 
 import java.util.Enumeration;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONArray;
-import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
 import org.apache.http.Header;
@@ -23,24 +21,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.baishop.entity.ass.Admins;
-import com.baishop.entity.ass.Depts;
 import com.baishop.entity.ass.Modules;
-import com.baishop.entity.ass.Roles;
-import com.baishop.entity.goods.Category;
-import com.baishop.framework.exception.ServiceException;
 import com.baishop.framework.utils.PropsConf;
-import com.baishop.framework.utils.TreeRecursiveHandle;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
 import com.baishop.framework.web.controller.PageController;
 import com.baishop.service.ass.AdminsService;
-import com.baishop.service.ass.CityService;
-import com.baishop.service.ass.DeptsService;
 import com.baishop.service.ass.EnumsService;
 import com.baishop.service.ass.ModulesService;
 import com.baishop.service.ass.ParamsService;
 import com.baishop.service.ass.RolesService;
-import com.baishop.service.goods.CategoryService;
 
 /**
  * 页面MVC控制层基类，主要编写公共方法
@@ -59,22 +49,13 @@ public abstract class PageManagerController extends PageController {
 	protected RolesService rolesService;	
 	/** 应用模块服务类 */
 	@Autowired
-	protected ModulesService modulesService;	
-	/** 组织架构服务类 */
-	@Autowired
-	protected DeptsService deptsService;	
-	/** 行政区划服务类 */
-	@Autowired
-	protected CityService cityService;	
+	protected ModulesService modulesService;
 	/** 系统参数服务类 */
 	@Autowired
 	protected ParamsService paramsService;	
 	/** 系统枚举服务类 */
 	@Autowired
 	protected EnumsService enumsService;
-	/** 商品类目服务类  */
-	@Autowired
-	protected CategoryService categoryService;
 	
 	
 	
@@ -234,7 +215,7 @@ public abstract class PageManagerController extends PageController {
 	protected void doMainPage(HttpServletExtendRequest request,
 			HttpServletExtendResponse response, ModelAndView modeview){
 		// 获取当前用户有权限的模块树
-		JSONObject modules = this.getTreeModulesOfJSON(this.getCurrUser(),
+		JSONObject modules = modulesService.getTreeModulesOfJSON(this.getCurrUser(),
 															this.appConf.getProperty("app.name", "", "UTF-8"),
 															new String[] { 
 																ModulesService.SYSTEM,
@@ -248,353 +229,10 @@ public abstract class PageManagerController extends PageController {
 			modeview.addObject("treeModules", "{}");
 		
 		// 获取所有包含URL的模块
-		modeview.addObject("leafModules", this.getLeafModulesOfJSON());
+		modeview.addObject("leafModules", modulesService.getLeafModulesOfJSON());
 		
 		// 获取所有子系统
-		modeview.addObject("listSystems", this.getListSystemsOfJSON());
+		modeview.addObject("listSystems", modulesService.getListSystemsOfJSON());
 	}
-	
-	
 
-	/**
-	 * 获取子系统、模块、操作的map集合
-	 * @return 返回JSON对象
-	 */
-	public JSONArray getListSystemsOfJSON(){		
-		JSONArray json = new JSONArray();		
-		List<Modules> list = this.modulesService.getModulesList(null);
-		
-		for(Modules module : list){		
-			//添加最叶子节点到列表中
-			if(ModulesService.SYSTEM.equals(module.getType())){
-				JSONObject m = new JSONObject();
-				m.put("id", module.getModuleId());
-				m.put("cls", module.getText());
-				json.add(m);
-			}
-		}
-		
-		return json;
-	}
-	
-	
-	/**
-	 * 获取JSON格式的树型模块
-	 * @param user 后台用户对象,如果user为null，则查出所有的模块
-	 * @param subsystem 后台子系统,如果为null，则查出所有子系统的模块
-	 * @param types 模块类型,值为"SYSTEM"、"GROUP"、"MODULE"、"FUNCTION"， 如果为null，则查出所有的模块
-	 * @return 返回JSON对象
-	 */
-	public JSONObject getTreeModulesOfJSON(Admins user, final String subsystem, final String[] types) {
-		final JSONObject json = new JSONObject();
-		
-		try {
-			json.put("moduleId", 0);
-			json.put("id", 0);
-			json.put("text", "应用模块");
-			json.put("iconCls", "icon-docs");
-			json.put("children", new JSONArray());
-			
-			List<Modules> list;
-			if(user==null)
-				list = this.modulesService.getModulesList(null);
-			else
-				list = this.modulesService.getModulesListByUser(user, false);
-			
-						
-			//递归加载
-			TreeRecursiveHandle<Modules> treeRecursiveHandle = new TreeRecursiveHandle<Modules>(){
-				public void recursive(List<Modules> list, JSONObject treeNode) throws JSONException{
-					for(Modules module : list){
-						if(module.getModulePid().equals(treeNode.getInt("id"))){	
-							//判断是不是当前子系统
-							if(subsystem!=null){
-								if(module.getModulePid()==0 || module.getType().equals(ModulesService.SYSTEM)){
-									if(!module.getText().equals(subsystem)){
-										continue;
-									}
-								}
-							}
-							
-							//判断是否匹配要查询的类型
-							if(types!=null){
-								boolean isMatch = false; 
-								for(String type : types){
-									if(type.equals(module.getType())){
-										isMatch = true;
-										break;
-									}
-								}
-								if(!isMatch){
-									continue;
-								}
-							}
-							
-							
-							//获取JSON对象
-							JSONObject node = JSONObject.fromObject(module);
-							
-							node.put("id", module.getModuleId());
-							node.put("text", module.getText());
-							node.put("leaf", true);
-
-							node.put("nExpanded", module.getExpanded());
-							if(module.getExpanded()==1)
-								node.put("expanded", true);
-							else
-								node.put("expanded", false);
-														
-							//递归
-							this.recursive(list, node);
-							
-							//添加到树中
-							JSONArray children;
-							try {
-								children = treeNode.getJSONArray("children");
-							} catch (JSONException e) {
-								treeNode.put("children", new JSONArray());
-								children = treeNode.getJSONArray("children");
-							}							
-							children.add(node);
-							treeNode.put("leaf", false);
-						}
-					}
-				}
-			};
-			
-			treeRecursiveHandle.recursive(list, json);
-			
-		} catch (Exception e) {
-			throw new ServiceException(902001, e);
-		}
-		
-		return json;
-	}
-	
-
-	
-	/**
-	 * 获取子系统、模块、操作的map集合
-	 * @return 返回JSON对象
-	 */
-	public JSONObject getLeafModulesOfJSON(){		
-		JSONObject json = new JSONObject();		
-		List<Modules> list = this.modulesService.getModulesList(null);
-		
-		for(Modules module : list){		
-			//添加最叶子节点到列表中
-			if(ModulesService.SYSTEM.equals(module.getType()) || ModulesService.MODULE.equals(module.getType()) || ModulesService.FUNCTION.equals(module.getType())){
-				json.put(module.getText(), module.getUrl());
-			}
-		}
-		
-		return json;
-	}
-	
-	
-	/**
-	 * 获取JSON格式的树型角色
-	 * @return 返回JSON对象，json.get("leafMap")可以获取叶子节点集合
-	 */
-	public JSONObject getTreeRolesOfJSON() {
-		final JSONObject json = new JSONObject();
-		
-		try {
-			json.put("id", 0);
-			json.put("text", "用户角色");
-			json.put("roleId", 0);
-			json.put("roleName", "用户角色");
-			json.put("iconCls", "icon-docs");
-			json.put("children", new JSONArray());
-			json.put("leafMap", new JSONObject());
-			
-			List<Roles> list = this.rolesService.getRolesList(null);			
-			
-			//递归加载
-			TreeRecursiveHandle<Roles> treeRecursiveHandle = new TreeRecursiveHandle<Roles>(){
-				public void recursive(List<Roles> list, JSONObject treeNode) throws JSONException{
-					for(Roles role : list){
-						if(role.getRolePid().equals(treeNode.getInt("id"))){					
-							
-							JSONObject node = JSONObject.fromObject(role);
-							
-							node.put("id", role.getRoleId());
-							node.put("text", role.getRoleName());
-							node.put("expanded", true);
-							node.put("leaf", true);
-							node.put("nLeaf", role.getLeaf());
-							
-							//图标
-							if(role.getLeaf()==0)
-								node.put("iconCls", "icon-role-group");
-							else
-								node.put("iconCls", "icon-role-leaf");
-							
-							//角色中的模块ID
-							JSONArray modules = new JSONArray();
-							for(Modules module : role.getModules()){
-								modules.add(module.getModuleId());
-							}				
-							node.put("modules", modules);
-							
-							//递归
-							this.recursive(list, node);
-							
-							//添加到树中
-							JSONArray children;
-							try {
-								children = treeNode.getJSONArray("children");
-							} catch (JSONException e) {
-								treeNode.put("children", new JSONArray());
-								children = treeNode.getJSONArray("children");
-							}							
-							children.add(node);
-							treeNode.put("leaf", false);						
-							
-							//添加最叶子节点到列表中
-							if(role.getLeaf()==1){
-								json.getJSONObject("leafMap").put(role.getRoleId(), role.getRoleName());
-							}
-						}
-					}
-				}
-			};
-			
-			treeRecursiveHandle.recursive(list, json);
-			
-		} catch (Exception e) {
-			throw new ServiceException(902001, e);
-		}
-		
-		return json;
-	}
-	
-	
-	
-	/**
-	 * 获取JSON格式的树型部门
-	 * @return 返回JSON对象，json.get("cbbDept")可以获取combobox所需要的格式
-	 */
-	public JSONObject getTreeDeptOfJSON() {
-		final JSONObject json = new JSONObject();
-		
-		try {
-			json.put("id", 0);
-			json.put("text", "组织架构");
-			json.put("deptId", 0);
-			json.put("deptName", "组织架构");
-			json.put("iconCls", "icon-dept");
-			json.put("children", new JSONArray());
-			json.put("cbbDept", new JSONArray());
-			
-			List<Depts> list = this.deptsService.getDeptsList(null);			
-			
-			//递归加载
-			TreeRecursiveHandle<Depts> treeRecursiveHandle = new TreeRecursiveHandle<Depts>(){
-				public void recursive(List<Depts> list, JSONObject treeNode) throws JSONException{
-					for(Depts dept : list){
-						if(dept.getDeptPid().equals(treeNode.getInt("id"))){					
-							
-							JSONObject node = JSONObject.fromObject(dept);
-							
-							node.put("id", dept.getDeptId());
-							node.put("text", dept.getDeptName());
-							node.put("expanded", true);
-							node.put("leaf", true);
-							node.put("iconCls", "icon-dept");
-							
-							//递归
-							this.recursive(list, node);
-							
-							//添加到树中
-							JSONArray children;
-							try {
-								children = treeNode.getJSONArray("children");
-							} catch (JSONException e) {
-								treeNode.put("children", new JSONArray());
-								children = treeNode.getJSONArray("children");
-							}							
-							children.add(node);
-							treeNode.put("leaf", false);						
-							
-							//添加节点到列表中
-							json.getJSONArray("cbbDept").add(JSONArray.fromObject(new Object[]{dept.getDeptId(), dept.getDeptName()}));
-						}
-					}
-				}
-			};
-			
-			treeRecursiveHandle.recursive(list, json);
-			
-		} catch (Exception e) {
-			throw new ServiceException(902001, e);
-		}
-		
-		return json;
-	}	
-	
-	
-	/**
-	 * 获取JSON格式的类目树
-	 * @return
-	 */
-	public JSONObject getTreeCategoryOfJSON() {
-		final JSONObject json = new JSONObject();
-		
-		try {
-			json.put("id", 0);
-			json.put("text", "商品类目");
-			json.put("iconCls", "icon-docs");
-			json.put("children", new JSONArray());
-			json.put("cbbCategory", new JSONArray());
-			
-			List<Category> list = categoryService.getCategoryList();
-			
-			//递归加载
-			TreeRecursiveHandle<Category> treeRecursiveHandle = new TreeRecursiveHandle<Category>(){
-				public void recursive(List<Category> list, JSONObject treeNode) throws JSONException{
-					for(Category cate : list){
-						if(cate.getCateParent().equals(treeNode.getInt("id"))){
-							JSONObject node = JSONObject.fromObject(cate);
-							
-							node.put("id", cate.getCateId());
-							node.put("text", cate.getCateName());
-							node.put("expanded", true);
-							node.put("leaf", true);
-							
-							this.recursive(list, node);
-							
-							JSONArray children;
-							try {
-								children = treeNode.getJSONArray("children");
-							} catch (JSONException e) {
-								treeNode.put("children", new JSONArray());
-								children = treeNode.getJSONArray("children");
-							}
-							children.add(node);
-							treeNode.put("leaf", false);
-							
-							//添加节点到列表中
-							String name = cate.getCateName();			
-							int pid = cate.getCateParent();
-							while(pid>0){
-								Category _cate = categoryService.getCategory(pid);
-								pid = _cate.getCateParent();
-								name = _cate.getCateName() + ">>" + name;
-							}
-							json.getJSONArray("cbbCategory").add(JSONArray.fromObject(new Object[]{cate.getCateId(), name}));
-						}
-					}
-				}
-			};
-			
-			treeRecursiveHandle.recursive(list, json);
-			
-		} catch (Exception e) {
-			throw new ServiceException(902001, e);
-		}
-		
-		return json;
-	}
-	
 }

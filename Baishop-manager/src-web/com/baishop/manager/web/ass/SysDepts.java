@@ -5,14 +5,19 @@ import java.io.PrintWriter;
 
 import net.sf.json.JSONObject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.baishop.entity.ass.Depts;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
 import com.baishop.manager.controller.PageManagerController;
+import com.baishop.service.ass.DeptsService;
 
 public class SysDepts extends PageManagerController {
+
+	@Autowired
+	protected DeptsService deptsService;	
 
 	@Override
 	public void execute(HttpServletExtendRequest request,
@@ -33,7 +38,7 @@ public class SysDepts extends PageManagerController {
 		
 		try{
 			//组装JSON
-			JSONObject json = this.getTreeDeptOfJSON();
+			JSONObject json = deptsService.getTreeDeptOfJSON();
 
 			//输出数据
 			out.println(json);

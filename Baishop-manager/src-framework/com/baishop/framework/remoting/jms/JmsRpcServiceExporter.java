@@ -1,5 +1,7 @@
 package com.baishop.framework.remoting.jms;
 
+import java.lang.reflect.InvocationTargetException;
+
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageProducer;
@@ -33,12 +35,12 @@ public class JmsRpcServiceExporter extends DefaultMessageListenerContainer {
 		/**
 		 * 重写基类方法，添加监控功能
 		 */
-		@Override
-		protected RemoteInvocationResult invokeAndCreateResult(RemoteInvocation invocation, Object targetObject) {
+		protected Object invoke(RemoteInvocation invocation, Object targetObject)
+				throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 			//记录执行时间
 	        final StopWatch clock = new StopWatch();
 	        clock.start();
-			RemoteInvocationResult result = super.invokeAndCreateResult(invocation, targetObject);		
+			Object result = super.invoke(invocation, targetObject);		
 	        clock.stop();
 	        
 	        
@@ -48,7 +50,7 @@ public class JmsRpcServiceExporter extends DefaultMessageListenerContainer {
 			if(args!=null && args.length>0)
 				sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
 			if(result!=null)
-				sResult = JSONArray.fromObject(result.getValue(), JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");       
+				sResult = result instanceof String ? result.toString() : JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");       
 	        
 			//输出访问时间日志
 			if(logger.isInfoEnabled()){

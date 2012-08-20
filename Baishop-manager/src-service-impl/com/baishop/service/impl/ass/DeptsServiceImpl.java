@@ -4,10 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.baishop.entity.ass.Depts;
 import com.baishop.framework.exception.ServiceException;
+import com.baishop.framework.utils.TreeRecursiveHandle;
 import com.baishop.service.BaseService;
 import com.baishop.service.ass.DeptsService;
 
@@ -117,5 +122,66 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 			throw new ServiceException(104, e, new String[]{"部门"});
 		}
 	}
+	
+	
+	
+	@Override
+	public JSONObject getTreeDeptOfJSON() {
+		final JSONObject json = new JSONObject();
+		
+		try {
+			json.put("id", 0);
+			json.put("text", "组织架构");
+			json.put("deptId", 0);
+			json.put("deptName", "组织架构");
+			json.put("iconCls", "icon-dept");
+			json.put("children", new JSONArray());
+			json.put("cbbDept", new JSONArray());
+			
+			List<Depts> list = this.getDeptsList(null);			
+			
+			//递归加载
+			TreeRecursiveHandle<Depts> treeRecursiveHandle = new TreeRecursiveHandle<Depts>(){
+				public void recursive(List<Depts> list, JSONObject treeNode) throws JSONException{
+					for(Depts dept : list){
+						if(dept.getDeptPid().equals(treeNode.getInt("id"))){					
+							
+							JSONObject node = JSONObject.fromObject(dept);
+							
+							node.put("id", dept.getDeptId());
+							node.put("text", dept.getDeptName());
+							node.put("expanded", true);
+							node.put("leaf", true);
+							node.put("iconCls", "icon-dept");
+							
+							//递归
+							this.recursive(list, node);
+							
+							//添加到树中
+							JSONArray children;
+							try {
+								children = treeNode.getJSONArray("children");
+							} catch (JSONException e) {
+								treeNode.put("children", new JSONArray());
+								children = treeNode.getJSONArray("children");
+							}							
+							children.add(node);
+							treeNode.put("leaf", false);						
+							
+							//添加节点到列表中
+							json.getJSONArray("cbbDept").add(JSONArray.fromObject(new Object[]{dept.getDeptId(), dept.getDeptName()}));
+						}
+					}
+				}
+			};
+			
+			treeRecursiveHandle.recursive(list, json);
+			
+		} catch (Exception e) {
+			throw new ServiceException(902001, e);
+		}
+		
+		return json;
+	}	
 
 }

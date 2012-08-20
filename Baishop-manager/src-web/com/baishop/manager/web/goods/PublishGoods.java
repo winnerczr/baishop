@@ -25,6 +25,7 @@ import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
 import com.baishop.manager.controller.PageManagerController;
 import com.baishop.service.goods.BrandsService;
+import com.baishop.service.goods.CategoryService;
 import com.baishop.service.goods.GoodsService;
 import com.baishop.service.goods.PropertiesService;
 import com.baishop.service.goods.GoodsService.GoodsQueryMode;
@@ -39,6 +40,8 @@ public class PublishGoods extends PageManagerController {
 	private GoodsService goodsService;
 	@Autowired
 	private BrandsService brandsService;
+	@Autowired
+	protected CategoryService categoryService;
 	@Autowired
 	private PropertiesService propertiesService;
 	
@@ -64,7 +67,7 @@ public class PublishGoods extends PageManagerController {
 		
 		
 		//商品类目树和叶子列表
-		String treeCategory = this.getTreeCategoryOfJSON().toString();
+		String treeCategory = categoryService.getTreeCategoryOfJSON().toString();
 		modeview.addObject("treeCategory", treeCategory);
 		
 		//加载商品品牌列表

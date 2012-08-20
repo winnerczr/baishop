@@ -3,6 +3,8 @@ package com.baishop.service.goods;
 import java.io.Serializable;
 import java.util.List;
 
+import net.sf.json.JSONObject;
+
 import com.baishop.entity.goods.Category;
 
 /**
@@ -43,5 +45,11 @@ public interface CategoryService extends Serializable {
 	 * @param category 商品类别对象
 	 */
 	public void editCategory(Category category);
+	
+	/**
+	 * 获取JSON格式的类目树，EXTJS中使用
+	 * @return 返回JSON对象，json.get("cbbCategory")可以获取combobox所需要的列表
+	 */
+	public JSONObject getTreeCategoryOfJSON();
 	
 }

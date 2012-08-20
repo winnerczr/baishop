@@ -47,7 +47,7 @@ public class SysRoles extends PageManagerController {
 		
 		try{
 			//组装JSON
-			JSONObject json = this.getTreeRolesOfJSON();
+			JSONObject json = rolesService.getTreeRolesOfJSON();
 
 			//输出数据
 			out.println(json);
