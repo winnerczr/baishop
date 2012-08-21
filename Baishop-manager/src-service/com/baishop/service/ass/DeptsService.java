@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.json.JSONObject;
+
 import com.baishop.entity.ass.Depts;
 
 /**
@@ -64,5 +66,11 @@ public interface DeptsService extends Serializable {
 	 * @param dept 部门对象
 	 */
 	public void editDepts(Depts dept);	
+	
+	/**
+	 * 获取JSON格式的树型部门,EXTJS中使用
+	 * @return 返回JSON对象，json.get("cbbDept")可以获取combobox所需要的格式
+	 */
+	public JSONObject getTreeDeptOfJSON();
 	
 }

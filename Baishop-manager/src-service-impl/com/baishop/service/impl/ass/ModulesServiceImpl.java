@@ -7,16 +7,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.baishop.entity.ass.Admins;
 import com.baishop.entity.ass.Modules;
 import com.baishop.entity.ass.Roles;
-import com.baishop.entity.ass.Admins;
 import com.baishop.framework.exception.ServiceException;
+import com.baishop.framework.utils.TreeRecursiveHandle;
 import com.baishop.service.BaseService;
-import com.baishop.service.ass.ModulesService;
 import com.baishop.service.ass.AdminsService;
+import com.baishop.service.ass.ModulesService;
 
 /**
  * 功能模块服务类
@@ -181,6 +186,129 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"模块"});
 		}
+	}
+	
+	
+	
+
+	@Override
+	public JSONArray getListSystemsOfJSON(){		
+		JSONArray json = new JSONArray();		
+		List<Modules> list = this.getModulesList(null);
+		
+		for(Modules module : list){		
+			//添加最叶子节点到列表中
+			if(ModulesService.SYSTEM.equals(module.getType())){
+				JSONObject m = new JSONObject();
+				m.put("id", module.getModuleId());
+				m.put("cls", module.getText());
+				json.add(m);
+			}
+		}
+		
+		return json;
+	}
+
+	@Override
+	public JSONObject getLeafModulesOfJSON(){		
+		JSONObject json = new JSONObject();		
+		List<Modules> list = this.getModulesList(null);
+		
+		for(Modules module : list){		
+			//添加最叶子节点到列表中
+			if(ModulesService.SYSTEM.equals(module.getType()) || ModulesService.MODULE.equals(module.getType()) || ModulesService.FUNCTION.equals(module.getType())){
+				json.put(module.getText(), module.getUrl());
+			}
+		}
+		
+		return json;
+	}
+
+	@Override
+	public JSONObject getTreeModulesOfJSON(Admins user, final String subsystem, final String[] types) {
+		final JSONObject json = new JSONObject();
+		
+		try {
+			json.put("moduleId", 0);
+			json.put("id", 0);
+			json.put("text", "应用模块");
+			json.put("iconCls", "icon-docs");
+			json.put("children", new JSONArray());
+			
+			List<Modules> list;
+			if(user==null)
+				list = this.getModulesList(null);
+			else
+				list = this.getModulesListByUser(user, false);
+			
+						
+			//递归加载
+			TreeRecursiveHandle<Modules> treeRecursiveHandle = new TreeRecursiveHandle<Modules>(){
+				public void recursive(List<Modules> list, JSONObject treeNode) throws JSONException{
+					for(Modules module : list){
+						if(module.getModulePid().equals(treeNode.getInt("id"))){	
+							//判断是不是当前子系统
+							if(subsystem!=null){
+								if(module.getModulePid()==0 || module.getType().equals(ModulesService.SYSTEM)){
+									if(!module.getText().equals(subsystem)){
+										continue;
+									}
+								}
+							}
+							
+							//判断是否匹配要查询的类型
+							if(types!=null){
+								boolean isMatch = false; 
+								for(String type : types){
+									if(type.equals(module.getType())){
+										isMatch = true;
+										break;
+									}
+								}
+								if(!isMatch){
+									continue;
+								}
+							}
+							
+							
+							//获取JSON对象
+							JSONObject node = JSONObject.fromObject(module);
+							
+							node.put("id", module.getModuleId());
+							node.put("text", module.getText());
+							node.put("leaf", true);
+
+							node.put("nExpanded", module.getExpanded());
+							if(module.getExpanded()==1)
+								node.put("expanded", true);
+							else
+								node.put("expanded", false);
+														
+							//递归
+							this.recursive(list, node);
+							
+							//添加到树中
+							JSONArray children;
+							try {
+								children = treeNode.getJSONArray("children");
+							} catch (JSONException e) {
+								treeNode.put("children", new JSONArray());
+								children = treeNode.getJSONArray("children");
+							}							
+							children.add(node);
+							treeNode.put("leaf", false);
+						}
+					}
+				}
+			};
+			
+			treeRecursiveHandle.recursive(list, json);
+			
+		} catch (Exception e) {
+			throw new ServiceException(902001, e);
+		}
+		
+		return json;
 	}
 	
 	

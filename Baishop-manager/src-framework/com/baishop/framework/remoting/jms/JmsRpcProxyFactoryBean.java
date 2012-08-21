@@ -104,7 +104,7 @@ public class JmsRpcProxyFactoryBean extends JmsInvokerProxyFactoryBean {
 		if(args!=null && args.length>0)
 			sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
 		if(result!=null)
-			sResult = JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");       
+			sResult = result instanceof String ? result.toString() : JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");       
         
 		//输出访问时间日志
 		if(logger.isInfoEnabled()){

@@ -72,12 +72,12 @@ public class ServiceAspect implements Serializable {
 						if(args!=null && args.length>0)
 							sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
 						if(result!=null)
-							sResult = JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
+							sResult = result instanceof String ? result.toString() : JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
 						
 						syslog.setSource((byte)1);
 						syslog.setSignature(signature.toString());
-						syslog.setArgs(sArgs.length()<=255?sArgs:sArgs.substring(0, 255));
-						syslog.setResult(sResult.length()<=255?sResult:sResult.substring(0, 255));
+						syslog.setArgs(sArgs.length()<=2000?sArgs:sArgs.substring(0, 2000));
+						syslog.setResult(sResult.length()<=2000?sResult:sResult.substring(0, 2000));
 						syslog.setDescription("");
 						syslog.setExecTime(clock.getTime());
 

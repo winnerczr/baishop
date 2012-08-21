@@ -124,7 +124,6 @@ Ext.onReady(function(){
 			      	emptyText: '请选择品牌...', 
                     valueField: 'brandId',
         	      	displayField: 'brandName',
-                    emptyText: "全部",
                     store:  Ext.create('Ext.data.Store', {
                         fields: ['brandId', 'brandName'],
                         data : Ext.decode('${cbbBrands}')

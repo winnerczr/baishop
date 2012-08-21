@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+
 import org.springframework.orm.ibatis.SqlMapClientCallback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +16,7 @@ import com.baishop.entity.ass.Modules;
 import com.baishop.entity.ass.Roles;
 import com.baishop.entity.ass.RolesModules;
 import com.baishop.framework.exception.ServiceException;
+import com.baishop.framework.utils.TreeRecursiveHandle;
 import com.baishop.service.BaseService;
 import com.baishop.service.ass.RolesService;
 import com.ibatis.sqlmap.client.SqlMapExecutor;
@@ -171,6 +176,82 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"角色"});
 		}
+	}
+	
+	
+	
+	@Override
+	public JSONObject getTreeRolesOfJSON() {
+		final JSONObject json = new JSONObject();
+		
+		try {
+			json.put("id", 0);
+			json.put("text", "用户角色");
+			json.put("roleId", 0);
+			json.put("roleName", "用户角色");
+			json.put("iconCls", "icon-docs");
+			json.put("children", new JSONArray());
+			json.put("leafMap", new JSONObject());
+			
+			List<Roles> list = this.getRolesList(null);			
+			
+			//递归加载
+			TreeRecursiveHandle<Roles> treeRecursiveHandle = new TreeRecursiveHandle<Roles>(){
+				public void recursive(List<Roles> list, JSONObject treeNode) throws JSONException{
+					for(Roles role : list){
+						if(role.getRolePid().equals(treeNode.getInt("id"))){					
+							
+							JSONObject node = JSONObject.fromObject(role);
+							
+							node.put("id", role.getRoleId());
+							node.put("text", role.getRoleName());
+							node.put("expanded", true);
+							node.put("leaf", true);
+							node.put("nLeaf", role.getLeaf());
+							
+							//图标
+							if(role.getLeaf()==0)
+								node.put("iconCls", "icon-role-group");
+							else
+								node.put("iconCls", "icon-role-leaf");
+							
+							//角色中的模块ID
+							JSONArray modules = new JSONArray();
+							for(Modules module : role.getModules()){
+								modules.add(module.getModuleId());
+							}				
+							node.put("modules", modules);
+							
+							//递归
+							this.recursive(list, node);
+							
+							//添加到树中
+							JSONArray children;
+							try {
+								children = treeNode.getJSONArray("children");
+							} catch (JSONException e) {
+								treeNode.put("children", new JSONArray());
+								children = treeNode.getJSONArray("children");
+							}							
+							children.add(node);
+							treeNode.put("leaf", false);						
+							
+							//添加最叶子节点到列表中
+							if(role.getLeaf()==1){
+								json.getJSONObject("leafMap").put(role.getRoleId(), role.getRoleName());
+							}
+						}
+					}
+				}
+			};
+			
+			treeRecursiveHandle.recursive(list, json);
+			
+		} catch (Exception e) {
+			throw new ServiceException(902001, e);
+		}
+		
+		return json;
 	}
 	
 }

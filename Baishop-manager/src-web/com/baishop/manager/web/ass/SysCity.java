@@ -7,14 +7,19 @@ import java.util.List;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.baishop.entity.ass.City;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
 import com.baishop.manager.controller.PageManagerController;
+import com.baishop.service.ass.CityService;
 
 public class SysCity extends PageManagerController {
+	
+	@Autowired
+	protected CityService cityService;
 
 	@Override
 	public void execute(HttpServletExtendRequest request,
