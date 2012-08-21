@@ -339,17 +339,7 @@ Ext.onReady(function(){
 					    	window.location.href = "GoodsManage.jspx";
 					    },
 					    failure: function(form, action) {
-					        switch (action.failureType) {
-				            case Ext.form.action.Action.CLIENT_INVALID:
-				                Ext.Msg.alert('提示', '输入内容不通过');
-				                break;
-				            case Ext.form.action.Action.CONNECT_FAILURE:
-				                Ext.Msg.alert('提示', '连接出错');
-				                break;
-				            case Ext.form.action.Action.SERVER_INVALID:
-				               Ext.Msg.alert('提示', action.result.msg);
-				               break;
-							}
+					    	Ext.formFailure(form, action);
 					    	_this.enable();
 					    }
 					});
