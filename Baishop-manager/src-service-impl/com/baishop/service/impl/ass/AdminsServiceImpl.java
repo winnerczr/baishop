@@ -166,13 +166,14 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 	public void addAdmins(final Admins users, boolean syncDepts, boolean syncRoles, boolean syncModules) {
 		try{
 			// 添加用户记录
-			int userId = (Integer)this.getSqlMapClientAss().insert("Admins.addAdmins", users);			
+			int userId = (Integer)this.getSqlMapClientAss().insert("Admins.addAdmins", users);
+			users.setUserId(userId);
 
 			Map<String,Object> params = new HashMap<String,Object>();
-			params.put("userIds", new int[]{userId});
+			params.put("userIds", new int[]{users.getUserId()});
 			
 			// 添加部门记录
-			if(syncRoles){								
+			if(syncDepts){								
 				this.getSqlMapClientAss().delete("AdminsDepts.delAdminsDepts", params);
 				this.getSqlMapClientAss().execute(new SqlMapClientCallback<Integer>(){
 					@Override
