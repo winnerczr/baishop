@@ -616,7 +616,7 @@ Ext.onReady(function(){
 		       	    layout: 'fit',
 		       	    showed: false,
 					listeners: {
-						show: function(obj, options) {
+						activate: function(obj, options) {
 							if(!obj.shwoed){
 								obj.shwoed = true;
 								obj.add(gridStorage);
@@ -629,7 +629,7 @@ Ext.onReady(function(){
 		       	    layout: 'fit',
 		       	    showed: false,
 					listeners: {
-						show: function(obj, options) {
+						activate: function(obj, options) {
 							if(!obj.shwoed){
 								obj.shwoed = true;
 								obj.add(gridDeleted);
@@ -684,7 +684,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -734,7 +734,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -784,7 +784,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -825,7 +825,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -875,7 +875,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -925,7 +925,7 @@ Ext.onReady(function(){
     						},
     						failure : function(response, options) {
     							grid.el.unmask();
-    							Ext.Msg.alert("提示", response.responseText);
+    							Ext.ajaxFailure(response, options);
     						}
     					});
     				}
@@ -963,7 +963,7 @@ Ext.onReady(function(){
 			failure : function(response, options) {
 				grid.el.unmask();				
 				record.reject();
-				Ext.Msg.alert("提示", response.responseText);
+				Ext.ajaxFailure(response, options);
 			}
 		});
  	}
@@ -994,7 +994,7 @@ Ext.onReady(function(){
 			failure : function(response, options) {
 				grid.el.unmask();				
 				record.reject();
-				Ext.Msg.alert("提示", response.responseText);
+				Ext.ajaxFailure(response, options);
 			}
 		});
  	}
