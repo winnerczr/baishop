@@ -305,7 +305,9 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 			treeRecursiveHandle.recursive(list, json);
 			
 		} catch (Exception e) {
-			throw new ServiceException(902001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"模块"});
 		}
 		
 		return json;

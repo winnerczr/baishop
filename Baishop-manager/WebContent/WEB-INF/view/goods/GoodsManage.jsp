@@ -616,7 +616,7 @@ Ext.onReady(function(){
 		       	    layout: 'fit',
 		       	    showed: false,
 					listeners: {
-						show: function(obj, options) {
+						activate: function(obj, options) {
 							if(!obj.shwoed){
 								obj.shwoed = true;
 								obj.add(gridStorage);
@@ -629,7 +629,7 @@ Ext.onReady(function(){
 		       	    layout: 'fit',
 		       	    showed: false,
 					listeners: {
-						show: function(obj, options) {
+						activate: function(obj, options) {
 							if(!obj.shwoed){
 								obj.shwoed = true;
 								obj.add(gridDeleted);

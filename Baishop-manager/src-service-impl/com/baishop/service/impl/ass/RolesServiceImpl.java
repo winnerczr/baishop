@@ -248,7 +248,9 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			treeRecursiveHandle.recursive(list, json);
 			
 		} catch (Exception e) {
-			throw new ServiceException(902001, e);
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"角色"});
 		}
 		
 		return json;
