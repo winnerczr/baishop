@@ -73,7 +73,7 @@ public final class DateUtils {
 
 	
 	/**
-	 * 增加一年
+	 * 增加年
 	 * @param date
 	 * @param i
 	 * @return
@@ -86,7 +86,7 @@ public final class DateUtils {
 	}
 	
 	/**
-	 * 增加一个月
+	 * 增加月
 	 * @param date
 	 * @param i
 	 * @return
@@ -99,7 +99,7 @@ public final class DateUtils {
 	}
 	
 	/**
-	 * 增加一天
+	 * 增加天
 	 * @param date
 	 * @param i
 	 * @return
@@ -108,6 +108,45 @@ public final class DateUtils {
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
 		c.add(Calendar.DATE,i);
+		return c.getTime();		
+	}
+	
+	/**
+	 * 增加小时
+	 * @param date
+	 * @param i
+	 * @return
+	 */
+	public static Date addHour(Date date,int i){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		c.add(Calendar.HOUR,i);
+		return c.getTime();		
+	}
+	
+	/**
+	 * 增加分钟
+	 * @param date
+	 * @param i
+	 * @return
+	 */
+	public static Date addMinute(Date date,int i){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		c.add(Calendar.MINUTE,i);
+		return c.getTime();		
+	}
+	
+	/**
+	 * 增加秒
+	 * @param date
+	 * @param i
+	 * @return
+	 */
+	public static Date addSecond(Date date,int i){
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		c.add(Calendar.SECOND,i);
 		return c.getTime();		
 	}
 	

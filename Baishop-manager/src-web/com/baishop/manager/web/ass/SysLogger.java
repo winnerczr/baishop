@@ -57,10 +57,7 @@ public class SysLogger extends PageManagerController {
 			String searchKey = request.getParameter("searchKey", "UTF-8");
 			Integer source = request.getIntParameter("source");
 			Date startDate = request.getDateParameter("startDate");
-			Date endDate = request.getDateParameter("endDate");
-			
-			if(endDate!=null)
-				endDate = DateUtils.addDay(endDate,1);
+			Date endDate = DateUtils.addSecond(DateUtils.addDay(request.getDateParameter("endDate"),1),-1);
 						
 			//查询参数
 			Map<String,Object> params = new HashMap<String,Object>();
