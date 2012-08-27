@@ -4,13 +4,16 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.baishop.entity.ass.Admins;
+
 
 /**
  * 后台用户服务类
  * @author Linpn
  */
-public interface AdminsService extends Serializable {
+public interface AdminsService extends UserDetailsService, Serializable {
 	/**
 	 * 获取后台用户
 	 * @param userId 后台用户ID
@@ -20,14 +23,14 @@ public interface AdminsService extends Serializable {
 
 	/**
 	 * 获取后台用户
-	 * @param username 后台用户名称
+	 * @param username/code 后台用户名或用户工号
 	 * @return 返回后台用户对象
 	 */
 	public Admins getAdmins(String username);
 
 	/**
 	 * 获取后台用户
-	 * @param username 后台用户名称
+	 * @param username/code 后台用户名或用户工号
 	 * @param password 密码
 	 * @return 返回后台用户对象
 	 */
@@ -35,10 +38,33 @@ public interface AdminsService extends Serializable {
 	
 	/**
 	 * 获取后台用户列表
+	 * @return 返回后台用户列表
+	 */
+	public List<Admins> getAdminsList();
+	
+	/**
+	 * 获取后台用户列表
 	 * @param params 查询参数
 	 * @return 返回后台用户列表
 	 */
 	public List<Admins> getAdminsList(Map<String,Object> params);
+	
+	/**
+	 * 获取后台用户列表
+	 * @param params 查询参数
+	 * @param sorters 记录的排序，如sorters.put("id","desc")，该参数如果为空表示按默认排序
+	 * @param start 查询的起始记录,可为null
+	 * @param limit 查询的总记录数, 如果值为-1表示查询到最后,可为null
+	 * @return 返回后台用户列表
+	 */
+	public List<Admins> getAdminsList(Map<String,Object> params, Map<String,String> sorters, Long start, Long limit);
+	
+	/**
+	 * 获取用户总数
+	 * @param params 查询参数
+	 * @return
+	 */
+	public long getAdminsCount(Map<String, Object> params);
 
 	/**
 	 * 获取后台角色列表

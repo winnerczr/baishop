@@ -71,7 +71,7 @@ Ext.onReady(function() {
 			    xtype:'textfield',
 			    id: 'txtDeptCode',
 			    name: 'dept.deptCode',
-			    fieldLabel: '编码',
+			    fieldLabel: '编号',
 			    allowBlank: false
 			},{
 				xtype:'textfield',
@@ -147,7 +147,7 @@ Ext.onReady(function() {
             width: 300,
           	sortable: false
         },{
-            text: '编码',
+            text: '编号',
             dataIndex: 'deptCode',
             width: 150,
           	sortable: false

@@ -104,7 +104,7 @@
 	    </property>
 	</bean>
 	
-	<!-- 日志服务类 -->
+	<!-- 日志服务类 
 	<bean parent="JmsServiceExporter">
 	    <property name="service">
 	      <ref bean="syslogService"/>
@@ -112,7 +112,7 @@
 	    <property name="serviceInterface">
 	      <value>com.baishop.service.ass.SyslogService</value>
 	    </property>
-	</bean>
+	</bean>-->
 		
 	
 </beans>

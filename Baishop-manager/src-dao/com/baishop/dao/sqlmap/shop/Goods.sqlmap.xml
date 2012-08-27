@@ -167,7 +167,7 @@
   </select>
   
   <select id="getGoodsCount" resultClass="long" parameterClass="hashmap" cacheModel="cacheGoodsCount">
-    select count(0)
+    select count(*)
     from bai_goods
 	<include refid="select_where_clause" />
   </select>

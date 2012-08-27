@@ -76,22 +76,22 @@
 			enable = #enable:INTEGER#
 		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="roleId">
-			user_id in (select user_id from ass_admins_roles where role_id = #roleId:INTEGER#)
+			user_id in (select user_id from bai_admins_roles where role_id = #roleId:INTEGER#)
 		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="moduleId" open="(" close=")">
 			user_id in (
-				select user_id from ass_admins_modules where module_id = #moduleId:INTEGER#
+				select user_id from bai_admins_modules where module_id = #moduleId:INTEGER#
 			)
 			or
 			user_id in (
-				select user_id from ass_admins_roles where role_id in (
+				select user_id from bai_admins_roles where role_id in (
 					select role_id from ass_roles_modules where module_id = #moduleId:INTEGER#
 				)
 			)
 		</isNotEmpty>		
 		<isNotEmpty prepend="AND" property="deptCode">
 			user_id in (
-				select user_id from ass_admins_depts where dept_id in (
+				select user_id from bai_admins_depts where dept_id in (
 					select dept_id from ass_depts where dept_code like CONCAT(#deptCode:VARCHAR#,'%')
 				)
 			)
@@ -129,14 +129,14 @@
 
   <select id="getAdmins" resultMap="resultMap" cacheModel="cacheAdmins">
     select *
-    from ass_admins
+    from bai_admins
 	<include refid="select_where_clause" />
 	<include refid="select_sort_limit_clause" />
   </select>
   
   <select id="getAdminsCount" resultClass="long">
     select count(*)
-    from ass_admins
+    from bai_admins
 	<include refid="select_where_clause" />
   </select>
   

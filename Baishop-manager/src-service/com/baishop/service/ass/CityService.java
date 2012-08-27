@@ -21,10 +21,16 @@ public interface CityService extends Serializable {
 
 	/**
 	 * 获取城市
-	 * @param cityCode 城市编码
+	 * @param cityCode 城市编号
 	 * @return 返回城市对象
 	 */
 	public City getCity(String cityCode);
+	
+	/**
+	 * 获取城市列表
+	 * @return 返回城市列表
+	 */
+	public List<City> getCityList();
 	
 	/**
 	 * 获取城市列表

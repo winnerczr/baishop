@@ -39,7 +39,7 @@
         </property>
     </bean>
     
-    <!-- jms模版类 -->
+    <!-- jms模版类 
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
     	<property name="connectionFactory">
 	    	<bean class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">  
@@ -53,9 +53,9 @@
 			    <property name="maxConnections" value="1"/>  
 			</bean>
     	</property>
-    </bean>
+    </bean>-->
     
-    <!-- CluserLock集群锁 -->
+    <!-- CluserLock集群锁 
    	<bean id="clusterLockTemplate" class="com.baishop.framework.lock.ClusterLockTemplate"> 
 		<property name="connectString">
 			<value>${remoting.zookeeper.url}</value>
@@ -63,7 +63,7 @@
 		<property name="timeout">
 			<value>40000</value>
 		</property>
-	</bean>
+	</bean>-->
 
 	<!-- 线程池 -->
 	<bean id="threadPoolTaskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"> 

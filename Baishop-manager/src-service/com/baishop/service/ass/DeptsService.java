@@ -23,10 +23,16 @@ public interface DeptsService extends Serializable {
 
 	/**
 	 * 获取部门
-	 * @param deptCode 部门编码
+	 * @param deptCode 部门编号
 	 * @return 返回部门对象
 	 */
 	public Depts getDepts(String deptCode);
+
+	/**
+	 * 获取部门列表
+	 * @return 返回部门列表
+	 */
+	public List<Depts> getDeptsList();
 	
 	/**
 	 * 获取部门列表

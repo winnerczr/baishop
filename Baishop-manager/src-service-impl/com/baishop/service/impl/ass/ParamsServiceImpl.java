@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.DuplicateKeyException;
+
 import com.baishop.entity.ass.Params;
 import com.baishop.framework.exception.ServiceException;
 import com.baishop.service.BaseService;
@@ -35,6 +37,11 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 		return null;
 	}
 
+
+	@Override
+	public List<Params> getParamsList() {
+		return this.getParamsList(null);
+	}
 
 	@Override
 	public List<Params> getParamsList(Map<String, Object> map) {
@@ -75,7 +82,10 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 	public void addParams(Params params) {
 		try{
 			this.getSqlMapClientAss().insert("Params.addParams",params);		
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"参数名"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"系统参数"});
@@ -87,11 +97,15 @@ public class ParamsServiceImpl extends BaseService implements ParamsService {
 	public void editParams(Params params) {
 		try{
 			this.getSqlMapClientAss().update("Params.editParams",params);		
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"参数名"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"系统参数"});
 		}
 	}
+
 
 }

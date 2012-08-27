@@ -322,41 +322,50 @@ Ext.onReady(function() {
   	    
 	//------------------------------------------------------------------------------------//
 	
+	var storeAdmins = Ext.create('Ext.data.Store', {
+        pageSize: 50,
+        remoteSort: true,
+        idProperty: 'userId',
+        fields: [
+			'userId', 'username', 'name', 'code', 'sex', 'position', 'mobile', 'email', 
+			'regTime', 'updateTime', 'lastLoginTime', 'lastLoginIp', 'visitCount', 'isAllowLogin', 'enable', 
+			'deptIds', 'deptNames', 'roleIds', 'roleNames', 'roleModuleIds', 'userModuleIds'
+        ],
+        proxy: {
+            type: 'jsonp',
+            url: Url.getAdmins,
+            reader: {
+                root: 'records',
+                totalProperty: 'count'
+            },
+            simpleSortMode: true,
+			listeners: {
+    			exception: function(proxy, request, operation, options) {
+    				Ext.Msg.alert("提示", "加载数据出错："+proxy.getReader().rawData['msg'] );
+    			}
+    		}
+        },
+        sorters: [{
+            property: 'userId',
+            direction: 'asc'
+        }],
+        listeners: {
+        	beforeload: function(store, operation, options) {
+        		// 设置查询参数
+                Ext.apply(store.proxy.extraParams, { 
+                	searchKey: Ext.getCmp("searchKey").getValue()
+                });
+			}
+		}
+    });
+	
     //用户列表
     var gridAdmins = Ext.create('Ext.grid.Panel', {
 		id: 'gridAdmins',
 		border: false,
 		disableSelection: false,
 		loadMask: true,
-		store: Ext.create('Ext.data.Store', {
-	        idProperty: 'userId',
-	        fields: [
-				'userId', 'username', 'name', 'code', 'sex', 'position', 'mobile', 'email', 
-				'regTime', 'updateTime', 'lastLoginTime', 'lastLoginIp', 'visitCount', 'isAllowLogin', 'enable', 
-				'deptIds', 'deptNames', 'roleIds', 'roleNames', 'roleModuleIds', 'userModuleIds'
-	        ],
-	        proxy: {
-	            type: 'jsonp',
-	            url: Url.getAdmins,
-	            reader: {
-	                root: 'records'
-	            },
-	            simpleSortMode: true,
-				listeners: {
-	    			exception: function(proxy, request, operation, options) {
-	    				Ext.Msg.alert("提示", "加载数据出错："+proxy.getReader().rawData['msg'] );
-	    			}
-	    		}
-	        },
-	        listeners: {
-	        	beforeload: function(store, operation, options) {
-	        		// 设置查询参数
-	                Ext.apply(store.proxy.extraParams, { 
-	                	searchKey: Ext.getCmp("searchKey").getValue()
-	                });
-				}
-			}
-	    }),
+		store: storeAdmins,
 		selModel: Ext.create('Ext.selection.CheckboxModel'),
         columns:[{
             text: '用户名',
@@ -633,7 +642,13 @@ Ext.onReady(function() {
 		    handler: function(btn, event) {
 		    	Ext.getCmp("gridAdmins").getStore().loadPage(1);
 		    }
-        }]
+        }],
+        bbar: Ext.create('Ext.PagingToolbar', {
+            store: storeAdmins,
+            displayInfo: true,
+            displayMsg: '显示日志 {0} - {1} 共 {2}',
+            emptyMsg: "没有可显示的日志"
+        })
 	});
 		
   	    

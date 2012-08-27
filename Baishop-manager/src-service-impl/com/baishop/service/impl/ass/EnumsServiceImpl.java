@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.DuplicateKeyException;
+
 import com.baishop.entity.ass.Enums;
 import com.baishop.framework.exception.ServiceException;
 import com.baishop.service.BaseService;
@@ -15,7 +17,7 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 
 	@Override
 	public Enums getEnums(int enumsId) {
-		List<Enums> list = this.getEnumsList(new HashMap<String,Object>());
+		List<Enums> list = this.getEnumsList();
 		for(Enums enums : list){
 			if(enums.getEnumsId().equals(enumsId))
 				return enums;
@@ -25,12 +27,17 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 
 	@Override
 	public Enums getEnums(String enumsType, String enumsCode) {
-		List<Enums> list = this.getEnumsList(new HashMap<String,Object>());
+		List<Enums> list = this.getEnumsList();
 		for(Enums enums : list){
 			if(enums.getEnumsType().equals(enumsType) && enums.getEnumsCode().equals(enumsCode))
 				return enums;
 		}
 		return null;
+	}
+
+	@Override
+	public List<Enums> getEnumsList() {
+		return this.getEnumsList(new HashMap<String,Object>());
 	}
 
 	@Override
@@ -78,7 +85,10 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 	public void addEnums(Enums enums) {
 		try{
 			this.getSqlMapClientAss().insert("Enums.addEnums", enums);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"枚举类型与枚举码"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"系统枚举"});
@@ -89,7 +99,10 @@ public class EnumsServiceImpl extends BaseService implements EnumsService {
 	public void editEnums(Enums enums) {
 		try{
 			this.getSqlMapClientAss().update("Enums.editEnums", enums);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"枚举类型与枚举码"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"系统枚举"});

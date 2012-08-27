@@ -67,11 +67,11 @@ public class SysDepts extends PageManagerController {
 			Depts dept = request.getBindObject(Depts.class, "dept");			
 			Depts parent = deptsService.getDepts(dept.getDeptPid());
 
-			//判断编码是否正确
+			//判断编号是否正确
 			if(parent!=null){
 				String code = dept.getDeptCode();
 				if(!parent.getDeptCode().equals(code.substring(0, code.length()-2))){
-					out.println("{success: false, msg: '编码输入不正确，编码格式为：父编码+两位数字！'}");
+					out.println("{success: false, msg: '编号输入不正确，编号格式为：父编号+两位数字！'}");
 					return;
 				}
 			}

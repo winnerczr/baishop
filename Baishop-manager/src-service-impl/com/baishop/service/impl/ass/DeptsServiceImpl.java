@@ -8,6 +8,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.baishop.entity.ass.Depts;
@@ -22,7 +23,7 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 
 	@Override
 	public Depts getDepts(int deptId) {
-		List<Depts> list = this.getDeptsList(null);
+		List<Depts> list = this.getDeptsList();
 		for(Depts dept : list){
 			if(dept.getDeptId().equals(deptId))
 				return dept;
@@ -32,13 +33,18 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 
 	@Override
 	public Depts getDepts(String deptCode) {
-		List<Depts> list = this.getDeptsList(null);
+		List<Depts> list = this.getDeptsList();
 		for(Depts dept : list){
 			if(dept.getDeptCode().equals(deptCode))
 				return dept;
 		}
 		return null;
 	}
+
+	@Override
+	public List<Depts> getDeptsList() {
+		return this.getDeptsList(null);
+	}	
 
 	@Override
 	public List<Depts> getDeptsList(Map<String,Object> params) {
@@ -104,7 +110,10 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 	public void addDepts(Depts dept) {
 		try{
 			this.getSqlMapClientAss().insert("Depts.addDepts", dept);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"部门编号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"部门"});
@@ -116,7 +125,10 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 	public void editDepts(Depts dept) {
 		try{
 			this.getSqlMapClientAss().update("Depts.editDepts", dept);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"部门编号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"部门"});
@@ -138,7 +150,7 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 			json.put("children", new JSONArray());
 			json.put("cbbDept", new JSONArray());
 			
-			List<Depts> list = this.getDeptsList(null);			
+			List<Depts> list = this.getDeptsList();			
 			
 			//递归加载
 			TreeRecursiveHandle<Depts> treeRecursiveHandle = new TreeRecursiveHandle<Depts>(){
@@ -182,6 +194,6 @@ public class DeptsServiceImpl extends BaseService implements DeptsService {
 		}
 		
 		return json;
-	}	
+	}
 
 }

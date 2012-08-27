@@ -42,7 +42,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	 */
 	@Override
 	public Modules getModules(int moduleId) {
-		List<Modules> list = this.getModulesList(null);
+		List<Modules> list = this.getModulesList();
 		for(Modules module : list){
 			if(module.getModuleId().equals(moduleId))
 				return module;
@@ -52,7 +52,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	
 	@Override
 	public Modules getModules(String text) {
-		List<Modules> list = this.getModulesList(null);
+		List<Modules> list = this.getModulesList();
 		for(Modules module : list){
 			if(module.getText().equals(text))
 				return module;
@@ -62,7 +62,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	
 	@Override
 	public Modules getModulesByUrl(String url) {
-		List<Modules> list = this.getModulesList(null);
+		List<Modules> list = this.getModulesList();
 		for(Modules module : list){
 			if(module.getUrl().equals(url))
 				return module;
@@ -70,6 +70,11 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 		return null;
 	}
 
+
+	@Override
+	public List<Modules> getModulesList() {
+		return this.getModulesList(null);
+	} 
 	
 	@Override
 	public List<Modules> getModulesList(Map<String,Object> params) {
@@ -194,7 +199,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	@Override
 	public JSONArray getListSystemsOfJSON(){		
 		JSONArray json = new JSONArray();		
-		List<Modules> list = this.getModulesList(null);
+		List<Modules> list = this.getModulesList();
 		
 		for(Modules module : list){		
 			//添加最叶子节点到列表中
@@ -212,7 +217,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 	@Override
 	public JSONObject getLeafModulesOfJSON(){		
 		JSONObject json = new JSONObject();		
-		List<Modules> list = this.getModulesList(null);
+		List<Modules> list = this.getModulesList();
 		
 		for(Modules module : list){		
 			//添加最叶子节点到列表中
@@ -237,7 +242,7 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 			
 			List<Modules> list;
 			if(user==null)
-				list = this.getModulesList(null);
+				list = this.getModulesList();
 			else
 				list = this.getModulesListByUser(user, false);
 			
@@ -340,6 +345,6 @@ public class ModulesServiceImpl extends BaseService implements ModulesService {
 		});		
 
 		return list;
-	} 
+	}
 
 }

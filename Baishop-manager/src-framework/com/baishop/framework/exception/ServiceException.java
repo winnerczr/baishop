@@ -36,10 +36,10 @@ public class ServiceException extends RuntimeException implements Serializable {
 	}
 
 	/**
-	 * 通过异常编码获取异常信息
+	 * 通过异常编号获取异常信息
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 * @return 异常信息
 	 */
 	public static String getMessageByCode(int code) {
@@ -47,10 +47,10 @@ public class ServiceException extends RuntimeException implements Serializable {
 	}
 
 	/**
-	 * 通过异常编码获取异常信息
+	 * 通过异常编号获取异常信息
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 * @param args
 	 *            异常返回信息中的参数
 	 * @return 异常信息
@@ -118,7 +118,7 @@ public class ServiceException extends RuntimeException implements Serializable {
 	 * 构造服务异常类
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 */
 	public ServiceException(int code) {
 		super(ServiceException.getMessageByCode(code));
@@ -128,7 +128,7 @@ public class ServiceException extends RuntimeException implements Serializable {
 	 * 构造服务异常类
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 * @param args
 	 *            异常返回信息中的参数
 	 */
@@ -140,7 +140,7 @@ public class ServiceException extends RuntimeException implements Serializable {
 	 * 构造服务异常类
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 * @param cause
 	 *            异常对象
 	 */
@@ -152,7 +152,7 @@ public class ServiceException extends RuntimeException implements Serializable {
 	 * 构造服务异常类
 	 * 
 	 * @param code
-	 *            异常编码
+	 *            异常编号
 	 * @param args
 	 *            异常返回信息中的参数
 	 * @param cause

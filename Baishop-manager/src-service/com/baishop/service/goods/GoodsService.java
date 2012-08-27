@@ -23,7 +23,7 @@ public interface GoodsService extends Serializable {
 
 	/**
 	 * 获取商品
-	 * @param goodsSn 商品编码
+	 * @param goodsSn 商品编号
 	 * @param mode 商品查询模式
 	 * @return 返回商品对象
 	 */

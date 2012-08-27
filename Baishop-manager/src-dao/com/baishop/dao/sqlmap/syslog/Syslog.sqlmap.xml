@@ -72,7 +72,7 @@
   </select>
   
   <select id="getSyslogCount" resultClass="long" parameterClass="hashmap" >
-    select count(0)
+    select count(*)
     from syslog
 	<include refid="select_where_clause" />
   </select>

@@ -29,6 +29,12 @@ public interface EnumsService extends Serializable {
 	
 	/**
 	 * 获取枚举列表
+	 * @return 返回枚举列表
+	 */
+	public List<Enums> getEnumsList();
+	
+	/**
+	 * 获取枚举列表
 	 * @param enumsType 枚举类型
 	 * @return 返回枚举列表
 	 */

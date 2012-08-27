@@ -44,7 +44,7 @@ org.springframework.security.web.access.intercept.FilterInvocationSecurityMetada
 	public synchronized void loadSecuritySource() {
 		if(httpMethodMap.size()==0){			
 			//获取全部资源
-			List<Modules> modules = this.modulesService.getModulesList(null);
+			List<Modules> modules = this.modulesService.getModulesList();
 			for (Modules module : modules) {
 				if(ModulesService.MODULE.equals(module.getType()) || ModulesService.FUNCTION.equals(module.getType())){		
 					if(module.getUrl().trim().equals(""))
@@ -59,7 +59,7 @@ org.springframework.security.web.access.intercept.FilterInvocationSecurityMetada
 			}
 			
 			//获取角色中的资源
-			List<Roles> roles = this.rolesService.getRolesList(null);
+			List<Roles> roles = this.rolesService.getRolesList();
 			for (Roles role : roles) {
 				modules = role.getModules();
 				for (Modules module : modules) {

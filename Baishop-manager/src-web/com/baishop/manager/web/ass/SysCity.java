@@ -81,11 +81,11 @@ public class SysCity extends PageManagerController {
 			City city = request.getBindObject(City.class, "city");			
 			City parent = cityService.getCity(city.getCityPid());
 			
-			//判断编码是否正确
+			//判断编号是否正确
 			if(parent!=null){
 				String code = city.getCityCode();
 				if(!parent.getCityCode().equals(code.substring(0, code.length()-2))){
-					out.println("{success: false, msg: '编码输入不正确，编码格式为：父编码+两位数字！'}");
+					out.println("{success: false, msg: '编号输入不正确，编号格式为：父编号+两位数字！'}");
 					return;
 				}
 			}
