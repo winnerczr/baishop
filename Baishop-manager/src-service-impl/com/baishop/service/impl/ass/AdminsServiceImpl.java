@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.orm.ibatis.SqlMapClientCallback;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,11 +37,10 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 
 	private static final long serialVersionUID = -5609524598183928386L;
 
-	private Md5PasswordEncoder md5 = new Md5PasswordEncoder();
-	
+	private Md5PasswordEncoder md5 = new Md5PasswordEncoder();	
+
 	@Autowired
 	private DeptsService deptsService;
-	
 
 	@Override
 	public UserDetails loadUserByUsername(String username)
@@ -59,7 +59,7 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 
 	@Override
 	public Admins getAdmins(int userId) {
-		List<Admins> list = this.getAdminsList(null);
+		List<Admins> list = this.getAdminsList();
 		for(Admins user : list){
 			if(user.getUserId().equals(userId))
 				return user;
@@ -69,9 +69,9 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 
 	@Override
 	public Admins getAdmins(String username) {
-		List<Admins> list = this.getAdminsList(null);
+		List<Admins> list = this.getAdminsList();
 		for(Admins user : list){
-			if(username.equals(user.getUsername()))
+			if(username.equals(user.getUsername()) || username.equals(user.getCode()))
 				return user;
 		}
 		return null;
@@ -79,19 +79,35 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 
 	@Override
 	public Admins getAdmins(String username, String password) {
-		List<Admins> list = this.getAdminsList(null);
+		List<Admins> list = this.getAdminsList();
 		for(Admins user : list){
-			if(user.getUsername().equals(username) && user.getPassword().equals(md5.encodePassword(password, username)))
-				return user;
+			if(username.equals(user.getUsername()) || username.equals(user.getCode())){
+				if(user.getPassword().equals(md5.encodePassword(password, user.getUsername())))
+					return user;
+			}
 		}
 		return null;
+	}
+	
+	@Override
+	public List<Admins> getAdminsList() {
+		return this.getAdminsList(null);
 	}
 
 	@Override
 	public List<Admins> getAdminsList(Map<String, Object> params) {
+		return this.getAdminsList(params, null, null, null);
+	}
+
+	@Override
+	public List<Admins> getAdminsList(Map<String, Object> params, Map<String, String> sorters, Long start, Long limit) {
 		try{
 			if(params==null)
 				params = new HashMap<String,Object>();
+
+			params.put("sort", this.getDbSort(sorters));
+			params.put("start", start);
+			params.put("limit", limit);
 			
 			@SuppressWarnings("unchecked")
 			List<Admins> list = this.getSqlMapClientAss().queryForList("Admins.getAdmins", params);
@@ -103,6 +119,19 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 			throw new ServiceException(101, e, new String[]{"用户"});
 		}
 	}
+	
+	@Override
+	public long getAdminsCount(Map<String, Object> params) {
+		try{
+			long count = (Long)this.getSqlMapClientAss().queryForObject("Admins.getAdminsCount", params);			
+			return count;		
+		}catch(Exception e){
+			if(e instanceof ServiceException)
+				throw (ServiceException)e;
+			throw new ServiceException(101, e, new String[]{"用户"});
+		}
+	}
+	
 	
 	@Override
 	public List<Admins> getAdminsListByRoleId(int roleId) {
@@ -166,8 +195,8 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 	public void addAdmins(final Admins users, boolean syncDepts, boolean syncRoles, boolean syncModules) {
 		try{
 			// 添加用户记录
-			int userId = (Integer)this.getSqlMapClientAss().insert("Admins.addAdmins", users);
-			users.setUserId(userId);
+			int userId = (Integer)this.getSqlMapClientAss().insert("Admins.addAdmins", users);		
+			users.setUserId(userId);	
 
 			Map<String,Object> params = new HashMap<String,Object>();
 			params.put("userIds", new int[]{users.getUserId()});
@@ -234,8 +263,10 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 					}
 				});
 			}
-			
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"用户名或工号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"用户"});
@@ -322,8 +353,10 @@ public class AdminsServiceImpl extends BaseService implements AdminsService, Use
 					}
 				});
 			}
-			
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"用户名或工号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"用户"});

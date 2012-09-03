@@ -9,6 +9,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.orm.ibatis.SqlMapClientCallback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,12 +33,29 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 
 	@Override
 	public Roles getRoles(int roleId) {
-		List<Roles> list = this.getRolesList(null);
+		List<Roles> list = this.getRolesList();
 		for(Roles role : list){
 			if(role.getRoleId().equals(roleId))
 				return role;
 		}
 		return null;
+	}
+	
+
+
+	@Override
+	public Roles getRoles(String roleName) {
+		List<Roles> list = this.getRolesList();
+		for(Roles role : list){
+			if(role.getRoleName().equals(roleName))
+				return role;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Roles> getRolesList() {
+		return this.getRolesList(null);
 	}
 
 	@Override
@@ -132,8 +150,10 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 					}
 				});
 			}
-			
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"角色名"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"角色"});
@@ -170,8 +190,10 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 					}
 				});
 			}
-			
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"角色名"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"角色"});
@@ -193,7 +215,7 @@ public class RolesServiceImpl extends BaseService implements RolesService {
 			json.put("children", new JSONArray());
 			json.put("leafMap", new JSONObject());
 			
-			List<Roles> list = this.getRolesList(null);			
+			List<Roles> list = this.getRolesList();			
 			
 			//递归加载
 			TreeRecursiveHandle<Roles> treeRecursiveHandle = new TreeRecursiveHandle<Roles>(){

@@ -49,9 +49,7 @@
   	<property name="reference-type" value="SOFT"/>
   </cacheModel>
 
-  <select id="getAdmins" resultMap="resultMap" cacheModel="cacheAdmins">
-    select *
-    from bai_admins
+  <sql id="select_where_clause" >
     <dynamic prepend="where">
 		<isNotEmpty prepend="and" property="userId">
 			user_id = #userId:INTEGER#
@@ -71,15 +69,18 @@
 		<isNotEmpty prepend="AND" property="isAllowLogin">
 			is_allow_login = #isAllowLogin:TINYINT#
 		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="coopSupplyId">
+			coop_supply_id = #coopSupplyId:INTEGER#
+		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="enable">
-			enable = #enable:TINYINT#
+			enable = #enable:INTEGER#
 		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="roleId">
 			user_id in (select user_id from bai_admins_roles where role_id = #roleId:INTEGER#)
 		</isNotEmpty>
 		<isNotEmpty prepend="AND" property="moduleId" open="(" close=")">
 			user_id in (
-				select user_id from ass_admins_modules where module_id = #moduleId:INTEGER#
+				select user_id from bai_admins_modules where module_id = #moduleId:INTEGER#
 			)
 			or
 			user_id in (
@@ -90,7 +91,7 @@
 		</isNotEmpty>		
 		<isNotEmpty prepend="AND" property="deptCode">
 			user_id in (
-				select user_id from ass_admins_depts where dept_id in (
+				select user_id from bai_admins_depts where dept_id in (
 					select dept_id from ass_depts where dept_code like CONCAT(#deptCode:VARCHAR#,'%')
 				)
 			)
@@ -102,6 +103,9 @@
 			code like CONCAT('%',#searchKey:VARCHAR#,'%')
 		</isNotEmpty>
 	</dynamic>
+  </sql>
+  
+  <sql id="select_sort_limit_clause" >
 	<dynamic prepend="order by" >
       <isNotEmpty property="sort" >
         $sort$
@@ -110,6 +114,30 @@
 	    enable desc, reg_time asc
 	  </isEmpty>
     </dynamic>
+	<dynamic prepend="limit">
+		<isNotNull property="start">
+			$start$,
+			<isNotNull property="limit">
+				$limit$
+			</isNotNull>
+			<isNull property="limit">
+				18446744073709551615
+			</isNull>
+		</isNotNull>
+	</dynamic>
+  </sql>
+
+  <select id="getAdmins" resultMap="resultMap" cacheModel="cacheAdmins">
+    select *
+    from bai_admins
+	<include refid="select_where_clause" />
+	<include refid="select_sort_limit_clause" />
+  </select>
+  
+  <select id="getAdminsCount" resultClass="long">
+    select count(*)
+    from bai_admins
+	<include refid="select_where_clause" />
   </select>
   
   <delete id="delAdmins" >

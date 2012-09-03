@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.DuplicateKeyException;
+
 import com.baishop.entity.ass.City;
 import com.baishop.framework.exception.ServiceException;
 import com.baishop.service.BaseService;
@@ -15,7 +17,7 @@ public class CityServiceImpl extends BaseService implements CityService {
 
 	@Override
 	public City getCity(int cityId) {
-		List<City> list = this.getCityList(null);
+		List<City> list = this.getCityList();
 		for(City city : list){
 			if(city.getCityId().equals(cityId))
 				return city;
@@ -25,12 +27,17 @@ public class CityServiceImpl extends BaseService implements CityService {
 
 	@Override
 	public City getCity(String cityCode) {
-		List<City> list = this.getCityList(null);
+		List<City> list = this.getCityList();
 		for(City city : list){
 			if(city.getCityCode().equals(cityCode))
 				return city;
 		}
 		return null;
+	}
+
+	@Override
+	public List<City> getCityList() {
+		return this.getCityList(null);
 	}
 
 	@Override
@@ -90,7 +97,10 @@ public class CityServiceImpl extends BaseService implements CityService {
 	public void addCity(City city) {
 		try{
 			this.getSqlMapClientAss().insert("City.addCity", city);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"城市编号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(103, e, new String[]{"城市"});
@@ -101,7 +111,10 @@ public class CityServiceImpl extends BaseService implements CityService {
 	public void editCity(City city) {
 		try{
 			this.getSqlMapClientAss().update("City.editCity", city);
-		}catch(Exception e){
+
+        }catch(DuplicateKeyException e){
+			throw new ServiceException(112, e, new String[]{"城市编号"});	
+        } catch (Exception e) {
 			if(e instanceof ServiceException)
 				throw (ServiceException)e;
 			throw new ServiceException(104, e, new String[]{"城市"});

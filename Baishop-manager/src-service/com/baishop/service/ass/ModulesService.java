@@ -51,6 +51,12 @@ public interface ModulesService extends Serializable {
 
 	/**
 	 * 获取功能模块列表
+	 * @return 返回功能模块列表
+	 */
+	public List<Modules> getModulesList();	
+
+	/**
+	 * 获取功能模块列表
 	 * @param params 查询参数
 	 * @return 返回功能模块列表
 	 */

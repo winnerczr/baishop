@@ -29,6 +29,12 @@ public interface ParamsService extends Serializable {
 	
 	/**
 	 * 获取参数列表
+	 * @return 返回参数列表
+	 */
+	public List<Params> getParamsList();
+	
+	/**
+	 * 获取参数列表
 	 * @param params 查询参数
 	 * @param sorters 记录的排序，如sorters.put("id","desc")，该参数如果为空表示按默认排序
 	 * @return 返回参数列表

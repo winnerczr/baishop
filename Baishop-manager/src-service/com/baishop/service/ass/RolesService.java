@@ -26,6 +26,19 @@ public interface RolesService extends Serializable {
 	 * @return 返回后台角色对象
 	 */
 	public Roles getRoles(int roleId);
+	
+	/**
+	 * 获取后台角色
+	 * @param roleName 后台角色名
+	 * @return 返回后台角色对象
+	 */
+	public Roles getRoles(String roleName);
+	
+	/**
+	 * 获取后台角色列表
+	 * @return 返回后台角色列表
+	 */
+	public List<Roles> getRolesList();
 
 	/**
 	 * 获取后台角色列表

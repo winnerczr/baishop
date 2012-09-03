@@ -57,17 +57,27 @@ public class SysAdmins extends PageManagerController {
 		
 		try{
 			//获取参数
+			String sort = request.getParameter("sort");
+			String dir = request.getParameter("dir");
+			Long start = request.getLongParameter("start");
+			Long limit = request.getLongParameter("limit");
 			String searchKey = request.getParameter("searchKey", "UTF-8");
 			
 			//查询参数
 			Map<String,Object> params = new HashMap<String,Object>();
 			params.put("searchKey", searchKey);
 			
+			//排序数据
+			Map<String,String> sorters = new HashMap<String,String>();
+			sorters.put(sort, dir);
+			
 			//查询数据
-			List<Admins> list = adminsService.getAdminsList(params);
+			List<Admins> list = adminsService.getAdminsList(params, sorters, start, limit);
+			long count = adminsService.getAdminsCount(params);
 			
 			//组装JSON
 			JSONObject json = new JSONObject();
+			json.put("count", count);
 			json.put("records", new JSONArray());
 			
 			JSONArray records = json.getJSONArray("records");

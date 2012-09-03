@@ -62,7 +62,7 @@ Ext.onReady(function() {
 			    xtype:'textfield',
 			    id: 'txtCityCode',
 			    name: 'city.cityCode',
-			    fieldLabel: '编码',
+			    fieldLabel: '编号',
 			    allowBlank: false
 			},{
 				xtype:'textfield',
@@ -138,7 +138,7 @@ Ext.onReady(function() {
             width: 300,
           	sortable: false
         },{
-            text: '编码',
+            text: '编号',
             dataIndex: 'cityCode',
             width: 150,
           	sortable: false

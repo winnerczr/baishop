@@ -24,7 +24,7 @@ public interface OrderService extends Serializable {
 	/**
 	 * 获取订单
 	 * @param user 用户对象，用于选择该用户所在的数据库
-	 * @param orderSn 订单编码
+	 * @param orderSn 订单编号
 	 * @param mode 订单查询模式
 	 * @return 返回订单对象
 	 */
@@ -63,7 +63,7 @@ public interface OrderService extends Serializable {
 	/**
 	 * 删除订单，只做虚拟删除
 	 * @param user 用户对象，用于选择该用户所在的数据库
-	 * @param orderSn 订单编码
+	 * @param orderSn 订单编号
 	 */
 	public void delOrder(Users user, String orderSn);
 	
