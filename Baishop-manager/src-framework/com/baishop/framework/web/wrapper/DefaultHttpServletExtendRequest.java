@@ -509,13 +509,21 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 
 	@Override
 	public Boolean getBooleanParameter(String name, Boolean defaultValue) {
+		return this.getBooleanParameter(name, defaultValue, null);
+	}
+
+	@Override
+	public Boolean getBooleanParameter(String name, Boolean defaultValue, String equalsValue) {
 		try{
 			String value = request.getParameter(name);
 			
 			if(StringUtils.isBlank(value))
 				return defaultValue;
 			
-			return Boolean.valueOf(value.trim());
+			if(StringUtils.isBlank(equalsValue))
+				return Boolean.valueOf(value.trim());
+			else
+				return value.trim().equals(equalsValue);			
 			
 		}catch(Exception e){
 			return defaultValue;
@@ -635,3 +643,4 @@ public class DefaultHttpServletExtendRequest implements HttpServletExtendRequest
 	}
 	
 }
+

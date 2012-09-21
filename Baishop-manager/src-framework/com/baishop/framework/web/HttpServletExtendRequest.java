@@ -58,6 +58,15 @@ public interface HttpServletExtendRequest extends HttpServletRequest,
 	public Boolean getBooleanParameter(String name, Boolean defaultValue);
 	
 	/**
+	 * 获取boolean型参数
+	 * @param name 参数名
+	 * @param defaultValue 默认值
+	 * @param equalsValue 比较的值
+	 * @return 返回参数值
+	 */
+	public Boolean getBooleanParameter(String name, Boolean defaultValue, String equalsValue);
+	
+	/**
 	 * 获取Integer型参数
 	 * @param name 参数名
 	 * @return 返回参数值
