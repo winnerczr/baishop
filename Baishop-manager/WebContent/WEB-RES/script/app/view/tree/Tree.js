@@ -43,33 +43,23 @@ Ext.define('Baishop.view.tree.Tree', {
                 dock: 'top',
                 margin: '0 0 15 0',
                 items: [
-	                {
-	                    xtype: 'hovermenubutton',
-	                    cls: 'icon-hist sidebar',
-	                    text: '系统',
-	                    menuCfg: {
-	                        cls: 'sidebar',
-                            width: 200,
-	                        emptyText: '没有子系统'
-	                    },
-                        store: Ext.create('Ext.data.Store', {
-							fields: ['id', 'cls'],
-							data: Baishop.listSystems
-                	    })
-	                },
                     {
-                        xtype: 'hovermenubutton',
-                        cls: 'icon-fav sidebar',
-                        text: '收藏',
-                        menuCfg: {
-                            cls: 'sidebar',
-                            emptyText: '没有收藏',
-                            showCloseButtons: true
-                        },
-                        store: Ext.getStore('Favorites'),
+                        xtype: 'hovermenubuttonLogout',
+	                    cls: 'icon-home sidebar',
+                        text: '主页',
                         listeners: {
-                            closeclick: function(cls) {
-                                Baishop.Favorites.remove(cls);
+                            click: function(cls) {
+                            	window.location.href = Baishop.casUrl;
+                            }
+                        }
+                    },
+                    {
+                        xtype: 'hovermenubuttonLogout',
+                        cls: 'icon-user sidebar',
+                        text: '用户',
+                        listeners: {
+                            click: function(cls) {
+                            	Baishop.winUserSetting.show(this);
                             }
                         }
                     },
@@ -79,7 +69,7 @@ Ext.define('Baishop.view.tree.Tree', {
                         text: '退出',
                         listeners: {
                             click: function(cls) {
-                            	window.location.href="j_spring_security_logout";
+                            	window.location.href="j_spring_cas_security_logout";
                             }
                         }
                     }

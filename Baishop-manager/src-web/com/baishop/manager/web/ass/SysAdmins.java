@@ -14,7 +14,6 @@ import net.sf.json.JSONObject;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.baishop.entity.ass.Admins;
@@ -29,8 +28,6 @@ import com.baishop.manager.controller.PageManagerController;
 import com.baishop.service.ass.DeptsService;
 
 public class SysAdmins extends PageManagerController {
-
-	private Md5PasswordEncoder md5 = new Md5PasswordEncoder();
 	
 	@Autowired
 	protected DeptsService deptsService;	

@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class Admins implements UserDetails, Serializable {
+public class Admins implements UserDetails, Serializable, Cloneable {
 	
 	private static final long serialVersionUID = -8097634475751877685L;
 
@@ -584,5 +584,14 @@ public class Admins implements UserDetails, Serializable {
 			return false;
 		}
 	}
+	
+	
+	/**
+     * @return 创建并返回此对象的一个副本。
+     * @throws CloneNotSupportedException
+     */
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 	
 }

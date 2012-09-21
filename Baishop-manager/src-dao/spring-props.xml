@@ -19,15 +19,16 @@
     http://www.springframework.org/schema/security/spring-security-3.0.xsd
 	">
 	
-	
-   	<!-- 引入参数配置文件 -->
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
+	<!-- 引入参数配置文件 --> 
+   	<bean class="com.baishop.framework.config.PropertyPlaceholderConfigurer">
+		<property name="profile">
+			<value>/WEB-INF/conf/profile.conf</value>
+		</property>
+		<property name="configs">
 			<list>
-				<value>/WEB-INF/conf/*.conf</value>
+				<value>/WEB-INF/conf/${sys.runtime}/*.conf</value>
 			</list>
 		</property>
 	</bean>
-	
 	
 </beans>

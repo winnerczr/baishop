@@ -24,6 +24,7 @@
     <result column="{userId=user_id}" property="modules" select="Modules.getModules" />
   </resultMap>
   
+  <!-- 
   <cacheModel id="cacheAdmins" type="MEMORY" readOnly="true" serialize="false">
   	<flushInterval hours="24"/>
   	<flushOnExecute statement="Admins.addAdmins"/>
@@ -48,7 +49,8 @@
   	<flushOnExecute statement="RolesModules.delRolesModules"/>  	
   	<property name="reference-type" value="SOFT"/>
   </cacheModel>
-
+  -->
+  
   <sql id="select_where_clause" >
     <dynamic prepend="where">
 		<isNotEmpty prepend="and" property="userId">
@@ -127,7 +129,7 @@
 	</dynamic>
   </sql>
 
-  <select id="getAdmins" resultMap="resultMap" cacheModel="cacheAdmins">
+  <select id="getAdmins" resultMap="resultMap">
     select *
     from bai_admins
 	<include refid="select_where_clause" />
