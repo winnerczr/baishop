@@ -1,5 +1,9 @@
 package com.baishop.manager.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.Date;
 import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -15,13 +20,17 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.baishop.entity.ass.Admins;
+import com.baishop.entity.ass.Depts;
 import com.baishop.entity.ass.Modules;
+import com.baishop.entity.ass.Roles;
+import com.baishop.framework.json.JsonConfigGlobal;
 import com.baishop.framework.utils.PropsConf;
 import com.baishop.framework.web.HttpServletExtendRequest;
 import com.baishop.framework.web.HttpServletExtendResponse;
@@ -57,6 +66,9 @@ public abstract class PageManagerController extends PageController {
 	@Autowired
 	protected EnumsService enumsService;
 	
+
+	/** 加密对象 */
+	protected final Md5PasswordEncoder md5 = new Md5PasswordEncoder();
 	
 	
 	/**
@@ -103,6 +115,96 @@ public abstract class PageManagerController extends PageController {
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 		return (Admins)userDetails;
 	}
+	
+	
+	/**
+	 * 获取当前用户
+	 * @param request request对象
+	 * @param response response对象
+	 * @throws IOException 
+	 */
+	public void getCurrUser(HttpServletExtendRequest request, 
+			HttpServletExtendResponse response) throws IOException {
+		PrintWriter out = response.getWriter();
+		
+		try{
+			Admins admins = (Admins)this.getCurrUser().clone();
+			admins.setPassword("");
+			admins.setRoles(Collections.<Roles>emptyList());
+			admins.setDepts(Collections.<Depts>emptyList());
+			admins.setModules(Collections.<Modules>emptyList());
+			
+			//输出数据
+			out.println("{success: true, data: '"+ JSONObject.fromObject(admins, JsonConfigGlobal.jsonConfig) +" '}");
+			
+		}catch(Exception e){
+			out.println("{success: false, msg: '"+ e.getMessage() +"'}");
+			e.printStackTrace();
+		}finally{		
+			out.close();
+		}
+	}
+	
+	
+	/**
+	 * 获取当前用户
+	 * @param request request对象
+	 * @param response response对象
+	 * @throws IOException 
+	 */
+	public void saveCurrUser(HttpServletExtendRequest request, 
+			HttpServletExtendResponse response) throws IOException {
+		PrintWriter out = response.getWriter();
+		
+		try{						
+			//获取对象
+			Admins user = request.getBindObject(Admins.class, "user");
+			
+			//修改密码
+			boolean checkPassword = request.getBooleanParameter("checkPassword", false, "on");
+			if(checkPassword){
+				String oldPassword = request.getParameter("oldPassword");
+				String password = request.getParameter("password");
+				String rePassword = request.getParameter("rePassword");
+				
+				if(this.getCurrUser().getPassword().equals(md5.encodePassword(oldPassword, user.getUsername()))){
+					if(StringUtils.isNotBlank(password) && password.equals(rePassword)){
+						user.setPassword(md5.encodePassword(password, user.getUsername()));
+					}else{
+						out.println("{success: false, msg: '再次输入的密码不正确'}");
+						return;
+					}
+				}else{
+					out.println("{success: false, msg: '旧密码不正确'}");
+					return;
+				}
+			}
+			
+			//保存到数据库
+			user.setUsername(null);
+			user.setPassword(null);
+			user.setCode(null);
+			user.setUpdateTime(new Date());
+			adminsService.editAdmins(user);
+			
+			//更新当前登录的用户
+			Admins admins = this.getCurrUser();
+			admins.setName(user.getName());
+			admins.setSex(user.getSex());
+			admins.setMobile(user.getMobile());
+			admins.setEmail(user.getEmail());			
+			
+			//输出数据
+			out.println("{success: true}");
+
+		}catch(Exception e){
+			out.println("{success: false, msg: '"+ e.getMessage() +"'}");
+			e.printStackTrace();
+		}finally{		
+			out.close();
+		}
+	}	
+	
 	
 	/**
 	 * 用户登录操作
