@@ -1,6 +1,11 @@
 Pg3Ed7Ej2gt5
 
 
+baishop
+baishop-erp
+baishop-bi
+
+
 
 原型设计软件			Axure RP Pro6
 项目管理和缺陷跟踪		JIRA、Redmine
