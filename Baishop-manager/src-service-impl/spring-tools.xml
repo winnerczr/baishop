@@ -33,7 +33,7 @@
         <property name="properties">
 			<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean" lazy-init="false">
 		        <property name="location">
-					<value>/WEB-INF/conf/app.conf</value>
+					<value>classpath:conf/${sys.runtime}/app.conf</value>
 		        </property>
 		    </bean>
         </property>

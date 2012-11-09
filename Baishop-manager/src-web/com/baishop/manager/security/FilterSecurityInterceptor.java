@@ -28,12 +28,25 @@ public class FilterSecurityInterceptor extends org.springframework.security.web.
 
         clock.stop(); 
 		
-		//输出访问时间日志
-		if(logger.isInfoEnabled()){
-			logger.info("Visit URL path ["+fi.getRequestUrl()+", time: "+ clock.getTime() +"ms]");
-		}
-		if(logger.isDebugEnabled()){
-			logger.debug("Visit URL params ["+ToStringBuilder.reflectionToString(fi.getRequest().getParameterMap(), ToStringStyle.SHORT_PREFIX_STYLE)+"]");
+		//输出访问时间日志		
+        this.logger(fi, clock);
+	}
+	
+	
+	/**
+	 * 方法调用日志
+	 */
+	private void logger(FilterInvocation fi, StopWatch clock){
+		try{
+			//输出访问时间日志
+			if(logger.isInfoEnabled()){
+				logger.info("Visit URL path ["+fi.getRequestUrl()+", time: "+ clock.getTime() +"ms]");
+			}
+			if(logger.isDebugEnabled()){
+				logger.debug("Visit URL params ["+ToStringBuilder.reflectionToString(fi.getRequest().getParameterMap(), ToStringStyle.SHORT_PREFIX_STYLE)+"]");
+			}
+		}catch(Exception e){
+			//e.printStackTrace();
 		}
 	}
 }

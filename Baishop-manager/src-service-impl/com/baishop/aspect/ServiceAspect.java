@@ -69,32 +69,37 @@ public class ServiceAspect implements Serializable {
 						String sArgs = "", sResult = "";
 						Object[] args = joinpoint.getArgs();
 						
-						if(args!=null && args.length>0)
-							sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
-						if(result!=null)
-							sResult = result instanceof String ? result.toString() : JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
+						try{
+				        	//获取参数和返回值
+							if(args!=null && args.length>0)
+								sArgs = JSONArray.fromObject(args, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");
+							if(result!=null)
+								sResult = result instanceof String ? result.toString() : JSONArray.fromObject(result, JsonConfigGlobal.jsonConfig).toString().replaceAll("\"", "");						
 						
-						syslog.setSource((byte)1);
-						syslog.setSignature(signature.toString());
-						syslog.setArgs(sArgs.length()<=2000?sArgs:sArgs.substring(0, 2000));
-						syslog.setResult(sResult.length()<=2000?sResult:sResult.substring(0, 2000));
-						syslog.setDescription("");
-						syslog.setExecTime(clock.getTime());
-
-						//输出访问日志
-						if(logger.isInfoEnabled()){
-							logger.info("Exec method ["+ syslog.getSignature() +", time: "+ syslog.getExecTime() +"ms]" );
+						}catch(Exception e){}finally{
+							//组装日志对象
+							syslog.setSource((byte)1);
+							syslog.setSignature(signature.toString());
+							syslog.setArgs(sArgs.length()<=2000?sArgs:sArgs.substring(0, 2000));
+							syslog.setResult(sResult.length()<=2000?sResult:sResult.substring(0, 2000));
+							syslog.setDescription("");
+							syslog.setExecTime(clock.getTime());
+	
+							//输出访问日志
+							if(logger.isInfoEnabled()){
+								logger.info("Exec method ["+ syslog.getSignature() +", time: "+ syslog.getExecTime() +"ms]" );
+							}
+							if(logger.isDebugEnabled()){
+								logger.debug("Method args ["+ syslog.getArgs() + "]");
+								logger.debug("Method return ["+ syslog.getResult() +"]");
+							}
+							
+							//插入数据库						
+							syslogService.logger(syslog);
 						}
-						if(logger.isDebugEnabled()){
-							logger.debug("Method args ["+ syslog.getArgs() + "]");
-							logger.debug("Method return ["+ syslog.getResult() +"]");
-						}
-						
-						//插入数据库						
-						syslogService.logger(syslog);
 					}
 				}catch(Exception e){
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});

@@ -64,7 +64,7 @@ public class HttpInvokerServiceExporter
 	        }
 	        
 		}catch(Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	

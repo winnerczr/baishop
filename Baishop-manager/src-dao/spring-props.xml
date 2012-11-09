@@ -26,7 +26,7 @@
 		</property>
 		<property name="configs">
 			<list>
-				<value>/WEB-INF/conf/${sys.runtime}/*.conf</value>
+				<value>classpath:conf/${sys.runtime}/*.conf</value>
 			</list>
 		</property>
 	</bean>

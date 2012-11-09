@@ -234,7 +234,7 @@ public class JmsRpcProxyFactoryBean extends JmsInvokerProxyFactoryBean {
 	        }
 	        
 		}catch(Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 }

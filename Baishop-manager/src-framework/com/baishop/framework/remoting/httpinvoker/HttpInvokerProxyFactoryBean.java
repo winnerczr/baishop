@@ -82,7 +82,7 @@ public class HttpInvokerProxyFactoryBean
 			}
 			
 		}catch(Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

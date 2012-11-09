@@ -96,7 +96,7 @@ public class JmsRpcServiceExporter extends DefaultMessageListenerContainer {
 		        }
 		        
 			}catch(Exception e){
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 		}
 	};
