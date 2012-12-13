@@ -1,15 +1,17 @@
 Pg3Ed7Ej2gt5
 
 
-baishop
-baishop-erp
-baishop-bi
-
+#前台
+bai-web
+bai-wap
+bai-auth
+#后台
+bai-manager
 
 
 原型设计软件			Axure RP Pro6
 项目管理和缺陷跟踪		JIRA、Redmine
-持续集成引擎			Hudson
+持续集成引擎			Hudson、nexus
 压力测试工具			LoadRunne
 抓包工具				Fidder
 网站流量统计			CNZZ、百度统计、Google Analytics、51la、量子恒道
