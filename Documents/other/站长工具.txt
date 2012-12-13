@@ -1,10 +1,18 @@
 Pg3Ed7Ej2gt5
 
 
-baishop
-baishop-erp
-baishop-bi
-
+#前台
+bai-web
+bai-wap
+bai-auth
+#后台
+bai-manager
+#中间件
+bai-search
+bai-dubbo
+#服务/框架
+bai-service
+bai-framework
 
 
 原型设计软件			Axure RP Pro6
